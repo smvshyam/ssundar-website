@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Shyam Sundar MV — SSUNDAR.</title>
+<meta name="description" content="25+ years inside Fortune 500 organizations. 10,000+ professionals trained. Brandon Hall Gold Award winner. The architect behind SSUNDAR.">
+<meta property="og:title" content="About Shyam Sundar MV — SSUNDAR.">
+<meta property="og:description" content="25+ years. 10,000+ professionals trained. 4 continents. The journey from process trainer to global capability architect.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ssundar.com/about">
+<meta property="og:image" content="https://ssundar.com/og-default.png">
+<link rel="canonical" href="https://ssundar.com/about">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="blog.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Shyam Sundar MV","jobTitle":"Founder & Principal Architect","worksFor":{"@type":"Organization","name":"SSUNDAR","url":"https://ssundar.com"},"url":"https://ssundar.com/about","sameAs":["https://www.linkedin.com/in/shyamsundarmv"],"description":"25+ years inside Fortune 500 organizations. 10,000+ professionals trained. Brandon Hall Gold Award winner.","award":["Brandon Hall Gold Award 2021","Brandon Hall Silver Award 2017","Golden Peacock Award 2016","ATD Best Award 2014"]}</script>
+
+<style>
+/* ── ABOUT PAGE EXCLUSIVE STYLES ── */
+
+/* Hero */
+.about-hero{
+  min-height:100vh;background:#000;display:flex;flex-direction:column;
+  justify-content:flex-end;padding:clamp(100px,12vw,160px) var(--px) clamp(60px,8vw,100px);
+  position:relative;overflow:hidden
+}
+.about-hero-inner-text{
+  position:relative;z-index:2;max-width:58%
+}
+@media(max-width:700px){
+  .about-hero-inner-text{max-width:100%}
+  .about-hero-photo-bg{display:none}
+}
+.about-hero-bg-text{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:var(--heading);font-size:clamp(120px,22vw,380px);font-weight:700;
+  color:rgba(255,255,255,0.03);letter-spacing:-0.04em;text-transform:uppercase;
+  white-space:nowrap;pointer-events:none;user-select:none;line-height:1
+}
+.about-hero-label{
+  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--red);margin-bottom:24px
+}
+.about-hero-name{
+  font-family:var(--heading);font-size:clamp(52px,8vw,130px);font-weight:700;
+  color:#fff;letter-spacing:-0.03em;text-transform:uppercase;line-height:0.9;
+  margin-bottom:32px
+}
+.about-hero-name .name-red{color:var(--red)}
+.about-hero-sub{
+  font-family:var(--body);font-size:clamp(16px,1.4vw,22px);font-weight:500;
+  color:rgba(255,255,255,0.55);max-width:640px;line-height:1.65;margin-bottom:56px
+}
+
+/* Animated counters bar */
+.counters-bar{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  border-top:1px solid rgba(255,255,255,0.1);padding-top:48px
+}
+.counter-item{padding:0 32px 0 0;border-right:1px solid rgba(255,255,255,0.08)}
+.counter-item:last-child{border-right:none}
+.counter-num{
+  font-family:var(--heading);font-size:clamp(36px,4vw,64px);font-weight:700;
+  color:#fff;letter-spacing:-0.02em;line-height:1;display:block
+}
+.counter-num .red{color:var(--red)}
+.counter-label{
+  font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.15em;
+  text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:8px;display:block
+}
+@media(max-width:640px){
+  .counters-bar{grid-template-columns:repeat(2,1fr);gap:0}
+  .counter-item{padding:16px 0;border-right:none;border-bottom:1px solid rgba(255,255,255,0.08)}
+}
+
+/* ── JOURNEY TIMELINE ── */
+.journey-section{background:#000;padding:clamp(80px,10vw,140px) var(--px)}
+.journey-inner{max-width:1200px;margin:0 auto}
+.journey-header{margin-bottom:80px}
+.journey-track{position:relative;padding-left:0}
+
+/* Vertical line */
+.journey-line{
+  position:absolute;left:140px;top:0;bottom:0;width:2px;
+  background:linear-gradient(to bottom,var(--red),rgba(227,30,36,0.1));
+  transform-origin:top
+}
+
+.journey-entry{
+  display:grid;grid-template-columns:140px 32px 1fr;gap:0;
+  align-items:start;margin-bottom:0;position:relative
+}
+.journey-entry:last-child .journey-entry-line{display:none}
+
+/* Year column */
+.journey-year{
+  padding:20px 20px 20px 0;text-align:right;
+  font-family:var(--mono);font-size:11px;font-weight:700;
+  letter-spacing:0.08em;color:rgba(255,255,255,0.3);
+  padding-top:24px
+}
+.journey-year.active{color:var(--red)}
+
+/* Dot column */
+.journey-dot-col{
+  display:flex;flex-direction:column;align-items:center;padding-top:20px;
+  position:relative
+}
+.journey-dot{
+  border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.2);
+  flex-shrink:0;transition:all 0.4s ease;position:relative;z-index:2
+}
+.journey-dot.scale-1{width:18px;height:18px}
+.journey-dot.scale-2{width:24px;height:24px}
+.journey-dot.scale-3{width:30px;height:30px}
+.journey-dot.scale-4{width:38px;height:38px;border-color:var(--red);background:rgba(227,30,36,0.2)}
+.journey-dot.scale-5{width:46px;height:46px;border-color:var(--red);background:rgba(227,30,36,0.3)}
+.journey-dot.scale-6{width:54px;height:54px;border-color:var(--red);background:var(--red)}
+
+.journey-connector{width:2px;flex:1;background:rgba(255,255,255,0.06);min-height:40px}
+
+/* Content column */
+.journey-card{
+  margin-left:28px;padding:20px 28px 40px 28px;
+  border-left:2px solid rgba(255,255,255,0.06);
+  opacity:0;transform:translateX(24px);
+  transition:opacity 0.6s ease, transform 0.6s ease
+}
+.journey-card.visible{opacity:1;transform:translateX(0)}
+.journey-card.big{border-left-color:var(--red)}
+
+.journey-scope{
+  font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.15em;
+  text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:10px
+}
+.journey-scope.red{color:var(--red)}
+.journey-role{
+  font-family:var(--heading);font-size:clamp(16px,1.5vw,22px);font-weight:700;
+  color:#fff;text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:4px;line-height:1.2
+}
+.journey-company{
+  font-family:var(--body);font-size:14px;font-weight:600;
+  color:rgba(255,255,255,0.5);margin-bottom:12px
+}
+.journey-company .geo{color:rgba(255,255,255,0.3);font-weight:400}
+.journey-desc{
+  font-family:var(--body);font-size:15px;font-weight:400;
+  color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:16px
+}
+.journey-stat{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
+  padding:6px 14px;border-radius:2px;margin-right:8px;margin-bottom:8px
+}
+.journey-stat .stat-num{
+  font-family:var(--heading);font-size:15px;font-weight:700;color:var(--red)
+}
+.journey-stat .stat-label{
+  font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:0.1em;
+  text-transform:uppercase;color:rgba(255,255,255,0.4)
+}
+.journey-award{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(227,30,36,0.1);border:1px solid rgba(227,30,36,0.3);
+  padding:6px 14px;border-radius:2px;margin-top:4px
+}
+.journey-award span{
+  font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--red)
+}
+
+@media(max-width:700px){
+  .journey-entry{grid-template-columns:60px 24px 1fr}
+  .journey-line{left:72px}
+  .journey-year{font-size:9px;padding-right:10px}
+}
+
+/* ── IMPACT NUMBERS ── */
+.impact-section{background:#E31E24;padding:clamp(64px,8vw,100px) var(--px)}
+.impact-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;
+  border:1px solid rgba(0,0,0,0.15);max-width:1200px;margin:0 auto
+}
+.impact-item{
+  padding:36px 28px;border-right:1px solid rgba(0,0,0,0.12);
+  border-bottom:1px solid rgba(0,0,0,0.12);
+  opacity:0;transform:translateY(16px);
+  transition:opacity 0.5s ease,transform 0.5s ease
+}
+.impact-item.visible{opacity:1;transform:translateY(0)}
+.impact-num{
+  font-family:var(--heading);font-size:clamp(36px,4vw,60px);font-weight:700;
+  color:#000;letter-spacing:-0.02em;line-height:1;margin-bottom:8px
+}
+.impact-desc{
+  font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.12em;
+  text-transform:uppercase;color:rgba(0,0,0,0.6)
+}
+
+/* ── TESTIMONIALS MARQUEE ── */
+.testimonials-section{background:#000;padding:clamp(64px,8vw,100px) 0;overflow:hidden}
+.testimonials-header{padding:0 var(--px);margin-bottom:48px;max-width:var(--max-w);margin-left:auto;margin-right:auto}
+.marquee-track{display:flex;gap:0;white-space:nowrap;animation:marquee 50s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.marquee-inner{display:flex;gap:0;flex-shrink:0}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+.testi-card{
+  display:inline-block;white-space:normal;width:340px;flex-shrink:0;
+  padding:32px;border:1px solid rgba(255,255,255,0.07);
+  margin-right:2px;vertical-align:top;background:#000
+}
+.testi-quote{
+  font-family:var(--body);font-size:15px;font-weight:400;
+  color:rgba(255,255,255,0.7);line-height:1.75;
+  font-style:italic
+}
+.testi-quote::before{content:'\201C';color:var(--red);font-size:28px;font-family:Georgia,serif;line-height:0;vertical-align:-0.4em;margin-right:4px}
+
+/* ── LINKEDIN RECOMMENDATIONS ── */
+.reco-section{background:#fff;padding:clamp(64px,8vw,100px) var(--px)}
+.reco-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:2px;max-width:1200px;margin:0 auto}
+.reco-card{
+  background:#fff;border:2px solid #000;padding:40px;
+  opacity:0;transform:translateY(20px);
+  transition:opacity 0.6s ease,transform 0.6s ease
+}
+.reco-card.visible{opacity:1;transform:translateY(0)}
+.reco-header{display:flex;gap:16px;align-items:flex-start;margin-bottom:24px}
+.reco-avatar{
+  width:52px;height:52px;border-radius:50%;background:#000;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  font-family:var(--heading);font-size:18px;font-weight:700;color:#fff
+}
+.reco-meta{}
+.reco-name{font-family:var(--heading);font-size:16px;font-weight:700;letter-spacing:-0.01em;text-transform:uppercase;margin-bottom:2px}
+.reco-title{font-family:var(--body);font-size:12px;font-weight:500;color:rgba(0,0,0,0.5);line-height:1.5;margin-bottom:4px}
+.reco-relation{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--red)}
+.reco-body{font-family:var(--body);font-size:15px;font-weight:400;color:rgba(0,0,0,0.75);line-height:1.8}
+.reco-body p{margin-bottom:12px}
+.reco-body p:last-child{margin-bottom:0}
+
+/* ── INDUSTRIES ── */
+.industries-section{background:#000;padding:clamp(64px,8vw,100px) var(--px)}
+.ind-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border:1px solid rgba(255,255,255,0.06);max-width:1200px;margin:0 auto
+}
+@media(max-width:900px){.ind-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.ind-grid{grid-template-columns:1fr}}
+.ind-item{
+  padding:36px 28px;border-right:1px solid rgba(255,255,255,0.06);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  opacity:0;transform:translateY(16px);
+  transition:opacity 0.5s ease,transform 0.5s ease
+}
+.ind-item.visible{opacity:1;transform:translateY(0)}
+.ind-tag{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+.ind-title{font-family:var(--heading);font-size:clamp(16px,1.4vw,20px);font-weight:700;text-transform:uppercase;letter-spacing:-0.01em;color:#fff;margin-bottom:12px;line-height:1.2}
+.ind-body{font-family:var(--body);font-size:14px;font-weight:400;color:rgba(255,255,255,0.5);line-height:1.7}
+
+/* ── AWARDS ── */
+.awards-section{background:#fff;padding:clamp(64px,8vw,100px) var(--px)}
+.awards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border:2px solid #000;max-width:1200px;margin:0 auto}
+.award-item{
+  padding:36px 28px;border-right:2px solid #000;border-bottom:2px solid #000;
+  opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease
+}
+.award-item.visible{opacity:1;transform:translateY(0)}
+.award-icon{font-size:32px;margin-bottom:16px;display:block}
+.award-name{font-family:var(--heading);font-size:clamp(14px,1.2vw,18px);font-weight:700;text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:8px}
+.award-context{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.award-desc{font-family:var(--body);font-size:13px;color:rgba(0,0,0,0.55);line-height:1.6}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+  <script src="/consent.js" defer></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href='/'><img src="logo.png" alt="SSUNDAR." class="nav-logo-img"></a>
+    <div class="nav-links">
+      <a class='nav-link' href='/systems'>Systems<span class="dot">.</span></a>
+      <a class='nav-link' href='/evidence'>Evidence<span class="dot">.</span></a>
+      <a class='nav-link' href='/process'>Process<span class="dot">.</span></a>
+      <a class='nav-link nav-link-live' href='/simulate'>Simulate<span class="dot">.</span></a>
+      <a class='nav-link' href='/insights'>Insights<span class="dot">.</span></a>
+      <a class='nav-link active' href='/about'>About<span class="dot">.</span></a>
+      <a href="https://app.ssundar.com" class="nav-link nav-link-live" target="_blank" rel="noopener noreferrer">Platform<span class="dot">.</span></a>
+      <a class='nav-link' href='/engage'>Engage<span class="dot">.</span></a>
+    </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-label="Navigation">
+  <a href='/systems'>Systems<span class="dot">.</span></a>
+  <a href='/evidence'>Evidence<span class="dot">.</span></a>
+  <a href='/process'>Process<span class="dot">.</span></a>
+  <a class='nav-link-live-mobile' href='/simulate'>Simulate<span class="dot">.</span></a>
+  <a href='/insights'>Insights<span class="dot">.</span></a>
+  <a href='/about'>About<span class="dot">.</span></a>
+  <a href="https://app.ssundar.com" class="nav-link-live-mobile" target="_blank" rel="noopener noreferrer">Platform<span class="dot">.</span></a>
+  <a href='/engage'>Engage<span class="dot">.</span></a>
+</div>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="about-hero">
+  <canvas id="particleCanvas" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0"></canvas>
+  <div class="about-hero-bg-text" aria-hidden="true" style="transition:transform .15s ease">SSUNDAR</div>
+  <div style="position:absolute;inset:0;z-index:0;display:grid;grid-template-columns:1fr 42%;">
+    <div></div>
+    <div style="overflow:hidden;position:relative">
+      <img src="shyam-photo.jpg" alt="Shyam Sundar MV" style="width:100%;height:100%;object-fit:cover;object-position:55% 30%;display:block;opacity:0.9">
+      <div style="position:absolute;inset:0;background:linear-gradient(to right,#000 0%,rgba(0,0,0,0.1) 25%,transparent 60%),linear-gradient(to top,#000 0%,transparent 25%)"></div>
+    </div>
+  </div>
+  <div style="position:relative;z-index:1;display:flex;flex-direction:column;justify-content:flex-end;max-width:58%;">
+  <div class="about-hero-label">Principal Architect — SSUNDAR.</div>
+  <h1 class="about-hero-name">Shyam<br>Sundar<span class="name-red">.</span></h1>
+  <p class="about-hero-sub" style="margin-bottom:0">25 years inside Fortune 500 organizations. Not consulting from outside — building the systems from within. 10,000+ professionals trained across 4 continents, 10+ industries, and every altitude of the corporate hierarchy.</p>
+  </div><!-- /hero-inner -->
+  <div class="counters-bar" style="position:relative;z-index:2">
+    <div class="counter-item">
+      <span class="counter-num" data-target="25" data-suffix="+">0</span>
+      <span class="counter-label">Years Building Systems</span>
+    </div>
+    <div class="counter-item">
+      <span class="counter-num" data-target="10000" data-suffix="+" data-format="short">0</span>
+      <span class="counter-label">Professionals Trained</span>
+    </div>
+    <div class="counter-item">
+      <span class="counter-num" data-target="52" data-suffix="+">0</span>
+      <span class="counter-label">Programs Designed</span>
+    </div>
+    <div class="counter-item">
+      <span class="counter-num" data-target="4" data-suffix="">0</span>
+      <span class="counter-label">Continents Delivered</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     JOURNEY TIMELINE
+══════════════════════════════════════ -->
+<section class="journey-section">
+  <div class="journey-inner">
+    <div class="journey-header reveal">
+      <p class="mono-label mb-16">THE JOURNEY</p>
+      <h2 class="h2 text-white mb-20">Process Trainer<span class="dot">.</span><br>To Global Architect<span class="dot">.</span></h2>
+      <p class="body-text" style="color:rgba(255,255,255,0.45);max-width:560px">The dot on the timeline grows as the scope grows. From one city, one team, one client — to five countries, five thousand people, thirteen regulatory frameworks. The same discipline. Progressively larger stage.</p>
+    </div>
+
+    <div class="journey-track" style="position:relative">
+      <div class="journey-line" id="journeyLine"></div>
+
+      <!-- 2000 -->
+      <div class="journey-entry">
+        <div class="journey-year">2000–04</div>
+        <div class="journey-dot-col">
+          <div class="journey-dot scale-1"></div>
+          <div class="journey-connector"></div>
+        </div>
+        <div class="journey-card">
+          <div class="journey-scope">Entry Level · Single Org · Hyderabad</div>
+          <div class="journey-role">Process Trainer → Quality Auditor</div>
+          <div class="journey-company">RCI / Genpact <span class="geo">· Hyderabad, India</span></div>
+          <p class="journey-desc">Customer service, process training, quality auditing, and Voice &amp; Accent training. The foundation — where the discipline of measurement, repeatability, and performance linkage was first built.</p>
+        </div>
+      </div>
+
+      <!-- 2004 -->
+      <div class="journey-entry">
+        <div class="journey-year">2004–06</div>
+        <div class="journey-dot-col">
+          <div class="journey-dot scale-2"></div>
+          <div class="journey-connector"></div>
+        </div>
+        <div class="journey-card">
+          <div class="journey-scope">Trainer → Manager · 800-Person Ramp</div>
+          <div class="journey-role">Senior Process Trainer → Asst. Manager Training</div>
+          <div class="journey-company">Tata Business Support Services <span class="geo">· Hyderabad / Punjab</span></div>
+          <p class="journey-desc">First ramp leadership. Zero-to-800 employee site build in four months. 90% graduation rate to production. First proof that a system can scale without breaking.</p>
+          <div>
+            <div class="journey-stat"><span class="stat-num">800</span><span class="stat-label">FTEs Ramped</span></div>
+            <div class="journey-stat"><span class="stat-num">4 mo</span><span class="stat-label">Site Build</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2006 -->
+      <div class="journey-entry">
+        <div class="journey-year">2006–07</div>
+        <div class="journey-dot-col">
+          <div class="journey-dot scale-2"></div>
+          <div class="journey-connector"></div>
+        </div>
+        <div class="journey-card">
+          <div class="journey-scope">National Scale · 3 States</div>
+          <div class="journey-role">Assistant Manager – Training</div>
+          <div class="journey-company">Bharti Airtel <span class="geo">· Punjab, India</span></div>
+          <p class="journey-desc">Training for 15,000+ employees across three states. Regulatory compliance and customer operations capability at national telecom scale. First multi-geography responsibility.</p>
+          <div>
+            <div class="journey-stat"><span class="stat-num">15,000+</span><span class="stat-label">Employees</span></div>
+            <div class="journey-stat"><span class="stat-num">3</span><span class="stat-label">States</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2007 -->
+      <div class="journey-entry">
+        <div class="journey-year">2007–09</div>
+        <div class="journey-dot-col">
+          <div class="journey-dot scale-3"></div>
+          <div class="journey-connector"></div>
+        </div>
+        <div class="journey-card">
+          <div class="journey-scope">Fortune 500 · Performance Architecture</div>
+          <div class="journey-role">Deputy Manager – Training</div>
+          <div class="journey-company">Accenture <span class="geo">· Bangalore, India</span></div>
+          <p class="journey-desc">Developed performance prediction models that lifted batch pass rates from 12% to 80%. Led 500+ associate ramp in six months. First exposure to Fortune 500 operating standards.</p>
+          <div>
+            <div class="journey-stat"><span class="stat-num">12%→80%</span><span class="stat-label">Batch Pass Rate</span></div>
+            <div class="journey-stat"><span class="stat-num">500+</span><span class="stat-label">Associates</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2009 -->
+      <div class="journey-entry">
+        <div class="journey-year">2009–12</div>
+        <div class="journey-dot-col">
+          <div class="journey-dot scale-3"></div>
+          <div class="journey-connector"></div>
+        </div>
+        <div class="journey-card">
+          <div class="journey-scope">Senior Manager · Multi-City</div>
+          <div class="journey-role">Senior Manager – Training</div>
+          <div class="journey-company">Aegis Global Services <span class="geo">· Hyderabad / Lucknow</span></div>
+          <p class="journey-desc">Reduced onboarding from 8 weeks to 5 weeks — 35% compression — without quality regression. Designed remedial and refresher interventions for both new hires and tenured staff. Multi-city operation.</p>
+          <div>
+            <div class="journey-stat"><span class="stat-num">35%</span><span class="stat-label">Onboarding Reduction</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2012 -->
+      <div class="journey-entry">
+        <div class="journey-year">2012–15</div>
+        <div class="journey-dot-col">
+          <div class="journey-dot scale-4"></div>
+          <div class="journey-connector"></div>
+        </div>
+        <div class="journey-card big">
+          <div class="journey-scope red">Site Director · Largest Ramp in Company History</div>
+          <div class="journey-role">Site Director – Training</div>
+          <div class="journey-company">Sutherland Global Services <span class="geo">· Chennai, India</span></div>
+          <p class="journey-desc">Led the company's largest new-hire ramp — 2,500+ per year, 7,000+ total in tenure. 30% YoY increase in hiring volume. Improved time-to-proficiency by 30%. Contributing factor to an industry award win.</p>
+          <div>
+            <div class="journey-stat"><span class="stat-num">7,000+</span><span class="stat-label">FTEs Trained</span></div>
+            <div class="journey-stat"><span class="stat-num">30%</span><span class="stat-label">Faster Proficiency</span></div>
+            <div class="journey-award"><span>🏆 ATD Best Award 2014</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2015 -->
+      <div class="journey-entry">
+        <div class="journey-year">2015–16</div>
+        <div class="journey-dot-col">
+          <div class="journey-dot scale-4"></div>
+          <div class="journey-connector"></div>
+        </div>
+        <div class="journey-card">
+          <div class="journey-scope">AGM · Built from Zero · 40+ Programs</div>
+          <div class="journey-role">Assistant General Manager – Training (South)</div>
+          <div class="journey-company">Intelenet Global Services <span class="geo">· Bengaluru, India</span></div>
+          <p class="journey-desc">Set up the training function from scratch for a new business unit spanning 40+ client programs. Two large accounts (500+ FTE each) at full operational readiness within 90 days. CSAT improved 50% in 60 days for a 300-member operations team.</p>
+          <div>
+            <div class="journey-stat"><span class="stat-num">40+</span><span class="stat-label">Client Programs</span></div>
+            <div class="journey-stat"><span class="stat-num">+50%</span><span class="stat-label">CSAT in 60 days</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2016 -->
+      <div class="journey-entry">
+        <div class="journey-year">2016–19</div>
+        <div class="journey-dot-col">
+          <div class="journey-dot scale-5"></div>
+          <div class="journey-connector"></div>
+        </div>
+        <div class="journey-card big">
+          <div class="journey-scope red">AVP · 4 Countries · Fortune 500 Multi-Account</div>
+          <div class="journey-role">AVP – Training &amp; Quality</div>
+          <div class="journey-company">Accenture <span class="geo">· Hyderabad · India · Japan · Ireland · Argentina</span></div>
+          <p class="journey-desc">Led training and quality for Google and Uber accounts globally. New quality coaching model drove 90% KPI improvement. Built the Digital Marketing Academy with top universities — reduced hiring cycle time by 75%. Standardized practices across 4 countries.</p>
+          <div>
+            <div class="journey-stat"><span class="stat-num">90%</span><span class="stat-label">KPI Improvement</span></div>
+            <div class="journey-stat"><span class="stat-num">4</span><span class="stat-label">Countries</span></div>
+            <div class="journey-stat"><span class="stat-num">−75%</span><span class="stat-label">Hiring Cycle Time</span></div>
+            <div class="journey-award"><span>🦚 Golden Peacock 2016</span></div>
+            <div class="journey-award" style="margin-left:6px"><span>🥈 Brandon Hall Silver 2017</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2019 -->
+      <div class="journey-entry">
+        <div class="journey-year">2019–20</div>
+        <div class="journey-dot-col">
+          <div class="journey-dot scale-5"></div>
+          <div class="journey-connector"></div>
+        </div>
+        <div class="journey-card big">
+          <div class="journey-scope red">Director · 8,000 Associates · 95 Processes</div>
+          <div class="journey-role">Director – Training</div>
+          <div class="journey-company">Cognizant Technology Solutions (Google Account) <span class="geo">· Hyderabad, India</span></div>
+          <p class="journey-desc">Directed a global training organization of 8,000 associates across 95 processes. Redesigned new-hire learning path — 70% productivity improvement in first 60 days. Enabled rapid scale-up of new service lines within strict timelines.</p>
+          <div>
+            <div class="journey-stat"><span class="stat-num">8,000</span><span class="stat-label">Associates</span></div>
+            <div class="journey-stat"><span class="stat-num">95</span><span class="stat-label">Processes</span></div>
+            <div class="journey-stat"><span class="stat-num">+70%</span><span class="stat-label">60-Day Productivity</span></div>
+            <div class="journey-award"><span>🏆 Brandon Hall Gold 2021</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2020 -->
+      <div class="journey-entry">
+        <div class="journey-year">2020–25</div>
+        <div class="journey-dot-col">
+          <div class="journey-dot scale-6"></div>
+          <div class="journey-connector"></div>
+        </div>
+        <div class="journey-card big">
+          <div class="journey-scope red">Global · 5 Countries · 13 Regulatory Programs</div>
+          <div class="journey-role">Senior Global Training Leader</div>
+          <div class="journey-company">Amazon <span class="geo">· Bengaluru, India → Global</span></div>
+          <p class="journey-desc">Global training across 5 countries, ~5,000 associates. GSRC expert — 13 regulatory programs across 8 countries. Cut onboarding-to-floor time by 35% while ensuring 100% of new hires met 60-day performance benchmarks. Designed scalable competency frameworks for frontline managers leveraging SLII principles.</p>
+          <div>
+            <div class="journey-stat"><span class="stat-num">5,000+</span><span class="stat-label">Associates</span></div>
+            <div class="journey-stat"><span class="stat-num">5</span><span class="stat-label">Countries</span></div>
+            <div class="journey-stat"><span class="stat-num">13</span><span class="stat-label">Regulatory Programs</span></div>
+            <div class="journey-stat"><span class="stat-num">−35%</span><span class="stat-label">Onboarding Time</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2025 -->
+      <div class="journey-entry">
+        <div class="journey-year" style="color:var(--red)">2025–Now</div>
+        <div class="journey-dot-col">
+          <div class="journey-dot scale-6" style="background:var(--red);border-color:var(--red);box-shadow:0 0 20px rgba(227,30,36,0.5)"></div>
+        </div>
+        <div class="journey-card big" style="border-left-color:var(--red);background:rgba(227,30,36,0.04)">
+          <div class="journey-scope red">Founder · Global · Fortune 500</div>
+          <div class="journey-role">Founder &amp; Principal Architect</div>
+          <div class="journey-company">SSUNDAR<span class="dot">.</span> <span class="geo">· Bangalore, India → Worldwide</span></div>
+          <p class="journey-desc">The concentrated output of 25 years. Four systems. Judgment-centered design. Serving Fortune 500 organizations globally. From a single process trainer in Hyderabad to the architect of performance systems for the world's most demanding organizations.</p>
+          <div>
+            <div class="journey-stat"><span class="stat-num">10,000+</span><span class="stat-label">Professionals Trained</span></div>
+            <div class="journey-stat"><span class="stat-num">52+</span><span class="stat-label">Programs Built</span></div>
+            <div class="journey-stat"><span class="stat-num">4</span><span class="stat-label">Continents</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /journey-track -->
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     IMPACT NUMBERS
+══════════════════════════════════════ -->
+<section class="impact-section">
+  <div style="max-width:1200px;margin:0 auto;margin-bottom:40px" class="reveal">
+    <p style="font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(0,0,0,0.5);margin-bottom:16px">SCALE OF IMPACT</p>
+    <h2 style="font-family:var(--heading);font-size:clamp(32px,4vw,56px);font-weight:700;letter-spacing:-0.02em;text-transform:uppercase;color:#000;line-height:1">Numbers That Moved<span style="color:var(--red)">.</span></h2>
+  </div>
+  <div class="impact-grid">
+    <div class="impact-item">
+      <div class="impact-num" data-target="10000" data-suffix="+" data-format="short">0</div>
+      <div class="impact-desc">Professionals Trained Globally</div>
+    </div>
+    <div class="impact-item">
+      <div class="impact-num" data-target="7000" data-suffix="+" data-format="short">0</div>
+      <div class="impact-desc">FTEs Onboarded at Sutherland</div>
+    </div>
+    <div class="impact-item">
+      <div class="impact-num" data-target="15000" data-suffix="+" data-format="short">0</div>
+      <div class="impact-desc">Airtel Employees Trained</div>
+    </div>
+    <div class="impact-item">
+      <div class="impact-num" data-target="8000" data-suffix="" data-format="short">0</div>
+      <div class="impact-desc">Associates at Cognizant / Google</div>
+    </div>
+    <div class="impact-item">
+      <div class="impact-num" data-target="5000" data-suffix="+" data-format="short">0</div>
+      <div class="impact-desc">Associates Led at Amazon</div>
+    </div>
+    <div class="impact-item">
+      <div class="impact-num" data-target="95" data-suffix="">0</div>
+      <div class="impact-desc">Processes Managed Simultaneously</div>
+    </div>
+    <div class="impact-item">
+      <div class="impact-num" data-target="13" data-suffix="">0</div>
+      <div class="impact-desc">Regulatory Programs (Amazon GSRC)</div>
+    </div>
+    <div class="impact-item">
+      <div class="impact-num" data-target="4" data-suffix="">0</div>
+      <div class="impact-desc">Continents of Delivery</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     TESTIMONIALS MARQUEE
+══════════════════════════════════════ -->
+<section class="testimonials-section">
+  <div class="testimonials-header reveal">
+    <p class="mono-label mb-16">WHAT PARTICIPANTS SAY</p>
+    <h2 class="h2 text-white mb-0">The Work Speaks<span class="dot">.</span></h2>
+  </div>
+  <div style="overflow:hidden;position:relative">
+    <div class="marquee-track" id="marqueeTrack">
+      <div class="marquee-inner" id="marqueeInner">
+        <div class="testi-card"><p class="testi-quote">This shifted our focus from content delivery to decision quality under pressure.</p></div>
+        <div class="testi-card"><p class="testi-quote">The frameworks were immediately usable — clear enough to apply, deep enough to scale.</p></div>
+        <div class="testi-card"><p class="testi-quote">The biggest value was building judgment, not just learning concepts.</p></div>
+        <div class="testi-card"><p class="testi-quote">This improved how we diagnose problems before we design solutions.</p></div>
+        <div class="testi-card"><p class="testi-quote">The sessions helped convert ambiguity into structured action without over-simplifying.</p></div>
+        <div class="testi-card"><p class="testi-quote">I left with repeatable tools to coach performance, not just manage tasks.</p></div>
+        <div class="testi-card"><p class="testi-quote">The approach connected leadership behaviors to measurable execution outcomes.</p></div>
+        <div class="testi-card"><p class="testi-quote">This made our facilitation sharper and our discussions more outcome-driven.</p></div>
+        <div class="testi-card"><p class="testi-quote">The design elevated confidence in handling tough conversations and escalations.</p></div>
+        <div class="testi-card"><p class="testi-quote">We finally have a system to translate strategy into frontline decisions.</p></div>
+        <div class="testi-card"><p class="testi-quote">The learning felt engineered — practice-heavy, precise, and grounded in real work.</p></div>
+        <div class="testi-card"><p class="testi-quote">This changed how we think about capability building: systems first, events second.</p></div>
+        <div class="testi-card"><p class="testi-quote">The structure helped our leaders act faster without sacrificing quality.</p></div>
+        <div class="testi-card"><p class="testi-quote">This raised the bar on facilitation — from sessions to learning architecture.</p></div>
+        <div class="testi-card"><p class="testi-quote">The program helped turn strategy into consistent day-to-day decisions.</p></div>
+        <div class="testi-card"><p class="testi-quote">The system design lens changed how we build capabilities across teams.</p></div>
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="marquee-inner" aria-hidden="true">
+        <div class="testi-card"><p class="testi-quote">This shifted our focus from content delivery to decision quality under pressure.</p></div>
+        <div class="testi-card"><p class="testi-quote">The frameworks were immediately usable — clear enough to apply, deep enough to scale.</p></div>
+        <div class="testi-card"><p class="testi-quote">The biggest value was building judgment, not just learning concepts.</p></div>
+        <div class="testi-card"><p class="testi-quote">This improved how we diagnose problems before we design solutions.</p></div>
+        <div class="testi-card"><p class="testi-quote">The sessions helped convert ambiguity into structured action without over-simplifying.</p></div>
+        <div class="testi-card"><p class="testi-quote">I left with repeatable tools to coach performance, not just manage tasks.</p></div>
+        <div class="testi-card"><p class="testi-quote">The approach connected leadership behaviors to measurable execution outcomes.</p></div>
+        <div class="testi-card"><p class="testi-quote">This made our facilitation sharper and our discussions more outcome-driven.</p></div>
+        <div class="testi-card"><p class="testi-quote">The design elevated confidence in handling tough conversations and escalations.</p></div>
+        <div class="testi-card"><p class="testi-quote">We finally have a system to translate strategy into frontline decisions.</p></div>
+        <div class="testi-card"><p class="testi-quote">The learning felt engineered — practice-heavy, precise, and grounded in real work.</p></div>
+        <div class="testi-card"><p class="testi-quote">This changed how we think about capability building: systems first, events second.</p></div>
+        <div class="testi-card"><p class="testi-quote">The structure helped our leaders act faster without sacrificing quality.</p></div>
+        <div class="testi-card"><p class="testi-quote">This raised the bar on facilitation — from sessions to learning architecture.</p></div>
+        <div class="testi-card"><p class="testi-quote">The program helped turn strategy into consistent day-to-day decisions.</p></div>
+        <div class="testi-card"><p class="testi-quote">The system design lens changed how we build capabilities across teams.</p></div>
+      </div>
+    </div>
+  </div>
+  <p style="text-align:center;font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-top:24px;padding:0 var(--px)">Hover to pause · Participant feedback from global programs</p>
+</section>
+
+<!-- ══════════════════════════════════════
+     LINKEDIN RECOMMENDATIONS
+══════════════════════════════════════ -->
+<section class="reco-section">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="reveal" style="margin-bottom:48px">
+      <p class="mono-label mb-16">LINKEDIN RECOMMENDATIONS</p>
+      <h2 class="h2 mb-0">People Who've Seen It<span class="dot">.</span></h2>
+    </div>
+    <div class="reco-grid">
+      <div class="reco-card">
+        <div class="reco-header">
+          <div class="reco-avatar" style="background:var(--red)">HR</div>
+          <div class="reco-meta">
+            <div class="reco-name">Global HR Director</div>
+            <div class="reco-title">Talent &amp; Culture Architect &middot; Fortune 500 People Strategy</div>
+            <div class="reco-relation">Worked alongside &middot; 2015</div>
+          </div>
+        </div>
+        <div class="reco-body">
+          <p>An energetic and charismatic leader. Result-oriented &mdash; an excellent people manager with focus on improvements and client satisfaction with attention to detail.</p>
+          <p>Loves to challenge the status quo. A true professional in getting the best out of people around him. Vast experience reflects in his actions and thought process &mdash; a great colleague to work with.</p>
+        </div>
+      </div>
+      <div class="reco-card">
+        <div class="reco-header">
+          <div class="reco-avatar" style="background:#111">OPS</div>
+          <div class="reco-meta">
+            <div class="reco-name">Director &ndash; Global Operations</div>
+            <div class="reco-title">BPO &middot; CCaaS &middot; IT Field Services &middot; IIMB Alumni</div>
+            <div class="reco-relation">Direct Report &middot; 2010</div>
+          </div>
+        </div>
+        <div class="reco-body">
+          <p>A custodian of knowledge &mdash; excellence of leadership and an individual with numerous skills. My journey in training and development started under his supervision and guidance. A journey of learning and expertise.</p>
+          <p>A leader I trust blindly and look up to. He made me recognize my own field of excellence and helped me work with my negatives.</p>
+        </div>
+      </div>
+    </div>
+    <p style="font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(0,0,0,0.3);margin-top:24px;text-align:center">View all recommendations on <a href="https://linkedin.com/in/shyamsundarmv" target="_blank" rel="noopener noreferrer" style="color:var(--red)">LinkedIn →</a></p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     INDUSTRIES
+══════════════════════════════════════ -->
+<section class="industries-section">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="reveal" style="margin-bottom:48px">
+      <p class="mono-label mb-16">INDUSTRIES</p>
+      <h2 class="h2 text-white mb-16">Same Pattern<span class="dot">.</span> Every Sector<span class="dot">.</span></h2>
+      <p style="font-family:var(--body);font-size:clamp(15px,1.2vw,18px);color:rgba(255,255,255,0.45);max-width:540px;line-height:1.7">Smart people. Good intentions. Poor execution under pressure. 25 years. 10+ sectors. The judgment gap is always the same problem wearing a different uniform.</p>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-item"><div class="ind-tag">Global E-Commerce</div><h3 class="ind-title">Regulatory Compliance at Amazon Scale</h3><p class="ind-body">GSRC across 13 regulatory programs in 8 countries. 5,000+ associates. Onboarding and safety compliance in a high-velocity environment where errors have seven-figure consequences.</p></div>
+      <div class="ind-item"><div class="ind-tag">Digital Marketing</div><h3 class="ind-title">Capability Architecture for Emerging Services</h3><p class="ind-body">Built the Digital Marketing Academy at Accenture with top universities. Reduced hiring cycle time by 75% and created an internal talent pipeline for a domain that had no ready talent market.</p></div>
+      <div class="ind-item"><div class="ind-tag">Global Capability Centres</div><h3 class="ind-title">GCC Onboarding & Scale</h3><p class="ind-body">Cognizant (Google account) — 8,000 associates, 95 processes. Designed learning systems for GCC environments scaling new service lines fast, under strict SLA and regulatory constraints.</p></div>
+      <div class="ind-item"><div class="ind-tag">Inbound Customer Support</div><h3 class="ind-title">From Script-Following to Judgment</h3><p class="ind-body">Sutherland, Aegis, Tata BSS — 2,500+ hires per year. Shifted teams from reactive scripted responses to judgment-based resolution. Measured in CSAT, FCR, and attrition — not completion rates.</p></div>
+      <div class="ind-item"><div class="ind-tag">Tech Support · Cross-Geo</div><h3 class="ind-title">Multi-Site Quality Across Time Zones</h3><p class="ind-body">Accenture — standardized across India, Japan, Ireland, Argentina. Built a Training Community of Practice that held consistent quality standards globally. 90% KPI improvement.</p></div>
+      <div class="ind-item"><div class="ind-tag">Telecom</div><h3 class="ind-title">National Scale Customer Operations</h3><p class="ind-body">Airtel — 15,000+ employees across three states. Regulatory compliance and customer capability for one of India's largest telecom networks. First multi-state L&amp;D responsibility.</p></div>
+      <div class="ind-item"><div class="ind-tag">BPO · Outsourced Operations</div><h3 class="ind-title">Multi-Client Ramp Architecture</h3><p class="ind-body">Intelenet — training function built from zero across 40+ client programs. Every client: different SLAs, compliance needs, performance benchmarks. Systems built to handle all simultaneously.</p></div>
+      <div class="ind-item"><div class="ind-tag">Global Consulting</div><h3 class="ind-title">Enterprise Transformation at Scale</h3><p class="ind-body">Accenture — multi-account architecture across Google and Uber. India, Japan, Ireland, Argentina. Built systems designed to transfer ownership cleanly and run without us after engagement close.</p></div>
+      <div class="ind-item"><div class="ind-tag">Financial Services · Process Excellence</div><h3 class="ind-title">Quality, Compliance & Measurement</h3><p class="ind-body">RCI / Genpact — process training, quality auditing, and Six Sigma performance systems. Where the discipline of measurement and performance linkage was first built. The foundation for everything that followed.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     AWARDS
+══════════════════════════════════════ -->
+<section class="awards-section">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="reveal" style="margin-bottom:48px">
+      <p class="mono-label mb-16">AWARDS &amp; CREDENTIALS</p>
+      <h2 class="h2 mb-0">Not Collected<span class="dot">.</span> Earned<span class="dot">.</span></h2>
+    </div>
+    <div class="awards-grid">
+      <div class="award-item"><span class="award-icon">🏆</span><div class="award-name">Brandon Hall Gold</div><div class="award-context">2021 · Cognizant / Google Account</div><p class="award-desc">Excellence in Onboarding & Performance. 70% improvement in first-60-day productivity. Industry's most rigorous recognition standard.</p></div>
+      <div class="award-item"><span class="award-icon">🥈</span><div class="award-name">Brandon Hall Silver</div><div class="award-context">2017 · Accenture</div><p class="award-desc">Leadership Capability Development. Scalable programs delivering measurable performance improvement across Fortune 500 accounts.</p></div>
+      <div class="award-item"><span class="award-icon">🦚</span><div class="award-name">Golden Peacock Award</div><div class="award-context">2016 · Accenture</div><p class="award-desc">Best New Hire Onboarding & Performance Management. One of India's most prestigious corporate excellence awards.</p></div>
+      <div class="award-item"><span class="award-icon">🎓</span><div class="award-name">ATD Best Award</div><div class="award-context">2014 · Sutherland Global Services</div><p class="award-desc">Training Excellence. Recognized for sustainable learning frameworks that scaled quality at 7,000+ hires across 3 years.</p></div>
+      <div class="award-item"><span class="award-icon">🎯</span><div class="award-name">SLII® Certified</div><div class="award-context">The Ken Blanchard Companies</div><p class="award-desc">Leadership Trainer / Coach. Situational Leadership II applied across Amazon, Accenture, and Fortune 100 programs.</p></div>
+      <div class="award-item"><span class="award-icon">📊</span><div class="award-name">COPC® Certified</div><div class="award-context">COPC Inc.</div><p class="award-desc">Global standard for customer operations and contact center performance management.</p></div>
+      <div class="award-item"><span class="award-icon">📉</span><div class="award-name">Six Sigma Green Belt</div><div class="award-context">Genpact</div><p class="award-desc">Process excellence and quality methodology. The operations discipline beneath performance architecture.</p></div>
+      <div class="award-item"><span class="award-icon">💡</span><div class="award-name">Design Thinking</div><div class="award-context">Fjord · Practitioner Certified</div><p class="award-desc">Applied across APAC leadership programs and Fortune 500 capability interventions.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CTA
+══════════════════════════════════════ -->
+<div class="bg-black">
+  <section class="section" style="padding-top:clamp(80px,12vw,140px);padding-bottom:clamp(80px,12vw,140px)">
+    <div class="reveal">
+      <h2 class="h2 text-white max-w-800 mb-32" style="line-height:1.05">25 years of building the systems most organizations are still trying to buy<span class="dot">.</span></h2>
+      <p class="body-bold text-w5 mb-40 max-w-600">If your organization has a capability problem, the answer isn't more programs. It's architecture.</p>
+      <a class='btn btn-red' href='/engage'>Start with Diagnosis<span class="dot">.</span></a>
+      <a href="https://linkedin.com/in/shyamsundarmv" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-left:16px">LinkedIn &rarr;</a>
+    </div>
+  </section>
+</div>
+<div class="red-line-thick"></div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <section class="section" style="padding-top:80px;padding-bottom:40px">
+    <span style="font-family:var(--heading);font-weight:700;font-size:24px;letter-spacing:0.06em;text-transform:uppercase;color:#fff">SSUNDAR<span class="dot">.</span></span>
+    <div class="red-line-thick" style="margin:20px 0"></div>
+    <p class="footer-tagline mb-24">JUDGMENT-CENTERED LEADERSHIP DESIGN&trade;</p>
+    <p style="font-family:var(--body);font-size:14px;font-weight:500;color:rgba(255,255,255,0.35);max-width:480px;line-height:1.7;margin-bottom:48px">Performance systems architecture for Fortune 500 organizations.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:440px" class="mb-48">
+      <div class="flex flex-col gap-12">
+        <a class='footer-link' href='/systems'>Systems<span class="dot">.</span></a>
+        <a class='footer-link' href='/evidence'>Evidence<span class="dot">.</span></a>
+        <a class='footer-link' href='/process'>Process<span class="dot">.</span></a>
+        <a class='footer-link' href='/simulate'>Simulate<span class="dot">.</span></a>
+        <a class='footer-link' href='/insights'>Insights<span class="dot">.</span></a>
+        <a class='footer-link' href='/about'>About<span class="dot">.</span></a>
+        <a class='footer-link' href='/engage'>Engage<span class="dot">.</span></a>
+        <a href="https://app.ssundar.com" target="_blank" rel="noopener noreferrer" class="footer-link" style="color:var(--red)">Platform<span class="dot">.</span></a>
+      </div>
+      <div>
+        <a href="mailto:shyam@ssundar.com" class="footer-link">shyam@ssundar.com</a>
+        <a href="https://linkedin.com/in/shyamsundarmv" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn &rarr;</a>
+        <p style="font-family:var(--body);font-size:13px;color:rgba(255,255,255,0.3);margin-top:12px">Bangalore, India</p>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:24px">
+            <div style="display:flex;flex-wrap:wrap;gap:16px 24px;margin-bottom:16px">
+        <a href="/terms" style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.05em;text-decoration:none;text-transform:uppercase">Terms of Use</a>
+        <a href="/privacy" style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.05em;text-decoration:none;text-transform:uppercase">Privacy Policy</a>
+        <a href="/cookie-policy" style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.05em;text-decoration:none;text-transform:uppercase">Cookie Policy</a>
+        <a href="/disclaimer" style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.05em;text-decoration:none;text-transform:uppercase">Disclaimer</a>
+        <a href="mailto:privacy@ssundar.com?subject=Data%20Removal%20Request" style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.05em;text-decoration:none;text-transform:uppercase">Remove My Data</a>
+        <a href="mailto:legal@ssundar.com?subject=DMCA%20Notice" style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.05em;text-decoration:none;text-transform:uppercase">DMCA</a>
+      </div>
+<p style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.2);letter-spacing:0.05em">&copy; 2026 SSUNDAR. ALL RIGHTS RESERVED. &mdash; DMCA Registered Agent: DMCA-1073290</p>
+    </div>
+  </section>
+</footer>
+
+<a class='floating-cta' href='/engage' id='floatingCta'>Start Diagnosis<span class="dot">.</span><span class="cta-arrow">→</span></a>
+
+<script src="app.js"></script>
+<script>
+/* ── COUNTER ANIMATION ── */
+function animateCounter(el){
+  const target = parseInt(el.dataset.target, 10);
+  const suffix = el.dataset.suffix || '';
+  const fmt = el.dataset.format;
+  const duration = 2000;
+  const start = performance.now();
+
+  function format(n){
+    if(fmt === 'short'){
+      if(n >= 10000) return (n/1000).toFixed(0)+'K';
+      if(n >= 1000)  return (n/1000).toFixed(1).replace('.0','')+'K';
+    }
+    return n.toLocaleString('en-IN');
+  }
+
+  function step(now){
+    const progress = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3); // cubic ease-out
+    const current = Math.floor(ease * target);
+    el.textContent = format(current) + suffix;
+    if(progress < 1) requestAnimationFrame(step);
+    else el.textContent = format(target) + suffix;
+  }
+  requestAnimationFrame(step);
+}
+
+/* ── INTERSECTION OBSERVER ── */
+const revealEls = document.querySelectorAll('.reveal, .journey-card, .impact-item, .ind-item, .award-item, .reco-card');
+const counterEls = document.querySelectorAll('[data-target]');
+const triggeredCounters = new WeakSet();
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+revealEls.forEach(el => observer.observe(el));
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting && !triggeredCounters.has(entry.target)){
+      triggeredCounters.add(entry.target);
+      animateCounter(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+counterEls.forEach(el => counterObserver.observe(el));
+
+/* ── HERO COUNTERS — trigger immediately ── */
+window.addEventListener('load', () => {
+  document.querySelectorAll('.about-hero [data-target]').forEach(el => {
+    setTimeout(() => animateCounter(el), 400);
+  });
+});
+
+/* ── JOURNEY LINE DRAW ── */
+(function(){
+  const line = document.getElementById('journeyLine');
+  if(!line) return;
+  const track = line.parentElement;
+  function updateLine(){
+    const trackRect = track.getBoundingClientRect();
+    const scrollY = window.scrollY;
+    const trackTop = trackRect.top + scrollY;
+    const viewBottom = scrollY + window.innerHeight;
+    const progress = Math.max(0, Math.min(1, (viewBottom - trackTop) / (track.offsetHeight + window.innerHeight)));
+    line.style.transform = `scaleY(${progress})`;
+  }
+  window.addEventListener('scroll', updateLine, { passive: true });
+  updateLine();
+})();
+
+/* ── STAGGERED REVEAL FOR IND + AWARD ITEMS ── */
+document.querySelectorAll('.ind-item, .award-item, .impact-item').forEach((el, i) => {
+  el.style.transitionDelay = (i % 4) * 80 + 'ms';
+});
+
+/* ── CURSOR GLOW ── */
+(function(){
+  if(window.matchMedia('(pointer:coarse)').matches) return;
+  const glow = document.createElement('div');
+  glow.style.cssText='position:fixed;pointer-events:none;z-index:9998;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(227,30,36,0.07) 0%,transparent 70%);transform:translate(-50%,-50%);mix-blend-mode:screen;top:0;left:0';
+  document.body.appendChild(glow);
+  let mx=window.innerWidth/2,my=window.innerHeight/2,cx=mx,cy=my;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+  (function loop(){cx+=(mx-cx)*0.06;cy+=(my-cy)*0.06;glow.style.left=cx+'px';glow.style.top=cy+'px';requestAnimationFrame(loop);})();
+})();
+
+/* ── PARTICLE CANVAS ── */
+(function(){
+  const canvas=document.getElementById('particleCanvas');
+  if(!canvas) return;
+  const ctx=canvas.getContext('2d');
+  let W,H,mouse={x:0,y:0};
+  function resize(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight;mouse.x=W/2;mouse.y=H/2;}
+  window.addEventListener('resize',resize);resize();
+  const N=100;
+  const pts=Array.from({length:N},()=>({
+    x:Math.random()*W,y:Math.random()*H,
+    vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5,
+    r:Math.random()*1.6+.3,
+    a:Math.random()*.35+.08,
+    red:Math.random()>.82
+  }));
+  const hero=document.querySelector('.about-hero');
+  if(hero) hero.addEventListener('mousemove',e=>{const r=hero.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top;});
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    for(let i=0;i<N;i++){
+      const p=pts[i];
+      const dx=mouse.x-p.x,dy=mouse.y-p.y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<200){const f=(200-d)/200*.005;p.vx-=dx*f;p.vy-=dy*f;}
+      p.vx*=.994;p.vy*=.994;p.x+=p.vx;p.y+=p.vy;
+      if(p.x<-5||p.x>W+5){p.vx*=-1;}if(p.y<-5||p.y>H+5){p.vy*=-1;}
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=p.red?`rgba(227,30,36,${p.a})`:`rgba(255,255,255,${p.a})`;
+      ctx.fill();
+      for(let j=i+1;j<N;j++){
+        const q=pts[j],ex=p.x-q.x,ey=p.y-q.y,ed=ex*ex+ey*ey;
+        if(ed<7000){ctx.beginPath();ctx.strokeStyle=`rgba(255,255,255,${.04*(1-ed/7000)})`;ctx.lineWidth=.5;ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  frame();
+})();
+
+/* ── PULSATING DOTS ── */
+(function(){
+  const s=document.createElement('style');
+  s.textContent=`
+    @keyframes pdot{0%,100%{box-shadow:0 0 0 0 rgba(227,30,36,.5)}50%{box-shadow:0 0 0 10px rgba(227,30,36,0)}}
+    @keyframes pdot-big{0%,100%{box-shadow:0 0 0 0 rgba(227,30,36,.7),0 0 24px rgba(227,30,36,.25)}50%{box-shadow:0 0 0 18px rgba(227,30,36,0),0 0 40px rgba(227,30,36,.05)}}
+    .journey-dot.scale-4,.journey-dot.scale-5{animation:pdot 2s ease-in-out infinite}
+    .journey-dot.scale-6{animation:pdot-big 1.6s ease-in-out infinite !important}
+  `;
+  document.head.appendChild(s);
+})();
+
+/* ── MAGNETIC BUTTONS ── */
+(function(){
+  if(window.matchMedia('(pointer:coarse)').matches) return;
+  document.querySelectorAll('.btn').forEach(btn=>{
+    btn.addEventListener('mousemove',e=>{
+      const r=btn.getBoundingClientRect();
+      btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.22}px,${(e.clientY-r.top-r.height/2)*.22}px)`;
+      btn.style.transition='transform .08s ease';
+    });
+    btn.addEventListener('mouseleave',()=>{btn.style.transform='translate(0,0)';btn.style.transition='transform .5s cubic-bezier(.23,1,.32,1)';});
+  });
+})();
+
+/* ── HERO PARALLAX ── */
+(function(){
+  if(window.matchMedia('(pointer:coarse)').matches) return;
+  const hero=document.querySelector('.about-hero');
+  const inner=document.querySelector('.about-hero-inner');
+  if(!hero||!inner) return;
+  hero.addEventListener('mousemove',e=>{
+    const r=hero.getBoundingClientRect();
+    const rx=(e.clientX-r.left)/r.width-.5,ry=(e.clientY-r.top)/r.height-.5;
+    inner.style.cssText=`transform:translate(${rx*14}px,${ry*9}px);transition:transform .1s ease`;
+  });
+  hero.addEventListener('mouseleave',()=>{inner.style.cssText='transform:translate(0,0);transition:transform .9s cubic-bezier(.23,1,.32,1)';});
+})();
+
+/* ── 3D TILT on hover ── */
+(function(){
+  if(window.matchMedia('(pointer:coarse)').matches) return;
+  document.querySelectorAll('.reco-card,.award-item,.ind-item').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(700px) rotateY(${x*7}deg) rotateX(${-y*7}deg) translateZ(6px) scale(1.01)`;
+      card.style.transition='transform .08s ease';
+    });
+    card.addEventListener('mouseleave',()=>{card.style.transform='perspective(700px) rotateY(0) rotateX(0) translateZ(0) scale(1)';card.style.transition='transform .6s cubic-bezier(.23,1,.32,1)';});
+  });
+})();
+
+/* ── ORBIT RINGS on impact section ── */
+(function(){
+  const s=document.createElement('style');
+  s.textContent=`
+    .impact-section{position:relative;overflow:hidden}
+    .impact-section::before,.impact-section::after{content:'';position:absolute;top:50%;left:50%;border-radius:50%;pointer-events:none;border:1px solid rgba(0,0,0,.07);}
+    .impact-section::before{width:700px;height:700px;transform:translate(-50%,-50%);animation:ospin 22s linear infinite}
+    .impact-section::after{width:1100px;height:1100px;transform:translate(-50%,-50%);animation:ospin 38s linear infinite reverse}
+    @keyframes ospin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+  `;
+  document.head.appendChild(s);
+})();
+</script>
+
+<!-- COOKIE CONSENT -->
+<div id="cookieBar" style="display:none;position:fixed;bottom:0;left:0;width:100%;background:#0a0a0a;border-top:1px solid rgba(255,255,255,0.1);z-index:9999;padding:14px 24px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap"><p style="margin:0;font-family:var(--body,sans-serif);font-size:13px;color:rgba(255,255,255,0.75);line-height:1.5;flex:1;min-width:240px">This site uses analytics to understand visitor behaviour. <a href="/privacy" style="color:#E31E24;text-decoration:none">Privacy Policy</a></p><button onclick="document.getElementById('cookieBar').style.display='none';localStorage.setItem('ssundar_cookie_ok','1')" style="background:#E31E24;color:#fff;border:none;padding:8px 20px;font-family:var(--body,sans-serif);font-size:13px;font-weight:700;cursor:pointer;letter-spacing:0.04em">Got it</button></div>
+<script>(function(){if(!localStorage.getItem('ssundar_cookie_ok')){var b=document.getElementById('cookieBar');if(b)b.style.display='flex';}})();</script>
+</body>
+</html>

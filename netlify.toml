@@ -1,0 +1,19 @@
+[build]
+  publish = "."
+
+# Production — main branch
+[context.production]
+  environment = { NODE_ENV = "production" }
+
+# Staging — dev branch gets its own deploy URL
+[context.dev]
+  environment = { NODE_ENV = "staging" }
+
+# Branch deploy previews for any other branch
+[context.branch-deploy]
+  environment = { NODE_ENV = "preview" }
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow"

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /api/
+Disallow: /.netlify/
+
+Sitemap: https://ssundar.com/sitemap.xml

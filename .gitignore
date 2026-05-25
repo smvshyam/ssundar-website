@@ -1,0 +1,7 @@
+*.zip
+node_modules/
+netlify/
+test-results/
+.deploy-config
+.DS_Store
+__pycache__/
