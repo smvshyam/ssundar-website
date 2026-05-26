@@ -4,16 +4,115 @@
       "slug": "decision-velocity-leadership-metric",
       "title": "Decision Velocity: The Leadership Metric Nobody Tracks",
       "category": "JUDGMENT DESIGN",
-      "excerpt": "How fast your leadership team makes decisions under ambiguity is measurable and improvable. Most organizations are not measuring it. Here is what that costs — and what the architecture looks like.",
+      "excerpt": "How fast your leadership team makes decisions under ambiguity is measurable and improvable. Most organizations are not measuring it. Here is what that costs and what the architecture looks like.",
       "date": "2026-05-25",
       "readTime": "10 min",
       "file": "decision-velocity-leadership-metric.html"
     },
     {
+      "slug": "gcc-borrowed-architecture",
+      "title": "GCCs Are Running Fast on Borrowed Architecture",
+      "category": "SYSTEMS ARCHITECTURE",
+      "excerpt": "India built 1,700 Global Capability Centers. Most of them imported their leadership architecture from the same organizations they were designed to outrun. Here is what that costs and what a native GCC architecture actually requires.",
+      "date": "2026-05-20",
+      "readTime": "11 min",
+      "file": "gcc-borrowed-architecture.html"
+    },
+    {
+      "slug": "insight-ld-audit-5-days",
+      "title": "How to Audit Your L&D Function in 5 Days",
+      "category": "PERFORMANCE SYSTEMS",
+      "excerpt": "Five questions. Five days. A clear picture of what is working and what is theater. A structured audit method for L&D leaders who want the truth about their function before the CFO asks it for them.",
+      "date": "2026-04-06",
+      "readTime": "9 min",
+      "file": "insight-ld-audit-5-days.html"
+    },
+    {
+      "slug": "insight-gcc-laboratory",
+      "title": "Why GCCs Are the Perfect Laboratory for Judgment-Centered Design",
+      "category": "SYSTEMS ARCHITECTURE",
+      "excerpt": "GCCs have scale, mandate, and budget. They are building leadership pipelines at speed and most of the architecture is wrong. Here is the structural opportunity nobody is designing for.",
+      "date": "2026-04-01",
+      "readTime": "9 min",
+      "file": "insight-gcc-laboratory.html"
+    },
+    {
+      "slug": "insight-vendor-roster",
+      "title": "What Happens When You Fire Your Entire L&D Vendor Roster",
+      "category": "PERFORMANCE SYSTEMS",
+      "excerpt": "Vendor dependency is a symptom. When organizations cut their entire L&D vendor roster, they discover the real problem: there was never any internal architecture. Here is what to build instead.",
+      "date": "2026-04-01",
+      "readTime": "8 min",
+      "file": "insight-vendor-roster.html"
+    },
+    {
+      "slug": "insight-cfo-question",
+      "title": "The CFO Question Every L&D Leader Dreads — And How to Answer It",
+      "category": "MEASUREMENT",
+      "excerpt": "What is the return on your training investment? Most L&D leaders cannot answer this with data. Here is how to build the answer into the system before the CFO asks.",
+      "date": "2026-03-25",
+      "readTime": "8 min",
+      "file": "insight-cfo-question.html"
+    },
+    {
+      "slug": "insight-360-feedback-lying",
+      "title": "Your Leadership 360 Is Lying to You",
+      "category": "MEASUREMENT",
+      "excerpt": "360 feedback measures perception, not judgment. It tells you how people feel about a leader, not how that leader performs when stakes are real. Here is what to use instead.",
+      "date": "2026-03-25",
+      "readTime": "7 min",
+      "file": "insight-360-feedback-lying.html"
+    },
+    {
+      "slug": "insight-90-day-decay",
+      "title": "The 90-Day Decay: Why Training Evaporates and Systems Don't",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "Behavior change has a half-life of 21 days without reinforcement architecture. Most organizations spend on content and almost nothing on the system that makes it stick.",
+      "date": "2026-03-25",
+      "readTime": "7 min",
+      "file": "insight-90-day-decay.html"
+    },
+    {
+      "slug": "insight-post-merger-ld",
+      "title": "The Post-Merger L&D Disaster Nobody Talks About",
+      "category": "SYSTEMS ARCHITECTURE",
+      "excerpt": "Four cultures, zero unified architecture. Why most post-merger L&D integration fails and the 90-day window to fix it before the structural damage compounds.",
+      "date": "2026-03-25",
+      "readTime": "9 min",
+      "file": "insight-post-merger-ld.html"
+    },
+    {
+      "slug": "insight-ic-to-manager",
+      "title": "Why Your Best Individual Contributors Become Your Worst Managers",
+      "category": "SYSTEMS ARCHITECTURE",
+      "excerpt": "Promoting your top performer is the most common leadership pipeline mistake Fortune 500 organizations make. Here is the structural reason it fails and what to build instead.",
+      "date": "2026-03-25",
+      "readTime": "8 min",
+      "file": "insight-ic-to-manager.html"
+    },
+    {
+      "slug": "insight-escalation-epidemic",
+      "title": "The Escalation Epidemic: What Every Unnecessary Escalation Costs Your Organization",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "Every escalation is a judgment gap made visible. Most organizations treat escalations as process. They are architecture failures. Here is how to diagnose the system and what it actually costs.",
+      "date": "2026-03-23",
+      "readTime": "8 min",
+      "file": "insight-escalation-epidemic.html"
+    },
+    {
+      "slug": "insight-ld-wrong-metrics",
+      "title": "Why Your L&D Team Measures the Wrong Things",
+      "category": "MEASUREMENT",
+      "excerpt": "Most L&D teams track completion rates, satisfaction scores, and seat-hours. None of these measure performance. Here is what to track instead and why the shift changes everything.",
+      "date": "2026-03-23",
+      "readTime": "7 min",
+      "file": "insight-ld-wrong-metrics.html"
+    },
+    {
       "slug": "insight-simulation-data",
       "title": "What 200+ Leadership Simulations Reveal About How Executives Actually Decide",
       "category": "SIMULATION DATA",
-      "excerpt": "We ran hundreds of leaders through cascading crisis simulations. The patterns that emerged aren't what conventional leadership theory predicts. Three findings that should change how you design your leadership pipeline.",
+      "excerpt": "We ran hundreds of leaders through cascading crisis simulations. The patterns that emerged are not what conventional leadership theory predicts. Three findings that should change how you design your leadership pipeline.",
       "date": "2026-02-11",
       "readTime": "7 min",
       "file": "insight-simulation-data.html"
@@ -22,7 +121,7 @@
       "slug": "insight-judgment-vs-competency",
       "title": "The Competency Model Is Dead. Here's What Replaces It",
       "category": "JUDGMENT DESIGN",
-      "excerpt": "Competency models were designed for predictable organizations. The world stopped being predictable. What Fortune 500 organizations actually need is a judgment architecture — a fundamentally different design pattern for developing leaders.",
+      "excerpt": "Competency models were designed for predictable organizations. The world stopped being predictable. What Fortune 500 organizations actually need is a judgment architecture.",
       "date": "2026-02-11",
       "readTime": "6 min",
       "file": "insight-judgment-vs-competency.html"
@@ -31,7 +130,7 @@
       "slug": "insight-compounding-leadership",
       "title": "Why Leadership Development Doesn't Compound — And What Does",
       "category": "SYSTEMS ARCHITECTURE",
-      "excerpt": "Most organizations treat leadership development as an event. A workshop. An offsite. Each one exists in isolation — no compounding, no architecture, no system. Here's the structural reason why, and the design pattern that fixes it.",
+      "excerpt": "Most organizations treat leadership development as an event. Each one exists in isolation — no compounding, no architecture, no system. Here is the structural reason why, and the design pattern that fixes it.",
       "date": "2026-02-11",
       "readTime": "8 min",
       "file": "insight-compounding-leadership.html"
