@@ -1,6 +1,42 @@
 {
   "posts": [
     {
+      "slug": "transformation-deck-47-slides",
+      "title": "The Transformation Deck Had 47 Slides. Nothing Changed.",
+      "category": "CRITICAL AND HONEST THOUGHTS",
+      "excerpt": "The deck was clear. The strategy was understood. Everyone in the room knew exactly what was being asked. Nothing changed because the deck didn't touch the systems that govern behavior.",
+      "date": "2026-05-27",
+      "readTime": "9 min",
+      "file": "transformation-deck-47-slides.html"
+    },
+    {
+      "slug": "exit-interview-never-read",
+      "title": "The Exit Interview They Never Read",
+      "category": "LEADING BETWEEN THE LINES",
+      "excerpt": "She had been there seven years. She sat in the glass-walled room and said careful things. The notes are in a folder. They have not been read by anyone who could change the conditions that produced them.",
+      "date": "2026-05-27",
+      "readTime": "9 min",
+      "file": "exit-interview-never-read.html"
+    },
+    {
+      "slug": "classroom-full-behavior-didnt-change",
+      "title": "The Classroom Was Full. The Behavior Didn't Change.",
+      "category": "LEARNING CULTURE ESSENTIALS",
+      "excerpt": "The program had 94% completion. Feedback scores averaged 4.6 out of 5. Six months later, the behavior the program was designed to change had not changed.",
+      "date": "2026-05-27",
+      "readTime": "8 min",
+      "file": "classroom-full-behavior-didnt-change.html"
+    },
+    {
+      "slug": "simulation-didnt-judge-you",
+      "title": "The Simulation Didn't Judge You. It Showed You.",
+      "category": "JUDGMENT ARCHITECTURE",
+      "excerpt": "The simulation doesn't create the pattern it reveals. What makes senior leaders uncomfortable is not their result. It is recognising that the pattern was already there, running quietly inside every real decision they had already made.",
+      "date": "2026-05-27",
+      "readTime": "9 min",
+      "file": "simulation-didnt-judge-you.html"
+    },
+    {
       "slug": "decision-velocity-leadership-metric",
       "title": "Decision Velocity: The Leadership Metric Nobody Tracks",
       "category": "JUDGMENT DESIGN",
@@ -47,7 +83,7 @@
     },
     {
       "slug": "insight-cfo-question",
-      "title": "The CFO Question Every L&D Leader Dreads — And How to Answer It",
+      "title": "The CFO Question Every L&D Leader Dreads \u2014 And How to Answer It",
       "category": "MEASUREMENT",
       "excerpt": "What is the return on your training investment? Most L&D leaders cannot answer this with data. Here is how to build the answer into the system before the CFO asks.",
       "date": "2026-03-25",
@@ -128,9 +164,9 @@
     },
     {
       "slug": "insight-compounding-leadership",
-      "title": "Why Leadership Development Doesn't Compound — And What Does",
+      "title": "Why Leadership Development Doesn't Compound \u2014 And What Does",
       "category": "SYSTEMS ARCHITECTURE",
-      "excerpt": "Most organizations treat leadership development as an event. Each one exists in isolation — no compounding, no architecture, no system. Here is the structural reason why, and the design pattern that fixes it.",
+      "excerpt": "Most organizations treat leadership development as an event. Each one exists in isolation \u2014 no compounding, no architecture, no system. Here is the structural reason why, and the design pattern that fixes it.",
       "date": "2026-02-11",
       "readTime": "8 min",
       "file": "insight-compounding-leadership.html"
