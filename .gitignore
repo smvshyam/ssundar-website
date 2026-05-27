@@ -1,7 +1,8 @@
 *.zip
 node_modules/
-netlify/
+netlify/*.zip
 test-results/
 .deploy-config
 .DS_Store
 __pycache__/
+!netlify/functions/
