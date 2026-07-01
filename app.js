@@ -39,6 +39,18 @@ document.addEventListener('DOMContentLoaded', function () {
     animEls.forEach(function (el) { animObs.observe(el); });
   }
 
+  // Dedicated counter observer — animates every [data-count] on scroll-in,
+  // independent of anim-class wrappers (fixes stats that rendered as 0).
+  var countEls = document.querySelectorAll('[data-count]');
+  if (countEls.length) {
+    var countObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { animateCounter(e.target); countObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.25 });
+    countEls.forEach(function (el) { countObs.observe(el); });
+  }
+
   // Counter animation for stats
   function animateCounter(el) {
     if (el.dataset.counted) return;
