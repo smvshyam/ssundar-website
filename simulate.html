@@ -24,11 +24,6 @@
   <script src="jspdf.min.js"></script>
   <style>
     :root{--heading:'Chakra Petch',sans-serif;--body:'Inter Tight',sans-serif;--mono:'JetBrains Mono',monospace;--red:#E31E24;--bg:#0a0a0a;--card:#111}
-    /* FIX: setup & briefing render on a WHITE background but reuse .hero (which forces white text/buttons). Restore dark text so the headline, subhead and Launch button are visible. */
-    #setupPhase .h1,#setupPhase .mono-label,#setupPhase .body-bold,#briefingPhase .h1{color:#0a0a0a}
-    #setupPhase .cc-execute,#briefingPhase .cc-execute{background:rgba(10,10,10,0.05);color:rgba(10,10,10,0.45);border:1px solid rgba(10,10,10,0.12)}
-    #setupPhase .cc-execute.ready,#briefingPhase .cc-execute.ready{background:var(--red);color:#fff;border-color:var(--red)}
-    #setupPhase .cc-execute.ready:hover,#briefingPhase .cc-execute.ready:hover{background:#ff2a30}
     .cc-grid{display:grid;grid-template-columns:240px 1fr 260px;gap:0;min-height:calc(100vh - 70px);background:var(--bg);margin-top:70px}
     .cc-left,.cc-right{background:#0d0d0d;padding:28px 24px;border-right:1px solid rgba(255,255,255,0.06);position:sticky;top:70px;height:calc(100vh - 70px);overflow-y:auto}
     .cc-right{border-right:none;border-left:1px solid rgba(255,255,255,0.06)}
@@ -105,13 +100,13 @@
     .cc-ind-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-bottom:32px}
     .cc-ind-btn{background:var(--card);border:1px solid rgba(255,255,255,0.06);padding:16px;cursor:pointer;text-align:left;transition:all 0.2s}
     .cc-ind-btn:hover{border-color:rgba(227,30,36,0.3)}
-    .cc-ind-btn.selected{border-color:var(--red);background:linear-gradient(rgba(227,30,36,0.16),rgba(227,30,36,0.16)),var(--card)}
+    .cc-ind-btn.selected{border-color:var(--red);background:rgba(227,30,36,0.06)}
     .cc-ind-num{font-size:20px;margin-bottom:6px}
     .cc-ind-name{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.06em;color:rgba(255,255,255,0.6);text-transform:uppercase}
     .cc-scale-grid{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px}
     .cc-scale-btn{background:var(--card);border:1px solid rgba(255,255,255,0.06);padding:12px 20px;cursor:pointer;transition:all 0.2s}
     .cc-scale-btn:hover{border-color:rgba(227,30,36,0.3)}
-    .cc-scale-btn.selected{border-color:var(--red);background:linear-gradient(rgba(227,30,36,0.16),rgba(227,30,36,0.16)),var(--card)}
+    .cc-scale-btn.selected{border-color:var(--red);background:rgba(227,30,36,0.06)}
     .cc-scale-num{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.4);text-transform:uppercase}
     .cc-scale-name{font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.3)}
     .cc-panel-title{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:0.12em;color:var(--red);text-transform:uppercase}
