@@ -151,7 +151,7 @@ exports.handler = async (event) => {
 
   // ── 2. Rate limiting ──────────────────────────────────────────────────────
   const clientIp = getClientIp(event);
-  if (isRateLimited(clientIp)) {
+  if (await isRateLimited(clientIp)) {
     return err(429, 'Too many requests. Please wait a moment before trying again.', HEADERS);
   }
 
