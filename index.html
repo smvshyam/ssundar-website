@@ -45,204 +45,251 @@
   </script>
 
   <style>
-    /* ── Page-scoped: editorial rebuild ─────────────────────────── */
+    /* ═══ PAGE SHELL ═══════════════════════════════════════════════ */
     body { background:#0a0a0a; color:#fff; }
 
-    .wrap { max-width:1100px; margin:0 auto; padding:0 var(--px); }
-    .rule { height:1px; background:rgba(255,255,255,0.10); }
+    .band     { position:relative; overflow:hidden; }
+    .wrap     { max-width:1240px; margin:0 auto; padding:0 var(--px); position:relative; z-index:2; }
+    .rule     { height:1px; background:rgba(255,255,255,0.09); }
+    .rule-red { height:2px; background:var(--red); max-width:180px; }
+
+    /* Ghost typography — parallax depth layer */
+    .ghost-layer {
+      position:absolute; pointer-events:none; user-select:none; z-index:0;
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      line-height:0.78; letter-spacing:-0.04em; white-space:nowrap;
+      color:rgba(255,255,255,0.035);
+    }
+    .ghost-layer.red { color:rgba(227,30,36,0.10); }
+    .ghost-layer.on-red { color:rgba(255,255,255,0.11); }
 
     .sec-num {
       font-family:var(--mono); font-size:11px; font-weight:700;
-      letter-spacing:0.18em; color:var(--red);
-      display:block; margin-bottom:28px;
+      letter-spacing:0.2em; color:var(--red);
+      display:flex; align-items:center; gap:14px; margin-bottom:30px;
     }
+    .sec-num::after { content:''; flex:1; height:1px; background:rgba(227,30,36,0.28); max-width:220px; }
 
-    /* ── Nav CTA ─────────────────────────────────────────────────── */
+    /* ═══ NAV ══════════════════════════════════════════════════════ */
     .nav-cta {
       font-family:var(--mono); font-size:11px; font-weight:700;
-      letter-spacing:0.10em; text-transform:uppercase;
+      letter-spacing:0.09em; text-transform:uppercase;
       color:#fff; text-decoration:none;
       border:1px solid var(--red); padding:9px 16px;
-      transition:background .18s ease;
+      transition:background .18s ease, box-shadow .18s ease;
       white-space:nowrap;
     }
-    .nav-cta:hover { background:var(--red); }
+    .nav-cta:hover { background:var(--red); box-shadow:0 6px 24px rgba(227,30,36,0.35); }
 
-    /* ── 01 Identity ─────────────────────────────────────────────── */
-    .identity { padding:clamp(110px,17vw,210px) 0 clamp(70px,10vw,120px); }
+    /* ═══ 01 IDENTITY ══════════════════════════════════════════════ */
+    .identity { padding:clamp(120px,16vw,200px) 0 clamp(80px,10vw,130px); }
+    .identity .ghost-layer {
+      top:12%; left:-4%; font-size:clamp(150px,23vw,380px);
+    }
     .identity h1 {
       font-family:var(--heading); font-weight:700; text-transform:uppercase;
-      font-size:clamp(38px,6.4vw,92px); line-height:0.94; letter-spacing:-0.03em;
-      margin-bottom:40px; max-width:15ch;
+      font-size:clamp(40px,6.8vw,104px); line-height:0.92; letter-spacing:-0.035em;
+      margin-bottom:44px; max-width:19ch;
     }
-    .identity h1 .soft { color:rgba(255,255,255,0.38); }
+    /* Readability: second clause stays clearly legible, hierarchy via weight of colour not disappearance */
+    .identity h1 .soft { color:rgba(255,255,255,0.66); }
     .identity-lede {
-      font-family:var(--body); font-size:clamp(17px,1.75vw,22px);
-      line-height:1.62; color:rgba(255,255,255,0.72);
-      max-width:60ch; margin-bottom:22px;
+      font-family:var(--body); font-size:clamp(17px,1.6vw,23px);
+      line-height:1.6; color:rgba(255,255,255,0.82);
+      max-width:62ch; margin-bottom:24px;
     }
+    .identity-lede.dim { color:rgba(255,255,255,0.70); }
     .identity-cred {
       font-family:var(--mono); font-size:12px; font-weight:700;
-      letter-spacing:0.10em; text-transform:uppercase;
-      color:rgba(255,255,255,0.42); line-height:2;
+      letter-spacing:0.1em; text-transform:uppercase;
+      color:rgba(255,255,255,0.5); line-height:2.1;
     }
-    .identity-cred b { color:#fff; font-weight:700; }
+    .identity-cred b { color:#fff; }
+    .cred-orgs { display:flex; flex-wrap:wrap; gap:0 26px; margin-top:6px; }
+    .cred-orgs b { position:relative; padding-left:16px; }
+    .cred-orgs b::before {
+      content:''; position:absolute; left:0; top:50%; transform:translateY(-50%);
+      width:6px; height:6px; background:var(--red);
+    }
 
-    /* ── 02 Argument ─────────────────────────────────────────────── */
-    .argument { padding:clamp(80px,11vw,140px) 0; }
+    /* ═══ 02 ARGUMENT ══════════════════════════════════════════════ */
+    .argument { padding:clamp(90px,11vw,150px) 0; }
+    .argument .ghost-layer { top:4%; right:-6%; font-size:clamp(130px,19vw,300px); }
     .arg-head {
       font-family:var(--heading); font-weight:700; text-transform:uppercase;
-      font-size:clamp(28px,3.6vw,52px); line-height:1.02; letter-spacing:-0.02em;
-      max-width:20ch; margin-bottom:64px;
+      font-size:clamp(30px,3.9vw,60px); line-height:1.0; letter-spacing:-0.025em;
+      max-width:19ch; margin-bottom:16px;
     }
-    .arg-block { margin-bottom:60px; max-width:74ch; }
-    .arg-block:last-child { margin-bottom:0; }
+    .arg-block { padding:44px 0; border-top:1px solid rgba(255,255,255,0.09); }
+    .arg-block:first-of-type { margin-top:56px; }
     .arg-kicker {
       font-family:var(--mono); font-size:11px; font-weight:700;
       letter-spacing:0.16em; text-transform:uppercase;
-      color:var(--red); display:block; margin-bottom:16px;
+      color:var(--red); display:block; margin-bottom:14px;
     }
     .arg-block h3 {
       font-family:var(--heading); font-weight:700; text-transform:uppercase;
-      font-size:clamp(19px,2vw,27px); line-height:1.15; letter-spacing:-0.01em;
-      margin-bottom:18px; color:#fff;
+      font-size:clamp(20px,2.1vw,30px); line-height:1.12; letter-spacing:-0.015em;
+      color:#fff; max-width:22ch;
     }
-    .arg-block p {
-      font-family:var(--body); font-size:clamp(15.5px,1.15vw,17.5px);
-      line-height:1.78; color:rgba(255,255,255,0.66); margin-bottom:16px;
+    .arg-body p {
+      font-family:var(--body); font-size:clamp(15.5px,1.1vw,17.5px);
+      line-height:1.75; color:rgba(255,255,255,0.76); margin-bottom:18px;
     }
-    .arg-block p:last-child { margin-bottom:0; }
-    .arg-block strong { color:#fff; font-weight:600; }
-    .arg-block em { font-style:italic; color:rgba(255,255,255,0.85); }
+    .arg-body p:last-child { margin-bottom:0; }
+    .arg-body strong { color:#fff; font-weight:600; }
+    .arg-body em { font-style:italic; color:#fff; }
     .arg-pull {
-      border-left:2px solid var(--red); padding:4px 0 4px 24px; margin:28px 0;
-      font-family:var(--body); font-size:clamp(17px,1.5vw,21px);
-      line-height:1.5; color:#fff; font-weight:500; max-width:52ch;
+      border-left:3px solid var(--red); padding:6px 0 6px 26px; margin:26px 0 0;
+      font-family:var(--body); font-size:clamp(17px,1.45vw,21px);
+      line-height:1.48; color:#fff; font-weight:500;
     }
 
-    /* ── 03 Evidence ─────────────────────────────────────────────── */
-    .evidence { padding:clamp(80px,11vw,140px) 0; }
-    .ev-grid { display:grid; gap:1px; background:rgba(255,255,255,0.10); margin-top:56px; }
+    /* ═══ 03 EVIDENCE ══════════════════════════════════════════════ */
+    .evidence { padding:clamp(90px,11vw,150px) 0; }
+    .evidence .ghost-layer { bottom:6%; left:-5%; font-size:clamp(130px,20vw,320px); }
+    .ev-grid { display:grid; gap:1px; background:rgba(255,255,255,0.11); margin-top:60px; }
     @media(min-width:900px){ .ev-grid { grid-template-columns:repeat(3,1fr); } }
-    .ev-card { background:#0a0a0a; padding:40px 32px; }
+    .ev-card {
+      background:#0a0a0a; padding:44px 34px; position:relative;
+      transition:background .3s ease;
+    }
+    .ev-card::before {
+      content:''; position:absolute; top:0; left:0; width:0; height:3px;
+      background:var(--red); transition:width .5s cubic-bezier(0.16,1,0.3,1);
+    }
+    .ev-card:hover::before { width:100%; }
+    .ev-card:hover { background:#111; }
     .ev-sector {
       font-family:var(--mono); font-size:10.5px; font-weight:700;
-      letter-spacing:0.14em; text-transform:uppercase;
-      color:var(--red); margin-bottom:10px; display:block;
+      letter-spacing:0.13em; text-transform:uppercase;
+      color:var(--red); margin-bottom:12px; display:block;
     }
     .ev-kind {
       font-family:var(--heading); font-weight:700; text-transform:uppercase;
-      font-size:19px; line-height:1.15; color:#fff; margin-bottom:26px;
+      font-size:20px; line-height:1.14; color:#fff; margin-bottom:30px;
     }
     .ev-figure {
       font-family:var(--heading); font-weight:700;
-      font-size:clamp(34px,3.6vw,48px); line-height:1; letter-spacing:-0.025em;
-      color:#fff; margin-bottom:8px;
+      font-size:clamp(38px,4vw,56px); line-height:1; letter-spacing:-0.03em;
+      color:#fff; margin-bottom:10px; display:flex; align-items:baseline; gap:10px;
     }
+    .ev-figure .from { color:rgba(255,255,255,0.42); }
+    .ev-figure .arw  { color:var(--red); font-size:0.62em; }
     .ev-figure-sub {
-      font-family:var(--body); font-size:14px; line-height:1.5;
-      color:rgba(255,255,255,0.55); margin-bottom:22px;
+      font-family:var(--body); font-size:14.5px; line-height:1.5;
+      color:rgba(255,255,255,0.68); margin-bottom:24px;
     }
     .ev-meta {
-      border-top:1px solid rgba(255,255,255,0.10); padding-top:16px;
+      border-top:1px solid rgba(255,255,255,0.11); padding-top:18px;
       font-family:var(--mono); font-size:11px; font-weight:700;
-      letter-spacing:0.08em; text-transform:uppercase;
-      color:rgba(255,255,255,0.40); line-height:1.9;
+      letter-spacing:0.07em; text-transform:uppercase;
+      color:rgba(255,255,255,0.55); line-height:1.95;
     }
     .ev-note {
-      margin-top:32px; font-family:var(--mono); font-size:11px;
-      letter-spacing:0.06em; color:rgba(255,255,255,0.30);
-      line-height:1.8; max-width:74ch;
+      margin-top:36px; font-family:var(--mono); font-size:11px;
+      letter-spacing:0.05em; color:rgba(255,255,255,0.42);
+      line-height:1.9; max-width:80ch;
     }
 
-    /* ── 04 Method ───────────────────────────────────────────────── */
-    .method { padding:clamp(80px,11vw,140px) 0; }
-    .method-grid { display:grid; gap:56px; }
-    @media(min-width:900px){ .method-grid { grid-template-columns:1fr 1.35fr; gap:80px; } }
+    /* ═══ 04 METHOD ════════════════════════════════════════════════ */
+    .method { padding:clamp(90px,11vw,150px) 0; }
+    .method .ghost-layer { top:14%; right:-4%; font-size:clamp(120px,17vw,260px); }
     .method p {
-      font-family:var(--body); font-size:clamp(15.5px,1.15vw,17.5px);
-      line-height:1.78; color:rgba(255,255,255,0.66); margin-bottom:18px;
+      font-family:var(--body); font-size:clamp(15.5px,1.1vw,17.5px);
+      line-height:1.75; color:rgba(255,255,255,0.76); margin-bottom:18px;
     }
     .method strong { color:#fff; font-weight:600; }
     .method-link {
-      display:inline-block; margin-top:12px;
+      display:inline-block; margin-top:14px;
       font-family:var(--mono); font-size:12px; font-weight:700;
-      letter-spacing:0.10em; text-transform:uppercase;
+      letter-spacing:0.1em; text-transform:uppercase;
       color:var(--red); text-decoration:none;
-      border-bottom:1px solid rgba(227,30,36,0.4); padding-bottom:3px;
-      transition:border-color .18s ease;
+      border-bottom:1px solid rgba(227,30,36,0.45); padding-bottom:4px;
+      transition:border-color .18s ease, letter-spacing .18s ease;
     }
-    .method-link:hover { border-bottom-color:var(--red); }
+    .method-link:hover { border-bottom-color:var(--red); letter-spacing:0.13em; }
 
-    /* ── 05 Writing ──────────────────────────────────────────────── */
-    .writing { padding:clamp(80px,11vw,140px) 0; }
-    .w-list { margin-top:50px; border-top:1px solid rgba(255,255,255,0.10); }
+    /* ═══ 05 WRITING ═══════════════════════════════════════════════ */
+    .writing { padding:clamp(90px,11vw,150px) 0; }
+    .w-list { margin-top:56px; border-top:1px solid rgba(255,255,255,0.11); }
     .w-item {
-      display:block; text-decoration:none;
-      border-bottom:1px solid rgba(255,255,255,0.10);
-      padding:30px 0; transition:padding-left .22s ease;
+      display:grid; grid-template-columns:auto 1fr; gap:0 28px;
+      text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.11);
+      padding:32px 0; transition:padding-left .25s cubic-bezier(0.16,1,0.3,1);
     }
-    .w-item:hover { padding-left:14px; }
+    .w-item:hover { padding-left:18px; }
+    .w-idx {
+      font-family:var(--mono); font-size:11px; font-weight:700;
+      color:var(--red); letter-spacing:0.1em; padding-top:7px;
+    }
     .w-item h4 {
       font-family:var(--heading); font-weight:700; text-transform:uppercase;
-      font-size:clamp(18px,1.9vw,25px); line-height:1.18; letter-spacing:-0.01em;
-      color:#fff; margin-bottom:9px; transition:color .18s ease;
+      font-size:clamp(19px,2vw,27px); line-height:1.16; letter-spacing:-0.012em;
+      color:#fff; margin-bottom:10px; transition:color .18s ease;
     }
     .w-item:hover h4 { color:var(--red); }
     .w-item p {
       font-family:var(--body); font-size:15px; line-height:1.6;
-      color:rgba(255,255,255,0.50); max-width:68ch;
+      color:rgba(255,255,255,0.62); max-width:74ch;
     }
     .w-all {
-      display:inline-block; margin-top:36px;
+      display:inline-block; margin-top:38px;
       font-family:var(--mono); font-size:12px; font-weight:700;
-      letter-spacing:0.10em; text-transform:uppercase;
-      color:rgba(255,255,255,0.55); text-decoration:none;
-      transition:color .18s ease;
+      letter-spacing:0.1em; text-transform:uppercase;
+      color:rgba(255,255,255,0.65); text-decoration:none;
+      transition:color .18s ease, letter-spacing .18s ease;
     }
-    .w-all:hover { color:var(--red); }
+    .w-all:hover { color:var(--red); letter-spacing:0.13em; }
 
-    /* ── 06 CTA ──────────────────────────────────────────────────── */
-    .cta { background:var(--red); padding:clamp(80px,11vw,140px) 0; }
+    /* ═══ 06 CTA ═══════════════════════════════════════════════════ */
+    .cta { background:var(--red); padding:clamp(90px,11vw,150px) 0; }
+    .cta .ghost-layer { top:8%; right:-3%; font-size:clamp(140px,21vw,340px); }
     .cta h2 {
       font-family:var(--heading); font-weight:700; text-transform:uppercase;
-      font-size:clamp(34px,5.2vw,74px); line-height:0.96; letter-spacing:-0.03em;
-      color:#fff; margin-bottom:26px; max-width:16ch;
+      font-size:clamp(36px,5.4vw,86px); line-height:0.94; letter-spacing:-0.035em;
+      color:#fff; margin-bottom:28px; max-width:15ch;
     }
     .cta p {
-      font-family:var(--body); font-size:clamp(16px,1.35vw,19px);
-      line-height:1.62; color:rgba(255,255,255,0.90);
-      max-width:56ch; margin-bottom:44px;
+      font-family:var(--body); font-size:clamp(16px,1.3vw,20px);
+      line-height:1.6; color:rgba(255,255,255,0.95);
+      max-width:58ch; margin-bottom:46px;
     }
     .cta-btn {
       display:inline-block; background:#0a0a0a; color:#fff;
       font-family:var(--mono); font-size:13px; font-weight:700;
-      letter-spacing:0.10em; text-transform:uppercase;
-      padding:20px 40px; text-decoration:none;
-      transition:transform .18s ease;
+      letter-spacing:0.1em; text-transform:uppercase;
+      padding:22px 44px; text-decoration:none;
+      transition:transform .2s cubic-bezier(0.16,1,0.3,1), box-shadow .2s ease;
     }
-    .cta-btn:hover { transform:translateY(-2px); }
+    .cta-btn:hover { transform:translateY(-3px); box-shadow:0 14px 40px rgba(0,0,0,0.4); }
     .cta-sub {
-      margin-top:22px; font-family:var(--mono); font-size:11px;
-      letter-spacing:0.08em; color:rgba(255,255,255,0.65);
+      margin-top:24px; font-family:var(--mono); font-size:11px;
+      letter-spacing:0.08em; color:rgba(255,255,255,0.8);
     }
 
-    /* ── Footer ──────────────────────────────────────────────────── */
+    /* ═══ FOOTER ═══════════════════════════════════════════════════ */
     .f-links { display:flex; flex-wrap:wrap; gap:26px; margin-bottom:44px; }
     .f-links a {
       font-family:var(--mono); font-size:12px; font-weight:700;
       letter-spacing:0.08em; text-transform:uppercase;
-      color:rgba(255,255,255,0.50); text-decoration:none;
-      transition:color .18s ease;
+      color:rgba(255,255,255,0.6); text-decoration:none; transition:color .18s ease;
     }
-    .f-links a:hover { color:#fff; }
+    .f-links a:hover { color:var(--red); }
     .f-legal { display:flex; flex-wrap:wrap; gap:18px; margin-top:14px; }
     .f-legal a {
       font-family:var(--mono); font-size:10px; letter-spacing:0.06em;
-      text-transform:uppercase; color:rgba(255,255,255,0.26);
-      text-decoration:none;
+      text-transform:uppercase; color:rgba(255,255,255,0.3); text-decoration:none;
     }
-    .f-legal a:hover { color:rgba(255,255,255,0.55); }
+    .f-legal a:hover { color:rgba(255,255,255,0.6); }
+
+    /* ═══ RESPONSIVE ═══════════════════════════════════════════════ */
+    @media(max-width:860px){
+      .grid-asym, .grid-asym-r { grid-template-columns:1fr !important; gap:24px !important; }
+      .w-item { grid-template-columns:1fr; gap:8px; }
+      .w-idx { padding-top:0; }
+      .ghost-layer { display:none; }
+    }
   </style>
 </head>
 <body>
@@ -269,23 +316,28 @@
 
 
 <!-- ══ 01 — IDENTITY ═════════════════════════════════════════════ -->
-<section class="identity">
+<section class="band identity">
+  <div class="ghost-layer" data-z-speed="0.12">JUDGMENT</div>
   <div class="wrap">
-    <span class="sec-num">01 — Position</span>
-    <h1>I build judgment into organizations<span class="dot">.</span> <span class="soft">Not training programs.</span></h1>
-    <p class="identity-lede">
-      AI has absorbed the execution layer. What it cannot do is exercise judgment under
-      pressure — decide well when the data is incomplete, the stakeholders disagree, and
-      the clock is running. That is the gap I design for.
-    </p>
-    <p class="identity-lede" style="margin-bottom:40px">
-      I did not advise on these systems. I built and ran them from inside the operation,
-      accountable for whether the number moved.
-    </p>
-    <p class="identity-cred">
-      Built and run inside Fortune 500 operations<br>
-      <b>Amazon</b> &nbsp;·&nbsp; <b>Accenture</b> &nbsp;·&nbsp; <b>Cognizant</b>
-    </p>
+    <div class="fade-in">
+      <span class="sec-num">01 &mdash; Position</span>
+    </div>
+    <h1 class="slide-up">I build judgment into organizations<span class="dot">.</span> <span class="soft">Not training programs.</span></h1>
+    <div class="slide-up">
+      <p class="identity-lede">
+        AI has absorbed the execution layer. What it cannot do is exercise judgment under
+        pressure &mdash; decide well when the data is incomplete, the stakeholders disagree, and
+        the clock is running. That is the gap I design for.
+      </p>
+      <p class="identity-lede dim" style="margin-bottom:44px">
+        I did not advise on these systems. I built and ran them from inside the operation,
+        accountable for whether the number moved.
+      </p>
+      <p class="identity-cred">
+        Built and run inside Fortune 500 operations
+        <span class="cred-orgs"><b>Amazon</b> <b>Accenture</b> <b>Cognizant</b></span>
+      </p>
+    </div>
   </div>
 </section>
 
@@ -293,86 +345,104 @@
 
 
 <!-- ══ 02 — THE ARGUMENT ═════════════════════════════════════════ -->
-<section class="argument">
+<section class="band argument">
+  <div class="ghost-layer" data-z-speed="0.08">THE ARGUMENT</div>
   <div class="wrap">
-    <span class="sec-num">02 — The Argument</span>
-    <h2 class="arg-head">The constraint moved upstream. Almost nobody redesigned for it<span class="dot">.</span></h2>
+    <div class="fade-in"><span class="sec-num">02 &mdash; The Argument</span></div>
+    <h2 class="arg-head slide-up">The constraint moved upstream. Almost nobody redesigned for it<span class="dot">.</span></h2>
+    <div class="rule-red line-draw"></div>
 
-    <div class="arg-block">
-      <span class="arg-kicker">i. The inflection</span>
-      <h3>AI did not reduce the demand for capability. It relocated it.</h3>
-      <p>
-        Drafting, summarizing, modelling, first-pass analysis on structured problems — all of it
-        now happens faster than any human can supervise in real time. The intuitive conclusion is
-        that organizations need less from their people. The opposite is true. When execution
-        becomes cheap and instantaneous, the binding constraint moves upstream to the quality of
-        the decision that sets execution in motion.
-      </p>
-      <p>
-        A poor call no longer costs you a slow quarter. It propagates at machine speed, across
-        every downstream system that was waiting on it. <strong>The cost of weak judgment has gone up,
-        not down — and it compounds faster than it used to.</strong>
-      </p>
-    </div>
-
-    <div class="arg-block">
-      <span class="arg-kicker">ii. Why the standard response fails</span>
-      <h3>Training transfers knowledge. Knowledge is the thing AI commoditized.</h3>
-      <p>
-        Most organizations answer the capability question by buying more content. The logic is
-        intuitive and wrong. A manager who can recall a framework is not more valuable in 2026 —
-        the framework is one prompt away, better formatted than the one they memorized.
-      </p>
-      <p>
-        What stays scarce is the capacity to decide <em>which</em> framework applies when the
-        situation is ambiguous, the inputs conflict, and the decision cannot wait. That capacity
-        is not knowledge. It is judgment, and judgment does not transfer through content delivery.
-      </p>
-      <div class="arg-pull">
-        This is why the measurement problem never resolves. Completion and satisfaction measure
-        the delivery of knowledge. The organization is trying to buy something knowledge delivery
-        does not produce.
+    <div class="arg-block grid-asym slide-up">
+      <div>
+        <span class="arg-kicker">i. The inflection</span>
+        <h3>AI did not reduce the demand for capability. It relocated it.</h3>
+      </div>
+      <div class="arg-body">
+        <p>
+          Drafting, summarizing, modelling, first-pass analysis on structured problems &mdash; all of it
+          now happens faster than any human can supervise in real time. The intuitive conclusion is
+          that organizations need less from their people. The opposite is true. When execution
+          becomes cheap and instantaneous, the binding constraint moves upstream to the quality of
+          the decision that sets execution in motion.
+        </p>
+        <p>
+          A poor call no longer costs you a slow quarter. It propagates at machine speed, across
+          every downstream system that was waiting on it. <strong>The cost of weak judgment has gone up,
+          not down &mdash; and it compounds faster than it used to.</strong>
+        </p>
       </div>
     </div>
 
-    <div class="arg-block">
-      <span class="arg-kicker">iii. What judgment-design is</span>
-      <h3>Start from the decisions being made badly. Not from the ideal leader.</h3>
-      <p>
-        Judgment-design inverts the sequence. Rather than asking what leaders ought to know, it
-        asks which specific decisions in <em>this</em> organization are made badly — by whom, under
-        what conditions, with what consequence. Those decisions become the design unit. The
-        intervention is built backward from them: the reps, the pressure, the feedback loop, the
-        escalation path, the accountability structure that makes the better decision the natural one.
-      </p>
-      <p>
-        This is architecture, not curriculum. And it frequently concludes that the fix is structural
-        rather than educational — authority misaligned with accountability, escalation paths that
-        route around the person who should decide, measurement that quietly rewards the wrong call.
-        <strong>A competency framework cannot see any of this</strong>, because it begins from a model of
-        the ideal leader rather than from the decisions the organization is actually getting wrong.
-      </p>
+    <div class="arg-block grid-asym slide-up">
+      <div>
+        <span class="arg-kicker">ii. Why the standard response fails</span>
+        <h3>Training transfers knowledge. Knowledge is the thing AI commoditized.</h3>
+      </div>
+      <div class="arg-body">
+        <p>
+          Most organizations answer the capability question by buying more content. The logic is
+          intuitive and wrong. A manager who can recall a framework is not more valuable in 2026 &mdash;
+          the framework is one prompt away, better formatted than the one they memorized.
+        </p>
+        <p>
+          What stays scarce is the capacity to decide <em>which</em> framework applies when the
+          situation is ambiguous, the inputs conflict, and the decision cannot wait. That capacity
+          is not knowledge. It is judgment, and judgment does not transfer through content delivery.
+        </p>
+        <div class="arg-pull">
+          This is why the measurement problem never resolves. Completion and satisfaction measure
+          the delivery of knowledge. The organization is trying to buy something knowledge delivery
+          does not produce.
+        </div>
+      </div>
     </div>
 
-    <div class="arg-block">
-      <span class="arg-kicker">iv. Why the operator position matters</span>
-      <h3>An advisor optimizes the recommendation. An operator optimizes what survives.</h3>
-      <p>
-        This method is only available to someone who has carried the outcome. I built and ran these
-        systems inside Fortune 500 operations, where the measure was whether the number moved — not
-        whether the recommendation was well received.
-      </p>
-      <p>
-        That position teaches what advisory work structurally cannot: which constraints are real and
-        which are negotiable, where an elegant design fails on contact with an operating floor, and
-        how long change actually takes once it has to survive attrition, quarter-end, and a
-        reorganization nobody warned you about.
-      </p>
-      <p>
-        <strong>The distinction is the entire method.</strong> It is also why the evidence below is stated
-        as operational outcomes rather than institutional scale — the numbers are meant to survive
-        diligence, not to impress at a distance.
-      </p>
+    <div class="arg-block grid-asym slide-up">
+      <div>
+        <span class="arg-kicker">iii. What judgment-design is</span>
+        <h3>Start from the decisions being made badly. Not from the ideal leader.</h3>
+      </div>
+      <div class="arg-body">
+        <p>
+          Judgment-design inverts the sequence. Rather than asking what leaders ought to know, it
+          asks which specific decisions in <em>this</em> organization are made badly &mdash; by whom, under
+          what conditions, with what consequence. Those decisions become the design unit. The
+          intervention is built backward from them: the reps, the pressure, the feedback loop, the
+          escalation path, the accountability structure that makes the better decision the natural one.
+        </p>
+        <p>
+          This is architecture, not curriculum. And it frequently concludes that the fix is structural
+          rather than educational &mdash; authority misaligned with accountability, escalation paths that
+          route around the person who should decide, measurement that quietly rewards the wrong call.
+          <strong>A competency framework cannot see any of this</strong>, because it begins from a model of
+          the ideal leader rather than from the decisions the organization is actually getting wrong.
+        </p>
+      </div>
+    </div>
+
+    <div class="arg-block grid-asym slide-up">
+      <div>
+        <span class="arg-kicker">iv. Why the operator position matters</span>
+        <h3>An advisor optimizes the recommendation. An operator optimizes what survives.</h3>
+      </div>
+      <div class="arg-body">
+        <p>
+          This method is only available to someone who has carried the outcome. I built and ran these
+          systems inside Fortune 500 operations, where the measure was whether the number moved &mdash; not
+          whether the recommendation was well received.
+        </p>
+        <p>
+          That position teaches what advisory work structurally cannot: which constraints are real and
+          which are negotiable, where an elegant design fails on contact with an operating floor, and
+          how long change actually takes once it has to survive attrition, quarter-end, and a
+          reorganization nobody warned you about.
+        </p>
+        <p>
+          <strong>The distinction is the entire method.</strong> It is also why the evidence below is stated
+          as operational outcomes rather than institutional scale &mdash; the numbers are meant to survive
+          diligence, not to impress at a distance.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -381,16 +451,20 @@
 
 
 <!-- ══ 03 — FIELD EVIDENCE ═══════════════════════════════════════ -->
-<section class="evidence">
+<section class="band evidence">
+  <div class="ghost-layer red" data-z-speed="0.1">EVIDENCE</div>
   <div class="wrap">
-    <span class="sec-num">03 — Field Evidence</span>
-    <h2 class="arg-head" style="margin-bottom:0">Three kinds of proof. Every figure sourced<span class="dot">.</span></h2>
+    <div class="fade-in"><span class="sec-num">03 &mdash; Field Evidence</span></div>
+    <h2 class="arg-head slide-up" style="margin-bottom:16px">Three kinds of proof. Every figure sourced<span class="dot">.</span></h2>
+    <div class="rule-red line-draw"></div>
 
-    <div class="ev-grid">
-      <div class="ev-card">
+    <div class="ev-grid stagger-in">
+      <div class="ev-card stagger-child">
         <span class="ev-sector">Technical Support &middot; 27 Lines of Business</span>
         <p class="ev-kind">Quality turnaround</p>
-        <p class="ev-figure">77 &rarr; 93%</p>
+        <p class="ev-figure">
+          <span class="from">77</span><span class="arw">&rarr;</span><span data-count="93" data-suffix="%">0</span>
+        </p>
         <p class="ev-figure-sub">Quality score on an escalated account</p>
         <div class="ev-meta">
           Turned inside 90 days of implementation<br>
@@ -398,10 +472,12 @@
         </div>
       </div>
 
-      <div class="ev-card">
+      <div class="ev-card stagger-child">
         <span class="ev-sector">Business Process Outsourcing</span>
         <p class="ev-kind">CSAT turnaround</p>
-        <p class="ev-figure">70 &rarr; 89%</p>
+        <p class="ev-figure">
+          <span class="from">70</span><span class="arw">&rarr;</span><span data-count="89" data-suffix="%">0</span>
+        </p>
         <p class="ev-figure-sub">Customer satisfaction across a 1,600-person operation</p>
         <div class="ev-meta">
           90 days<br>
@@ -409,10 +485,12 @@
         </div>
       </div>
 
-      <div class="ev-card">
+      <div class="ev-card stagger-child">
         <span class="ev-sector">Technical Support &middot; New-Hire Cohorts</span>
         <p class="ev-kind">New-hire capability</p>
-        <p class="ev-figure">79 &rarr; 89%</p>
+        <p class="ev-figure">
+          <span class="from">79</span><span class="arw">&rarr;</span><span data-count="89" data-suffix="%">0</span>
+        </p>
         <p class="ev-figure-sub">30-day CSAT, new-hire cohort</p>
         <div class="ev-meta">
           Second cohort: 88% &rarr; 98%<br>
@@ -421,7 +499,7 @@
       </div>
     </div>
 
-    <p class="ev-note">
+    <p class="ev-note fade-in">
       Client identities and commercially sensitive detail remain confidential by contract,
       including where the engagement is well known. Figures are stated at sector level and
       every one traces to a source document. Nothing appears here that cannot be walked
@@ -434,21 +512,25 @@
 
 
 <!-- ══ 04 — HOW I WORK ═══════════════════════════════════════════ -->
-<section class="method">
+<section class="band method">
+  <div class="ghost-layer" data-z-speed="0.09">METHOD</div>
   <div class="wrap">
-    <span class="sec-num">04 — How I Work</span>
-    <div class="method-grid">
-      <h2 class="arg-head" style="margin-bottom:0">Diagnosis first<span class="dot">.</span> Always<span class="dot">.</span></h2>
+    <div class="fade-in"><span class="sec-num">04 &mdash; How I Work</span></div>
+    <div class="grid-asym slide-up" style="margin-top:8px">
+      <div>
+        <h2 class="arg-head" style="margin-bottom:18px">Diagnosis first<span class="dot">.</span> Always<span class="dot">.</span></h2>
+        <div class="rule-red line-draw"></div>
+      </div>
       <div>
         <p>
-          Every engagement opens with a diagnosis of which decisions are failing and why — before any
+          Every engagement opens with a diagnosis of which decisions are failing and why &mdash; before any
           design work begins. The root cause gets classified: skills, structure, measurement, or
           context. Each demands a fundamentally different response, and a misclassified root cause
           does not produce a weaker intervention. It produces the wrong one.
         </p>
         <p>
           That diagnosis sometimes concludes that a learning intervention is the wrong instrument
-          entirely — that the constraint is structural, and no amount of capability work will move it
+          entirely &mdash; that the constraint is structural, and no amount of capability work will move it
           until the structure changes. <strong>When that is the finding, I say so in writing.</strong>
           Architecture before intervention; evidence required at close.
         </p>
@@ -456,7 +538,7 @@
           Engagements run through EXLPRS, where the diagnostic, the programs, and the commercial
           terms live.
         </p>
-        <a class="method-link" href="https://exlprs.com" target="_blank" rel="noopener noreferrer">EXLPRS — the practice →</a>
+        <a class="method-link" href="https://exlprs.com" target="_blank" rel="noopener noreferrer">EXLPRS &mdash; the practice &rarr;</a>
       </div>
     </div>
   </div>
@@ -466,41 +548,54 @@
 
 
 <!-- ══ 05 — WRITING ══════════════════════════════════════════════ -->
-<section class="writing">
+<section class="band writing">
   <div class="wrap">
-    <span class="sec-num">05 — Writing</span>
-    <h2 class="arg-head" style="margin-bottom:0">The reasoning, in long form<span class="dot">.</span></h2>
+    <div class="fade-in"><span class="sec-num">05 &mdash; Writing</span></div>
+    <h2 class="arg-head slide-up" style="margin-bottom:16px">The reasoning, in long form<span class="dot">.</span></h2>
+    <div class="rule-red line-draw"></div>
 
     <div class="w-list">
-      <a class="w-item" href="/insight-judgment-vs-competency">
-        <h4>The competency model is dead. Here's what replaces it.</h4>
-        <p>Competency frameworks describe the ideal leader and measure distance from the description. Judgment architecture starts from the decisions being made badly — and is auditable.</p>
+      <a class="w-item fade-in" href="/insight-judgment-vs-competency">
+        <span class="w-idx">01</span>
+        <div>
+          <h4>The competency model is dead. Here's what replaces it.</h4>
+          <p>Competency frameworks describe the ideal leader and measure distance from the description. Judgment architecture starts from the decisions being made badly &mdash; and is auditable.</p>
+        </div>
       </a>
-      <a class="w-item" href="/insight-simulation-data">
-        <h4>What 500+ leadership simulations reveal about how executives actually decide</h4>
-        <p>Aggregate patterns from simulated decision-making under pressure. Where judgment breaks by function, tenure, and organizational scale — and which failure modes repeat.</p>
+      <a class="w-item fade-in" href="/insight-simulation-data">
+        <span class="w-idx">02</span>
+        <div>
+          <h4>What 500+ leadership simulations reveal about how executives actually decide</h4>
+          <p>Aggregate patterns from simulated decision-making under pressure. Where judgment breaks by function, tenure, and organizational scale &mdash; and which failure modes repeat.</p>
+        </div>
       </a>
-      <a class="w-item" href="/decision-velocity-leadership-metric">
-        <h4>Decision velocity: the leadership metric nobody tracks</h4>
-        <p>Organizations measure engagement, completion, and effectiveness. None of it captures how fast a good decision travels — which is the thing that actually compounds.</p>
+      <a class="w-item fade-in" href="/decision-velocity-leadership-metric">
+        <span class="w-idx">03</span>
+        <div>
+          <h4>Decision velocity: the leadership metric nobody tracks</h4>
+          <p>Organizations measure engagement, completion, and effectiveness. None of it captures how fast a good decision travels &mdash; which is the thing that actually compounds.</p>
+        </div>
       </a>
     </div>
 
-    <a class="w-all" href="/insights">Full archive →</a>
+    <a class="w-all" href="/insights">Full archive &rarr;</a>
   </div>
 </section>
 
 
 <!-- ══ 06 — CTA ══════════════════════════════════════════════════ -->
-<section class="cta">
+<section class="band cta">
+  <div class="ghost-layer on-red" data-z-speed="0.12">THE GAP</div>
   <div class="wrap">
-    <h2>Find your judgment gap<span class="dot" style="color:#0a0a0a">.</span></h2>
-    <p>
-      A structured diagnostic that names where judgment is breaking in your organization —
-      which decisions, at which altitude, under which conditions. It runs on EXLPRS.
-    </p>
-    <a class="cta-btn" href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer">Start the diagnostic →</a>
-    <p class="cta-sub">No cost · No slides · Runs on EXLPRS</p>
+    <h2 class="slide-up">Find your judgment gap<span class="dot" style="color:#0a0a0a">.</span></h2>
+    <div class="slide-up">
+      <p>
+        A structured diagnostic that names where judgment is breaking in your organization &mdash;
+        which decisions, at which altitude, under which conditions. It runs on EXLPRS.
+      </p>
+      <a class="cta-btn" href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer">Start the diagnostic &rarr;</a>
+      <p class="cta-sub">No cost &middot; No slides &middot; Runs on EXLPRS</p>
+    </div>
   </div>
 </section>
 
@@ -511,7 +606,7 @@
     <span style="font-family:var(--heading);font-weight:700;font-size:24px;letter-spacing:0.06em;text-transform:uppercase;color:#fff">SSUNDAR<span class="dot">.</span></span>
     <div class="red-line-thick" style="margin:20px 0"></div>
     <p class="footer-tagline mb-24">JUDGMENT-CENTERED LEADERSHIP DESIGN&trade;</p>
-    <p style="font-family:var(--body);font-size:14px;font-weight:500;color:rgba(255,255,255,0.35);max-width:520px;line-height:1.7;margin-bottom:44px">
+    <p style="font-family:var(--body);font-size:14px;font-weight:500;color:rgba(255,255,255,0.45);max-width:520px;line-height:1.7;margin-bottom:44px">
       The judgment-design point of view of Shyam Sundar MV. Engagements run through EXLPRS.
     </p>
 
@@ -522,14 +617,14 @@
       <a href="https://exlprs.com" target="_blank" rel="noopener noreferrer">EXLPRS</a>
       <a href="https://www.treeng.ai" target="_blank" rel="noopener noreferrer">Platform</a>
       <a href="mailto:shyam@ssundar.com">shyam@ssundar.com</a>
-      <a href="https://linkedin.com/in/shyamsundarmv" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
+      <a href="https://linkedin.com/in/shyamsundarmv" target="_blank" rel="noopener noreferrer">LinkedIn &rarr;</a>
     </div>
 
     <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:24px">
-      <p style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.2);letter-spacing:0.05em;margin-bottom:6px">
+      <p style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.25);letter-spacing:0.05em;margin-bottom:6px">
         &copy; 2026 SSUNDAR. ALL RIGHTS RESERVED. &nbsp;·&nbsp; WORKING GLOBALLY.
       </p>
-      <p style="font-family:var(--mono);font-size:9px;font-weight:500;color:rgba(255,255,255,0.12);letter-spacing:0.04em">
+      <p style="font-family:var(--mono);font-size:9px;font-weight:500;color:rgba(255,255,255,0.15);letter-spacing:0.04em">
         Judgment-Centered Leadership Design&trade;, Multi-Skilled Talent Pools&trade;, Performance Engine Integration&trade;, and Strategic Products &amp; AI&trade; are trademarks of SSUNDAR.
       </p>
       <div class="f-legal">
