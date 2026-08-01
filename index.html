@@ -71,15 +71,22 @@
     .sec-num::after { content:''; flex:1; height:1px; background:rgba(227,30,36,0.28); max-width:220px; }
 
     /* ═══ NAV ══════════════════════════════════════════════════════ */
+    /* Nav sits on a WHITE bar (styles.css: .nav{background:var(--white)}),
+       so this must be a filled button — white-on-white is invisible. */
     .nav-cta {
       font-family:var(--mono); font-size:11px; font-weight:700;
       letter-spacing:0.09em; text-transform:uppercase;
-      color:#fff; text-decoration:none;
-      border:1px solid var(--red); padding:9px 16px;
-      transition:background .18s ease, box-shadow .18s ease;
+      color:#fff !important; background:var(--red);
+      text-decoration:none; border:1px solid var(--red);
+      padding:11px 18px; display:inline-block; line-height:1;
+      transition:background .18s ease, border-color .18s ease, box-shadow .18s ease, transform .18s ease;
       white-space:nowrap;
     }
-    .nav-cta:hover { background:var(--red); box-shadow:0 6px 24px rgba(227,30,36,0.35); }
+    .nav-cta:hover {
+      background:#0a0a0a; border-color:#0a0a0a;
+      transform:translateY(-1px);
+      box-shadow:0 6px 22px rgba(0,0,0,0.28);
+    }
 
     /* ═══ 01 IDENTITY ══════════════════════════════════════════════ */
     .identity { padding:clamp(120px,16vw,200px) 0 clamp(80px,10vw,130px); }
