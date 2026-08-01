@@ -9,6 +9,9 @@
 /simulate       /simulate.html      200
 /insights       /insights.html      200
 /engage         /engage.html        200
-/blog           /blog.html          200
-/credentials    /credentials.html   200
 /platform       /platform.html      200
+
+# Retired duplicate pages -> canonical destinations (301)
+/blog           /insights           301
+/case-studies   /evidence           301
+/credentials    /about              301
