@@ -145,8 +145,8 @@ button{cursor:pointer;font-family:inherit}
 
 /* ---- HERO ---- */
 .hero-bg{background:#0a0a0a;color:#fff}
-.hero{padding-top:clamp(72px,8vw,110px);padding-bottom:clamp(48px,5vw,72px);position:relative;overflow:hidden}
-.hero .h1,.hero .h3,.hero .mono-label,.hero .body-bold,.hero .btn-black{color:#fff}
+.hero{padding-top:clamp(72px,8vw,110px);padding-bottom:clamp(48px,5vw,72px);position:relative;overflow:hidden;background:#0a0a0a;color:#fff}
+.hero .h1,.hero .h2,.hero .h3,.hero .h4,.hero .mono-label,.hero .mono-sm,.hero .body-bold,.hero .body-text,.hero p,.hero li,.hero .btn-black{color:#fff}
 .hero .btn-black{background:var(--red);border-color:var(--red)}
 .hero .btn-black:hover{background:#fff;color:#0a0a0a;border-color:#fff}
 .hero-accent{position:absolute;top:0;left:-16px;width:3px;height:100%;background:var(--red)}
@@ -492,3 +492,15 @@ a.hover-red:hover{color:var(--red)}
 }
 .sim-capture-form input:focus{border-color:var(--red)}
 .sim-capture-form input::placeholder{color:rgba(255,255,255,0.25)}
+
+
+/* ---- NAV CTA (site-wide) — nav bar is WHITE, so this must be filled ---- */
+.nav-cta{
+  font-family:var(--mono);font-size:11px;font-weight:700;
+  letter-spacing:0.09em;text-transform:uppercase;
+  color:#fff;background:var(--red);text-decoration:none;
+  border:1px solid var(--red);padding:11px 18px;
+  display:inline-block;line-height:1;white-space:nowrap;
+  transition:background .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease
+}
+.nav-cta:hover{background:#0a0a0a;border-color:#0a0a0a;transform:translateY(-1px);box-shadow:0 6px 22px rgba(0,0,0,0.28)}
