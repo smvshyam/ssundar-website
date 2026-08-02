@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-First Workshops — SSUNDAR</title>
+<meta name="description" content="90–120 minute AI-first workshops for global organisations. Not prompt engineering. Judgment and productivity under AI conditions.">
+<meta property="og:title" content="AI-First Workshops — SSUNDAR">
+<meta property="og:description" content="Not prompt engineering. Judgment and productivity under AI conditions. For international teams ready to stop treating AI as a tool and start treating it as an amplifier.">
+<meta property="og:url" content="https://ssundar.com/workshops.html">
+<meta property="og:image" content="https://ssundar.com/og-default.png">
+<link rel="canonical" href="https://ssundar.com/workshops.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.page-hero{padding:clamp(140px,18vw,220px) var(--px) clamp(64px,8vw,100px);max-width:var(--max-w);margin:0 auto}
+.workshop-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:0;
+  border:1px solid rgba(255,255,255,0.1);margin-top:48px
+}
+@media(max-width:760px){.workshop-grid{grid-template-columns:1fr}}
+.ws-card{
+  border-top:2px solid var(--red);border-left:1px solid rgba(255,255,255,0.08);
+  padding:36px 32px 40px
+}
+.ws-card:nth-child(odd){border-left:none}
+@media(max-width:760px){.ws-card{border-left:none;border-top:1px solid rgba(255,255,255,0.08)}.ws-card:first-child{border-top:2px solid var(--red)}}
+.ws-tag{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;color:var(--red);text-transform:uppercase;margin-bottom:16px}
+.ws-title{font-family:var(--heading);font-weight:700;font-size:clamp(17px,1.5vw,22px);color:var(--white);line-height:1.2;letter-spacing:-0.01em;text-transform:uppercase;margin-bottom:12px}
+.ws-meta{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:20px}
+.ws-body{font-family:var(--body);font-size:14px;color:rgba(255,255,255,0.5);line-height:1.8;margin-bottom:24px}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;border-top:1px solid rgba(255,255,255,0.08);padding-top:40px;margin-top:40px}
+@media(max-width:640px){.stat-row{grid-template-columns:1fr 1fr}}
+.stat-item .stat-num{font-family:var(--heading);font-weight:700;font-size:clamp(32px,3.5vw,52px);color:var(--white);letter-spacing:-0.03em;line-height:1}
+.stat-item .stat-label{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-top:8px;line-height:1.5}
+.stat-item .stat-red{color:var(--red)}
+.form-field{display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
+.form-label{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;color:rgba(255,255,255,0.4);text-transform:uppercase}
+.form-input,.form-textarea,.form-select{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);color:var(--white);font-family:var(--body);font-size:14px;padding:14px 16px;outline:none;transition:border-color 0.2s ease;width:100%}
+.form-input:focus,.form-textarea:focus,.form-select:focus{border-color:var(--red)}
+.form-textarea{min-height:110px;resize:vertical;line-height:1.6}
+.form-select option{background:var(--black);color:var(--white)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+@media(max-width:640px){.form-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="bg-black">
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/"><img src="logo.png" alt="SSUNDAR." class="nav-logo-img"></a>
+    <div class="nav-links">
+    <a class="nav-link" href="/insights">Writing<span class="dot">.</span></a>
+    <a class="nav-link" href="/evidence">Evidence<span class="dot">.</span></a>
+    <a class="nav-link" href="/work">Work<span class="dot">.</span></a>
+    <a class="nav-link" href="/about">About<span class="dot">.</span></a>
+    <a class="nav-cta" href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer">Discover your judgment gap &rarr;</a>
+  </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-label="Navigation">
+  <a href="/insights">Writing<span class="dot">.</span></a>
+  <a href="/evidence">Evidence<span class="dot">.</span></a>
+  <a href="/work">Work<span class="dot">.</span></a>
+  <a href="/about">About<span class="dot">.</span></a>
+  <a href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer" style="color:var(--red)">Discover your judgment gap &rarr;</a>
+</div>
+<div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-label="Navigation">
+  <a href="/insights">Writing<span class="dot">.</span></a>
+  <a href="/evidence">Evidence<span class="dot">.</span></a>
+  <a href="/work">Work<span class="dot">.</span></a>
+  <a href="/about">About<span class="dot">.</span></a>
+  <a href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer" style="color:var(--red)">Discover your judgment gap &rarr;</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero fade-in">
+  <p class="mono-label mb-32">AI-First Workshops</p>
+  <h1 class="h1 text-white mb-40" style="max-width:860px;line-height:1.0">
+    Not prompt engineering<span class="dot">.</span><br>
+    Judgment under AI conditions<span class="dot">.</span>
+  </h1>
+  <p class="body-bold text-w5 mb-24" style="max-width:620px">
+    The market is flooded with AI training that teaches people to write better prompts. That is a tools problem. This is a judgment problem — and it requires a different intervention.
+  </p>
+  <p class="body-text text-w4 mb-40" style="max-width:620px">
+    SSUNDAR's AI-First Workshops are 90–120 minute facilitated sessions designed for international teams navigating the judgment challenges that AI creates: over-reliance, deskilling, confidence miscalibration, and the erosion of accountability architecture when decisions are partially delegated to systems that cannot own outcomes.
+  </p>
+  <div style="display:flex;gap:16px;flex-wrap:wrap">
+    <a href="#book" class="btn btn-red">Book a session</a>
+    <a href="/play-labs" class="btn btn-outline">License for your team →</a>
+  </div>
+
+  <!-- STATS -->
+  <div class="stat-row">
+    <div class="stat-item"><p class="stat-num">90<span class="stat-red">–</span>120</p><p class="stat-label">minutes per session</p></div>
+    <div class="stat-item"><p class="stat-num">10<span class="stat-red">+</span></p><p class="stat-label">industries facilitated</p></div>
+    <div class="stat-item"><p class="stat-num">20<span class="stat-red">+</span></p><p class="stat-label">countries reached</p></div>
+  </div>
+</section>
+
+<!-- WHAT THIS IS NOT -->
+<div style="background:rgba(255,255,255,0.02);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06)">
+  <section style="padding:clamp(56px,8vw,96px) var(--px);max-width:var(--max-w);margin:0 auto">
+    <p class="mono-label mb-40">What separates this from everything else on the market</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:48px">
+      <div>
+        <div style="width:32px;height:2px;background:var(--red);margin-bottom:20px"></div>
+        <h4 class="h4 text-white mb-16" style="font-size:14px">Judgment over tools</h4>
+        <p class="body-text text-w4" style="font-size:14px">We do not teach participants how to use specific AI tools. We build the cognitive infrastructure to make better decisions when AI is part of the process — regardless of which tools change next quarter.</p>
+      </div>
+      <div>
+        <div style="width:32px;height:2px;background:var(--red);margin-bottom:20px"></div>
+        <h4 class="h4 text-white mb-16" style="font-size:14px">International by design</h4>
+        <p class="body-text text-w4" style="font-size:14px">Designed for cross-cultural teams. Facilitated across APAC, Middle East, Europe, and NAMER. Nuance-aware — the same judgment challenges manifest differently across cultural contexts.</p>
+      </div>
+      <div>
+        <div style="width:32px;height:2px;background:var(--red);margin-bottom:20px"></div>
+        <h4 class="h4 text-white mb-16" style="font-size:14px">Scenario-driven</h4>
+        <p class="body-text text-w4" style="font-size:14px">Built on Play Labs™ methodology. Participants work through realistic decision scenarios under pressure. The debrief reveals the judgment architecture — not as theory, but as observed behaviour.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- WORKSHOP FORMATS -->
+<section style="padding:clamp(56px,8vw,100px) var(--px);max-width:var(--max-w);margin:0 auto">
+  <p class="mono-label mb-16">Workshop Formats</p>
+  <p class="body-text text-w4 mb-0" style="max-width:540px">Choose the format that fits your team's context. All can be run virtually or in-person.</p>
+  <div class="workshop-grid">
+    <div class="ws-card">
+      <p class="ws-tag">Format 01</p>
+      <h3 class="ws-title">AI Judgment Foundations</h3>
+      <p class="ws-meta">90 min · Teams of 12–40 · Any level</p>
+      <p class="ws-body">The entry-point session. Builds a shared vocabulary around judgment quality, AI over-reliance, and what it means to maintain accountability when AI is in the loop. High-impact as an all-hands opener or a leadership kickoff.</p>
+    </div>
+    <div class="ws-card">
+      <p class="ws-tag">Format 02</p>
+      <h3 class="ws-title">Decision Quality Under AI Conditions</h3>
+      <p class="ws-meta">120 min · Teams of 8–20 · Manager level and above</p>
+      <p class="ws-body">A deeper, scenario-driven session for managers and team leads. Participants navigate real-time decision scenarios where AI input is present. The session reveals over-confidence, anchoring, and delegation failure patterns — and builds correction habits.</p>
+    </div>
+    <div class="ws-card">
+      <p class="ws-tag">Format 03</p>
+      <h3 class="ws-title">AI Productivity Reframe</h3>
+      <p class="ws-meta">90 min · Teams of any size · Individual contributor level</p>
+      <p class="ws-body">Repositions AI from "tool to learn" to "amplifier of current capability." Builds awareness of skill atrophy risk, deskilling patterns, and how to use AI in ways that compound judgment rather than replace it. High retention and application rate.</p>
+    </div>
+    <div class="ws-card">
+      <p class="ws-tag">Format 04</p>
+      <h3 class="ws-title">Leadership Judgment Simulation</h3>
+      <p class="ws-meta">120 min · C-suite and senior leaders · Custom design</p>
+      <p class="ws-body">Senior leadership version of the Organisation Command Center experience. Custom-designed to mirror your organisation's specific AI challenges. Run as a standalone session or embedded in an offsite or leadership programme. Produces a judgment readiness report.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING FORM -->
+<div style="background:var(--black);border-top:2px solid var(--red)" id="book">
+  <section style="padding:clamp(64px,9vw,120px) var(--px);max-width:800px;margin:0 auto">
+    <p class="mono-label mb-20">Book a Session</p>
+    <h2 class="h2 text-white mb-32" style="line-height:1.05">Tell us about your team<span class="dot">.</span></h2>
+    <p class="body-text text-w4 mb-48" style="max-width:540px">Fill in what you know. We'll come back with a format recommendation and a suggested approach — no obligations.</p>
+
+    <form action="mailto:shyam@ssundar.com" method="GET" enctype="text/plain">
+      <div class="form-grid">
+        <div class="form-field">
+          <label class="form-label" for="name">Your name</label>
+          <input class="form-input" type="text" id="name" name="name" required>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="email">Work email</label>
+          <input class="form-input" type="email" id="email" name="email" required>
+        </div>
+      </div>
+      <div class="form-grid">
+        <div class="form-field">
+          <label class="form-label" for="org">Organisation</label>
+          <input class="form-input" type="text" id="org" name="organisation" required>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="team-size">Approximate team size</label>
+          <select class="form-select" id="team-size" name="team_size">
+            <option value="small">Under 20</option>
+            <option value="mid">20–60</option>
+            <option value="large">60–150</option>
+            <option value="enterprise">150+</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-grid">
+        <div class="form-field">
+          <label class="form-label" for="format">Workshop format interest</label>
+          <select class="form-select" id="format" name="format_interest">
+            <option value="">Not sure yet</option>
+            <option value="foundations">AI Judgment Foundations</option>
+            <option value="decision">Decision Quality Under AI</option>
+            <option value="productivity">AI Productivity Reframe</option>
+            <option value="simulation">Leadership Judgment Simulation</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="delivery">Delivery preference</label>
+          <select class="form-select" id="delivery" name="delivery">
+            <option value="virtual">Virtual</option>
+            <option value="in-person">In-person</option>
+            <option value="hybrid">Hybrid</option>
+            <option value="unsure">Flexible</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="context">What's driving this conversation right now?</label>
+        <textarea class="form-textarea" id="context" name="context" placeholder="We're mid-way through an AI rollout and noticing that performance hasn't improved. Our managers are using the tools but something isn't landing..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-red" style="margin-top:8px">Send request →</button>
+      <p style="font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.2);letter-spacing:0.06em;margin-top:20px">Response within 48 hours. Shyam responds personally — not a team inbox.</p>
+    </form>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <section class="section" style="padding-top:80px;padding-bottom:40px">
+    <span style="font-family:var(--heading);font-weight:700;font-size:24px;letter-spacing:0.06em;text-transform:uppercase;color:#fff">SSUNDAR<span class="dot">.</span></span>
+    <div class="red-line-thick" style="margin:20px 0"></div>
+    <p class="footer-tagline mb-24">JUDGMENT-CENTERED LEADERSHIP DESIGN&trade;</p>
+    <p style="font-family:var(--body);font-size:14px;font-weight:500;color:rgba(255,255,255,0.35);max-width:480px;line-height:1.7;margin-bottom:48px">Judgment architecture for global organisations scaling through AI transformation.</p>
+    <div style="display:flex;gap:48px;flex-wrap:wrap;margin-bottom:48px">
+      <div>
+        <p class="mono-sm" style="color:rgba(255,255,255,0.25);margin-bottom:12px">WHAT WE DO</p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <a href="/consulting" class="footer-link">Consulting</a>
+          <a href="/workshops" class="footer-link">Workshops</a>
+          <a href="/play-labs" class="footer-link">Play Labs™</a>
+          <a href="/academy" class="footer-link">Academy</a>
+          <a href="/platform" class="footer-link">Platform</a>
+        </div>
+      </div>
+      <div>
+        <p class="mono-sm" style="color:rgba(255,255,255,0.25);margin-bottom:12px">TOOLS</p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <a href="/simulate" class="footer-link">Simulate<span class="dot">.</span></a>
+          <a href="/insights" class="footer-link">Insights</a>
+        </div>
+      </div>
+      <div>
+        <p class="mono-sm" style="color:rgba(255,255,255,0.25);margin-bottom:12px">CONNECT</p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <a href="https://linkedin.com/in/shyamsundarmv" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+          <a href="mailto:shyam@ssundar.com" class="footer-link">shyam@ssundar.com</a>
+        </div>
+      </div>
+    </div>
+    <p style="font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.2);letter-spacing:0.08em;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08)">&copy; 2026 SSUNDAR. All rights reserved. Play Labs™ and Judgment-Centered Leadership Design™ are trademarks of SSUNDAR.</p>
+  </section>
+      <p style="font-family:var(--mono);font-size:9px;color:rgba(255,255,255,0.15);letter-spacing:0.04em;margin-top:10px">
+        <a href="privacy.html" style="color:rgba(255,255,255,0.3);text-decoration:none;margin-right:12px;">Privacy Policy</a>
+        <a href="terms.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">Terms of Use</a>
+      </p>
+</footer>
+
+<script src="app.js"></script>
+<script src="cookie-consent.js"></script>
+</body>
+</html>

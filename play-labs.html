@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Play Labs™ Licensing — SSUNDAR</title>
+<meta name="description" content="License Play Labs™ for co-delivery, partner networks, or internal L&D teams. Three licensing models. Application-based access.">
+<meta property="og:title" content="Play Labs™ Licensing — SSUNDAR">
+<meta property="og:description" content="The scenario-based judgment development methodology. Now licensable for partners, internal L&D teams, and co-delivery networks.">
+<meta property="og:url" content="https://ssundar.com/play-labs.html">
+<meta property="og:image" content="https://ssundar.com/og-default.png">
+<link rel="canonical" href="https://ssundar.com/play-labs.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.page-hero{padding:clamp(140px,18vw,220px) var(--px) clamp(64px,8vw,100px);max-width:var(--max-w);margin:0 auto}
+.license-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid rgba(255,255,255,0.1);margin-top:48px}
+@media(max-width:860px){.license-grid{grid-template-columns:1fr}}
+.license-card{
+  border-top:2px solid rgba(255,255,255,0.1);
+  border-left:1px solid rgba(255,255,255,0.08);
+  padding:36px 32px 40px;
+  display:flex;flex-direction:column;
+  transition:border-top-color 0.3s ease
+}
+.license-card:first-child{border-left:none;border-top-color:var(--red)}
+.license-card:hover{border-top-color:var(--red)}
+@media(max-width:860px){.license-card{border-left:none;border-top:1px solid rgba(255,255,255,0.08)}.license-card:first-child{border-top:2px solid var(--red)}}
+.lc-tag{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;color:var(--red);text-transform:uppercase;margin-bottom:16px}
+.lc-title{font-family:var(--heading);font-weight:700;font-size:clamp(17px,1.5vw,22px);color:var(--white);line-height:1.15;letter-spacing:-0.01em;text-transform:uppercase;margin-bottom:8px}
+.lc-rev{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:var(--red);text-transform:uppercase;margin-bottom:20px}
+.lc-body{font-family:var(--body);font-size:14px;color:rgba(255,255,255,0.5);line-height:1.8;flex:1;margin-bottom:24px}
+.lc-includes{border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;margin-bottom:28px}
+.lc-includes li{font-family:var(--body);font-size:13px;color:rgba(255,255,255,0.4);line-height:2;list-style:none;padding-left:16px;position:relative}
+.lc-includes li::before{content:'✓';position:absolute;left:0;color:var(--red);font-size:11px}
+.methodology-row{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+@media(max-width:800px){.methodology-row{grid-template-columns:1fr;gap:40px}}
+.form-field{display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
+.form-label{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;color:rgba(255,255,255,0.4);text-transform:uppercase}
+.form-input,.form-textarea,.form-select{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);color:var(--white);font-family:var(--body);font-size:14px;padding:14px 16px;outline:none;transition:border-color 0.2s ease;width:100%}
+.form-input:focus,.form-textarea:focus,.form-select:focus{border-color:var(--red)}
+.form-textarea{min-height:110px;resize:vertical;line-height:1.6}
+.form-select option{background:var(--black);color:var(--white)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+@media(max-width:640px){.form-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="bg-black">
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/"><img src="logo.png" alt="SSUNDAR." class="nav-logo-img"></a>
+    <div class="nav-links">
+    <a class="nav-link" href="/insights">Writing<span class="dot">.</span></a>
+    <a class="nav-link" href="/evidence">Evidence<span class="dot">.</span></a>
+    <a class="nav-link" href="/work">Work<span class="dot">.</span></a>
+    <a class="nav-link" href="/about">About<span class="dot">.</span></a>
+    <a class="nav-cta" href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer">Discover your judgment gap &rarr;</a>
+  </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-label="Navigation">
+  <a href="/insights">Writing<span class="dot">.</span></a>
+  <a href="/evidence">Evidence<span class="dot">.</span></a>
+  <a href="/work">Work<span class="dot">.</span></a>
+  <a href="/about">About<span class="dot">.</span></a>
+  <a href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer" style="color:var(--red)">Discover your judgment gap &rarr;</a>
+</div>
+<div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-label="Navigation">
+  <a href="/insights">Writing<span class="dot">.</span></a>
+  <a href="/evidence">Evidence<span class="dot">.</span></a>
+  <a href="/work">Work<span class="dot">.</span></a>
+  <a href="/about">About<span class="dot">.</span></a>
+  <a href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer" style="color:var(--red)">Discover your judgment gap &rarr;</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero fade-in">
+  <p class="mono-label mb-32">Play Labs™</p>
+  <h1 class="h1 text-white mb-40" style="max-width:900px;line-height:1.0">
+    The methodology that reveals judgment<span class="dot">.</span><br>
+    <span style="color:rgba(255,255,255,0.3)">Now available to license<span class="dot" style="color:var(--red)">.</span></span>
+  </h1>
+  <p class="body-bold text-w5 mb-24" style="max-width:640px">
+    Play Labs™ is SSUNDAR's proprietary scenario-based methodology for judgment development. It does not teach what to decide — it creates conditions that reveal how decisions are actually made, and builds the architecture to make better ones.
+  </p>
+  <p class="body-text text-w4 mb-40" style="max-width:640px">
+    Selected partners, internal L&D teams, and co-delivery networks can now license Play Labs™ for independent facilitation. Access is application-based — not a catalogue purchase.
+  </p>
+  <a href="#apply" class="btn btn-red">Apply for licensing →</a>
+</section>
+
+<!-- WHAT IT IS -->
+<div style="background:rgba(255,255,255,0.02);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06)">
+  <section style="padding:clamp(56px,8vw,96px) var(--px);max-width:var(--max-w);margin:0 auto">
+    <div class="methodology-row">
+      <div>
+        <p class="mono-label mb-24">The Methodology</p>
+        <p class="body-text text-w5 mb-20" style="font-size:clamp(16px,1.3vw,20px);font-weight:600;color:rgba(255,255,255,0.75)">Judgment is not a concept. It is an observable behaviour that emerges under conditions of pressure, ambiguity, and consequence.</p>
+        <p class="body-text text-w4 mb-20">Play Labs™ creates those conditions in a controlled facilitated environment. Participants are placed inside realistic organisational scenarios — with competing priorities, incomplete information, and a clock running — and asked to decide.</p>
+        <p class="body-text text-w4">The facilitation process is designed to surface the judgment architecture at work: what frameworks are applied, what is weighted, what is ignored, and what the decision reveals about the organisation's deeper operating assumptions. This is the data. The debrief builds from there.</p>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.1);padding:40px;border-top:2px solid var(--red)">
+        <p class="mono-label mb-24" style="margin-bottom:16px">CORE DESIGN PRINCIPLES</p>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;gap:16px">
+            <span style="font-family:var(--mono);font-size:11px;color:var(--red);flex-shrink:0;margin-top:2px">01</span>
+            <p class="body-text text-w4" style="font-size:13px">Scenarios are built from real organisational failure patterns — not hypotheticals designed to teach.</p>
+          </div>
+          <div style="display:flex;gap:16px">
+            <span style="font-family:var(--mono);font-size:11px;color:var(--red);flex-shrink:0;margin-top:2px">02</span>
+            <p class="body-text text-w4" style="font-size:13px">No "right answer" is embedded. The value is in the decision process, not the outcome.</p>
+          </div>
+          <div style="display:flex;gap:16px">
+            <span style="font-family:var(--mono);font-size:11px;color:var(--red);flex-shrink:0;margin-top:2px">03</span>
+            <p class="body-text text-w4" style="font-size:13px">Debrief methodology is as rigorous as the scenario design. The debrief is where the architecture is built.</p>
+          </div>
+          <div style="display:flex;gap:16px">
+            <span style="font-family:var(--mono);font-size:11px;color:var(--red);flex-shrink:0;margin-top:2px">04</span>
+            <p class="body-text text-w4" style="font-size:13px">Designed for international application. Cultural calibration is built into the facilitation guide.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- LICENSING MODELS -->
+<section style="padding:clamp(56px,8vw,100px) var(--px);max-width:var(--max-w);margin:0 auto">
+  <p class="mono-label mb-16">Licensing Models</p>
+  <p class="body-text text-w4 mb-0" style="max-width:540px">Three ways to access Play Labs™. Each with a different commercial structure and delivery scope.</p>
+  <div class="license-grid">
+    <div class="license-card">
+      <p class="lc-tag">Model 01</p>
+      <h3 class="lc-title">Referral Partner</h3>
+      <p class="lc-rev">15% referral fee · No facilitation rights</p>
+      <p class="lc-body">You refer qualified organisations to SSUNDAR for Play Labs™ delivery. SSUNDAR delivers. You earn a referral fee on confirmed engagements. No facilitation training required. Low complexity, high value for partners with strong networks.</p>
+      <ul class="lc-includes">
+        <li>Referral agreement</li>
+        <li>Co-branded collateral access</li>
+        <li>Partner portal access</li>
+        <li>15% on confirmed engagements</li>
+      </ul>
+      <a href="#apply" class="btn btn-outline" style="font-size:11px;padding:10px 20px;align-self:flex-start">Apply →</a>
+    </div>
+    <div class="license-card">
+      <p class="lc-tag">Model 02</p>
+      <h3 class="lc-title">Co-Delivery Partner</h3>
+      <p class="lc-rev">30/70 revenue split · Certified facilitators only</p>
+      <p class="lc-body">Certified Play Labs™ facilitators within your team co-deliver with SSUNDAR on licensed programmes. Revenue split reflects facilitation contribution. Requires completion of Train-the-Trainer Academy. Ideal for consulting firms and L&D boutiques with existing relationships.</p>
+      <ul class="lc-includes">
+        <li>Co-delivery certification pathway</li>
+        <li>Full methodology access</li>
+        <li>SSUNDAR co-delivery support</li>
+        <li>30% of engagement fees</li>
+      </ul>
+      <a href="#apply" class="btn btn-outline" style="font-size:11px;padding:10px 20px;align-self:flex-start">Apply →</a>
+    </div>
+    <div class="license-card">
+      <p class="lc-tag">Model 03</p>
+      <h3 class="lc-title">Full Licensing</h3>
+      <p class="lc-rev">Annual license fee · Unlimited internal delivery</p>
+      <p class="lc-body">Full licensing of Play Labs™ for internal L&D teams. Unlimited internal delivery rights within a defined organisation. Includes complete facilitator guide, scenario library, debrief framework, and annual methodology updates. Requires facilitator certification for all delivery leads.</p>
+      <ul class="lc-includes">
+        <li>Unlimited internal delivery rights</li>
+        <li>Full scenario library</li>
+        <li>Annual methodology updates</li>
+        <li>Facilitator certification included</li>
+        <li>Direct SSUNDAR support line</li>
+      </ul>
+      <a href="#apply" class="btn btn-red" style="font-size:11px;padding:10px 20px;align-self:flex-start">Apply →</a>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION FORM -->
+<div style="background:var(--black);border-top:2px solid var(--red)" id="apply">
+  <section style="padding:clamp(64px,9vw,120px) var(--px);max-width:800px;margin:0 auto">
+    <p class="mono-label mb-20">Licensing Application</p>
+    <h2 class="h2 text-white mb-32" style="line-height:1.05">Tell us about your context<span class="dot">.</span></h2>
+    <p class="body-text text-w4 mb-48" style="max-width:540px">Applications are reviewed personally. We're looking for partners and teams who understand the methodology's intent — not those who want a product to resell.</p>
+
+    <form action="mailto:shyam@ssundar.com" method="GET" enctype="text/plain">
+      <div class="form-grid">
+        <div class="form-field">
+          <label class="form-label" for="name">Your name</label>
+          <input class="form-input" type="text" id="name" name="name" required>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="email">Work email</label>
+          <input class="form-input" type="email" id="email" name="email" required>
+        </div>
+      </div>
+      <div class="form-grid">
+        <div class="form-field">
+          <label class="form-label" for="org">Organisation / firm name</label>
+          <input class="form-input" type="text" id="org" name="organisation" required>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="model">Licensing model interest</label>
+          <select class="form-select" id="model" name="model_interest">
+            <option value="">Not sure yet</option>
+            <option value="referral">Model 01 — Referral Partner</option>
+            <option value="co-delivery">Model 02 — Co-Delivery Partner</option>
+            <option value="full">Model 03 — Full Licensing</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="context">Describe your context and what you want to do with Play Labs™</label>
+        <textarea class="form-textarea" id="context" name="context" placeholder="We run leadership development programmes for mid-market organisations in Southeast Asia. We're interested in co-delivery because we have facilitators but need a stronger methodology for judgment and AI..." required></textarea>
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="reach">What regions or sectors do you primarily work in?</label>
+        <input class="form-input" type="text" id="reach" name="reach" placeholder="e.g. APAC, Middle East / Financial services, BPO">
+      </div>
+      <button type="submit" class="btn btn-red" style="margin-top:8px">Submit application →</button>
+      <p style="font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.2);letter-spacing:0.06em;margin-top:20px">Applications reviewed within 5 business days. We respond to every application — accepted or not.</p>
+    </form>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <section class="section" style="padding-top:80px;padding-bottom:40px">
+    <span style="font-family:var(--heading);font-weight:700;font-size:24px;letter-spacing:0.06em;text-transform:uppercase;color:#fff">SSUNDAR<span class="dot">.</span></span>
+    <div class="red-line-thick" style="margin:20px 0"></div>
+    <p class="footer-tagline mb-24">JUDGMENT-CENTERED LEADERSHIP DESIGN&trade;</p>
+    <p style="font-family:var(--body);font-size:14px;font-weight:500;color:rgba(255,255,255,0.35);max-width:480px;line-height:1.7;margin-bottom:48px">Judgment architecture for global organisations scaling through AI transformation.</p>
+    <div style="display:flex;gap:48px;flex-wrap:wrap;margin-bottom:48px">
+      <div>
+        <p class="mono-sm" style="color:rgba(255,255,255,0.25);margin-bottom:12px">WHAT WE DO</p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <a href="/consulting" class="footer-link">Consulting</a>
+          <a href="/workshops" class="footer-link">Workshops</a>
+          <a href="/play-labs" class="footer-link">Play Labs™</a>
+          <a href="/academy" class="footer-link">Academy</a>
+          <a href="/platform" class="footer-link">Platform</a>
+        </div>
+      </div>
+      <div>
+        <p class="mono-sm" style="color:rgba(255,255,255,0.25);margin-bottom:12px">TOOLS</p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <a href="/simulate" class="footer-link">Simulate<span class="dot">.</span></a>
+          <a href="/insights" class="footer-link">Insights</a>
+        </div>
+      </div>
+      <div>
+        <p class="mono-sm" style="color:rgba(255,255,255,0.25);margin-bottom:12px">CONNECT</p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <a href="https://linkedin.com/in/shyamsundarmv" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+          <a href="mailto:shyam@ssundar.com" class="footer-link">shyam@ssundar.com</a>
+        </div>
+      </div>
+    </div>
+    <p style="font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.2);letter-spacing:0.08em;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08)">&copy; 2026 SSUNDAR. All rights reserved. Play Labs™ and Judgment-Centered Leadership Design™ are trademarks of SSUNDAR.</p>
+  </section>
+      <p style="font-family:var(--mono);font-size:9px;color:rgba(255,255,255,0.15);letter-spacing:0.04em;margin-top:10px">
+        <a href="privacy.html" style="color:rgba(255,255,255,0.3);text-decoration:none;margin-right:12px;">Privacy Policy</a>
+        <a href="terms.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">Terms of Use</a>
+      </p>
+</footer>
+
+<script src="app.js"></script>
+<script src="cookie-consent.js"></script>
+</body>
+</html>

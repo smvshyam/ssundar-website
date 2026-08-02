@@ -9,6 +9,12 @@
 /simulate       /simulate.html      200
 /insights       /insights.html      200
 /engage         /engage.html        200
+/work           /work.html          200
+/academy        /academy.html       200
+/consulting     /consulting.html    200
+/platform       /platform.html      200
+/play-labs      /play-labs.html     200
+/workshops      /workshops.html     200
 
 /testimonials   /testimonials.html  200
 
@@ -16,10 +22,3 @@
 /blog           /insights           301
 /case-studies   /evidence           301
 /credentials    /about              301
-
-# Retired offering pages -> canonical destinations (301)
-/academy        /                       301
-/consulting     /                       301
-/play-labs      /                       301
-/workshops      /                       301
-/platform       https://www.treeng.ai   301

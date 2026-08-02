@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work — Five Ways In | SSUNDAR.</title>
+  <meta name="description" content="Five ways to work with SSUNDAR: free judgment diagnostic, AI-first workshops (90–120 min), Train-the-Trainer Academy (60-day, SHRM-track), judgment architecture consulting, and Play Labs™ licensing.">
+  <meta property="og:title" content="Work — Five Ways In | SSUNDAR.">
+  <meta property="og:description" content="Free diagnostic, AI-first workshops, Train-the-Trainer Academy, judgment architecture consulting, and Play Labs™ licensing. Scoped by depth of engagement.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ssundar.com/work">
+  <meta property="og:image" content="https://ssundar.com/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://ssundar.com/work">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Work — Five Ways In | SSUNDAR.">
+  <meta name="twitter:description" content="Five ways to work with SSUNDAR, scoped by depth of engagement.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body { background:#0a0a0a; color:#fff; }
+    .band { position:relative; overflow:hidden; }
+    .wrap { max-width:1240px; margin:0 auto; padding:0 var(--px); position:relative; z-index:2; }
+    .rule { height:1px; background:rgba(255,255,255,0.09); }
+    .rule-red { height:2px; background:var(--red); max-width:180px; }
+
+    .ghost-layer{
+      position:absolute; pointer-events:none; user-select:none; z-index:0;
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      line-height:0.78; letter-spacing:-0.04em; white-space:nowrap;
+      color:rgba(255,255,255,0.035);
+    }
+    .sec-num{
+      font-family:var(--mono); font-size:11px; font-weight:700;
+      letter-spacing:0.2em; color:var(--red);
+      display:flex; align-items:center; gap:14px; margin-bottom:30px;
+    }
+    .sec-num::after{ content:''; flex:1; height:1px; background:rgba(227,30,36,0.28); max-width:220px; }
+
+    .w-hero{ padding:clamp(120px,15vw,190px) 0 clamp(56px,7vw,84px); }
+    .w-hero .ghost-layer{ top:16%; left:-4%; font-size:clamp(140px,21vw,340px); }
+    .w-hero h1{
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      font-size:clamp(38px,6vw,88px); line-height:0.94; letter-spacing:-0.035em;
+      margin-bottom:32px; max-width:15ch;
+    }
+    .w-hero h1 .soft{ color:rgba(255,255,255,0.66); }
+    .w-lede{
+      font-family:var(--body); font-size:clamp(16px,1.5vw,21px);
+      line-height:1.62; color:rgba(255,255,255,0.8); max-width:64ch;
+    }
+
+    /* ── Offer rows ───────────────────────────────────────────── */
+    .offers{ border-top:1px solid rgba(255,255,255,0.11); margin-top:8px; }
+    .offer{
+      display:grid; gap:12px 40px; padding:48px 0;
+      border-bottom:1px solid rgba(255,255,255,0.11);
+      text-decoration:none; transition:padding-left .25s cubic-bezier(0.16,1,0.3,1);
+    }
+    @media(min-width:900px){ .offer{ grid-template-columns:clamp(190px,22%,260px) 1fr auto; align-items:start; } }
+    .offer:hover{ padding-left:16px; }
+    .offer-when{
+      font-family:var(--mono); font-size:10.5px; font-weight:700;
+      letter-spacing:0.13em; text-transform:uppercase; color:var(--red);
+      line-height:1.7; padding-top:8px;
+    }
+    .offer h2{
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      font-size:clamp(23px,2.5vw,34px); line-height:1.12; letter-spacing:-0.015em;
+      color:#fff; margin-bottom:12px; transition:color .18s ease;
+    }
+    .offer:hover h2{ color:var(--red); }
+    .offer p{
+      font-family:var(--body); font-size:clamp(15.5px,1.15vw,17px);
+      line-height:1.68; color:rgba(255,255,255,0.76); max-width:62ch; margin-bottom:14px;
+    }
+    .offer-spec{
+      font-family:var(--mono); font-size:11px; font-weight:700;
+      letter-spacing:0.08em; text-transform:uppercase;
+      color:rgba(255,255,255,0.5); line-height:1.9;
+    }
+    .offer-go{
+      font-family:var(--mono); font-size:11px; font-weight:700;
+      letter-spacing:0.1em; text-transform:uppercase; color:var(--red);
+      white-space:nowrap; padding-top:10px;
+    }
+
+    .note{
+      font-family:var(--mono); font-size:11px; letter-spacing:0.05em;
+      color:rgba(255,255,255,0.45); line-height:1.95; max-width:78ch; margin-top:44px;
+    }
+    .note a{ color:var(--red); text-decoration:none; }
+
+    .cta{ background:var(--red); padding:clamp(80px,10vw,130px) 0; }
+    .cta h2{
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      font-size:clamp(32px,4.8vw,72px); line-height:0.96; letter-spacing:-0.035em;
+      color:#fff; margin-bottom:24px; max-width:16ch;
+    }
+    .cta p{
+      font-family:var(--body); font-size:clamp(16px,1.3vw,19px);
+      line-height:1.6; color:rgba(255,255,255,0.95); max-width:56ch; margin-bottom:42px;
+    }
+    .cta-btn{
+      display:inline-block; background:#0a0a0a; color:#fff;
+      font-family:var(--mono); font-size:13px; font-weight:700;
+      letter-spacing:0.1em; text-transform:uppercase;
+      padding:21px 42px; text-decoration:none;
+      transition:transform .2s cubic-bezier(0.16,1,0.3,1), box-shadow .2s ease;
+    }
+    .cta-btn:hover{ transform:translateY(-3px); box-shadow:0 14px 40px rgba(0,0,0,0.4); }
+
+    .f-links{ display:flex; flex-wrap:wrap; gap:26px; margin-bottom:44px; }
+    .f-links a{
+      font-family:var(--mono); font-size:12px; font-weight:700;
+      letter-spacing:0.08em; text-transform:uppercase;
+      color:rgba(255,255,255,0.6); text-decoration:none; transition:color .18s ease;
+    }
+    .f-links a:hover{ color:var(--red); }
+    .f-legal{ display:flex; flex-wrap:wrap; gap:18px; margin-top:14px; }
+    .f-legal a{
+      font-family:var(--mono); font-size:10px; letter-spacing:0.06em;
+      text-transform:uppercase; color:rgba(255,255,255,0.3); text-decoration:none;
+    }
+    .f-legal a:hover{ color:rgba(255,255,255,0.6); }
+
+    @media(max-width:860px){ .ghost-layer{ display:none; } .offer-go{ padding-top:0; } }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/"><img src="logo.png" alt="SSUNDAR." class="nav-logo-img"></a>
+    <div class="nav-links">
+    <a class="nav-link" href="/insights">Writing<span class="dot">.</span></a>
+    <a class="nav-link" href="/evidence">Evidence<span class="dot">.</span></a>
+    <a class="nav-link" href="/work">Work<span class="dot">.</span></a>
+    <a class="nav-link" href="/about">About<span class="dot">.</span></a>
+    <a class="nav-cta" href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer">Discover your judgment gap &rarr;</a>
+  </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-label="Navigation">
+  <a href="/insights">Writing<span class="dot">.</span></a>
+  <a href="/evidence">Evidence<span class="dot">.</span></a>
+  <a href="/work">Work<span class="dot">.</span></a>
+  <a href="/about">About<span class="dot">.</span></a>
+  <a href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer" style="color:var(--red)">Discover your judgment gap &rarr;</a>
+</div>
+
+
+<!-- ══ HERO ══════════════════════════════════════════════════════ -->
+<section class="band w-hero">
+  <div class="ghost-layer" data-z-speed="0.12">WORK</div>
+  <div class="wrap">
+    <div class="fade-in"><span class="sec-num">Work</span></div>
+    <h1 class="slide-up">Five ways in<span class="dot">.</span> <span class="soft">Scoped by depth.</span></h1>
+    <p class="w-lede slide-up">
+      Ordered by commitment, not by price. Most organizations start at the top of this list and
+      move down only when the diagnosis says the problem is structural. If it doesn't, I say so &mdash;
+      and the engagement ends there.
+    </p>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+
+<!-- ══ OFFERS ════════════════════════════════════════════════════ -->
+<section class="band" style="padding:clamp(60px,7vw,90px) 0 clamp(80px,10vw,130px)">
+  <div class="wrap">
+    <div class="offers">
+
+      <a class="offer fade-in" href="/platform">
+        <div class="offer-when">Start here<br>No cost</div>
+        <div>
+          <h2>The diagnostic<span class="dot">.</span></h2>
+          <p>Free diagnostic access for L&amp;D leaders. Establishes where your organization's
+          judgment infrastructure actually stands, benchmarked against sector peers, before anyone
+          proposes a solution to it.</p>
+          <p class="offer-spec">Contributes to the Global Organisational Judgment Index 2026 &middot; Sector benchmarks returned</p>
+        </div>
+        <span class="offer-go">Open &rarr;</span>
+      </a>
+
+      <a class="offer fade-in" href="/workshops">
+        <div class="offer-when">Single intervention<br>90&ndash;120 minutes</div>
+        <div>
+          <h2>AI-first workshops<span class="dot">.</span></h2>
+          <p>Not prompt engineering. Judgment and productivity under AI conditions &mdash; what
+          changes about decision quality when execution becomes instant, and what leaders have to
+          do differently as a result.</p>
+          <p class="offer-spec">90&ndash;120 minutes &middot; Global delivery &middot; Intact teams or cross-functional cohorts</p>
+        </div>
+        <span class="offer-go">Explore &rarr;</span>
+      </a>
+
+      <a class="offer fade-in" href="/academy">
+        <div class="offer-when">Build internal capability<br>60 days</div>
+        <div>
+          <h2>Train-the-Trainer Academy<span class="dot">.</span></h2>
+          <p>Build a certified cohort of internal facilitators rather than renting facilitation
+          forever. The measure of the architecture is whether it runs without its architect &mdash;
+          this is how that gets built.</p>
+          <p class="offer-spec">60-day programme &middot; SHRM-track accreditation pathway &middot; Judgment-Centered Leadership Design&trade;</p>
+        </div>
+        <span class="offer-go">Explore &rarr;</span>
+      </a>
+
+      <a class="offer fade-in" href="/consulting">
+        <div class="offer-when">Systemic engagement<br>3&ndash;6 months or retained</div>
+        <div>
+          <h2>Judgment architecture consulting<span class="dot">.</span></h2>
+          <p>For organizations where AI deployment is outpacing the judgment layer it lands on.
+          Diagnosis first, always &mdash; root cause classified as skills, structure, measurement or
+          context before any design work begins.</p>
+          <p class="offer-spec">Audit &middot; Transformation advisory, 3&ndash;6 month &middot; Fractional CLO, retained</p>
+        </div>
+        <span class="offer-go">Explore &rarr;</span>
+      </a>
+
+      <a class="offer fade-in" href="/play-labs">
+        <div class="offer-when">Partner or license<br>Application-based</div>
+        <div>
+          <h2>Play Labs&trade; licensing<span class="dot">.</span></h2>
+          <p>For consultancies, partner networks and internal L&amp;D teams that want to deliver the
+          methodology themselves. Three commercial structures depending on whether you refer,
+          co-deliver, or run it independently.</p>
+          <p class="offer-spec">Referral &middot; Co-delivery, certified facilitators &middot; Full licensing</p>
+        </div>
+        <span class="offer-go">Explore &rarr;</span>
+      </a>
+
+    </div>
+
+    <p class="note fade-in">
+      Commercial terms, scoping and contracting run through <a href="https://exlprs.com" target="_blank" rel="noopener noreferrer">EXLPRS</a>,
+      the delivery practice. This page describes what the work is; EXLPRS is where an engagement
+      gets defined and priced.
+    </p>
+  </div>
+</section>
+
+
+<!-- ══ CTA ═══════════════════════════════════════════════════════ -->
+<section class="band cta">
+  <div class="wrap">
+    <h2 class="slide-up">Not sure which one<span class="dot" style="color:#0a0a0a">.</span></h2>
+    <div class="slide-up">
+      <p>
+        Then start with the diagnostic. It names where judgment is breaking &mdash; which decisions,
+        at which altitude, under which conditions &mdash; and that determines which of the five
+        above is actually the right instrument.
+      </p>
+      <a class="cta-btn" href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer">Start the diagnostic &rarr;</a>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <section class="section" style="padding-top:80px;padding-bottom:44px">
+    <span style="font-family:var(--heading);font-weight:700;font-size:24px;letter-spacing:0.06em;text-transform:uppercase;color:#fff">SSUNDAR<span class="dot">.</span></span>
+    <div class="red-line-thick" style="margin:20px 0"></div>
+    <p class="footer-tagline mb-24">JUDGMENT-CENTERED LEADERSHIP DESIGN&trade;</p>
+    <p style="font-family:var(--body);font-size:14px;font-weight:500;color:rgba(255,255,255,0.45);max-width:520px;line-height:1.7;margin-bottom:44px">
+      The judgment-design point of view of Shyam Sundar MV. Engagements run through EXLPRS.
+    </p>
+    <div class="f-links">
+      <a href="/insights">Writing</a>
+      <a href="/evidence">Evidence</a>
+      <a href="/testimonials">Participants</a>
+      <a href="/work">Work</a>
+      <a href="/about">About</a>
+      <a href="https://exlprs.com" target="_blank" rel="noopener noreferrer">EXLPRS</a>
+      <a href="https://www.treeng.ai" target="_blank" rel="noopener noreferrer">Platform</a>
+      <a href="mailto:shyam@ssundar.com">shyam@ssundar.com</a>
+      <a href="https://linkedin.com/in/shyamsundarmv" target="_blank" rel="noopener noreferrer">LinkedIn &rarr;</a>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:24px">
+      <p style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.25);letter-spacing:0.05em;margin-bottom:6px">
+        &copy; 2026 SSUNDAR. ALL RIGHTS RESERVED. &nbsp;&middot;&nbsp; WORKING GLOBALLY.
+      </p>
+      <div class="f-legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/cookie-policy">Cookies</a>
+        <a href="/disclaimer">Disclaimer</a>
+      </div>
+    </div>
+  </section>
+</footer>
+
+<script src="app.js"></script>
+<script src="cookie-consent.js"></script>
+</body>
+</html>
