@@ -11,6 +11,8 @@
 /engage         /engage.html        200
 /platform       /platform.html      200
 
+/testimonials   /testimonials.html  200
+
 # Retired duplicate pages -> canonical destinations (301)
 /blog           /insights           301
 /case-studies   /evidence           301

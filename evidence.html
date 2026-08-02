@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evidence & Performance Metrics — SSUNDAR. Results</title>
-  <meta name="description" content="Real outcomes, not testimonials. 23% to 9.1% leadership attrition. 4% to 89% framework adoption. Unmeasured to 4.2x learning ROI. Metrics from SSUNDAR. engagements.">
-  <meta property="og:title" content="Evidence & Performance Metrics — SSUNDAR. Results">
-  <meta property="og:description" content="Real outcomes, not testimonials. 23% to 9.1% leadership attrition. 4% to 89% framework adoption. Unmeasured to 4.2x learning ROI. Metrics from SSUNDAR. engagements.">
+  <title>Evidence — Sourced Outcomes | SSUNDAR.</title>
+  <meta name="description" content="Every figure traces to a source document. Quality score 77% to 93% on an escalated account inside 90 days while headcount ramped 70%. CSAT 70% to 89% across a 1,600-person operation. Sector-only by contract.">
+  <meta property="og:title" content="Evidence — Sourced Outcomes | SSUNDAR.">
+  <meta property="og:description" content="Every figure traces to a source document. Sector-only attribution by contract. Nothing published that cannot be walked through line by line.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ssundar.com/evidence">
   <meta property="og:image" content="https://ssundar.com/og-default.png">
@@ -15,26 +14,181 @@
   <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://ssundar.com/evidence">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Evidence & Performance Metrics — SSUNDAR. Results">
-  <meta name="twitter:description" content="Real outcomes, not testimonials. 23% to 9.1% leadership attrition. 4% to 89% framework adoption. Unmeasured to 4.2x learning ROI. Metrics from SSUNDAR. engagements.">
-  <meta name="twitter:image" content="https://ssundar.com/og-default.png">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="stylesheet" href="/fonts.css">
+  <meta name="twitter:title" content="Evidence — Sourced Outcomes | SSUNDAR.">
+  <meta name="twitter:description" content="Every figure traces to a source document. Sector-only attribution by contract.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="/fonts.css">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="blog.css">
-  <script src="/consent.js" defer></script>
+
+  <style>
+    body { background:#0a0a0a; color:#fff; }
+    .band { position:relative; overflow:hidden; }
+    .wrap { max-width:1240px; margin:0 auto; padding:0 var(--px); position:relative; z-index:2; }
+    .rule { height:1px; background:rgba(255,255,255,0.09); }
+    .rule-red { height:2px; background:var(--red); max-width:180px; }
+
+    .ghost-layer{
+      position:absolute; pointer-events:none; user-select:none; z-index:0;
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      line-height:0.78; letter-spacing:-0.04em; white-space:nowrap;
+      color:rgba(255,255,255,0.035);
+    }
+    .ghost-layer.red{ color:rgba(227,30,36,0.10); }
+
+    .sec-num{
+      font-family:var(--mono); font-size:11px; font-weight:700;
+      letter-spacing:0.2em; color:var(--red);
+      display:flex; align-items:center; gap:14px; margin-bottom:30px;
+    }
+    .sec-num::after{ content:''; flex:1; height:1px; background:rgba(227,30,36,0.28); max-width:220px; }
+
+    .e-hero{ padding:clamp(120px,15vw,190px) 0 clamp(60px,7vw,90px); }
+    .e-hero .ghost-layer{ top:16%; left:-4%; font-size:clamp(140px,21vw,340px); }
+    .e-hero h1{
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      font-size:clamp(38px,6vw,88px); line-height:0.94; letter-spacing:-0.035em;
+      margin-bottom:34px; max-width:16ch;
+    }
+    .e-hero h1 .soft{ color:rgba(255,255,255,0.66); }
+    .e-lede{
+      font-family:var(--body); font-size:clamp(16px,1.5vw,21px);
+      line-height:1.62; color:rgba(255,255,255,0.8); max-width:62ch; margin-bottom:20px;
+    }
+    .e-note{
+      font-family:var(--mono); font-size:11px; letter-spacing:0.05em;
+      color:rgba(255,255,255,0.45); line-height:1.9; max-width:76ch;
+    }
+
+    /* ── Case block ───────────────────────────────────────────── */
+    .case{ padding:clamp(80px,10vw,130px) 0; }
+    .case-tag{
+      font-family:var(--mono); font-size:11px; font-weight:700;
+      letter-spacing:0.15em; text-transform:uppercase; color:var(--red);
+      display:block; margin-bottom:20px;
+    }
+    .case-head{
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      font-size:clamp(28px,3.6vw,52px); line-height:1.02; letter-spacing:-0.025em;
+      max-width:20ch; margin-bottom:18px;
+    }
+    .case-body{
+      font-family:var(--body); font-size:clamp(15.5px,1.15vw,17.5px);
+      line-height:1.75; color:rgba(255,255,255,0.76); max-width:70ch; margin-bottom:16px;
+    }
+    .case-body strong{ color:#fff; font-weight:600; }
+
+    .m-grid{ display:grid; gap:1px; background:rgba(255,255,255,0.11); margin-top:48px; }
+    @media(min-width:760px){ .m-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:1040px){ .m-grid.four{ grid-template-columns:repeat(4,1fr); } }
+    .m{ background:#0a0a0a; padding:34px 26px; }
+    .m-lbl{
+      font-family:var(--mono); font-size:10.5px; font-weight:700;
+      letter-spacing:0.11em; text-transform:uppercase;
+      color:rgba(255,255,255,0.5); margin-bottom:16px;
+    }
+    .m-fig{
+      font-family:var(--heading); font-weight:700;
+      font-size:clamp(30px,3.2vw,44px); line-height:1; letter-spacing:-0.03em;
+      color:#fff; margin-bottom:10px; display:flex; align-items:baseline; gap:9px; flex-wrap:wrap;
+    }
+    .m-fig .from{ color:rgba(255,255,255,0.4); }
+    .m-fig .arw{ color:var(--red); font-size:0.6em; }
+    .m-per{
+      font-family:var(--mono); font-size:10.5px; font-weight:700;
+      letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.5);
+    }
+
+    .ctx{ margin-top:40px; border-left:3px solid var(--red); padding:6px 0 6px 26px; max-width:72ch; }
+    .ctx p{
+      font-family:var(--body); font-size:15.5px; line-height:1.72;
+      color:rgba(255,255,255,0.72); margin-bottom:10px;
+    }
+    .ctx p:last-child{ margin-bottom:0; }
+    .ctx strong{ color:#fff; font-weight:600; }
+
+    /* ── Recognition ──────────────────────────────────────────── */
+    .rec-grid{ display:grid; gap:1px; background:rgba(255,255,255,0.11); margin-top:48px; }
+    @media(min-width:760px){ .rec-grid{ grid-template-columns:repeat(2,1fr); } }
+    .rec{ background:#0a0a0a; padding:36px 30px; }
+    .rec-name{
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      font-size:22px; line-height:1.15; color:#fff; margin-bottom:10px;
+    }
+    .rec-ctx{
+      font-family:var(--mono); font-size:11px; font-weight:700;
+      letter-spacing:0.1em; text-transform:uppercase; color:var(--red);
+    }
+
+    /* ── Cross-link ───────────────────────────────────────────── */
+    .xlink{
+      display:block; text-decoration:none; margin-top:56px;
+      border:1px solid rgba(255,255,255,0.16); padding:40px 34px;
+      transition:border-color .2s ease, background .2s ease;
+    }
+    .xlink:hover{ border-color:var(--red); background:#111; }
+    .xlink h3{
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      font-size:clamp(22px,2.4vw,32px); line-height:1.12; color:#fff; margin-bottom:12px;
+    }
+    .xlink p{
+      font-family:var(--body); font-size:16px; line-height:1.6;
+      color:rgba(255,255,255,0.68); max-width:66ch; margin-bottom:16px;
+    }
+    .xlink span{
+      font-family:var(--mono); font-size:12px; font-weight:700;
+      letter-spacing:0.1em; text-transform:uppercase; color:var(--red);
+    }
+
+    .cta{ background:var(--red); padding:clamp(80px,10vw,130px) 0; }
+    .cta h2{
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      font-size:clamp(32px,4.8vw,72px); line-height:0.96; letter-spacing:-0.035em;
+      color:#fff; margin-bottom:24px; max-width:16ch;
+    }
+    .cta p{
+      font-family:var(--body); font-size:clamp(16px,1.3vw,19px);
+      line-height:1.6; color:rgba(255,255,255,0.95); max-width:56ch; margin-bottom:42px;
+    }
+    .cta-btn{
+      display:inline-block; background:#0a0a0a; color:#fff;
+      font-family:var(--mono); font-size:13px; font-weight:700;
+      letter-spacing:0.1em; text-transform:uppercase;
+      padding:21px 42px; text-decoration:none;
+      transition:transform .2s cubic-bezier(0.16,1,0.3,1), box-shadow .2s ease;
+    }
+    .cta-btn:hover{ transform:translateY(-3px); box-shadow:0 14px 40px rgba(0,0,0,0.4); }
+
+    .f-links{ display:flex; flex-wrap:wrap; gap:26px; margin-bottom:44px; }
+    .f-links a{
+      font-family:var(--mono); font-size:12px; font-weight:700;
+      letter-spacing:0.08em; text-transform:uppercase;
+      color:rgba(255,255,255,0.6); text-decoration:none; transition:color .18s ease;
+    }
+    .f-links a:hover{ color:var(--red); }
+    .f-legal{ display:flex; flex-wrap:wrap; gap:18px; margin-top:14px; }
+    .f-legal a{
+      font-family:var(--mono); font-size:10px; letter-spacing:0.06em;
+      text-transform:uppercase; color:rgba(255,255,255,0.3); text-decoration:none;
+    }
+    .f-legal a:hover{ color:rgba(255,255,255,0.6); }
+
+    @media(max-width:860px){ .ghost-layer{ display:none; } }
+  </style>
 </head>
 <body>
 
-<nav class="nav"><div class="nav-inner">
-  <a href='/'><img src="logo.png" alt="SSUNDAR." class="nav-logo-img"></a>
-  <div class="nav-links">
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/"><img src="logo.png" alt="SSUNDAR." class="nav-logo-img"></a>
+    <div class="nav-links">
     <a class="nav-link" href="/insights">Writing<span class="dot">.</span></a>
     <a class="nav-link" href="/evidence">Evidence<span class="dot">.</span></a>
     <a class="nav-link" href="/about">About<span class="dot">.</span></a>
     <a class="nav-cta" href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer">Discover your judgment gap &rarr;</a>
   </div>
-  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
-</div></nav>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
 <div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-label="Navigation">
   <a href="/insights">Writing<span class="dot">.</span></a>
   <a href="/evidence">Evidence<span class="dot">.</span></a>
@@ -42,149 +196,241 @@
   <a href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer" style="color:var(--red)">Discover your judgment gap &rarr;</a>
 </div>
 
-<!-- HERO -->
-<section class="section hero" style="padding-top:clamp(130px,16vw,200px)">
-  <div class="fade-in">
-    <p class="mono-label mb-24">EVIDENCE</p>
-    <h1 class="h1 max-w-900 mb-32">Metrics<span class="dot">.</span> Not "in their words<span class="dot">.</span>"</h1>
-    <p class="body-bold opacity-7 max-w-640 mb-16">Every engagement measured against business outcomes defined before work begins. Not satisfaction scores. Not NPS. Not curated quotes.</p>
-    <p class="body-text opacity-5 max-w-580">Company names redacted unless explicitly approved.</p>
+
+<!-- ══ HERO ══════════════════════════════════════════════════════ -->
+<section class="band e-hero">
+  <div class="ghost-layer" data-z-speed="0.12">SOURCED</div>
+  <div class="wrap">
+    <div class="fade-in"><span class="sec-num">Evidence</span></div>
+    <h1 class="slide-up">Metrics<span class="dot">.</span> <span class="soft">Not &ldquo;in their words.&rdquo;</span></h1>
+    <p class="e-lede slide-up">
+      Every engagement measured against business outcomes defined before work begins.
+      Not satisfaction scores. Not NPS. Not curated quotes.
+    </p>
+    <p class="e-note slide-up">
+      Client identities and commercially sensitive detail remain confidential by contract,
+      including where the engagement is well known. Figures are stated at sector level and every
+      one traces to a source document. Nothing appears on this page that cannot be walked
+      through, line by line, in a room.
+    </p>
   </div>
 </section>
 
-<!-- STUDY 1 -->
-<div class="red-line-thick"></div>
-<section class="section">
-  <p class="mono-label mb-32" style="font-size:13px;letter-spacing:0.1em">GLOBAL TECHNOLOGY — FORTUNE 100</p>
-  <div class="grid-2 mb-56 fade-in">
-    <div>
-      <p class="mono-sm opacity-6 mb-12">CHALLENGE</p>
-      <p class="body-bold">12,000-person engineering org with 23% annual attrition in mid-level technical leadership.</p>
-      <p class="body-text opacity-6 mt-24">Exit interviews cited "lack of growth architecture" as primary driver. Not compensation. Not culture. Architecture.</p>
-    </div>
-    <div>
-      <p class="mono-sm opacity-6 mb-12">ARCHITECTURE DEPLOYED</p>
-      <p class="body-bold">Judgment-Centered Leadership Design™ across 6 verticals.</p>
-      <p class="body-text opacity-6 mt-24">Decision-context mapping for 14 critical scenarios. Capability sequencing calibrated to complexity curve.</p>
-    </div>
-  </div>
-  <p class="mono-sm opacity-6 mb-28">OUTCOMES</p>
-  <div class="grid-4 stagger-in">
-    <div class="metric stagger-child"><p class="metric-label">Leadership attrition</p><span class="metric-before">23%</span><span class="metric-after large">9.1%</span><p class="metric-period">18 months</p></div>
-    <div class="metric stagger-child"><p class="metric-label">Internal mobility</p><span class="metric-before">8%</span><span class="metric-after">34%</span><p class="metric-period">12 months</p></div>
-    <div class="metric stagger-child"><p class="metric-label">Time-to-competency</p><span class="metric-before">14 mo</span><span class="metric-after">6 mo</span><p class="metric-period">Role transitions</p></div>
-    <div class="metric stagger-child"><p class="metric-label">Leadership NPS</p><span class="metric-before">12</span><span class="metric-after">67</span><p class="metric-period">12 months</p></div>
-  </div>
-</section>
+<div class="rule"></div>
 
-<!-- STUDY 2 -->
-<div class="red-line-thick"></div>
-<section class="section">
-  <p class="mono-label mb-32" style="font-size:13px;letter-spacing:0.1em">FINANCIAL SERVICES — FORTUNE 200</p>
-  <div class="grid-2 mb-56 fade-in">
-    <div>
-      <p class="mono-sm opacity-6 mb-12">CHALLENGE</p>
-      <p class="body-bold">Post-merger integration. 4 legacy cultures. Existing playbook adoption at 4%.</p>
-      <p class="body-text opacity-6 mt-24">Four separate competency models with zero cross-functional alignment. Integration stalled.</p>
-    </div>
-    <div>
-      <p class="mono-sm opacity-6 mb-12">ARCHITECTURE DEPLOYED</p>
-      <p class="body-bold">Multi-skilled talent pool architecture replacing culture-specific competency models.</p>
-      <p class="body-text opacity-6 mt-24">Performance engine linking capability to client outcomes — not to completion rates.</p>
-    </div>
-  </div>
-  <p class="mono-sm opacity-6 mb-28">OUTCOMES</p>
-  <div class="grid-4 stagger-in">
-    <div class="metric stagger-child"><p class="metric-label">Framework adoption</p><span class="metric-before">4%</span><span class="metric-after large">89%</span><p class="metric-period">9 months</p></div>
-    <div class="metric stagger-child"><p class="metric-label">Decision consistency</p><span class="metric-before">31%</span><span class="metric-after">78%</span><p class="metric-period">Quarterly</p></div>
-    <div class="metric stagger-child"><p class="metric-label">Integration timeline</p><span class="metric-before">36 mo</span><span class="metric-after">19 mo</span><p class="metric-period">Complete</p></div>
-    <div class="metric stagger-child"><p class="metric-label">Client retention</p><span class="metric-before">71%</span><span class="metric-after">94%</span><p class="metric-period">Year 1</p></div>
-  </div>
-</section>
 
-<!-- STUDY 3 -->
-<div class="red-line-thick"></div>
-<section class="section">
-  <p class="mono-label mb-32" style="font-size:13px;letter-spacing:0.1em">GLOBAL CONSULTING — BIG FOUR</p>
-  <div class="grid-2 mb-56 fade-in">
-    <div>
-      <p class="mono-sm opacity-6 mb-12">CHALLENGE</p>
-      <p class="body-bold">$180M annual learning function with zero measurable linkage to engagement profitability.</p>
-      <p class="body-text opacity-6 mt-24">Board mandate: prove ROI or restructure. No existing measurement infrastructure linking capability to profit.</p>
-    </div>
-    <div>
-      <p class="mono-sm opacity-6 mb-12">ARCHITECTURE DEPLOYED</p>
-      <p class="body-bold">Complete performance engine redesign. Capability investment mapped to engagement margin.</p>
-      <p class="body-text opacity-6 mt-24">Multi-skilled pool replacing practice-siloed development tracks.</p>
-    </div>
-  </div>
-  <p class="mono-sm opacity-6 mb-28">OUTCOMES</p>
-  <div class="grid-4 stagger-in">
-    <div class="metric stagger-child"><p class="metric-label">Deployment speed</p><span class="metric-before">22 wk</span><span class="metric-after large">8 wk</span><p class="metric-period">New capabilities</p></div>
-    <div class="metric stagger-child"><p class="metric-label">Learning ROI</p><span class="metric-before">Unmeasured</span><span class="metric-after">4.2×</span><p class="metric-period">First fiscal year</p></div>
-    <div class="metric stagger-child"><p class="metric-label">Cross-practice</p><span class="metric-before">11%</span><span class="metric-after">41%</span><p class="metric-period">Utilization</p></div>
-    
-  </div>
-</section>
+<!-- ══ CASE 01 — QUALITY TURNAROUND ══════════════════════════════ -->
+<section class="band case">
+  <div class="ghost-layer red" data-z-speed="0.08" style="top:6%;right:-6%;font-size:clamp(120px,18vw,280px)">QUALITY</div>
+  <div class="wrap">
+    <span class="case-tag fade-in">01 &mdash; Technical support &middot; 27 lines of business</span>
+    <h2 class="case-head slide-up">Escalated account, turned inside 90 days<span class="dot">.</span></h2>
+    <p class="case-body slide-up">
+      A new quality framework was imposed mid-year. Process-knowledge weighting was cut to 50%
+      and customer-experience parameters were made zero-tolerance &mdash; a harder instrument
+      against which the floor immediately underperformed. Seven consecutive months below the
+      90% target, then a client escalation.
+    </p>
+    <p class="case-body slide-up">
+      The redesign was implemented in November. <strong>The score crossed target the following
+      month and held.</strong> All of it while the floor absorbed a 70% headcount increase.
+    </p>
 
-<!-- RECOGNITION -->
-<div class="bg-black">
-  <section class="section">
-    <div class="flex items-center gap-32 flex-wrap">
-      <div style="width:3px;height:48px;background:var(--red)"></div>
-      <div>
-        <p class="mono-label mb-8">RECOGNITION</p>
-        <h3 class="h3 text-white">Brandon Hall Group Excellence Award &mdash; Silver<span class="dot">.</span></h3>
+    <div class="m-grid four stagger-in">
+      <div class="m stagger-child">
+        <p class="m-lbl">Quality score</p>
+        <p class="m-fig"><span class="from">77</span><span class="arw">&rarr;</span><span data-count="93" data-suffix="%">0</span></p>
+        <p class="m-per">Peak, post-implementation</p>
+      </div>
+      <div class="m stagger-child">
+        <p class="m-lbl">Time to cross target</p>
+        <p class="m-fig"><span data-count="90">0</span> <span style="font-size:0.5em">DAYS</span></p>
+        <p class="m-per">From implementation</p>
+      </div>
+      <div class="m stagger-child">
+        <p class="m-lbl">Concurrent headcount ramp</p>
+        <p class="m-fig"><span data-count="70" data-suffix="%">0</span></p>
+        <p class="m-per">Growth from base</p>
+      </div>
+      <div class="m stagger-child">
+        <p class="m-lbl">Calibration variance</p>
+        <p class="m-fig">&lt;<span data-count="5" data-suffix="%">0</span></p>
+        <p class="m-per">Across the quality function</p>
       </div>
     </div>
-  </section>
-</div>
 
-<!-- FOOTER -->
+    <div class="ctx slide-up">
+      <p><strong>Scale of the operating environment.</strong> 27 lines of business. 150+ trainers
+      and 250+ quality analysts inside the capability function. 160 advisors externally
+      accredited.</p>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+
+<!-- ══ CASE 02 — NEW-HIRE CAPABILITY ═════════════════════════════ -->
+<section class="band case">
+  <div class="wrap">
+    <span class="case-tag fade-in">02 &mdash; Technical support &middot; new-hire cohorts</span>
+    <h2 class="case-head slide-up">Capability at the point of entry<span class="dot">.</span></h2>
+    <p class="case-body slide-up">
+      Same operating environment, measured at the cohort level. New-hire satisfaction assessed
+      at 30 days &mdash; early enough that the result reflects the onboarding system rather than
+      subsequent floor coaching.
+    </p>
+
+    <div class="m-grid stagger-in">
+      <div class="m stagger-child">
+        <p class="m-lbl">New-hire CSAT &middot; cohort A</p>
+        <p class="m-fig"><span class="from">79</span><span class="arw">&rarr;</span><span data-count="89" data-suffix="%">0</span></p>
+        <p class="m-per">Measured at 30 days</p>
+      </div>
+      <div class="m stagger-child">
+        <p class="m-lbl">New-hire CSAT &middot; cohort B</p>
+        <p class="m-fig"><span class="from">88</span><span class="arw">&rarr;</span><span data-count="98" data-suffix="%">0</span></p>
+        <p class="m-per">Measured at 30 days</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+
+<!-- ══ CASE 03 — CSAT TURNAROUND (SEPARATE ENGAGEMENT) ═══════════ -->
+<section class="band case">
+  <div class="ghost-layer" data-z-speed="0.09" style="bottom:8%;left:-5%;font-size:clamp(120px,18vw,280px)">CSAT</div>
+  <div class="wrap">
+    <span class="case-tag fade-in">03 &mdash; Business process outsourcing &middot; 1,600-person operation</span>
+    <h2 class="case-head slide-up">Nineteen points of customer satisfaction, in one quarter<span class="dot">.</span></h2>
+    <p class="case-body slide-up">
+      A separate engagement, at operation-wide scale. Customer satisfaction rebuilt across a
+      1,600-person floor inside a single 90-day cycle.
+    </p>
+
+    <div class="m-grid stagger-in">
+      <div class="m stagger-child">
+        <p class="m-lbl">Customer satisfaction</p>
+        <p class="m-fig"><span class="from">70</span><span class="arw">&rarr;</span><span data-count="89" data-suffix="%">0</span></p>
+        <p class="m-per">90 days</p>
+      </div>
+      <div class="m stagger-child">
+        <p class="m-lbl">Operation size</p>
+        <p class="m-fig"><span data-count="1600">0</span></p>
+        <p class="m-per">People in scope</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+
+<!-- ══ CASE 04 — CAPABILITY MULTIPLICATION ═══════════════════════ -->
+<section class="band case">
+  <div class="wrap">
+    <span class="case-tag fade-in">04 &mdash; Train-the-trainer build</span>
+    <h2 class="case-head slide-up">Capability that outlives the engagement<span class="dot">.</span></h2>
+    <p class="case-body slide-up">
+      The measure of an architecture is whether it runs without its architect. Facilitator
+      capability was built in-house rather than retained &mdash; no dependency created,
+      no open-ended engagement.
+    </p>
+
+    <div class="m-grid stagger-in">
+      <div class="m stagger-child">
+        <p class="m-lbl">Facilitators trained</p>
+        <p class="m-fig"><span data-count="44">0</span></p>
+        <p class="m-per">Train-the-trainer build</p>
+      </div>
+      <div class="m stagger-child">
+        <p class="m-lbl">Ongoing retainer required</p>
+        <p class="m-fig">None</p>
+        <p class="m-per">By design</p>
+      </div>
+    </div>
+
+    <a class="xlink fade-in" href="/testimonials">
+      <h3>What the participants said<span class="dot">.</span></h3>
+      <p>Twenty-seven survey responses, published verbatim &mdash; including every improvement
+      request participants made. 96% facilitator score, 100% would recommend.</p>
+      <span>Read the feedback &rarr;</span>
+    </a>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+
+<!-- ══ RECOGNITION ═══════════════════════════════════════════════ -->
+<section class="band case">
+  <div class="wrap">
+    <span class="case-tag fade-in">Recognition</span>
+    <h2 class="case-head slide-up" style="margin-bottom:0">Externally judged<span class="dot">.</span></h2>
+    <div class="rec-grid stagger-in">
+      <div class="rec stagger-child">
+        <p class="rec-name">Brandon Hall Group Excellence Award &mdash; Silver</p>
+        <p class="rec-ctx">Competency Development</p>
+      </div>
+      <div class="rec stagger-child">
+        <p class="rec-name">Golden Peacock Award</p>
+        <p class="rec-ctx">2017 &middot; Business</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ CTA ═══════════════════════════════════════════════════════ -->
+<section class="band cta">
+  <div class="wrap">
+    <h2 class="slide-up">Find your judgment gap<span class="dot" style="color:#0a0a0a">.</span></h2>
+    <div class="slide-up">
+      <p>
+        A structured diagnostic that names where judgment is breaking in your organization &mdash;
+        which decisions, at which altitude, under which conditions. It runs on EXLPRS.
+      </p>
+      <a class="cta-btn" href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer">Start the diagnostic &rarr;</a>
+    </div>
+  </div>
+</section>
+
+
 <footer class="footer">
-  <section class="section" style="padding-top:80px;padding-bottom:40px">
+  <section class="section" style="padding-top:80px;padding-bottom:44px">
     <span style="font-family:var(--heading);font-weight:700;font-size:24px;letter-spacing:0.06em;text-transform:uppercase;color:#fff">SSUNDAR<span class="dot">.</span></span>
     <div class="red-line-thick" style="margin:20px 0"></div>
     <p class="footer-tagline mb-24">JUDGMENT-CENTERED LEADERSHIP DESIGN&trade;</p>
-    <p style="font-family:var(--body);font-size:14px;font-weight:500;color:rgba(255,255,255,0.35);max-width:480px;line-height:1.7;margin-bottom:48px">Performance systems architecture for Fortune 500 organizations. Serving leaders across Technology, Financial Services, Healthcare, Manufacturing, Retail, Energy, and Global Capability Centers &mdash; wherever judgment compounds into outcomes.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:440px" class="mb-48">
-      <div class="flex flex-col gap-12">
-        <a class='footer-link' href='/systems'>Systems<span class="dot">.</span></a>
-        <a class='footer-link' href='/evidence'>Evidence<span class="dot">.</span></a>
-        <a class='footer-link' href='/process'>Process<span class="dot">.</span></a>
-        <a class='footer-link' href='/simulate'>Simulate<span class="dot">.</span></a>
-        <a class='footer-link' href='/insights'>Insights<span class="dot">.</span></a>
-        <a class='footer-link' href='/engage'>Engage<span class="dot">.</span></a>
-      </div>
-      <div>
-        <a href="mailto:shyam@ssundar.com" class="footer-link">shyam@ssundar.com</a>
-        <a href="https://linkedin.com/in/shyamsundarmv" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn &rarr;</a>
-        
-        <p style="font-family:var(--body);font-size:13px;font-weight:500;color:rgba(255,255,255,0.2);margin-top:4px">Working globally</p>
-      </div>
+    <p style="font-family:var(--body);font-size:14px;font-weight:500;color:rgba(255,255,255,0.45);max-width:520px;line-height:1.7;margin-bottom:44px">
+      The judgment-design point of view of Shyam Sundar MV. Engagements run through EXLPRS.
+    </p>
+    <div class="f-links">
+      <a href="/insights">Writing</a>
+      <a href="/evidence">Evidence</a>
+      <a href="/testimonials">Participants</a>
+      <a href="/about">About</a>
+      <a href="https://exlprs.com" target="_blank" rel="noopener noreferrer">EXLPRS</a>
+      <a href="https://www.treeng.ai" target="_blank" rel="noopener noreferrer">Platform</a>
+      <a href="mailto:shyam@ssundar.com">shyam@ssundar.com</a>
+      <a href="https://linkedin.com/in/shyamsundarmv" target="_blank" rel="noopener noreferrer">LinkedIn &rarr;</a>
     </div>
     <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:24px">
-      <div style="display:flex;flex-wrap:wrap;gap:16px 24px;margin-bottom:16px">
-        <a href="/terms" style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.05em;text-decoration:none;text-transform:uppercase">Terms of Use</a>
-        <a href="/privacy" style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.05em;text-decoration:none;text-transform:uppercase">Privacy Policy</a>
-        <a href="/cookie-policy" style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.05em;text-decoration:none;text-transform:uppercase">Cookie Policy</a>
-        <a href="/disclaimer" style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.05em;text-decoration:none;text-transform:uppercase">Disclaimer</a>
-        <a href="mailto:privacy@ssundar.com?subject=Data%20Removal%20Request" style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.05em;text-decoration:none;text-transform:uppercase">Remove My Data</a>
-        <a href="mailto:legal@ssundar.com?subject=DMCA%20Notice" style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.05em;text-decoration:none;text-transform:uppercase">DMCA</a>
+      <p style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.25);letter-spacing:0.05em;margin-bottom:6px">
+        &copy; 2026 SSUNDAR. ALL RIGHTS RESERVED. &nbsp;&middot;&nbsp; WORKING GLOBALLY.
+      </p>
+      <div class="f-legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/cookie-policy">Cookies</a>
+        <a href="/disclaimer">Disclaimer</a>
       </div>
-      <p style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.2);letter-spacing:0.05em;margin-bottom:6px">&copy; 2026 SSUNDAR. ALL RIGHTS RESERVED. &mdash; DMCA Registered Agent: DMCA-1073290</p>
-      <p style="font-family:var(--mono);font-size:9px;font-weight:500;color:rgba(255,255,255,0.12);letter-spacing:0.04em">Judgment-Centered Leadership Design&trade;, Multi-Skilled Talent Pools&trade;, Performance Engine Integration&trade;, and Strategic Products &amp; AI&trade; are trademarks of SSUNDAR.</p>
     </div>
   </section>
 </footer>
-<!-- FLOATING CTA -->
-<a class='floating-cta' href='/engage' id='floatingCta'>
-  Start Diagnosis<span class="dot">.</span>
-  <span class="cta-arrow">→</span>
-</a>
 
 <script src="app.js"></script>
-<!-- COOKIE CONSENT BANNER -->
-<div id="cookieBar" role="dialog" aria-label="Cookie consent" style="display:none;position:fixed;bottom:0;left:0;width:100%;background:#0a0a0a;border-top:1px solid rgba(255,255,255,0.1);z-index:9999;padding:14px 24px;box-sizing:border-box;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap"><p style="margin:0;font-family:var(--body,sans-serif);font-size:13px;color:rgba(255,255,255,0.75);line-height:1.5;flex:1;min-width:240px">This site uses Google Analytics and Microsoft Clarity to understand visitor behaviour. Accept to enable analytics. <a href="/privacy" style="color:#E31E24;text-decoration:none">Privacy Policy</a></p><div style="display:flex;gap:10px;flex-shrink:0"><button id="cookieDecline" style="background:transparent;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.2);padding:8px 16px;font-family:var(--body,sans-serif);font-size:13px;cursor:pointer;letter-spacing:0.04em">Decline</button><button id="cookieAccept" style="background:#E31E24;color:#fff;border:none;padding:8px 20px;font-family:var(--body,sans-serif);font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;letter-spacing:0.04em">Accept</button></div></div>
+<script src="cookie-consent.js"></script>
 </body>
 </html>

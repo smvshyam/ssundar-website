@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Participants Said — SSUNDAR.</title>
+  <meta name="description" content="Anonymized participant feedback from 27 survey responses. 96% facilitator score, 100% would recommend. Including every improvement request participants made — published unedited.">
+  <meta property="og:title" content="What Participants Said — SSUNDAR.">
+  <meta property="og:description" content="Anonymized participant feedback from 27 survey responses. Including every improvement request, published unedited.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ssundar.com/testimonials">
+  <meta property="og:image" content="https://ssundar.com/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://ssundar.com/testimonials">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What Participants Said — SSUNDAR.">
+  <meta name="twitter:description" content="Anonymized participant feedback. Including every improvement request, published unedited.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body { background:#0a0a0a; color:#fff; }
+    .band { position:relative; overflow:hidden; }
+    .wrap { max-width:1240px; margin:0 auto; padding:0 var(--px); position:relative; z-index:2; }
+    .rule { height:1px; background:rgba(255,255,255,0.09); }
+    .rule-red { height:2px; background:var(--red); max-width:180px; }
+
+    .ghost-layer{
+      position:absolute; pointer-events:none; user-select:none; z-index:0;
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      line-height:0.78; letter-spacing:-0.04em; white-space:nowrap;
+      color:rgba(255,255,255,0.035);
+    }
+    .ghost-layer.red { color:rgba(227,30,36,0.10); }
+
+    .sec-num{
+      font-family:var(--mono); font-size:11px; font-weight:700;
+      letter-spacing:0.2em; color:var(--red);
+      display:flex; align-items:center; gap:14px; margin-bottom:30px;
+    }
+    .sec-num::after{ content:''; flex:1; height:1px; background:rgba(227,30,36,0.28); max-width:220px; }
+
+    /* ── Hero ─────────────────────────────────────────────────── */
+    .t-hero{ padding:clamp(120px,15vw,190px) 0 clamp(60px,7vw,90px); }
+    .t-hero .ghost-layer{ top:16%; left:-4%; font-size:clamp(140px,21vw,340px); }
+    .t-hero h1{
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      font-size:clamp(38px,6vw,88px); line-height:0.94; letter-spacing:-0.035em;
+      margin-bottom:34px; max-width:17ch;
+    }
+    .t-hero h1 .soft{ color:rgba(255,255,255,0.66); }
+    .t-lede{
+      font-family:var(--body); font-size:clamp(16px,1.5vw,21px);
+      line-height:1.62; color:rgba(255,255,255,0.8); max-width:62ch;
+    }
+
+    /* ── Stat block ───────────────────────────────────────────── */
+    .stats{ display:grid; gap:1px; background:rgba(255,255,255,0.11); margin-top:60px; }
+    @media(min-width:820px){ .stats{ grid-template-columns:repeat(4,1fr); } }
+    .stat{ background:#0a0a0a; padding:34px 26px; }
+    .stat-num{
+      font-family:var(--heading); font-weight:700;
+      font-size:clamp(34px,3.6vw,50px); line-height:1;
+      letter-spacing:-0.03em; color:#fff; margin-bottom:10px;
+    }
+    .stat-lbl{
+      font-family:var(--mono); font-size:10.5px; font-weight:700;
+      letter-spacing:0.11em; text-transform:uppercase;
+      color:rgba(255,255,255,0.55); line-height:1.7;
+    }
+
+    /* ── Quote blocks ─────────────────────────────────────────── */
+    .q-flag{
+      font-family:var(--body); font-size:clamp(19px,2.05vw,30px);
+      line-height:1.42; color:#fff; font-weight:500;
+      border-left:3px solid var(--red); padding-left:30px; margin-bottom:22px;
+    }
+    .q-attr{
+      font-family:var(--mono); font-size:10.5px; font-weight:700;
+      letter-spacing:0.11em; text-transform:uppercase;
+      color:rgba(255,255,255,0.45); padding-left:33px;
+    }
+    .flag-item{ margin-bottom:60px; max-width:80ch; }
+    .flag-item:last-child{ margin-bottom:0; }
+
+    .q-grid{ display:grid; gap:1px; background:rgba(255,255,255,0.11); margin-top:56px; }
+    @media(min-width:880px){ .q-grid{ grid-template-columns:repeat(2,1fr); } }
+    .q-card{ background:#0a0a0a; padding:38px 32px; }
+    .q-card p{
+      font-family:var(--body); font-size:16px; line-height:1.68;
+      color:rgba(255,255,255,0.84); margin-bottom:18px;
+    }
+    .q-card .q-attr{ padding-left:0; }
+
+    /* ── Marquee strip ────────────────────────────────────────── */
+    .marq{ background:var(--red); padding:clamp(52px,6vw,78px) 0; }
+    .marq-in{ display:flex; flex-wrap:wrap; gap:14px; max-width:1240px; margin:0 auto; padding:0 var(--px); }
+    .chip{
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      font-size:clamp(14px,1.3vw,19px); letter-spacing:-0.01em;
+      color:#fff; border:1px solid rgba(255,255,255,0.42);
+      padding:12px 20px; line-height:1.2;
+    }
+    .marq-attr{
+      max-width:1240px; margin:26px auto 0; padding:0 var(--px);
+      font-family:var(--mono); font-size:10.5px; font-weight:700;
+      letter-spacing:0.11em; text-transform:uppercase; color:rgba(255,255,255,0.75);
+    }
+
+    /* ── Criticism panel ──────────────────────────────────────── */
+    .crit{ padding:clamp(90px,11vw,150px) 0; }
+    .crit .ghost-layer{ top:8%; right:-5%; font-size:clamp(120px,17vw,270px); }
+    .crit-head{
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      font-size:clamp(30px,3.9vw,58px); line-height:1.0; letter-spacing:-0.025em;
+      max-width:18ch; margin-bottom:18px;
+    }
+    .crit-sub{
+      font-family:var(--body); font-size:clamp(16px,1.3vw,19px);
+      line-height:1.6; color:rgba(255,255,255,0.72); max-width:62ch; margin-bottom:50px;
+    }
+    .crit-list{ border-top:1px solid rgba(255,255,255,0.11); }
+    .crit-item{
+      border-bottom:1px solid rgba(255,255,255,0.11);
+      padding:26px 0; display:grid; grid-template-columns:auto 1fr; gap:0 26px;
+    }
+    .crit-idx{
+      font-family:var(--mono); font-size:11px; font-weight:700;
+      color:var(--red); letter-spacing:0.1em; padding-top:5px;
+    }
+    .crit-item p{
+      font-family:var(--body); font-size:clamp(15.5px,1.2vw,18px);
+      line-height:1.62; color:rgba(255,255,255,0.86);
+    }
+    .crit-close{
+      margin-top:48px; border-left:3px solid var(--red); padding:10px 0 10px 30px;
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      font-size:clamp(19px,2.1vw,30px); line-height:1.25; color:#fff; max-width:24ch;
+    }
+
+    /* ── Method note ──────────────────────────────────────────── */
+    .note{
+      font-family:var(--mono); font-size:11px; letter-spacing:0.05em;
+      color:rgba(255,255,255,0.42); line-height:1.95; max-width:82ch;
+    }
+
+    /* ── CTA ──────────────────────────────────────────────────── */
+    .cta{ background:var(--red); padding:clamp(80px,10vw,130px) 0; }
+    .cta h2{
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      font-size:clamp(32px,4.8vw,72px); line-height:0.96; letter-spacing:-0.035em;
+      color:#fff; margin-bottom:24px; max-width:16ch;
+    }
+    .cta p{
+      font-family:var(--body); font-size:clamp(16px,1.3vw,19px);
+      line-height:1.6; color:rgba(255,255,255,0.95); max-width:56ch; margin-bottom:42px;
+    }
+    .cta-btn{
+      display:inline-block; background:#0a0a0a; color:#fff;
+      font-family:var(--mono); font-size:13px; font-weight:700;
+      letter-spacing:0.1em; text-transform:uppercase;
+      padding:21px 42px; text-decoration:none;
+      transition:transform .2s cubic-bezier(0.16,1,0.3,1), box-shadow .2s ease;
+    }
+    .cta-btn:hover{ transform:translateY(-3px); box-shadow:0 14px 40px rgba(0,0,0,0.4); }
+
+    .f-links{ display:flex; flex-wrap:wrap; gap:26px; margin-bottom:44px; }
+    .f-links a{
+      font-family:var(--mono); font-size:12px; font-weight:700;
+      letter-spacing:0.08em; text-transform:uppercase;
+      color:rgba(255,255,255,0.6); text-decoration:none; transition:color .18s ease;
+    }
+    .f-links a:hover{ color:var(--red); }
+    .f-legal{ display:flex; flex-wrap:wrap; gap:18px; margin-top:14px; }
+    .f-legal a{
+      font-family:var(--mono); font-size:10px; letter-spacing:0.06em;
+      text-transform:uppercase; color:rgba(255,255,255,0.3); text-decoration:none;
+    }
+    .f-legal a:hover{ color:rgba(255,255,255,0.6); }
+
+    @media(max-width:860px){ .ghost-layer{ display:none; } .crit-item{ grid-template-columns:1fr; gap:8px; } .crit-idx{ padding-top:0; } }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/"><img src="logo.png" alt="SSUNDAR." class="nav-logo-img"></a>
+    <div class="nav-links">
+    <a class="nav-link" href="/insights">Writing<span class="dot">.</span></a>
+    <a class="nav-link" href="/evidence">Evidence<span class="dot">.</span></a>
+    <a class="nav-link" href="/about">About<span class="dot">.</span></a>
+    <a class="nav-cta" href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer">Discover your judgment gap &rarr;</a>
+  </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-label="Navigation">
+  <a href="/insights">Writing<span class="dot">.</span></a>
+  <a href="/evidence">Evidence<span class="dot">.</span></a>
+  <a href="/about">About<span class="dot">.</span></a>
+  <a href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer" style="color:var(--red)">Discover your judgment gap &rarr;</a>
+</div>
+
+
+<!-- ══ HERO + STATS ══════════════════════════════════════════════ -->
+<section class="band t-hero">
+  <div class="ghost-layer" data-z-speed="0.12">VERBATIM</div>
+  <div class="wrap">
+    <div class="fade-in"><span class="sec-num">Participant Feedback</span></div>
+    <h1 class="slide-up">What participants actually said<span class="dot">.</span> <span class="soft">Including the criticism.</span></h1>
+    <p class="t-lede slide-up">
+      Twenty-seven survey responses across two 2025 cohorts. Every quote below is verbatim &mdash;
+      nothing rewritten, nothing corrected, nothing paraphrased. Cuts are marked.
+    </p>
+
+    <div class="stats stagger-in">
+      <div class="stat stagger-child">
+        <p class="stat-num"><span data-count="96" data-suffix="%">0</span></p>
+        <p class="stat-lbl">Facilitator score</p>
+      </div>
+      <div class="stat stagger-child">
+        <p class="stat-num"><span data-count="100" data-suffix="%">0</span></p>
+        <p class="stat-lbl">Would recommend</p>
+      </div>
+      <div class="stat stagger-child">
+        <p class="stat-num"><span data-count="27">0</span></p>
+        <p class="stat-lbl">Participant responses</p>
+      </div>
+      <div class="stat stagger-child">
+        <p class="stat-num"><span data-count="100" data-suffix="%">0</span></p>
+        <p class="stat-lbl">On the flagship leadership module</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+
+<!-- ══ TIER 1 — FLAGSHIP ═════════════════════════════════════════ -->
+<section class="band" style="padding:clamp(90px,11vw,150px) 0">
+  <div class="ghost-layer red" data-z-speed="0.08" style="top:6%;right:-6%;font-size:clamp(130px,19vw,300px)">IMPACT</div>
+  <div class="wrap">
+    <div class="fade-in"><span class="sec-num">01 &mdash; Impact</span></div>
+    <div class="rule-red line-draw" style="margin-bottom:56px"></div>
+
+    <div class="flag-item slide-up">
+      <p class="q-flag">&ldquo;The entire program was phenomenal. Every lesson involved examples, roleplays and interactive exchanges of thoughts and feelings. The exactness of what makes a leader, what being a leader requires and what outcomes being an exemplary leader can deliver were outlined so beautifully. […] To bring about significant mindset change in an individual in a holistic manner is no easy feat.&rdquo;</p>
+      <p class="q-attr">Emerging people leader &middot; global CX outsourcing &middot; 2025</p>
+    </div>
+
+    <div class="flag-item slide-up">
+      <p class="q-flag">&ldquo;The program helped me grow in a way I never thought &mdash; grew exponentially personally and professionally. What I have experienced in these 2 weeks will forever stick with me in my life. That is the magnitude of the impact of this program […] life transforming.&rdquo;</p>
+      <p class="q-attr">Emerging people leader &middot; global CX outsourcing &middot; 2025</p>
+    </div>
+
+    <div class="flag-item slide-up">
+      <p class="q-flag">&ldquo;Shyam not only facilitated me with the learnings and activities to become a better leader […] but also in life. His program has been one of the best learnings I have had in my entire career. […] His classes were never boring and I never came out of the class without even a single learning.&rdquo;</p>
+      <p class="q-attr">Emerging people leader &middot; global CX outsourcing &middot; 2025</p>
+    </div>
+
+    <div class="flag-item slide-up">
+      <p class="q-flag">&ldquo;This is my 4th organization and I have not seen this culture anywhere. Even in Amazon.&rdquo;</p>
+      <p class="q-attr">Emerging people leader &middot; global CX outsourcing &middot; 2025</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ TIER 4 — OUTCOME MARQUEE ══════════════════════════════════ -->
+<section class="marq">
+  <div class="marq-in">
+    <span class="chip">Influence without authority</span>
+    <span class="chip">Coaching effectively</span>
+    <span class="chip">Brilliant at basics</span>
+    <span class="chip">Change of perspective on the TL and many other roles</span>
+    <span class="chip">People manager without the role</span>
+    <span class="chip">Self-awareness and personal growth</span>
+    <span class="chip">Exposure to strategic thinking</span>
+    <span class="chip">Real-world leadership challenges</span>
+    <span class="chip">Practical and hands-on</span>
+    <span class="chip">Solving for actual business problems</span>
+  </div>
+  <p class="marq-attr">Emerging people leader / senior leader &middot; global CX outsourcing &middot; 2025</p>
+</section>
+
+
+<!-- ══ TIER 2 — METHOD AND DELIVERY ══════════════════════════════ -->
+<section class="band" style="padding:clamp(90px,11vw,150px) 0">
+  <div class="ghost-layer" data-z-speed="0.09" style="bottom:8%;left:-5%;font-size:clamp(120px,18vw,280px)">METHOD</div>
+  <div class="wrap">
+    <div class="fade-in"><span class="sec-num">02 &mdash; Method and delivery</span></div>
+    <h2 class="crit-head slide-up" style="margin-bottom:0">Taught through actions, not slides<span class="dot">.</span></h2>
+
+    <div class="q-grid stagger-in">
+      <div class="q-card stagger-child">
+        <p>&ldquo;They taught us via actions not through powerpoint presentations, which was something we were all taken aback [by].&rdquo;</p>
+        <p class="q-attr">Emerging people leader &middot; global CX outsourcing &middot; 2025</p>
+      </div>
+      <div class="q-card stagger-child">
+        <p>&ldquo;Led by Actions. Teaching Techniques &mdash; Story Telling, Personal Experiences, Critical Feedback, Reflections. Activities, Role Plays, Case studies.&rdquo;</p>
+        <p class="q-attr">Emerging people leader &middot; global CX outsourcing &middot; 2025</p>
+      </div>
+      <div class="q-card stagger-child">
+        <p>&ldquo;Shyam's energy was viral and help[ed] mold a new perception to being a people leader. […] Role play &mdash; SPOT ON!&rdquo;</p>
+        <p class="q-attr">Emerging people leader &middot; global CX outsourcing &middot; 2025</p>
+      </div>
+      <div class="q-card stagger-child">
+        <p>&ldquo;Structured Yet Creative Problem-Solving Approach. Real-World Relevance of Scenarios. Trust [and] Collaboration Across Roles.&rdquo;</p>
+        <p class="q-attr">Senior leader &middot; capability co-design workshop &middot; 2025</p>
+      </div>
+      <div class="q-card stagger-child">
+        <p>&ldquo;High standards of explanation and learning. Facilitator was very knowledgeable. Engaging overall.&rdquo;</p>
+        <p class="q-attr">Emerging people leader &middot; global CX outsourcing &middot; 2025</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+
+<!-- ══ TIER 3 — SENIOR LEADER ════════════════════════════════════ -->
+<section class="band" style="padding:clamp(90px,11vw,150px) 0">
+  <div class="wrap">
+    <div class="fade-in"><span class="sec-num">03 &mdash; Senior leaders</span></div>
+    <h2 class="crit-head slide-up" style="margin-bottom:0">Co-creation, not delivery<span class="dot">.</span></h2>
+
+    <div class="q-grid stagger-in">
+      <div class="q-card stagger-child">
+        <p>&ldquo;Strategic Co-Creation with Senior Leaders. The full-day, in-person training allowed for deep engagement, reflection, and collaboration. Structured pre-read &amp; prep guide.&rdquo;</p>
+        <p class="q-attr">Senior leader &middot; capability co-design workshop &middot; 2025</p>
+      </div>
+      <div class="q-card stagger-child">
+        <p>&ldquo;Practical and real life scenarios discussed &mdash; the solutions implemented effectively will ensure the impact is as desired.&rdquo;</p>
+        <p class="q-attr">Senior leader &middot; capability co-design workshop &middot; 2025</p>
+      </div>
+      <div class="q-card stagger-child">
+        <p>&ldquo;The objective of the program was clearly defined. The teams were designed in a way which enabled Cross Functional collaboration.&rdquo;</p>
+        <p class="q-attr">Senior leader &middot; capability co-design workshop &middot; 2025</p>
+      </div>
+      <div class="q-card stagger-child">
+        <p>&ldquo;Finding practical solutions for business specific situations was well organised.&rdquo;</p>
+        <p class="q-attr">Senior leader &middot; capability co-design workshop &middot; 2025</p>
+      </div>
+      <div class="q-card stagger-child">
+        <p>&ldquo;Though a 3 day program was crunched into 1 day, it was not too difficult to grasp the concept due to the ground work managed by Shyam. […] The pre-work shared was structured well […] Time management through the session was done very well.&rdquo;</p>
+        <p class="q-attr">Senior leader &middot; capability co-design workshop &middot; 2025</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+
+<!-- ══ THE DIFFERENTIATING PANEL — PUBLISH THE CRITICISM ═════════ -->
+<section class="band crit">
+  <div class="ghost-layer red" data-z-speed="0.1">CRITICISM</div>
+  <div class="wrap">
+    <div class="fade-in"><span class="sec-num">04 &mdash; The criticism</span></div>
+    <h2 class="crit-head slide-up">What participants asked us to change<span class="dot">.</span></h2>
+    <p class="crit-sub slide-up">
+      Every improvement request in the dataset is published below, unedited. They are reproduced
+      in full because of what they have in common.
+    </p>
+
+    <div class="crit-list">
+      <div class="crit-item fade-in"><span class="crit-idx">01</span>
+        <p>&ldquo;I would recommend at least 3 weeks for this program to be optimal.&rdquo;</p></div>
+      <div class="crit-item fade-in"><span class="crit-idx">02</span>
+        <p>&ldquo;Could have been 3-4 week learning […] felt the concepts were taken through a lot faster.&rdquo;</p></div>
+      <div class="crit-item fade-in"><span class="crit-idx">03</span>
+        <p>&ldquo;The improvement would be to extend these sessions. We have worked on a lot of case studies and working on more case studies would have been amazing.&rdquo;</p></div>
+      <div class="crit-item fade-in"><span class="crit-idx">04</span>
+        <p>&ldquo;While I understand the need to compress the program into a single day, I believe its impact could have been even greater had it been spread over 2&ndash;3 days.&rdquo;</p></div>
+      <div class="crit-item fade-in"><span class="crit-idx">05</span>
+        <p>&ldquo;I found every part of the program valuable, and would especially welcome more sessions led by Shyam.&rdquo;</p></div>
+      <div class="crit-item fade-in"><span class="crit-idx">06</span>
+        <p>&ldquo;Shyam can facilitate some TL's, Managers and Leads already working on the floor as well.&rdquo;</p></div>
+    </div>
+
+    <p class="crit-close slide-up">Every request was for more time. None were for different content<span class="dot">.</span></p>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+
+<!-- ══ METHOD NOTE ═══════════════════════════════════════════════ -->
+<section class="band" style="padding:clamp(70px,9vw,110px) 0">
+  <div class="wrap">
+    <div class="fade-in"><span class="sec-num">Method</span></div>
+    <p class="note fade-in">
+      Source: participant survey data, 27 responses, 22 with usable free text, across two 2025
+      cohorts &mdash; a leadership cohort (Aug&ndash;Sep 2025, n=11) and a capability co-design
+      workshop (Jul 2025, n=16). Client organization names, programme names and all colleague and
+      facilitator names have been removed under NDA and will not be restored. No role titles exist
+      in the source data and none have been inferred; sector, seniority band and year is the
+      maximum claim made for any quote. Every quote is reproduced verbatim &mdash; cuts marked
+      &ldquo;[…]&rdquo;, clarifying insertions in square brackets. Nothing has been rewritten or corrected.
+    </p>
+  </div>
+</section>
+
+
+<!-- ══ CTA ═══════════════════════════════════════════════════════ -->
+<section class="band cta">
+  <div class="wrap">
+    <h2 class="slide-up">Find your judgment gap<span class="dot" style="color:#0a0a0a">.</span></h2>
+    <div class="slide-up">
+      <p>
+        A structured diagnostic that names where judgment is breaking in your organization &mdash;
+        which decisions, at which altitude, under which conditions. It runs on EXLPRS.
+      </p>
+      <a class="cta-btn" href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer">Start the diagnostic &rarr;</a>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <section class="section" style="padding-top:80px;padding-bottom:44px">
+    <span style="font-family:var(--heading);font-weight:700;font-size:24px;letter-spacing:0.06em;text-transform:uppercase;color:#fff">SSUNDAR<span class="dot">.</span></span>
+    <div class="red-line-thick" style="margin:20px 0"></div>
+    <p class="footer-tagline mb-24">JUDGMENT-CENTERED LEADERSHIP DESIGN&trade;</p>
+    <p style="font-family:var(--body);font-size:14px;font-weight:500;color:rgba(255,255,255,0.45);max-width:520px;line-height:1.7;margin-bottom:44px">
+      The judgment-design point of view of Shyam Sundar MV. Engagements run through EXLPRS.
+    </p>
+    <div class="f-links">
+      <a href="/insights">Writing</a>
+      <a href="/evidence">Evidence</a>
+      <a href="/testimonials">Participants</a>
+      <a href="/about">About</a>
+      <a href="https://exlprs.com" target="_blank" rel="noopener noreferrer">EXLPRS</a>
+      <a href="https://www.treeng.ai" target="_blank" rel="noopener noreferrer">Platform</a>
+      <a href="mailto:shyam@ssundar.com">shyam@ssundar.com</a>
+      <a href="https://linkedin.com/in/shyamsundarmv" target="_blank" rel="noopener noreferrer">LinkedIn &rarr;</a>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:24px">
+      <p style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.25);letter-spacing:0.05em;margin-bottom:6px">
+        &copy; 2026 SSUNDAR. ALL RIGHTS RESERVED. &nbsp;&middot;&nbsp; WORKING GLOBALLY.
+      </p>
+      <div class="f-legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/cookie-policy">Cookies</a>
+        <a href="/disclaimer">Disclaimer</a>
+      </div>
+    </div>
+  </section>
+</footer>
+
+<script src="app.js"></script>
+<script src="cookie-consent.js"></script>
+</body>
+</html>
