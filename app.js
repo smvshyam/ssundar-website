@@ -66,7 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
       var elapsed = now - start;
       var progress = Math.min(elapsed / duration, 1);
       var eased = 1 - Math.pow(1 - progress, 3);
-      var current = isFloat ? (end * eased).toFixed(1) : Math.round(end * eased);
+      var current = isFloat ? (end * eased).toFixed(1)
+                            : Math.round(end * eased).toLocaleString('en-US');
       el.textContent = prefix + current + suffix;
       if (progress < 1) requestAnimationFrame(step);
     }
