@@ -140,6 +140,24 @@
       font-size:clamp(19px,2.1vw,30px); line-height:1.25; color:#fff; max-width:24ch;
     }
 
+
+    /* ── Written recommendation — distinct class of evidence ─── */
+    .rec-band{ border:1px solid rgba(255,255,255,0.16); padding:44px 38px; margin-top:56px; }
+    .rec-kicker{
+      font-family:var(--mono); font-size:10.5px; font-weight:700;
+      letter-spacing:0.14em; text-transform:uppercase; color:var(--red);
+      display:block; margin-bottom:18px;
+    }
+    .rec-band blockquote{
+      font-family:var(--body); font-size:clamp(17px,1.7vw,24px);
+      line-height:1.5; color:#fff; font-weight:500; margin:0 0 20px; max-width:70ch;
+    }
+    .rec-band .q-attr{ padding-left:0; }
+    .rec-note{
+      margin-top:22px; font-family:var(--mono); font-size:10.5px;
+      letter-spacing:0.06em; color:rgba(255,255,255,0.42); line-height:1.9; max-width:74ch;
+    }
+
     /* ── Method note ──────────────────────────────────────────── */
     .note{
       font-family:var(--mono); font-size:11px; letter-spacing:0.05em;
@@ -394,6 +412,17 @@
         <p>&ldquo;Each module built naturally on the previous one, moving from self-leadership through coaching, decision-making, stakeholder management and executive communication.&rdquo;</p>
         <p class="q-attr">Leadership cohort &middot; EMEA &middot; 2025</p>
       </div>
+    </div>
+
+    <div class="rec-band fade-in">
+      <span class="rec-kicker">Written recommendation &mdash; unsolicited</span>
+      <blockquote>&ldquo;He provided different angles, was very flexible in the approaches and has tailored the whole training to the needs of our cohort. Shyam provided the needed space for cross-cultural exchange.&rdquo;</blockquote>
+      <p class="q-attr">Strategy manager &middot; AI technology &middot; 2026</p>
+      <p class="rec-note">
+        A separate class of evidence from the survey quotes above: written and offered
+        unprompted rather than collected on an instrument. Name, title and employer withheld
+        under the confidentiality terms covering the engagement.
+      </p>
     </div>
   </div>
 </section>
