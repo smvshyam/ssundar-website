@@ -51,7 +51,14 @@
 .form-select option{background:var(--black);color:var(--white)}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
 @media(max-width:640px){.form-grid{grid-template-columns:1fr}}
-</style>
+
+    .btn-disabled{
+      display:inline-block; font-family:var(--mono); font-size:13px; font-weight:700;
+      letter-spacing:0.1em; text-transform:uppercase; padding:18px 36px;
+      color:rgba(255,255,255,0.42); border:1px solid rgba(255,255,255,0.18);
+      background:transparent; cursor:default;
+    }
+  </style>
 </head>
 <body class="bg-black">
 
@@ -98,7 +105,7 @@
     Under 12 minutes. Immediate scorecard. Contributing responses feed the Global Organisational Judgment Index 2026 — a first-of-kind benchmark of how organisations worldwide are building (or not building) the judgment infrastructure to support AI transformation.
   </p>
   <div style="display:flex;gap:16px;flex-wrap:wrap">
-    <a href="https://www.treeng.ai" target="_blank" rel="noopener" class="btn btn-red">Access the platform →</a>
+    <span class="btn-disabled">In development</span>
     <a href="#goji" class="btn btn-outline">About the GOJI →</a>
   </div>
 </section>
@@ -196,7 +203,7 @@
           <li style="font-family:var(--body);font-size:13px;color:rgba(255,255,255,0.4);padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--red)">✓</span>GOJI 2026 contribution</li>
           <li style="font-family:var(--body);font-size:13px;color:rgba(255,255,255,0.4);padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--red)">✓</span>Sector benchmark (anonymised)</li>
         </ul>
-        <a href="https://www.treeng.ai" target="_blank" rel="noopener" class="btn btn-red">Access now →</a>
+        <span class="btn-disabled">In development</span>
       </div>
       <div class="access-card">
         <p style="font-family:var(--mono);font-size:10px;letter-spacing:0.12em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:16px">Organisation</p>
