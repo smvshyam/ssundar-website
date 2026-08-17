@@ -151,7 +151,7 @@ exports.handler = async (event) => {
 
   // ── 2. Rate limiting ──────────────────────────────────────────────────────
   const clientIp = getClientIp(event);
-  if (await isRateLimited(clientIp)) {
+  if (isRateLimited(clientIp)) {
     return err(429, 'Too many requests. Please wait a moment before trying again.', HEADERS);
   }
 
@@ -364,4 +364,61 @@ Respond ONLY with valid JSON:
   "strongest_dimension": "1-2 sentences on the metric where this leader showed most consistency",
   "critical_gap": "1-2 sentences on the metric or pattern that represents the most significant blind spot",
   "pattern_protected": "1-2 sentences on what this leadership style reliably protects even under pressure",
-  "ssundar_recommendation": "2-3 sentences on the specific SSUNDAR. intervention that would address the critical gap — be specific
+  "ssundar_recommendation": "2-3 sentences on the specific SSUNDAR. intervention that would address the critical gap — be specific about the methodology (simulation, judgment architecture, capability design)",
+  "industry_insight": "1-2 sentences of ${safeIndustry}-specific benchmark context for this pattern"
+}
+
+Rules:
+- Be specific to the decisions made, not generic
+- pattern_name must reflect the actual dominant pattern from the decisions
+- Do NOT use filler phrases like 'your journey', 'remarkable', 'impressive'
+- Return ONLY JSON, no markdown`;
+
+  const data   = await callClaude(prompt, apiKey, 1200);
+  const parsed = JSON.parse(data);
+  return { statusCode: 200, headers: HEADERS, body: JSON.stringify(parsed) };
+}
+
+// ─── Anthropic API call with timeout + graceful error ─────────────────────────
+async function callClaude(prompt, apiKey, maxTokens) {
+  const controller = new AbortController();
+  const timer      = setTimeout(() => controller.abort(), CLAUDE_TIMEOUT_MS);
+
+  let response;
+  try {
+    response = await fetch(ANTHROPIC_API_URL, {
+      method:  'POST',
+      headers: {
+        'x-api-key':         apiKey,
+        'anthropic-version': '2023-06-01',
+        'content-type':      'application/json'
+      },
+      body:   JSON.stringify({
+        model:      'claude-haiku-4-5-20251001',
+        max_tokens: maxTokens,
+        messages:   [{ role: 'user', content: prompt }]
+      }),
+      signal: controller.signal
+    });
+  } catch (e) {
+    if (e.name === 'AbortError') throw new Error('UNAVAILABLE: request timed out');
+    throw new Error('UNAVAILABLE: network error reaching analysis service');
+  } finally {
+    clearTimeout(timer);
+  }
+
+  if (!response.ok) {
+    // Log status code only — never log response body which may contain sensitive data
+    console.error('Anthropic API status:', response.status);
+    if (response.status === 529 || response.status === 503 || response.status === 502) {
+      throw new Error('UNAVAILABLE: analysis service is temporarily down');
+    }
+    throw new Error('Analysis could not be completed');
+  }
+
+  const json = await response.json();
+  const text = json.content[0].text.trim();
+
+  // Strip markdown code fences if Claude wraps the JSON
+  return text.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
+}

@@ -1,8 +1,21 @@
+# Deploy zips
 *.zip
+ssundar-deploy*.zip
+
+# Docs (internal only)
+PRD.md
+TRD.md
+CORS-FIX-app.ssundar.com.md
+
+# Node
 node_modules/
-netlify/*.zip
-test-results/
-.deploy-config
+package-lock.json
+
+# System
 .DS_Store
 __pycache__/
-!netlify/functions/
+*.pyc
+
+# Tests (optional - keep if you want CI later)
+# tests/
+.deploy-config

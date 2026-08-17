@@ -19,6 +19,16 @@
 /testimonials   /testimonials.html  200
 
 # Retired duplicate pages -> canonical destinations (301)
-/blog           /insights           301
-/case-studies   /evidence           301
-/credentials    /about              301
+/blog           /insights           301!
+/case-studies   /evidence           301!
+/credentials    /about              301!
+
+# Legacy pre-brand stubs (no nav, off-brand, thin) -> modern equivalents
+/why-ld-measures-wrong        /insight-ld-wrong-metrics          301!
+/end-of-measurement-theater   /insight-ld-wrong-metrics          301!
+/fallacy-of-360-review        /insight-360-feedback-lying        301!
+/collision-of-mental-models   /insight-judgment-vs-competency    301!
+/fractional-clo-advantage     /fractional-clo-india              301!
+/embedded-advantage           /fractional-clo-india              301!
+/illusion-of-bench-strength   /insight-ic-to-manager             301!
+

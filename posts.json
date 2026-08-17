@@ -1,175 +1,574 @@
 {
   "posts": [
     {
-      "slug": "transformation-deck-47-slides",
-      "title": "The Transformation Deck Had 47 Slides. Nothing Changed.",
+      "title": "Tier 2 Is the Tier 1 of Tomorrow. You Are Still Certifying the Old One.",
+      "slug": "insight-tier-two-is-tomorrows-tier-one",
+      "date": "2026-08-17",
+      "excerpt": "The work re-tiers continuously and the system that re-tiers the people runs once a year. What was advanced last year is baseline this year, and by the time a promotion clears, the tier it certified has already become the entry expectation. Every certificate is an accurate photograph of a floor that already rose, and the gap between the picture and the room widens every quarter.",
+      "published": true,
       "category": "CRITICAL AND HONEST THOUGHTS",
-      "excerpt": "The deck was clear. The strategy was understood. Everyone in the room knew exactly what was being asked. Nothing changed because the deck didn't touch the systems that govern behavior.",
-      "date": "2026-05-27",
-      "readTime": "9 min",
-      "file": "transformation-deck-47-slides.html"
+      "file": "insight-tier-two-is-tomorrows-tier-one.html",
+      "readTime": "8 min"
     },
     {
-      "slug": "exit-interview-never-read",
-      "title": "The Exit Interview They Never Read",
-      "category": "LEADING BETWEEN THE LINES",
-      "excerpt": "She had been there seven years. She sat in the glass-walled room and said careful things. The notes are in a folder. They have not been read by anyone who could change the conditions that produced them.",
-      "date": "2026-05-27",
-      "readTime": "9 min",
-      "file": "exit-interview-never-read.html"
+      "title": "The 10,000 Became 2,000. Nobody Rebuilt the Talent Model.",
+      "slug": "insight-ten-thousand-became-two-thousand",
+      "date": "2026-08-16",
+      "excerpt": "The work that took ten thousand pairs of hands now takes two thousand and a compute layer. Then the deck advances to a hiring plan that still counts bodies. Compute broke the link between headcount and capacity, and the talent model never noticed. Depth became the unit of value; the machine that finds and funds people is still counting seats.",
+      "published": true,
+      "category": "CRITICAL AND HONEST THOUGHTS",
+      "readTime": "8 min",
+      "file": "insight-ten-thousand-became-two-thousand.html"
     },
     {
-      "slug": "classroom-full-behavior-didnt-change",
-      "title": "The Classroom Was Full. The Behavior Didn't Change.",
+      "title": "Animals Are Trained. Human Beings Learn.",
+      "slug": "insight-animals-trained-humans-learn",
+      "date": "2026-08-13",
+      "excerpt": "They called it an Academy, which was the first thing that should have given it away. Watch the mechanics of the AI rollout and you will recognize them: stimulus, reward, streak, badge. That is operant conditioning, the technology of animal training. It builds compliance. It cannot build the judgment the work actually requires.",
+      "published": true,
       "category": "LEARNING CULTURE ESSENTIALS",
-      "excerpt": "The program had 94% completion. Feedback scores averaged 4.6 out of 5. Six months later, the behavior the program was designed to change had not changed.",
+      "readTime": "7 min",
+      "file": "insight-animals-trained-humans-learn.html"
+    },
+    {
+      "title": "Ninety-Five Percent Failed. The Model Was Never the Reason.",
+      "slug": "insight-ninety-five-percent-failed-model-not-the-reason",
+      "date": "2026-08-12",
+      "excerpt": "About 95 percent of enterprise AI pilots returned nothing on the profit and loss, on tens of billions of dollars of investment. MIT was explicit that this was a learning gap, not a model gap. The five percent who captured value did not buy a better model. They built the enablement layer everyone else skipped.",
+      "published": true,
+      "category": "CRITICAL AND HONEST THOUGHTS",
+      "readTime": "8 min",
+      "file": "insight-ninety-five-percent-failed-model-not-the-reason.html"
+    },
+    {
+      "title": "The Six-Times Gap Is Your Real AI Strategy.",
+      "slug": "insight-six-times-gap-ai-metric",
+      "date": "2026-08-12",
+      "excerpt": "Everyone in the enterprise has the same AI tools now. OpenAI measured about nine thousand workers and found the power users are roughly six times more productive on those same tools, and the gap comes from learned orchestration built into real work, not from a one-time course. The completion certificate does not close that gap. It hides it.",
+      "published": true,
+      "category": "LEARNING CULTURE ESSENTIALS",
+      "readTime": "9 min",
+      "file": "insight-six-times-gap-ai-metric.html"
+    },
+    {
+      "title": "Domain Experts Are Protocol Thinkers, Not Systems Thinkers.",
+      "slug": "insight-protocol-thinkers-not-systems-thinkers",
+      "date": "2026-08-12",
+      "excerpt": "Collapse the transactional tier, rebuild around deep domain experts plus compute, and leadership assumes it has also bought systems thinking. It has not. Protocol mastery and systems wiring are built by different work, and the org that confuses them promotes protocol masters into architecture roles and then wonders why the architecture never improves.",
+      "published": true,
+      "category": "JUDGMENT DESIGN",
+      "readTime": "9 min",
+      "file": "insight-protocol-thinkers-not-systems-thinkers.html"
+    },
+    {
+      "title": "We Gave Everyone AI. We Trained No One.",
+      "slug": "insight-gave-everyone-ai-trained-no-one",
+      "date": "2026-08-11",
+      "excerpt": "An organization bought AI for everyone, declared transformation, and eight months later nothing the tool was supposed to move had moved. The model did not fail. It faithfully ran a broken process at a thousand times the volume, with more confidence and far less traceability. AI does not fix a broken organization. It industrialises it.",
+      "published": true,
+      "category": "CRITICAL AND HONEST THOUGHTS",
+      "readTime": "8 min",
+      "file": "insight-gave-everyone-ai-trained-no-one.html"
+    },
+    {
+      "title": "Nobody Mentioned the Model in the Room.",
+      "slug": "insight-model-in-the-room",
+      "date": "2026-08-11",
+      "excerpt": "There is now a third participant in every senior decision, and nobody names it. A leader pastes the board problem into a model at 11pm and walks in the next morning owning a judgment that is half his and half a machine's, unable to say which half. The leaders who win the next decade build a doctrine for deciding with the machine, not around it.",
+      "published": true,
+      "category": "LEADING BETWEEN THE LINES",
+      "readTime": "8 min",
+      "file": "insight-model-in-the-room.html"
+    },
+    {
+      "title": "We Certified the Workforce AI-Ready. The Tool Changed on Tuesday.",
+      "slug": "insight-certified-ai-ready-tool-changed",
+      "date": "2026-08-11",
+      "excerpt": "L&D ran the prompt-writing workshops, issued the AI-Ready badges, and added an AI-literacy row to the competency framework. Then a new model version shipped on a Tuesday and half of what was taught expired before the certificates printed. The failure was not in the delivery. It was in a system that only knows how to certify things that stop moving.",
+      "published": true,
+      "category": "LEARNING CULTURE ESSENTIALS",
+      "readTime": "8 min",
+      "file": "insight-certified-ai-ready-tool-changed.html"
+    },
+    {
+      "title": "The Brief Said Leadership. The Problem Was Architecture.",
+      "slug": "insight-brief-said-leadership-architecture",
+      "date": "2026-08-11",
+      "excerpt": "The theme is already printed on the lanyard. The diagnosis is on the agenda before the first session begins: our senior leaders operate in silos, they do not collaborate. But leaders who look misaligned are usually aligned perfectly, each to a target you designed to collide with the person across the table.",
+      "published": true,
+      "category": "PRACTITIONER",
+      "readTime": "7 min",
+      "file": "insight-brief-said-leadership-architecture.html"
+    },
+    {
+      "title": "We Didn't Train Them. We Rebuilt What They Walked Into.",
+      "slug": "insight-rebuilt-what-they-walked-into",
+      "date": "2026-08-10",
+      "excerpt": "The request arrives already diagnosed. The managers will not take ownership. The leaders escalate everything. So a training programme is scoped. But the behaviour you dislike does not live inside your people. It lives inside the architecture they walk into.",
+      "published": true,
+      "category": "PRACTITIONER",
+      "readTime": "6 min",
+      "file": "insight-rebuilt-what-they-walked-into.html"
+    },
+    {
+      "title": "The Leadership Gap You Can't See in a 360",
+      "slug": "insight-gap-you-cant-see-in-a-360",
+      "date": "2026-07-17",
+      "excerpt": "The report lands on the table with the quiet authority of a thing that took three weeks and twenty-two raters to produce. Clean radar chart. It is accurate, and it is useless for the one decision it is about to be used for.",
+      "published": true,
+      "category": "JUDGMENT DESIGN",
+      "readTime": "6 min",
+      "file": "insight-gap-you-cant-see-in-a-360.html"
+    },
+    {
+      "title": "We Didn't Build a Test. We Built a Mirror.",
+      "slug": "insight-built-a-mirror-not-a-test",
+      "date": "2026-07-16",
+      "excerpt": "Every talent team asks the same question in the first ten minutes: what is the passing score. It is the precise instinct the instrument was built to disappoint. The moment a leader can pass something, they can study for it, perform to it, and beat it without ever becoming the thing it was meant to measure.",
+      "published": true,
+      "category": "JUDGMENT DESIGN",
+      "readTime": "7 min",
+      "file": "insight-built-a-mirror-not-a-test.html"
+    },
+    {
+      "title": "The Facilitator Who Changed Nothing",
+      "slug": "insight-facilitator-changed-nothing",
+      "date": "2026-07-14",
+      "excerpt": "She scored 4.7 out of 5. Nine months later nothing in the business had moved, and the organisation concluded the participants had failed to apply it. The most convenient sentence in corporate learning is also the most expensive.",
+      "published": true,
+      "category": "JUDGMENT DESIGN",
+      "readTime": "7 min",
+      "file": "insight-facilitator-changed-nothing.html"
+    },
+    {
+      "title": "Why the Smartest Person in the Room Fails the Simulation",
+      "slug": "insight-smartest-person-fails-simulation",
+      "date": "2026-07-10",
+      "excerpt": "Ask a room of leaders which of them will win a timed crisis and they name the sharpest analyst. The results rarely agree. The smartest person has a failure mode under a running clock, and it is a direct consequence of the intelligence itself.",
+      "published": true,
+      "category": "JUDGMENT DESIGN",
+      "readTime": "8 min",
+      "file": "insight-smartest-person-fails-simulation.html"
+    },
+    {
+      "title": "The Archetype You Don't Know You Are",
+      "slug": "the-archetype-you-dont-know-you-are",
+      "date": "2026-07-07",
+      "excerpt": "Ask a senior leader how they lead and you get a philosophy. Under pressure they run a pattern they have never seen, one their whole organisation learned years ago. Here is what surfaces when the clock removes the room to perform.",
+      "published": true,
+      "category": "JUDGMENT DESIGN",
+      "readTime": "7 min",
+      "file": "the-archetype-you-dont-know-you-are.html"
+    },
+    {
+      "title": "What Your Leaders Do Under Pressure When Nobody Is Watching",
+      "slug": "insight-leaders-under-pressure",
+      "date": "2026-07-01",
+      "excerpt": "Every leadership instrument your organisation runs is watched, so your leaders perform to it. The self that runs a real crisis is the one no 360 has ever seen. Here is what surfaces when the mirror goes dark.",
+      "published": true,
+      "category": "JUDGMENT DESIGN",
+      "readTime": "6 min",
+      "file": "insight-leaders-under-pressure.html"
+    },
+    {
+      "title": "The Skill They Built in 2019 That Doesn't Exist Anymore",
+      "slug": "insight-skill-built-2019-doesnt-exist",
+      "date": "2026-06-30",
+      "excerpt": "There is a competency framework sitting on a shared drive somewhere in your organisation. It was built in 2019. About a third of what it described no longer matters. The L&D function kept training to the map long after the territory had been redrawn.",
+      "published": true,
+      "category": "LEARNING CULTURE ESSENTIALS",
+      "readTime": "7 min",
+      "file": "insight-skill-built-2019-doesnt-exist.html"
+    },
+    {
+      "title": "The Manager Who Was Never Trained to Develop People",
+      "slug": "insight-manager-never-trained-develop-people",
+      "date": "2026-06-29",
+      "excerpt": "She was the best individual contributor on the team. That is why she was promoted. Eight months later her best engineer resigns, saying he stopped growing. She is failing at the part of the job nobody ever taught her, that nobody measures, and that the system punishes her for prioritising.",
+      "published": true,
+      "category": "LEARNING CULTURE ESSENTIALS",
+      "readTime": "7 min",
+      "file": "insight-manager-never-trained-develop-people.html"
+    },
+    {
+      "title": "The Cohort That Graduated and Disappeared",
+      "slug": "insight-cohort-graduated-disappeared",
+      "date": "2026-06-25",
+      "excerpt": "There is a photograph from the closing day. Twenty-four high-potential managers, six months of an accelerator behind them, holding certificates. The cohort graduated. Then it disappeared into the same organisation that sent it.",
+      "published": true,
+      "category": "LEARNING CULTURE ESSENTIALS",
+      "readTime": "6 min",
+      "file": "insight-cohort-graduated-disappeared.html"
+    },
+    {
+      "title": "The Feedback Loop Nobody Closed",
+      "slug": "insight-feedback-loop-nobody-closed",
+      "date": "2026-06-24",
+      "excerpt": "The form went out. Forty-two people completed it. The system generated a report. The report was filed. The loop was never closed.",
+      "published": true,
+      "category": "LEARNING CULTURE ESSENTIALS",
+      "readTime": "7 min",
+      "file": "insight-feedback-loop-nobody-closed.html"
+    },
+    {
+      "title": "What Psychological Safety Actually Costs",
+      "slug": "insight-psychological-safety-cost",
+      "date": "2026-06-23",
+      "excerpt": "Organizations installed the language of psychological safety without the architecture it requires. Here is what the gap actually costs and what building the real thing demands.",
+      "published": true,
+      "category": "LEARNING CULTURE ESSENTIALS",
+      "readTime": "9 min",
+      "file": "insight-psychological-safety-cost.html"
+    },
+    {
+      "title": "The Learning Culture That Only Existed in the Annual Report",
+      "slug": "insight-learning-culture-annual-report",
+      "date": "2026-06-22",
+      "excerpt": "Most organizations claim a culture of continuous learning. The claim is in the annual report. The architecture is not. Here is what the gap actually costs and what closing it requires.",
+      "published": true,
+      "category": "LEARNING CULTURE ESSENTIALS",
+      "readTime": "7 min",
+      "file": "insight-learning-culture-annual-report.html"
+    },
+    {
+      "title": "The KPI Nobody Wanted to Own",
+      "slug": "insight-kpi-nobody-wanted-to-own",
+      "date": "2026-06-19",
+      "excerpt": "The meeting had seventeen people in it. Training hours: up 23%. Completion rates: 91%. Manager satisfaction: 4.2. Nobody asked what changed. That is not an oversight.",
+      "published": true,
+      "category": "CRITICAL AND HONEST THOUGHTS",
+      "readTime": "5 min",
+      "file": "insight-kpi-nobody-wanted-to-own.html"
+    },
+    {
+      "title": "The Town Hall That Answered Nothing",
+      "slug": "insight-town-hall-answered-nothing",
+      "date": "2026-06-18",
+      "excerpt": "Organizations spend months designing town halls. The questions that mattered most are still in the queue. The workforce already knows this. The workforce adapted to it years ago.",
+      "published": true,
+      "category": "CRITICAL AND HONEST THOUGHTS",
+      "readTime": "7 min",
+      "file": "insight-town-hall-answered-nothing.html"
+    },
+    {
+      "title": "The Diversity Hire Who Was Never in the Room",
+      "slug": "insight-diversity-hire-never-in-room",
+      "date": "2026-06-17",
+      "excerpt": "Organizations spend months recruiting for diversity. They spend almost nothing rebuilding the architecture that decides who gets heard. The hire lands. The room doesn't change.",
+      "published": true,
+      "category": "CRITICAL AND HONEST THOUGHTS",
+      "readTime": "7 min",
+      "file": "insight-diversity-hire-never-in-room.html"
+    },
+    {
+      "title": "Culture Fit Is a Polite Word for Something Else",
+      "slug": "insight-culture-fit-polite-word",
+      "date": "2026-06-16",
+      "excerpt": "Every organization says it hires for culture fit. Most cannot define the culture they are hiring for. The gap between those two facts is where organizations quietly compound their most expensive mistakes.",
+      "published": true,
+      "category": "CRITICAL AND HONEST THOUGHTS",
+      "readTime": "7 min",
+      "file": "insight-culture-fit-polite-word.html"
+    },
+    {
+      "title": "The Mentor Program That Mentored No One",
+      "slug": "insight-mentor-program-mentored-no-one",
+      "date": "2026-06-15",
+      "excerpt": "The mentorship program launched with a town hall. 312 pairs activated. 143 never met. The gap is between what the organization says mentorship is and what it actually requires.",
+      "published": true,
+      "category": "CRITICAL AND HONEST THOUGHTS",
+      "readTime": "6 min",
+      "file": "insight-mentor-program-mentored-no-one.html"
+    },
+    {
+      "title": "The Survey Said 91%. Nobody Believed It.",
+      "slug": "insight-survey-91-nobody-believed-it",
+      "date": "2026-06-12",
+      "excerpt": "The engagement survey landed on a Tuesday. 91% say leadership communicates vision clearly. Three weeks later, the CFO asked why attrition had spiked 12 points.",
+      "published": true,
+      "category": "CRITICAL AND HONEST THOUGHTS",
+      "readTime": "6 min",
+      "file": "insight-survey-91-nobody-believed-it.html"
+    },
+    {
+      "title": "The Rehearsal Nobody Schedules",
+      "slug": "the-rehearsal-nobody-schedules",
+      "date": "2026-06-11",
+      "excerpt": "The board presentation had six rehearsals. The conversation that mattered most had none.",
+      "published": true,
+      "category": "LEADING BETWEEN THE LINES",
+      "readTime": "9 min",
+      "file": "the-rehearsal-nobody-schedules.html"
+    },
+    {
+      "title": "The Handshake Before the Hire",
+      "slug": "insight-handshake-before-hire",
+      "date": "2026-06-10",
+      "excerpt": "The decision was made before the interview started. Four rounds of structured interviews followed, not to evaluate, but to confirm a conclusion formed in a hallway.",
+      "published": true,
+      "category": "LEADING BETWEEN THE LINES",
+      "readTime": "4 min",
+      "file": "insight-handshake-before-hire.html"
+    },
+    {
+      "title": "The Floor Moved",
+      "slug": "insight-the-floor-moved",
+      "date": "2026-06-08",
+      "excerpt": "The quarterly review was the same as always until the room said nothing. Not hostile. Just the weight of waiting to acknowledge that the floor had moved.",
+      "published": true,
+      "category": "LEADING BETWEEN THE LINES",
+      "readTime": "3 min",
+      "file": "insight-the-floor-moved.html"
+    },
+    {
+      "title": "Five Decisions. Ten Minutes. A Pattern That Doesn't Lie.",
+      "slug": "insight-five-decisions-ten-minutes",
+      "date": "2026-06-06",
+      "excerpt": "Twelve senior leaders. A timed crisis. The 360 said thoughtful, strong executor, needs to be more decisive. The simulation said something entirely different.",
+      "published": true,
+      "category": "JUDGMENT DESIGN",
+      "readTime": "8 min",
+      "file": "insight-five-decisions-ten-minutes.html"
+    },
+    {
+      "title": "When the System Works, Nobody Notices",
+      "slug": "insight-system-works-nobody-notices",
+      "date": "2026-06-06",
+      "excerpt": "The VP of L&D lost her budget fight three years in a row. Completion rates strong. Satisfaction scores high. The CFO asked one question: show me what changed.",
+      "published": true,
+      "category": "PRACTITIONER",
+      "readTime": "8 min",
+      "file": "insight-system-works-nobody-notices.html"
+    },
+    {
+      "title": "The Onboarding That Forgot the Human",
+      "slug": "insight-onboarding-forgot-human",
+      "date": "2026-06-06",
+      "excerpt": "14 modules completed. 7 documents signed. Zero people met who can tell you what actually matters around here. The onboarding was flawless. The human was never in it.",
+      "published": true,
+      "category": "LEARNING CULTURE ESSENTIALS",
+      "readTime": "8 min",
+      "file": "insight-onboarding-forgot-human.html"
+    },
+    {
+      "title": "The Corridor Verdict",
+      "slug": "insight-corridor-verdict",
+      "date": "2026-06-06",
+      "excerpt": "Nobody said it in the meeting. The proposal was sound. The data was clean. Fifteen minutes later, in the corridor, the actual conversation happened.",
+      "published": true,
+      "category": "LEADING BETWEEN THE LINES",
+      "readTime": "7 min",
+      "file": "insight-corridor-verdict.html"
+    },
+    {
+      "title": "The Applause Was Real. The Accountability Wasn't.",
+      "slug": "insight-applause-accountability",
+      "date": "2026-06-06",
+      "excerpt": "Three days. A resort. Breakout sessions. A keynote. Six weeks later, every behavioral change had regressed to baseline. The accountability architecture never existed.",
+      "published": true,
+      "category": "CRITICAL AND HONEST THOUGHTS",
+      "readTime": "9 min",
+      "file": "insight-applause-accountability.html"
+    },
+    {
+      "title": "The Weapon the CHRO Forgot to Use",
+      "slug": "insight-chro-hidden-leverage",
+      "date": "2026-06-01",
+      "excerpt": "The conversation usually starts around slide 14. The CFO is nodding but not listening. Board members are cycling through their phones.",
+      "published": true,
+      "category": "CRITICAL AND HONEST THOUGHTS",
+      "readTime": "8 min",
+      "file": "insight-chro-hidden-leverage.html"
+    },
+    {
+      "title": "The Simulation Didn't Judge You. It Showed You.",
+      "slug": "simulation-didnt-judge-you",
       "date": "2026-05-27",
+      "excerpt": "Most leaders who complete the SSUNDAR Organizational Crisis Simulation are not uncomfortable with their score. They are uncomfortable with the specificity of what comes after it.",
+      "published": true,
+      "category": "JUDGMENT DESIGN",
+      "readTime": "8 min",
+      "file": "simulation-didnt-judge-you.html"
+    },
+    {
+      "title": "The Classroom Was Full. The Behavior Didn't Change.",
+      "slug": "classroom-full-behavior-didnt-change",
+      "date": "2026-05-27",
+      "excerpt": "94% completion. 4.6 out of 5 on feedback. Six months later, the behavior hadn't moved. The program wasn't the problem. The architecture was.",
+      "published": true,
+      "category": "LEARNING CULTURE ESSENTIALS",
       "readTime": "8 min",
       "file": "classroom-full-behavior-didnt-change.html"
     },
     {
-      "slug": "simulation-didnt-judge-you",
-      "title": "The Simulation Didn't Judge You. It Showed You.",
-      "category": "JUDGMENT ARCHITECTURE",
-      "excerpt": "The simulation doesn't create the pattern it reveals. What makes senior leaders uncomfortable is not their result. It is recognising that the pattern was already there, running quietly inside every real decision they had already made.",
+      "title": "The Exit Interview They Never Read",
+      "slug": "exit-interview-never-read",
       "date": "2026-05-27",
-      "readTime": "9 min",
-      "file": "simulation-didnt-judge-you.html"
+      "excerpt": "She had been there seven years. She sat in the glass-walled room and said careful things. The notes are in a folder. They have not been read by anyone who could act on them.",
+      "published": true,
+      "category": "LEADING BETWEEN THE LINES",
+      "readTime": "8 min",
+      "file": "exit-interview-never-read.html"
     },
     {
+      "title": "The Transformation Deck Had 47 Slides. Nothing Changed.",
+      "slug": "transformation-deck-47-slides",
+      "date": "2026-05-27",
+      "excerpt": "Two hundred senior leaders. A hotel ballroom. The CEO had flown in. The deck was forty-seven slides. Three months later, nothing had changed.",
+      "published": true,
+      "category": "CRITICAL AND HONEST THOUGHTS",
+      "readTime": "8 min",
+      "file": "transformation-deck-47-slides.html"
+    },
+    {
+      "title": "Decision velocity: the leadership metric nobody tracks",
       "slug": "decision-velocity-leadership-metric",
-      "title": "Decision Velocity: The Leadership Metric Nobody Tracks",
-      "category": "JUDGMENT DESIGN",
-      "excerpt": "How fast your leadership team makes decisions under ambiguity is measurable and improvable. Most organizations are not measuring it. Here is what that costs and what the architecture looks like.",
       "date": "2026-05-25",
-      "readTime": "10 min",
+      "excerpt": "How fast your leadership team makes decisions under ambiguity is measurable and improvable. Most organizations are not measuring it. Here is what that costs.",
+      "published": true,
+      "category": "JUDGMENT DESIGN",
+      "readTime": "9 min",
       "file": "decision-velocity-leadership-metric.html"
     },
     {
       "slug": "gcc-borrowed-architecture",
-      "title": "GCCs Are Running Fast on Borrowed Architecture",
+      "title": "GCCs are running fast on borrowed architecture",
       "category": "SYSTEMS ARCHITECTURE",
-      "excerpt": "India built 1,700 Global Capability Centers. Most of them imported their leadership architecture from the same organizations they were designed to outrun. Here is what that costs and what a native GCC architecture actually requires.",
+      "excerpt": "India built 1,700 Global Capability Centers. Most of them imported their leadership architecture from the same organizations they were designed to outrun.",
       "date": "2026-05-20",
       "readTime": "11 min",
-      "file": "gcc-borrowed-architecture.html"
+      "file": "gcc-borrowed-architecture.html",
+      "published": true
     },
     {
       "slug": "insight-ld-audit-5-days",
-      "title": "How to Audit Your L&D Function in 5 Days",
+      "title": "How to audit your L&D function in 5 days",
       "category": "PERFORMANCE SYSTEMS",
-      "excerpt": "Five questions. Five days. A clear picture of what is working and what is theater. A structured audit method for L&D leaders who want the truth about their function before the CFO asks it for them.",
+      "excerpt": "Five questions. Five days. A clear picture of what is working and what is theater.",
       "date": "2026-04-06",
       "readTime": "9 min",
-      "file": "insight-ld-audit-5-days.html"
+      "file": "insight-ld-audit-5-days.html",
+      "published": true
     },
     {
       "slug": "insight-gcc-laboratory",
-      "title": "Why GCCs Are the Perfect Laboratory for Judgment-Centered Design",
+      "title": "Why GCCs are the perfect laboratory for judgment-centered design",
       "category": "SYSTEMS ARCHITECTURE",
-      "excerpt": "GCCs have scale, mandate, and budget. They are building leadership pipelines at speed and most of the architecture is wrong. Here is the structural opportunity nobody is designing for.",
+      "excerpt": "GCCs have scale, mandate, and budget. They are building leadership pipelines at speed and most of the architecture is wrong.",
       "date": "2026-04-01",
       "readTime": "9 min",
-      "file": "insight-gcc-laboratory.html"
+      "file": "insight-gcc-laboratory.html",
+      "published": true
     },
     {
       "slug": "insight-vendor-roster",
-      "title": "What Happens When You Fire Your Entire L&D Vendor Roster",
+      "title": "What happens when you fire your entire L&D vendor roster",
       "category": "PERFORMANCE SYSTEMS",
-      "excerpt": "Vendor dependency is a symptom. When organizations cut their entire L&D vendor roster, they discover the real problem: there was never any internal architecture. Here is what to build instead.",
+      "excerpt": "Vendor dependency is a symptom. When organizations cut their entire L&D vendor roster, they discover the real problem: there was never any internal architecture.",
       "date": "2026-04-01",
       "readTime": "8 min",
-      "file": "insight-vendor-roster.html"
+      "file": "insight-vendor-roster.html",
+      "published": true
     },
     {
       "slug": "insight-cfo-question",
-      "title": "The CFO Question Every L&D Leader Dreads \u2014 And How to Answer It",
+      "title": "The CFO question every L&D leader dreads and how to answer it",
       "category": "MEASUREMENT",
       "excerpt": "What is the return on your training investment? Most L&D leaders cannot answer this with data. Here is how to build the answer into the system before the CFO asks.",
       "date": "2026-03-25",
       "readTime": "8 min",
-      "file": "insight-cfo-question.html"
+      "file": "insight-cfo-question.html",
+      "published": true
     },
     {
       "slug": "insight-360-feedback-lying",
-      "title": "Your Leadership 360 Is Lying to You",
+      "title": "Your leadership 360 is lying to you",
       "category": "MEASUREMENT",
-      "excerpt": "360 feedback measures perception, not judgment. It tells you how people feel about a leader, not how that leader performs when stakes are real. Here is what to use instead.",
+      "excerpt": "360 feedback measures perception, not judgment. It tells you how people feel about a leader not how that leader performs when stakes are real.",
       "date": "2026-03-25",
       "readTime": "7 min",
-      "file": "insight-360-feedback-lying.html"
+      "file": "insight-360-feedback-lying.html",
+      "published": true
     },
     {
       "slug": "insight-90-day-decay",
-      "title": "The 90-Day Decay: Why Training Evaporates and Systems Don't",
+      "title": "The 90-day decay: why training evaporates and systems don't",
       "category": "JUDGMENT DESIGN",
       "excerpt": "Behavior change has a half-life of 21 days without reinforcement architecture. Most organizations spend on content and almost nothing on the system that makes it stick.",
       "date": "2026-03-25",
       "readTime": "7 min",
-      "file": "insight-90-day-decay.html"
+      "file": "insight-90-day-decay.html",
+      "published": true
     },
     {
       "slug": "insight-post-merger-ld",
-      "title": "The Post-Merger L&D Disaster Nobody Talks About",
+      "title": "The post-merger L&D disaster nobody talks about",
       "category": "SYSTEMS ARCHITECTURE",
       "excerpt": "Four cultures, zero unified architecture. Why most post-merger L&D integration fails and the 90-day window to fix it before the structural damage compounds.",
       "date": "2026-03-25",
       "readTime": "9 min",
-      "file": "insight-post-merger-ld.html"
+      "file": "insight-post-merger-ld.html",
+      "published": true
     },
     {
       "slug": "insight-ic-to-manager",
-      "title": "Why Your Best Individual Contributors Become Your Worst Managers",
+      "title": "Why your best individual contributors become your worst managers",
       "category": "SYSTEMS ARCHITECTURE",
-      "excerpt": "Promoting your top performer is the most common leadership pipeline mistake Fortune 500 organizations make. Here is the structural reason it fails and what to build instead.",
+      "excerpt": "Promoting your top performer is the most common leadership pipeline mistake Fortune 500 organizations make.",
       "date": "2026-03-25",
       "readTime": "8 min",
-      "file": "insight-ic-to-manager.html"
+      "file": "insight-ic-to-manager.html",
+      "published": true
     },
     {
       "slug": "insight-escalation-epidemic",
-      "title": "The Escalation Epidemic: What Every Unnecessary Escalation Costs Your Organization",
+      "title": "The escalation epidemic: what every unnecessary escalation costs your organization",
       "category": "JUDGMENT DESIGN",
-      "excerpt": "Every escalation is a judgment gap made visible. Most organizations treat escalations as process. They are architecture failures. Here is how to diagnose the system and what it actually costs.",
+      "excerpt": "Every escalation is a judgment gap made visible. Most organizations treat escalations as process. They are architecture failures.",
       "date": "2026-03-23",
       "readTime": "8 min",
-      "file": "insight-escalation-epidemic.html"
+      "file": "insight-escalation-epidemic.html",
+      "published": true
     },
     {
       "slug": "insight-ld-wrong-metrics",
-      "title": "Why Your L&D Team Measures the Wrong Things",
+      "title": "Why your L&D team measures the wrong things",
       "category": "MEASUREMENT",
-      "excerpt": "Most L&D teams track completion rates, satisfaction scores, and seat-hours. None of these measure performance. Here is what to track instead and why the shift changes everything.",
+      "excerpt": "Most L&D teams track completion rates, satisfaction scores, and seat-hours. None of these measure performance. Here is what to track instead.",
       "date": "2026-03-23",
       "readTime": "7 min",
-      "file": "insight-ld-wrong-metrics.html"
+      "file": "insight-ld-wrong-metrics.html",
+      "published": true
     },
     {
-      "slug": "insight-simulation-data",
-      "title": "What 200+ Leadership Simulations Reveal About How Executives Actually Decide",
-      "category": "SIMULATION DATA",
-      "excerpt": "We ran hundreds of leaders through cascading crisis simulations. The patterns that emerged are not what conventional leadership theory predicts. Three findings that should change how you design your leadership pipeline.",
+      "slug": "why-leadership-development-doesnt-compound",
+      "title": "Why leadership development doesn't compound - and what does",
+      "category": "SYSTEMS ARCHITECTURE",
+      "excerpt": "Most organizations treat leadership development as an event. A workshop. An offsite. Each one exists in isolation with no compounding, no architecture, no system.",
       "date": "2026-02-11",
-      "readTime": "7 min",
-      "file": "insight-simulation-data.html"
+      "readTime": "8 min",
+      "file": "insight-compounding-leadership.html",
+      "published": true
     },
     {
-      "slug": "insight-judgment-vs-competency",
-      "title": "The Competency Model Is Dead. Here's What Replaces It",
+      "slug": "competency-model-is-dead",
+      "title": "The competency model is dead. Here's what replaces it",
       "category": "JUDGMENT DESIGN",
       "excerpt": "Competency models were designed for predictable organizations. The world stopped being predictable. What Fortune 500 organizations actually need is a judgment architecture.",
       "date": "2026-02-11",
       "readTime": "6 min",
-      "file": "insight-judgment-vs-competency.html"
+      "file": "insight-judgment-vs-competency.html",
+      "published": true
     },
     {
-      "slug": "insight-compounding-leadership",
-      "title": "Why Leadership Development Doesn't Compound \u2014 And What Does",
-      "category": "SYSTEMS ARCHITECTURE",
-      "excerpt": "Most organizations treat leadership development as an event. Each one exists in isolation \u2014 no compounding, no architecture, no system. Here is the structural reason why, and the design pattern that fixes it.",
+      "slug": "what-200-simulations-reveal",
+      "title": "What 200+ leadership simulations reveal about how executives actually decide",
+      "category": "SIMULATION DATA",
+      "excerpt": "We ran hundreds of leaders through cascading crisis simulations. The patterns that emerged are not what conventional leadership theory predicts.",
       "date": "2026-02-11",
-      "readTime": "8 min",
-      "file": "insight-compounding-leadership.html"
+      "readTime": "7 min",
+      "file": "insight-simulation-data.html",
+      "published": true
     }
   ]
 }

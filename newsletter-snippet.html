@@ -1,0 +1,37 @@
+<!-- ============ NEWSLETTER SIGNUP ============ -->
+<div class="newsletter-section">
+  <div class="newsletter-inner">
+    <div>
+      <p class="mono-label mb-16">WEEKLY INTELLIGENCE</p>
+      <h3 class="h3 text-white mb-16">One insight on leadership systems<span class="dot">.</span> Every Monday<span class="dot">.</span></h3>
+      <p class="body-text text-w4">No fluff. No spam. Unsubscribe anytime.</p>
+    </div>
+    <div>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="hidden" name="_subject" value="SSUNDAR Newsletter Signup">
+        <input type="hidden" name="_form_type" value="newsletter">
+        <input type="email" name="email" placeholder="your@email.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="newsletter-success" id="newsletterSuccess" style="display:none">Subscribed<span class="dot">.</span> First issue arrives Monday.</p>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var nf=document.getElementById('newsletterForm');
+  if(!nf)return;
+  nf.addEventListener('submit',function(e){
+    e.preventDefault();
+    var fd=new FormData(nf);
+    var btn=nf.querySelector('button');
+    btn.textContent='SUBSCRIBING...';btn.style.opacity='0.5';
+    fetch('https://formspree.io/f/xykdyqyj',{
+      method:'POST',body:fd,headers:{'Accept':'application/json'}
+    }).then(function(r){
+      if(r.ok){nf.style.display='none';document.getElementById('newsletterSuccess').style.display='block';}
+      else{btn.textContent='SUBSCRIBE';btn.style.opacity='1';alert('Failed. Try again.');}
+    }).catch(function(){btn.textContent='SUBSCRIBE';btn.style.opacity='1';alert('Network error.');});
+  });
+})();
+</script>
