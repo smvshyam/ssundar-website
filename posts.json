@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "The AI Learned From Your Org. That Is Exactly Why It Is Dangerous.",
+      "slug": "insight-ai-learned-from-your-org",
+      "date": "2026-08-18",
+      "category": "CRITICAL AND HONEST THOUGHTS",
+      "excerpt": "Train a model on your own history and it does not absorb your best thinking. It converges on your median decision, the fast and expedient one that survived the calendar, and it cannot see which of those choices should never have cleared. Then it ships that judgment at a speed and confidence no bad decision ever had before, with the human friction that used to catch it deleted in the name of efficiency.",
+      "readTime": "6 min",
+      "file": "insight-ai-learned-from-your-org.html",
+      "published": true
+    },
+    {
       "title": "Tier 2 Is the Tier 1 of Tomorrow. You Are Still Certifying the Old One.",
       "slug": "insight-tier-two-is-tomorrows-tier-one",
       "date": "2026-08-17",

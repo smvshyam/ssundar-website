@@ -11,6 +11,12 @@
 
   <!-- Insight Articles -->
   <url>
+    <loc>https://ssundar.com/insight-ai-learned-from-your-org</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ssundar.com/insight-tier-two-is-tomorrows-tier-one</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
