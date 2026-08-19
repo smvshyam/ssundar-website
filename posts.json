@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "Your Leaders Say They Want a Capability. They Cannot Name It.",
+      "slug": "insight-leaders-cannot-name-the-capability",
+      "date": "2026-08-19",
+      "category": "CAPABILITY ARCHITECTURE",
+      "excerpt": "Ask the leader who named it to describe one moment where the capability was present and one where it was absent, and the answer arrives dressed as impatience: you know what I mean. They do not. Naming precisely what you want is itself an act of critical thinking, and the request fails it. The gap is not downstream in the workforce. It is standing at the front of the room holding the marker.",
+      "readTime": "6 min",
+      "file": "insight-leaders-cannot-name-the-capability.html",
+      "published": true
+    },
+    {
       "title": "The AI Learned From Your Org. That Is Exactly Why It Is Dangerous.",
       "slug": "insight-ai-learned-from-your-org",
       "date": "2026-08-18",
