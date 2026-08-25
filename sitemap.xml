@@ -11,6 +11,12 @@
 
   <!-- Insight Articles -->
   <url>
+    <loc>https://ssundar.com/insight-hallucination-governance-failure</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ssundar.com/insight-pilot-worked-rollout-died</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
