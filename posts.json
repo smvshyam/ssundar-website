@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "Hallucination Is a Governance Failure, Not a Model Failure.",
+      "slug": "insight-hallucination-governance-failure",
+      "date": "2026-08-25",
+      "category": "CRITICAL AND HONEST THOUGHTS",
+      "excerpt": "The number was wrong by a factor nobody caught until a customer did. By the time anyone traced it back, it had passed through six people and four systems, and not one of them had been asked to verify it. The post-mortem reached for the easy word. The model hallucinated. It did. That part is true and almost irrelevant.",
+      "readTime": "5 min",
+      "file": "insight-hallucination-governance-failure.html",
+      "published": true
+    },
+    {
       "title": "The Pilot Worked. The Rollout Died. Here Is the Layer Everyone Skipped.",
       "slug": "insight-pilot-worked-rollout-died",
       "date": "2026-08-25",
