@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "The Pilot Worked. The Rollout Died. Here Is the Layer Everyone Skipped.",
+      "slug": "insight-pilot-worked-rollout-died",
+      "date": "2026-08-25",
+      "category": "AI INTEGRATION",
+      "excerpt": "The demo went perfectly. It always does. A small team stands at the front of the room, the tool answers the hard question in four seconds, the output is clean, the summary is right, and someone senior says the word that ends the",
+      "readTime": "6 min",
+      "file": "insight-pilot-worked-rollout-died.html",
+      "published": true
+    },
+    {
       "title": "AI Does Not Have a Judgment Problem. You Do.",
       "slug": "insight-ai-judgment-problem-you-do",
       "date": "2026-08-20",
