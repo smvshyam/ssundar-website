@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "The LMS Delivered the Course. Nobody Agreed to Learn It.",
+      "slug": "insight-thirty-seventy-learning-contract",
+      "date": "2026-08-27",
+      "category": "LEARNING CULTURE ESSENTIALS",
+      "excerpt": "The dashboard was green. Ninety-one percent completion across twenty thousand people, a number that took a platform, a procurement cycle, and a small team of administrators to produce. The learning function presented it to the executive committee with the quiet confidence of a job done.",
+      "readTime": "5 min",
+      "file": "insight-thirty-seventy-learning-contract.html",
+      "published": true
+    },
+    {
       "title": "Hallucination Is a Governance Failure, Not a Model Failure.",
       "slug": "insight-hallucination-governance-failure",
       "date": "2026-08-25",
