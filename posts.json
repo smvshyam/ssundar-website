@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "What AI-Integrated Leadership Development Actually Looks Like",
+      "slug": "insight-ai-integrated-leadership-development",
+      "date": "2026-09-01",
+      "category": "AI INTEGRATION",
+      "excerpt": "A vendor stands at the front of the room and says the leadership academy now has AI. What they mean, when you strip the demo down to its mechanics, is that a chatbot has been trained on last year's slides and can now recite them on request. It is not integration. It is the same course with a faster mouth.",
+      "readTime": "5 min",
+      "file": "insight-ai-integrated-leadership-development.html",
+      "published": true
+    },
+    {
       "title": "The LMS Delivered the Course. Nobody Agreed to Learn It.",
       "slug": "insight-thirty-seventy-learning-contract",
       "date": "2026-08-27",
