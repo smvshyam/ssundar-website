@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "Half the L&D Stack Just Became AI. Nobody Owns the Half That Decides.",
+      "slug": "insight-fractional-clo-ai-era",
+      "date": "2026-09-04",
+      "category": "AI INTEGRATION",
+      "excerpt": "The demo is genuinely impressive, and that is the problem. The platform writes the course, builds the assessment, personalizes the pathway, and answers the 2 a.m. question. Somewhere between the applause and the procurement paperwork, one question never gets asked. Who decides what the machine is allowed to teach?",
+      "readTime": "5 min",
+      "file": "insight-fractional-clo-ai-era.html",
+      "published": true
+    },
+    {
       "title": "We Put AI Inside the Crisis Simulation. It Found the Pattern Faster Than We Did.",
       "slug": "insight-ai-inside-the-simulation",
       "date": "2026-09-03",
