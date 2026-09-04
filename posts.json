@@ -1,6 +1,26 @@
 {
   "posts": [
     {
+      "title": "Prediction Got Cheap. Judgment on Live Signals Is the Whole Job Now.",
+      "slug": "insight-prediction-got-cheap-signals",
+      "date": "2026-09-04",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "The team has built an impressive forecasting model, and someone calls it a competitive advantage. It learned the shape of the past and extended the line. That specific act, the one the room is admiring, is now something any competitor can buy for the price of an API call. So what is the human for?",
+      "readTime": "4 min",
+      "file": "insight-prediction-got-cheap-signals.html",
+      "published": true
+    },
+    {
+      "title": "Nobody in the Room Could Say What Success Looked Like.",
+      "slug": "insight-nobody-could-define-success",
+      "date": "2026-09-04",
+      "category": "CRITICAL AND HONEST THOUGHTS",
+      "excerpt": "The kickoff has real momentum. Budget approved, vendor shortlisted, eleven people agreeing this matters. Then someone asks the question that empties the room. If this works, what will be different? What does success actually look like? What follows is not an answer. It is a pause.",
+      "readTime": "4 min",
+      "file": "insight-nobody-could-define-success.html",
+      "published": true
+    },
+    {
       "title": "Half the L&D Stack Just Became AI. Nobody Owns the Half That Decides.",
       "slug": "insight-fractional-clo-ai-era",
       "date": "2026-09-04",
