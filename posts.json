@@ -1,6 +1,66 @@
 {
   "posts": [
     {
+      "title": "The Postmortem Was Blameless. Somebody Still Took the Fall.",
+      "slug": "insight-blameless-postmortem-took-the-fall",
+      "date": "2026-09-16",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "The meeting is called a review, and the first slide says the word everyone came to hear. Blameless. Then the timeline goes up, clean and forensic, and somewhere in the last ten minutes a name attaches itself to the cause. A person is where a failure stops when the system that produced it is too expensive to touch.",
+      "readTime": "6 min",
+      "file": "insight-blameless-postmortem-took-the-fall.html",
+      "published": true
+    },
+    {
+      "title": "Nobody Made the Call. They Wrote a Policy Instead.",
+      "slug": "insight-policy-instead-of-a-decision",
+      "date": "2026-09-15",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "Somewhere in your organization there is a rule that exists because one person, on one bad afternoon, made a call everybody later regretted. Nobody remembers the afternoon anymore. What survived is the rule. A policy is judgment made once, then frozen and shipped forward to conditions its authors never saw.",
+      "readTime": "6 min",
+      "file": "insight-policy-instead-of-a-decision.html",
+      "published": true
+    },
+    {
+      "title": "The Deliverable Was Never the Analysis. It Was the Dependency.",
+      "slug": "insight-deliverable-was-the-dependency",
+      "date": "2026-09-12",
+      "category": "SYSTEMS ARCHITECTURE",
+      "excerpt": "Ask any capability leader what they actually bought the last time they commissioned an external diagnostic, and the honest answer is not the analysis. They could already describe the problem. What they could not produce was the artefact. And the way that artefact has been sold for thirty years has one structural feature nobody puts in the proposal: you cannot edit it.",
+      "readTime": "7 min",
+      "file": "insight-deliverable-was-the-dependency.html",
+      "published": true
+    },
+    {
+      "title": "The Handover Was Complete. The Judgment Wasn't in It.",
+      "slug": "insight-handover-complete-judgment-wasnt",
+      "date": "2026-09-11",
+      "category": "SYSTEMS ARCHITECTURE",
+      "excerpt": "The handover document was forty pages and genuinely good. Nine years of running a function, written out in three weeks. The successor was capable and onboarded fast. Nothing broke on the day the old operator walked out. Things broke about five months later, so slowly nobody connected them to a departure everyone had already filed as a success.",
+      "readTime": "6 min",
+      "file": "insight-handover-complete-judgment-wasnt.html",
+      "published": true
+    },
+    {
+      "title": "Judgment Isn't Taught. It's Surfaced.",
+      "slug": "insight-judgment-isnt-taught-its-surfaced",
+      "date": "2026-09-10",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "The workshop scores north of 4.5. Then the next time a leader is forty minutes into a real decision with half the information missing and a clock nobody can stop, not one of them reaches for the framework. They reach for whatever they already were. Judgment does not live where knowledge lives, and the machinery built to install knowledge runs straight past it every time.",
+      "readTime": "7 min",
+      "file": "insight-judgment-isnt-taught-its-surfaced.html",
+      "published": true
+    },
+    {
+      "title": "Train-the-Trainer Is Not a Programme. It's a System Decision.",
+      "slug": "insight-train-the-trainer-system-decision",
+      "date": "2026-09-09",
+      "category": "SYSTEMS ARCHITECTURE",
+      "excerpt": "Somebody says it like a solved problem. Run a train-the-trainer, certify twelve of our own, stop paying external facilitators by the day. What actually happened is that the organization made one of its most consequential architecture decisions and filed it under logistics. It set a ceiling, and nobody in the room knew a ceiling was being set.",
+      "readTime": "6 min",
+      "file": "insight-train-the-trainer-system-decision.html",
+      "published": true
+    },
+    {
       "title": "Prediction Got Cheap. Judgment on Live Signals Is the Whole Job Now.",
       "slug": "insight-prediction-got-cheap-signals",
       "date": "2026-09-04",

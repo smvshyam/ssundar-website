@@ -1,66 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSUNDAR Platform — Free Diagnostic Access</title>
-<meta name="description" content="Free diagnostic access for L&D leaders. Contribute to the Global Organisational Judgment Index 2026. Understand where your organisation's judgment infrastructure stands.">
-<meta property="og:title" content="SSUNDAR Platform — Global Organisational Judgment Index 2026">
-<meta property="og:description" content="Free diagnostic access for L&D leaders. What does your organisation's judgment infrastructure actually look like? Find out in under 12 minutes.">
-<meta property="og:url" content="https://ssundar.com/platform.html">
-<meta property="og:image" content="https://ssundar.com/og-default.png">
-<link rel="canonical" href="https://ssundar.com/platform.html">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" href="/fonts.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treeng — The Platform | SSUNDAR.</title>
+  <meta name="description" content="Treeng is Judgment-Centered Leadership Design, productised. Sixteen diagnostic engines that grade the evidence behind every finding and export board-ready output in minutes. Free to start.">
+  <meta property="og:title" content="Treeng — The Platform | SSUNDAR.">
+  <meta property="og:description" content="Sixteen diagnostic engines. Every finding evidence-graded. Excel with live formulas, PowerPoint you own. Free to start, no credit card.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ssundar.com/platform">
+  <meta property="og:image" content="https://ssundar.com/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://ssundar.com/platform">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Treeng — The Platform | SSUNDAR.">
+  <meta name="twitter:description" content="Sixteen diagnostic engines. Every finding evidence-graded. Free to start.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="/fonts.css">
   <link rel="stylesheet" href="styles.css">
-<style>
-.page-hero{padding:clamp(140px,18vw,220px) var(--px) clamp(64px,8vw,100px);max-width:var(--max-w);margin:0 auto}
-.domain-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid rgba(255,255,255,0.1);margin-top:48px}
-@media(max-width:1100px){.domain-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:640px){.domain-grid{grid-template-columns:1fr 1fr}}
-.domain-cell{
-  border-top:2px solid rgba(255,255,255,0.06);
-  border-left:1px solid rgba(255,255,255,0.08);
-  padding:28px 24px;
-  transition:border-top-color 0.2s
-}
-.domain-cell:first-child{border-left:none;border-top-color:var(--red)}
-.domain-cell:hover{border-top-color:var(--red)}
-.domain-num{font-family:var(--mono);font-size:10px;color:var(--red);letter-spacing:0.1em;margin-bottom:14px}
-.domain-name{font-family:var(--body);font-weight:700;font-size:13px;color:var(--white);line-height:1.35;margin-bottom:10px}
-.domain-desc{font-family:var(--body);font-size:12px;color:rgba(255,255,255,0.35);line-height:1.75}
-.goji-stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(255,255,255,0.1);padding-top:40px;margin-top:40px}
-@media(max-width:640px){.goji-stat-row{grid-template-columns:1fr 1fr}}
-.goji-stat .num{font-family:var(--heading);font-weight:700;font-size:clamp(28px,3vw,44px);color:var(--white);letter-spacing:-0.03em;line-height:1}
-.goji-stat .red{color:var(--red)}
-.goji-stat .label{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-top:8px;line-height:1.5}
-.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid rgba(255,255,255,0.1)}
-@media(max-width:760px){.access-grid{grid-template-columns:1fr}}
-.access-card{padding:40px;border-left:1px solid rgba(255,255,255,0.08);border-top:2px solid rgba(255,255,255,0.06)}
-.access-card:first-child{border-left:none;border-top-color:var(--red)}
-.access-card:last-child{border-top-color:rgba(255,255,255,0.08)}
-@media(max-width:760px){.access-card{border-left:none;border-top:1px solid rgba(255,255,255,0.08)}.access-card:first-child{border-top:2px solid var(--red)}}
-.form-field{display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
-.form-label{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;color:rgba(255,255,255,0.4);text-transform:uppercase}
-.form-input,.form-select{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);color:var(--white);font-family:var(--body);font-size:14px;padding:14px 16px;outline:none;transition:border-color 0.2s ease;width:100%}
-.form-input:focus,.form-select:focus{border-color:var(--red)}
-.form-select option{background:var(--black);color:var(--white)}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
-@media(max-width:640px){.form-grid{grid-template-columns:1fr}}
 
-    .btn-disabled{
-      display:inline-block; font-family:var(--mono); font-size:13px; font-weight:700;
-      letter-spacing:0.1em; text-transform:uppercase; padding:18px 36px;
-      color:rgba(255,255,255,0.42); border:1px solid rgba(255,255,255,0.18);
-      background:transparent; cursor:default;
+  <style>
+    body { background:#0a0a0a; color:#fff; }
+    .band { position:relative; overflow:hidden; }
+    .wrap { max-width:1240px; margin:0 auto; padding:0 var(--px); position:relative; z-index:2; }
+    .rule { height:1px; background:rgba(255,255,255,0.09); }
+    .rule-red { height:2px; background:var(--red); max-width:150px; }
+
+    /* Ghost watermarks: edge-anchored, small enough never to cross the text column */
+    .ghost-layer{
+      position:absolute; pointer-events:none; user-select:none; z-index:0;
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      line-height:0.78; letter-spacing:-0.04em; white-space:nowrap;
+      color:rgba(255,255,255,0.022); font-size:clamp(90px,10vw,170px);
+    }
+    @media(max-width:1300px){ .ghost-layer{ display:none; } }
+
+    .sec-num{
+      font-family:var(--mono); font-size:10.5px; font-weight:700;
+      letter-spacing:0.2em; color:var(--red);
+      display:flex; align-items:center; gap:12px; margin-bottom:22px;
+    }
+    .sec-num::after{ content:''; flex:1; height:1px; background:rgba(227,30,36,0.3); max-width:120px; }
+
+    /* ── Hero ─────────────────────────────────────────────────── */
+    .p-hero{ padding:clamp(112px,13vw,168px) 0 clamp(52px,6vw,76px); }
+    .p-hero .ghost-layer{ top:12%; right:-2%; }
+    .hero-grid{ display:grid; gap:clamp(38px,5vw,72px); align-items:center; }
+    @media(min-width:1000px){ .hero-grid{ grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr); } }
+
+    .p-kicker{
+      font-family:var(--mono); font-size:10.5px; font-weight:700;
+      letter-spacing:0.2em; text-transform:uppercase; color:var(--red);
+      display:inline-flex; align-items:center; gap:9px; margin-bottom:22px;
+    }
+    .p-kicker::before{
+      content:''; width:7px; height:7px; border-radius:50%; background:var(--red);
+      box-shadow:0 0 0 0 rgba(227,30,36,0.6); animation:pk 2.4s ease-out infinite;
+    }
+    @keyframes pk{ 70%{ box-shadow:0 0 0 9px rgba(227,30,36,0); } 100%{ box-shadow:0 0 0 0 rgba(227,30,36,0); } }
+
+    .p-hero h1{
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      font-size:clamp(38px,4.6vw,66px); line-height:0.98; letter-spacing:-0.03em;
+      margin-bottom:24px; color:#fff;
+    }
+    .p-hero h1 .soft{ color:rgba(255,255,255,0.82); }
+    .p-lede{
+      font-family:var(--body); font-size:clamp(16px,1.25vw,19px);
+      line-height:1.62; color:rgba(255,255,255,0.88); margin-bottom:16px;
+    }
+    .p-sub{
+      font-family:var(--body); font-size:clamp(15px,1.05vw,16.5px);
+      line-height:1.68; color:rgba(255,255,255,0.66); margin-bottom:32px;
+    }
+    .p-actions{ display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+    .btn-treeng{
+      display:inline-block; background:var(--red); color:#fff;
+      font-family:var(--mono); font-size:12px; font-weight:700;
+      letter-spacing:0.09em; text-transform:uppercase;
+      padding:17px 32px; text-decoration:none; border:1px solid var(--red);
+      transition:transform .2s cubic-bezier(0.16,1,0.3,1), box-shadow .2s ease;
+    }
+    .btn-treeng:hover{ transform:translateY(-3px); box-shadow:0 14px 38px rgba(227,30,36,0.36); }
+    .btn-ghost{
+      display:inline-block; color:#fff;
+      font-family:var(--mono); font-size:12px; font-weight:700;
+      letter-spacing:0.09em; text-transform:uppercase;
+      padding:17px 28px; text-decoration:none; border:1px solid rgba(255,255,255,0.26);
+      transition:border-color .2s ease, background .2s ease;
+    }
+    .btn-ghost:hover{ border-color:#fff; background:rgba(255,255,255,0.06); }
+    .p-trust{
+      font-family:var(--mono); font-size:10px; font-weight:700;
+      letter-spacing:0.1em; text-transform:uppercase;
+      color:rgba(255,255,255,0.42); margin-top:20px;
+    }
+
+    /* ── Hero visual: sample diagnostic card ──────────────────── */
+    .card{
+      border:1px solid rgba(255,255,255,0.14); background:#0d0d0d;
+      box-shadow:0 26px 70px rgba(0,0,0,0.62);
+      transform:perspective(1400px) rotateY(-5deg) rotateX(2deg);
+      transition:transform .5s cubic-bezier(0.16,1,0.3,1);
+    }
+    .card:hover{ transform:perspective(1400px) rotateY(0deg) rotateX(0deg) translateY(-4px); }
+    @media(max-width:1000px){ .card{ transform:none; } }
+    .card-bar{
+      display:flex; align-items:center; gap:8px;
+      padding:13px 18px; border-bottom:1px solid rgba(255,255,255,0.11);
+      font-family:var(--mono); font-size:9.5px; font-weight:700;
+      letter-spacing:0.13em; text-transform:uppercase; color:rgba(255,255,255,0.5);
+    }
+    .card-dot{ width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,0.18); }
+    .card-dot.live{ background:var(--red); }
+    .card-bar .done{ margin-left:auto; color:var(--red); }
+    .card-body{ padding:24px 22px 20px; }
+    .card-eyebrow{
+      font-family:var(--mono); font-size:9.5px; font-weight:700;
+      letter-spacing:0.14em; text-transform:uppercase;
+      color:rgba(255,255,255,0.38); margin-bottom:9px;
+    }
+    .card-find{
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      font-size:clamp(17px,1.5vw,21px); line-height:1.18; color:#fff; margin-bottom:22px;
+    }
+    .row{
+      display:grid; grid-template-columns:1fr auto; align-items:center; gap:14px;
+      padding:13px 0; border-top:1px solid rgba(255,255,255,0.08);
+    }
+    .row-k{
+      font-family:var(--body); font-size:14px; line-height:1.4;
+      color:rgba(255,255,255,0.74);
+    }
+    .row-k em{ display:block; font-style:normal; font-family:var(--mono);
+      font-size:9.5px; letter-spacing:0.1em; text-transform:uppercase;
+      color:rgba(255,255,255,0.34); margin-top:4px; }
+    .chip{
+      font-family:var(--heading); font-weight:700; font-size:15px; line-height:1;
+      width:30px; height:30px; display:grid; place-items:center; flex:none;
+      border:1px solid; border-radius:2px;
+    }
+    .chip.a{ color:var(--red); border-color:rgba(227,30,36,0.6); background:rgba(227,30,36,0.1); }
+    .chip.b{ color:#fff; border-color:rgba(255,255,255,0.34); }
+    .chip.c{ color:rgba(255,255,255,0.5); border-color:rgba(255,255,255,0.18); }
+    .card-foot{
+      border-top:1px solid rgba(255,255,255,0.11); padding:13px 18px;
+      font-family:var(--mono); font-size:9.5px; font-weight:700;
+      letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.34);
+    }
+    .card-note{
+      font-family:var(--mono); font-size:9.5px; letter-spacing:0.07em;
+      color:rgba(255,255,255,0.3); margin-top:13px; text-align:right; line-height:1.7;
+    }
+
+    /* ── Stat strip ───────────────────────────────────────────── */
+    .stats{ display:grid; gap:1px; background:rgba(255,255,255,0.11); margin-top:clamp(48px,6vw,76px); }
+    @media(min-width:760px){ .stats{ grid-template-columns:repeat(4,1fr); } }
+    .stat{ background:#0a0a0a; padding:26px 22px; }
+    .stat-num{
+      font-family:var(--heading); font-weight:700;
+      font-size:clamp(26px,2.6vw,36px); line-height:1;
+      letter-spacing:-0.025em; color:#fff; margin-bottom:8px;
+    }
+    .stat-lbl{
+      font-family:var(--mono); font-size:9.5px; font-weight:700;
+      letter-spacing:0.11em; text-transform:uppercase;
+      color:rgba(255,255,255,0.5); line-height:1.75;
+    }
+
+    /* ── Two-column sections: heading left, argument right ────── */
+    .sec{ padding:clamp(64px,7.5vw,104px) 0; }
+    .two{ display:grid; gap:clamp(28px,4vw,64px); }
+    @media(min-width:980px){ .two{ grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr); } }
+    .two-l{ align-self:start; }
+    @media(min-width:980px){ .two-l{ position:sticky; top:118px; } }
+    .sec-head{
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      font-size:clamp(26px,2.9vw,40px); line-height:1.05; letter-spacing:-0.025em;
+      color:#fff; margin-bottom:18px;
+    }
+    .sec-body{
+      font-family:var(--body); font-size:clamp(15.5px,1.1vw,17px);
+      line-height:1.76; color:rgba(255,255,255,0.78); margin-bottom:18px;
+    }
+    .sec-body:last-child{ margin-bottom:0; }
+    .sec-body strong{ color:#fff; font-weight:600; }
+    .sec-body a{ color:var(--red); text-decoration:none; border-bottom:1px solid rgba(227,30,36,0.4); }
+
+    .pull{
+      border-left:3px solid var(--red); padding:4px 0 4px 22px; margin:28px 0;
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      font-size:clamp(17px,1.6vw,23px); line-height:1.25; color:#fff;
+    }
+
+    /* ── Grade scale ──────────────────────────────────────────── */
+    .grades{ margin-top:8px; border-top:1px solid rgba(255,255,255,0.1); }
+    .grade-row{
+      display:grid; grid-template-columns:auto 1fr; gap:0 18px; align-items:start;
+      padding:18px 0; border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+    .grade-row p{ font-family:var(--body); font-size:15px; line-height:1.66; color:rgba(255,255,255,0.76); }
+    .grade-row strong{ color:#fff; font-weight:600; }
+
+    /* ── Engine grid ──────────────────────────────────────────── */
+    .eng-grid{ display:grid; gap:1px; background:rgba(255,255,255,0.11); margin-top:44px; }
+    @media(min-width:620px){ .eng-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:1000px){ .eng-grid{ grid-template-columns:repeat(4,1fr); } }
+    .eng{ background:#0a0a0a; padding:24px 20px; transition:background .2s ease; }
+    .eng:hover{ background:#131313; }
+    .eng-cat{
+      font-family:var(--mono); font-size:9px; font-weight:700;
+      letter-spacing:0.13em; text-transform:uppercase; color:var(--red);
+      display:block; margin-bottom:11px;
+    }
+    .eng-name{
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      font-size:15px; line-height:1.2; color:#fff; margin-bottom:7px;
+    }
+    .eng p{ font-family:var(--body); font-size:13px; line-height:1.56; color:rgba(255,255,255,0.58); }
+
+    /* ── Comparison ───────────────────────────────────────────── */
+    .cmp{ margin-top:44px; border-top:1px solid rgba(255,255,255,0.16); }
+    .cmp-row{
+      display:grid; gap:5px 28px; padding:20px 0;
+      border-bottom:1px solid rgba(255,255,255,0.09);
+    }
+    @media(min-width:820px){ .cmp-row{ grid-template-columns:clamp(130px,16%,180px) 1fr 1fr; align-items:baseline; } }
+    .cmp-k{
+      font-family:var(--mono); font-size:10px; font-weight:700;
+      letter-spacing:0.11em; text-transform:uppercase; color:rgba(255,255,255,0.46);
+    }
+    .cmp-old{ font-family:var(--body); font-size:15px; line-height:1.58; color:rgba(255,255,255,0.44); }
+    .cmp-new{ font-family:var(--body); font-size:15px; line-height:1.58; color:#fff; font-weight:500; }
+    .cmp-head{ border-bottom:1px solid rgba(255,255,255,0.16); padding-bottom:11px; }
+    .cmp-head .cmp-old,.cmp-head .cmp-new{
+      font-family:var(--mono); font-size:10px; font-weight:700;
+      letter-spacing:0.11em; text-transform:uppercase;
+    }
+    .cmp-head .cmp-new{ color:var(--red); }
+
+    .note{
+      font-family:var(--mono); font-size:10.5px; letter-spacing:0.04em;
+      color:rgba(255,255,255,0.42); line-height:1.95; max-width:76ch; margin-top:32px;
+    }
+    .note a{ color:var(--red); text-decoration:none; }
+
+    /* ── CTA ──────────────────────────────────────────────────── */
+    .cta{ background:var(--red); padding:clamp(68px,8vw,110px) 0; }
+    .cta-in{ display:grid; gap:32px; align-items:center; }
+    @media(min-width:900px){ .cta-in{ grid-template-columns:1.1fr auto; } }
+    .cta h2{
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      font-size:clamp(30px,4vw,56px); line-height:0.98; letter-spacing:-0.03em;
+      color:#fff; margin-bottom:18px;
+    }
+    .cta p{
+      font-family:var(--body); font-size:clamp(15.5px,1.2vw,18px);
+      line-height:1.62; color:rgba(255,255,255,0.95); max-width:56ch; margin:0;
+    }
+    .cta-btn{
+      display:inline-block; background:#0a0a0a; color:#fff;
+      font-family:var(--mono); font-size:12.5px; font-weight:700;
+      letter-spacing:0.09em; text-transform:uppercase;
+      padding:19px 38px; text-decoration:none; white-space:nowrap;
+      transition:transform .2s cubic-bezier(0.16,1,0.3,1), box-shadow .2s ease;
+    }
+    .cta-btn:hover{ transform:translateY(-3px); box-shadow:0 14px 40px rgba(0,0,0,0.42); }
+    .cta-note{
+      font-family:var(--mono); font-size:10px; font-weight:700;
+      letter-spacing:0.1em; text-transform:uppercase;
+      color:rgba(255,255,255,0.78); margin-top:14px;
     }
   </style>
 </head>
-<body class="bg-black">
+<body>
 
-<!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
     <a href="/"><img src="logo.png" alt="SSUNDAR." class="nav-logo-img"></a>
@@ -68,6 +283,7 @@
     <a class="nav-link" href="/insights">Writing<span class="dot">.</span></a>
     <a class="nav-link" href="/evidence">Evidence<span class="dot">.</span></a>
     <a class="nav-link" href="/work">Work<span class="dot">.</span></a>
+    <a class="nav-link" href="/platform">Platform<span class="dot">.</span></a>
     <a class="nav-link" href="/about">About<span class="dot">.</span></a>
     <a class="nav-cta" href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer">Discover your judgment gap &rarr;</a>
   </div>
@@ -78,143 +294,307 @@
   <a href="/insights">Writing<span class="dot">.</span></a>
   <a href="/evidence">Evidence<span class="dot">.</span></a>
   <a href="/work">Work<span class="dot">.</span></a>
+  <a href="/platform">Platform<span class="dot">.</span></a>
   <a href="/about">About<span class="dot">.</span></a>
   <a href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer" style="color:var(--red)">Discover your judgment gap &rarr;</a>
 </div>
 
 
-<!-- HERO -->
-<section class="page-hero fade-in">
-  <p class="mono-label mb-32">SSUNDAR Platform</p>
-  <h1 class="h1 text-white mb-40" style="max-width:860px;line-height:1.0">
-    Know where your organisation stands<span class="dot">.</span><br>
-    <span style="color:rgba(255,255,255,0.3)">Before AI lands on it<span class="dot" style="color:var(--red)">.</span></span>
-  </h1>
-  <p class="body-bold text-w5 mb-24" style="max-width:640px">
-    The SSUNDAR Platform provides L&D leaders with a free diagnostic of their organisation's judgment infrastructure across five domains — the same five that determine whether AI investment produces performance or amplified failure.
-  </p>
-  <p class="body-text text-w4 mb-40" style="max-width:640px">
-    Under 12 minutes. Immediate scorecard. Contributing responses feed the Global Organisational Judgment Index 2026 — a first-of-kind benchmark of how organisations worldwide are building (or not building) the judgment infrastructure to support AI transformation.
-  </p>
-  <div style="display:flex;gap:16px;flex-wrap:wrap">
-    <span class="btn-disabled">In development</span>
-    <a href="#goji" class="btn btn-outline">About the GOJI →</a>
-  </div>
-</section>
+<!-- ══ HERO ══════════════════════════════════════════════════════ -->
+<section class="band p-hero">
+  <div class="ghost-layer" data-z-speed="0.1">TREENG</div>
+  <div class="wrap">
+    <div class="hero-grid">
 
-<!-- FIVE DOMAINS -->
-<div style="background:rgba(255,255,255,0.02);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06)">
-  <section style="padding:clamp(56px,8vw,96px) var(--px);max-width:var(--max-w);margin:0 auto">
-    <p class="mono-label mb-16">Five Judgment Domains</p>
-    <p class="body-text text-w4 mb-0" style="max-width:540px">The diagnostic assesses judgment infrastructure across five domains. Each scores independently and contributes to an overall Judgment Infrastructure Rating.</p>
-    <div class="domain-grid">
-      <div class="domain-cell">
-        <p class="domain-num">01</p>
-        <p class="domain-name">Decision Quality Architecture</p>
-        <p class="domain-desc">How decisions are structured, who holds them, and whether quality is defined and measured.</p>
-      </div>
-      <div class="domain-cell">
-        <p class="domain-num">02</p>
-        <p class="domain-name">Accountability Infrastructure</p>
-        <p class="domain-desc">Whether accountability is real and consequential, or nominal and diffused.</p>
-      </div>
-      <div class="domain-cell">
-        <p class="domain-num">03</p>
-        <p class="domain-name">AI-Integration Readiness</p>
-        <p class="domain-desc">The judgment maturity of teams and structures that will be most exposed to AI augmentation.</p>
-      </div>
-      <div class="domain-cell">
-        <p class="domain-num">04</p>
-        <p class="domain-name">Talent Judgment Signals</p>
-        <p class="domain-desc">Whether the organisation selects, develops, and promotes for judgment quality — or proxies.</p>
-      </div>
-      <div class="domain-cell">
-        <p class="domain-num">05</p>
-        <p class="domain-name">Systemic Failure Patterns</p>
-        <p class="domain-desc">The recurring decision failure modes that persist across leadership layers and business cycles.</p>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- GOJI -->
-<section id="goji" style="padding:clamp(56px,8vw,96px) var(--px);max-width:var(--max-w);margin:0 auto">
-  <p class="mono-label mb-24">Global Organisational Judgment Index 2026</p>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start">
-    <div>
-      <p class="body-bold text-w6 mb-20" style="font-size:clamp(16px,1.3vw,20px)">The GOJI is a first-of-kind global benchmark of organisational judgment infrastructure.</p>
-      <p class="body-text text-w4 mb-20">Every diagnostic completed on the SSUNDAR Platform contributes anonymised data to the GOJI — a live index tracking the judgment infrastructure of organisations across sectors, geographies, and transformation maturity levels.</p>
-      <p class="body-text text-w4 mb-20">The 2026 edition will be the first comprehensive picture of whether the world's organisations have the judgment architecture to support the AI investments they are making. Publication is planned for Q4 2026.</p>
-      <p class="body-text text-w4">Contributing organisations receive advanced access to the sector-specific benchmarks relevant to their industry.</p>
-    </div>
-    <div>
-      <div style="border:1px solid rgba(255,255,255,0.1);padding:40px;border-top:2px solid var(--red)">
-        <p class="mono-label mb-24" style="margin-bottom:16px">GOJI 2026 AT A GLANCE</p>
-        <div style="display:flex;flex-direction:column;gap:20px">
-          <div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:16px">
-            <p class="body-text text-w4" style="font-size:13px">Target respondent base</p>
-            <p style="font-family:var(--mono);font-size:12px;color:var(--red);font-weight:700">2,500+</p>
+      <div>
+        <div class="fade-in"><span class="p-kicker">The platform &mdash; now live</span></div>
+        <h1 class="slide-up">Treeng<span class="dot">.</span><br><span class="soft">The discipline, productised.</span></h1>
+        <div class="slide-up">
+          <p class="p-lede">
+            Judgment-Centered Leadership Design has always been a method: diagnose before you
+            prescribe, grade the evidence before you act, and never present a number you cannot
+            walk someone through line by line.
+          </p>
+          <p class="p-sub">
+            Treeng is that method built into software. Sixteen diagnostic engines that take your
+            data, run a named methodology against it, grade the strength of every finding, and hand
+            back an Excel workbook with live formulas and a deck you own outright.
+          </p>
+          <div class="p-actions">
+            <a class="btn-treeng" href="https://treeng.ai" target="_blank" rel="noopener noreferrer">Run a free diagnostic &rarr;</a>
+            <a class="btn-ghost" href="https://treeng.ai" target="_blank" rel="noopener noreferrer">See a sample report</a>
           </div>
-          <div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:16px">
-            <p class="body-text text-w4" style="font-size:13px">Sectors represented</p>
-            <p style="font-family:var(--mono);font-size:12px;color:var(--red);font-weight:700">10+</p>
-          </div>
-          <div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:16px">
-            <p class="body-text text-w4" style="font-size:13px">Target geographies</p>
-            <p style="font-family:var(--mono);font-size:12px;color:var(--red);font-weight:700">APAC / ME / EU / NAMER</p>
-          </div>
-          <div style="display:flex;justify-content:space-between">
-            <p class="body-text text-w4" style="font-size:13px">Publication</p>
-            <p style="font-family:var(--mono);font-size:12px;color:var(--red);font-weight:700">Q4 2026</p>
-          </div>
+          <p class="p-trust">No credit card &middot; First diagnostic free &middot; Every finding evidence-graded</p>
         </div>
       </div>
-      <div class="goji-stat-row">
-        <div class="goji-stat"><p class="num">12<span class="red">m</span></p><p class="label">Diagnostic time</p></div>
-        <div class="goji-stat"><p class="num">5</p><p class="label">Domains assessed</p></div>
-        <div class="goji-stat"><p class="num">Free</p><p class="label">Always</p></div>
-        <div class="goji-stat"><p class="num">Live</p><p class="label">Scorecard</p></div>
+
+      <div class="fade-in">
+        <div class="card">
+          <div class="card-bar">
+            <span class="card-dot live"></span><span class="card-dot"></span><span class="card-dot"></span>
+            <span style="margin-left:6px">treeng &mdash; diagnostic</span>
+            <span class="done">Complete</span>
+          </div>
+          <div class="card-body">
+            <div class="card-eyebrow">Module &middot; L&amp;D ROI Engine</div>
+            <div class="card-find">Every finding carries its own confidence grade<span class="dot">.</span></div>
+
+            <div class="row">
+              <div class="row-k">Programme cost-to-outcome linkage<em>Full population &middot; clean inputs</em></div>
+              <div class="chip a">A</div>
+            </div>
+            <div class="row">
+              <div class="row-k">Manager capability as a driver<em>Direction reliable &middot; wider band</em></div>
+              <div class="chip b">B</div>
+            </div>
+            <div class="row">
+              <div class="row-k">Onboarding as an ROI drag<em>Needs 2 more quarters of data</em></div>
+              <div class="chip c">C</div>
+            </div>
+          </div>
+          <div class="card-foot">PDF &middot; Excel &middot; PPTX &mdash; every formula traceable</div>
+        </div>
+        <p class="card-note">Illustrative. Your analysis runs on your own data.</p>
+      </div>
+
+    </div>
+
+    <div class="stats fade-in">
+      <div class="stat"><div class="stat-num">16</div><div class="stat-lbl">Diagnostic engines<br>One workspace</div></div>
+      <div class="stat"><div class="stat-num">&lt;5 min</div><div class="stat-lbl">To a defensible<br>report, most modules</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-lbl">Of findings carry<br>an evidence grade</div></div>
+      <div class="stat"><div class="stat-num">Free</div><div class="stat-lbl">To start<br>No card required</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+
+<!-- ══ 01 — WHY IT EXISTS ════════════════════════════════════════ -->
+<section class="band sec">
+  <div class="ghost-layer" data-z-speed="0.07" style="top:14%;left:-2%">WHY</div>
+  <div class="wrap">
+    <div class="two">
+      <div class="two-l">
+        <div class="fade-in"><span class="sec-num">01 &mdash; Why it exists</span></div>
+        <h2 class="sec-head slide-up">The analysis was never the hard part. The defensibility was<span class="dot">.</span></h2>
+        <div class="rule-red line-draw"></div>
+      </div>
+      <div class="slide-up">
+        <p class="sec-body">
+          Every capability leader I have worked with can describe their problem. What they cannot
+          do, on the timeline the business actually runs on, is produce the artefact that makes the
+          problem actionable at board level &mdash; the one where the methodology is named, the sample
+          size is stated, and the confidence in each finding is explicit.
+        </p>
+        <p class="sec-body">
+          So the work goes outside. Six to twelve weeks later a PDF arrives. The numbers cannot be
+          edited, the method is proprietary, and every follow-up question restarts the meter.
+        </p>
+        <div class="pull">The dependency is the product<span class="dot">.</span></div>
+        <p class="sec-body">
+          Treeng inverts that. You keep the workbook. You keep the formulas. You can interrogate any
+          number in it, change an assumption, and watch the conclusion move. That is not a
+          convenience feature &mdash; it is the difference between a report you present and a report
+          you can defend.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ACCESS -->
-<div style="background:rgba(255,255,255,0.02);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06)" id="access">
-  <section style="padding:clamp(56px,8vw,96px) var(--px);max-width:var(--max-w);margin:0 auto">
-    <p class="mono-label mb-40">Platform Access</p>
-    <div class="access-grid">
-      <div class="access-card">
-        <p style="font-family:var(--mono);font-size:10px;letter-spacing:0.12em;color:var(--red);text-transform:uppercase;margin-bottom:16px">Individual</p>
-        <h3 style="font-family:var(--heading);font-weight:700;font-size:clamp(18px,1.6vw,24px);color:var(--white);letter-spacing:-0.01em;text-transform:uppercase;margin-bottom:12px">Free Diagnostic</h3>
-        <p style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:20px">Free · Always</p>
-        <p style="font-family:var(--body);font-size:14px;color:rgba(255,255,255,0.5);line-height:1.8;margin-bottom:28px">Complete the five-domain diagnostic. Receive an immediate Judgment Infrastructure Scorecard. Benchmark against anonymised sector peers. Contribute to the GOJI 2026.</p>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:32px">
-          <li style="font-family:var(--body);font-size:13px;color:rgba(255,255,255,0.4);padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--red)">✓</span>Full five-domain diagnostic</li>
-          <li style="font-family:var(--body);font-size:13px;color:rgba(255,255,255,0.4);padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--red)">✓</span>Immediate scorecard</li>
-          <li style="font-family:var(--body);font-size:13px;color:rgba(255,255,255,0.4);padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--red)">✓</span>GOJI 2026 contribution</li>
-          <li style="font-family:var(--body);font-size:13px;color:rgba(255,255,255,0.4);padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--red)">✓</span>Sector benchmark (anonymised)</li>
-        </ul>
-        <span class="btn-disabled">In development</span>
+<div class="rule"></div>
+
+
+<!-- ══ 02 — EVIDENCE GRADING ═════════════════════════════════════ -->
+<section class="band sec">
+  <div class="wrap">
+    <div class="two">
+      <div class="two-l">
+        <div class="fade-in"><span class="sec-num">02 &mdash; The part nobody else does</span></div>
+        <h2 class="sec-head slide-up">Every finding tells you how much to trust it<span class="dot">.</span></h2>
+        <div class="rule-red line-draw"></div>
+        <p class="sec-body" style="margin-top:22px">
+          A consultant will not tell you which of their conclusions is thin. The engagement is
+          priced on confidence. A system has no such incentive.
+        </p>
       </div>
-      <div class="access-card">
-        <p style="font-family:var(--mono);font-size:10px;letter-spacing:0.12em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:16px">Organisation</p>
-        <h3 style="font-family:var(--heading);font-weight:700;font-size:clamp(18px,1.6vw,24px);color:var(--white);letter-spacing:-0.01em;text-transform:uppercase;margin-bottom:12px">Team Diagnostic</h3>
-        <p style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:20px">Enquire for access</p>
-        <p style="font-family:var(--body);font-size:14px;color:rgba(255,255,255,0.5);line-height:1.8;margin-bottom:28px">Run the diagnostic across a defined team or leadership cohort. Aggregate scoring across roles and levels. GOJI data at organisation level. Debrief session available with SSUNDAR.</p>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:32px">
-          <li style="font-family:var(--body);font-size:13px;color:rgba(255,255,255,0.4);padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--red)">✓</span>All Individual features</li>
-          <li style="font-family:var(--body);font-size:13px;color:rgba(255,255,255,0.4);padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--red)">✓</span>Team aggregate scoring</li>
-          <li style="font-family:var(--body);font-size:13px;color:rgba(255,255,255,0.4);padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--red)">✓</span>Role and level segmentation</li>
-          <li style="font-family:var(--body);font-size:13px;color:rgba(255,255,255,0.4);padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--red)">✓</span>Optional debrief session</li>
-        </ul>
-        <a href="consulting.html#engage" class="btn btn-outline">Enquire →</a>
+      <div class="slide-up">
+        <div class="grades">
+          <div class="grade-row">
+            <div class="chip a">A</div>
+            <p><strong>Solid.</strong> Sufficient sample, clean inputs, statistically meaningful. Act on it.</p>
+          </div>
+          <div class="grade-row">
+            <div class="chip b">B</div>
+            <p><strong>Indicative.</strong> The direction is reliable; the magnitude carries a wider band. Treat as a strong signal, not a settled figure.</p>
+          </div>
+          <div class="grade-row">
+            <div class="chip c">C</div>
+            <p><strong>Needs more data.</strong> The engine tells you exactly which data would move it up a grade.</p>
+          </div>
+        </div>
+        <p class="sec-body" style="margin-top:26px">
+          This is the same standard I hold my own consulting work to, and the reason the
+          <a href="/evidence">evidence page</a> on this site carries sector-only cases with sourced
+          figures rather than a wall of logos. If a number cannot be walked through, it does not get
+          presented.
+        </p>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
 
-<!-- FOOTER -->
+<div class="rule"></div>
+
+
+<!-- ══ 03 — THE ENGINES ══════════════════════════════════════════ -->
+<section class="band sec">
+  <div class="ghost-layer" data-z-speed="0.09" style="top:8%;right:-2%">ENGINES</div>
+  <div class="wrap">
+    <div class="fade-in"><span class="sec-num">03 &mdash; Sixteen engines</span></div>
+    <h2 class="sec-head slide-up" style="max-width:24ch">Each one does what a consulting team takes six weeks to produce<span class="dot">.</span></h2>
+    <div class="rule-red line-draw"></div>
+
+    <div class="eng-grid fade-in">
+      <div class="eng"><span class="eng-cat">Strategy &middot; Free</span><div class="eng-name">AI Readiness &amp; Workforce Transformation</div><p>AI exposure scored by role. The reskilling roadmap that follows from it.</p></div>
+      <div class="eng"><span class="eng-cat">L&amp;D &middot; Free</span><div class="eng-name">L&amp;D ROI Engine</div><p>Kirkpatrick-Phillips applied end to end. Every dollar traced to an outcome.</p></div>
+      <div class="eng"><span class="eng-cat">Operations &middot; Free</span><div class="eng-name">Root Cause Analysis</div><p>Ishikawa, 5-Why and Pareto run against your own data, not a workshop whiteboard.</p></div>
+      <div class="eng"><span class="eng-cat">L&amp;D &middot; Free</span><div class="eng-name">Training Needs Analysis</div><p>Gap to curriculum, with the curriculum actually specified.</p></div>
+      <div class="eng"><span class="eng-cat">Analytics &middot; Free</span><div class="eng-name">Industry Data Analysis</div><p>Upload, analyse, decide. Sector benchmarks built in.</p></div>
+      <div class="eng"><span class="eng-cat">HR &middot; Starter</span><div class="eng-name">Skills Gap Mapper</div><p>Current against required, sequenced into a prioritised development path.</p></div>
+      <div class="eng"><span class="eng-cat">Strategy &middot; Starter</span><div class="eng-name">Org Health Diagnostic</div><p>Multi-dimensional scoring that names what is broken and where to start.</p></div>
+      <div class="eng"><span class="eng-cat">Operations &middot; Starter</span><div class="eng-name">Process Efficiency Auditor</div><p>Lean analysis, waste identification, automation candidates ranked.</p></div>
+      <div class="eng"><span class="eng-cat">HR &middot; Pro</span><div class="eng-name">Survey Intelligence</div><p>Responses turned into predictions. Who is at risk, and what is actually driving it.</p></div>
+      <div class="eng"><span class="eng-cat">Procurement &middot; Pro</span><div class="eng-name">Vendor Intelligence</div><p>Competing bids scored on equal terms, with the fine print surfaced.</p></div>
+      <div class="eng"><span class="eng-cat">Compliance &middot; Pro</span><div class="eng-name">Compliance Scanner</div><p>ISO, labour law and industry frameworks resolved into a gap matrix.</p></div>
+      <div class="eng"><span class="eng-cat">Strategy &middot; Pro</span><div class="eng-name">Decision Intelligence</div><p>Meeting quality scored, decision rights mapped, actions tracked to closure.</p></div>
+      <div class="eng"><span class="eng-cat">Operations &middot; Pro</span><div class="eng-name">IdeaMap</div><p>Design thinking, causal loops and affinity mapping built around your actual challenge.</p></div>
+      <div class="eng"><span class="eng-cat">L&amp;D &middot; Enterprise</span><div class="eng-name">ID Studio</div><p>ADDIE or SAM, your rules. Full eLearning and facilitated decks built to your curriculum.</p></div>
+      <div class="eng"><span class="eng-cat">Strategy &middot; Enterprise</span><div class="eng-name">Research Pro</div><p>Live-cited synthesis. Named studies, source-indexed &mdash; evidence, not internal opinion.</p></div>
+      <div class="eng"><span class="eng-cat">HR &middot; Enterprise</span><div class="eng-name">Capability Scanner</div><p>Org-wide competency gaps against benchmarks, with the path to green per role.</p></div>
+    </div>
+
+    <p class="note fade-in">
+      Five engines are free to run. Pricing starts at $9 per analysis, or $49 a month with no
+      auto-renewal. Full module list, sample outputs and pricing at
+      <a href="https://treeng.ai" target="_blank" rel="noopener noreferrer">treeng.ai</a>.
+    </p>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+
+<!-- ══ 04 — WHAT CHANGES ═════════════════════════════════════════ -->
+<section class="band sec">
+  <div class="wrap">
+    <div class="fade-in"><span class="sec-num">04 &mdash; What changes</span></div>
+    <h2 class="sec-head slide-up">Same rigour. Different economics<span class="dot">.</span></h2>
+    <div class="rule-red line-draw"></div>
+
+    <div class="cmp fade-in">
+      <div class="cmp-row cmp-head">
+        <div class="cmp-k">&nbsp;</div>
+        <div class="cmp-old">Commissioned engagement</div>
+        <div class="cmp-new">Treeng</div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-k">Time to output</div>
+        <div class="cmp-old">Six to twelve weeks</div>
+        <div class="cmp-new">Under five minutes, most modules</div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-k">Methodology</div>
+        <div class="cmp-old">Proprietary, undisclosed</div>
+        <div class="cmp-new">Named and printed &mdash; Kirkpatrick-Phillips, ADDIE, Lean, Ishikawa</div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-k">Confidence</div>
+        <div class="cmp-old">Implied by the seniority of the presenter</div>
+        <div class="cmp-new">Graded A, B or C on every single finding</div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-k">Output</div>
+        <div class="cmp-old">Locked PDF you cannot edit</div>
+        <div class="cmp-new">Excel with live formulas, PowerPoint you own</div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-k">Re-running it</div>
+        <div class="cmp-old">A new brief, a new fee</div>
+        <div class="cmp-new">One click, same rigour</div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-k">Dependency</div>
+        <div class="cmp-old">Every follow-up question costs more</div>
+        <div class="cmp-new">None. Pay once, no auto-renewal</div>
+      </div>
+    </div>
+
+    <p class="note fade-in">
+      Comparable external engagements in this category are commonly quoted in the $50,000 to
+      $200,000 range. That is a market observation about typical consulting scope, not a figure
+      from any SSUNDAR engagement, and your own alternatives will vary.
+    </p>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+
+<!-- ══ 05 — WHO IT IS FOR ════════════════════════════════════════ -->
+<section class="band sec">
+  <div class="wrap">
+    <div class="two">
+      <div class="two-l">
+        <div class="fade-in"><span class="sec-num">05 &mdash; Who it is for</span></div>
+        <h2 class="sec-head slide-up">Leaders who answer to a CFO without an analyst on speed dial<span class="dot">.</span></h2>
+        <div class="rule-red line-draw"></div>
+      </div>
+      <div class="slide-up">
+        <p class="sec-body">
+          L&amp;D, HR, operations and strategy leads who are asked to justify a budget, size a gap or
+          explain a number on a timeline that does not accommodate a procurement cycle. If you have
+          the data and need the artefact, this is the shortest defensible path to it.
+        </p>
+        <p class="sec-body">
+          It does not replace the consulting work on this site. A diagnostic tells you what is
+          broken; it does not rebuild the architecture underneath it. Where the finding is
+          structural &mdash; where judgment itself is the constraint rather than the measurement of it
+          &mdash; that is still <a href="/work">an engagement</a>, not a report.
+        </p>
+        <p class="sec-body">
+          Most people should start with the free diagnostic and see what the evidence grade says
+          before deciding which of the two they need.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ CTA ═══════════════════════════════════════════════════════ -->
+<section class="band cta">
+  <div class="wrap">
+    <div class="cta-in">
+      <div class="slide-up">
+        <h2>Run one<span class="dot" style="color:#0a0a0a">.</span></h2>
+        <p>
+          The first diagnostic is free and takes minutes. You will see the full output on screen
+          before you pay anything &mdash; including the evidence grade on every finding, which is the
+          only part that actually matters.
+        </p>
+      </div>
+      <div class="slide-up">
+        <a class="cta-btn" href="https://treeng.ai" target="_blank" rel="noopener noreferrer">Open Treeng &rarr;</a>
+        <p class="cta-note">treeng.ai &middot; Treeng by SSUNDAR.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <footer class="footer">
   <section class="section" style="padding-top:80px;padding-bottom:40px">
     <span style="font-family:var(--heading);font-weight:700;font-size:24px;letter-spacing:0.06em;text-transform:uppercase;color:#fff">SSUNDAR<span class="dot">.</span></span>
@@ -229,12 +609,12 @@
         <a class='footer-link' href='/simulate'>Simulate<span class="dot">.</span></a>
         <a class='footer-link' href='/insights'>Insights<span class="dot">.</span></a>
         <a class='footer-link' href='/engage'>Engage<span class="dot">.</span></a>
-        <span class="footer-link" style="color:rgba(255,255,255,0.28);cursor:default">Platform &mdash; in development</span>
+        <a class='footer-link' href='/platform'>Platform<span class="dot">.</span></a>
       </div>
       <div>
         <a href="mailto:shyam@ssundar.com" class="footer-link">shyam@ssundar.com</a>
         <a href="https://linkedin.com/in/shyamsundarmv" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn &rarr;</a>
-        
+
         <p style="font-family:var(--body);font-size:13px;font-weight:500;color:rgba(255,255,255,0.2);margin-top:4px">Working globally</p>
       </div>
     </div>
@@ -252,6 +632,20 @@
     </div>
   </section>
 </footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"Treeng",
+  "applicationCategory":"BusinessApplication",
+  "operatingSystem":"Web",
+  "url":"https://treeng.ai",
+  "description":"AI leadership-intelligence platform. Sixteen diagnostic engines for L&D, HR, operations and strategy. Every finding evidence-graded; exports to Excel with live formulas, PowerPoint and PDF.",
+  "publisher":{"@type":"Organization","name":"SSUNDAR.","url":"https://ssundar.com"},
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"First diagnostic free, no credit card required."}
+}
+</script>
 
 <script src="app.js"></script>
 <script src="cookie-consent.js"></script>

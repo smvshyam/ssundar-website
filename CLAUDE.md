@@ -27,6 +27,20 @@ them identical.**
 change `ssundar-src`, push the same change to GitHub in the same session. If
 you push to GitHub, mirror it back into `ssundar-src`.
 
+From Windows, the mirror step is:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "C:\Users\shyam\.openclaw\mirror-to-github.ps1"
+```
+
+It clones fresh to a temp dir, copies `ssundar-src` over it, refuses to commit
+`.env` or `.deploy-config`, then pushes. Run it after every deploy.
+
+The local clone at `F:\Website build Claude\Ssundar Build\Build April 2026` lost
+its `.git` directory on 2026-09-12, so it is a plain folder now and cannot push.
+The mirror script does not depend on it (it only reads `.deploy-config` for the
+token), so that folder is no longer load-bearing.
+
 Retired: `smvshyam/ssundar.com-website`.
 Never touch: `smvshyam/ssundar-platform` (app.ssundar.com, separate Vercel app).
 
@@ -47,14 +61,35 @@ Zip the whole ssundar-src folder. Credentials: C:\Users\shyam\.openclaw\.env
 Site ID: a5ecad5f-6c16-446a-aaba-2e2188c8c741
 ```
 
+From Windows, use `C:\Users\shyam\.openclaw\deploy-ssundar-live.ps1`. It zips
+`ssundar-src`, runs a file-count safety check, POSTs to the Netlify API and
+polls to `ready`. This is the working local path and the one to use when the
+Cowork workspace shell is unavailable.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "C:\Users\shyam\.openclaw\deploy-ssundar-live.ps1"
+```
+
 `scripts\netlify-deploy.ps1` is **disabled** (`netlify-deploy.ps1.disabled.ps1`)
 and must stay disabled. It deployed a stale tree and caused the divergence above.
+Do not create additional deploy scripts. Two deploy paths is what broke this
+site twice; keep it to one.
 
 **A deploy replaces the entire site.** Always deploy the complete folder, never
 a subset. Before deploying, sanity-check the file count — a bundle materially
 smaller than ~100 HTML files means something is missing; abort.
 
 Credentials live in `.env` / `.deploy-config`, both gitignored. Never commit them.
+
+**Internal files must never ship.** This file, `AGENTS.md`, `CHANGELOG.md` and
+`SEND_QUEUE.md` live in `ssundar-src` because agents read them — but the deploy
+zips the whole folder, and for a period they were publicly readable at
+`https://ssundar.com/CLAUDE.md` and friends. That exposed the Netlify site id,
+the claims register (including retired client names), and outreach contact
+details. `deploy-ssundar-live.ps1` now excludes `.md`, `.ps1`, `.bat`, `.env*`,
+`.deploy-config`, `.pem` and `.key`, aborts if any survive the filter, and
+asserts those URLs return 404 after every deploy. Do not weaken those checks.
+If you add an internal note to this folder, give it one of those extensions.
 
 ---
 
@@ -117,6 +152,7 @@ LinkedIn posts, newsletters, and thought-leadership content follow
 
 - **Goal is the ₹10 Cr pipeline, not follower count.** Reverse-engineer every post from the qualified DM. Reject broad low-intent reach. Honest target: ~8–10K high-intent followers + 15–20 qualified DMs/month.
 - **Ignition formula on every profile post:** named entity + hard number + structural verdict + portable line. All four, or regenerate.
+- **Punch-first line 1 (added 2026-08-19):** Every post on every surface (profile, SSUNDAR. page, EXLPRS page, newsletter) opens its FIRST line with the punchy title or a standalone punch line, alone as its own paragraph. LinkedIn hides the headline and shows only the first ~2 lines, so line 1 must land the hook before the fold. No scene-setting, context, or warm-up before the punch. Line 1 does not punch → regenerate.
 - **Five pillars, weighted:** Decision Autopsy 35% · Contrarian Diagnosis 25% · Architecture Teardown 20% · Judgment-Under-AI 15% · Operator's Receipt 5%. Every pillar ladders to judgment under pressure.
 - **EXLPRS is sunsetting.** SSUNDAR is the only external face. Practitioner content is a sub-tier under SSUNDAR, never an EXLPRS-branded external track.
 - **Distribution:** Hour 0 profile-only → seed 3–5 first-hour comments → Hour 24 one most-relevant group → Hour 48 extend only if it performed. Never simultaneous multi-group posting. Cadence 5/week, Tue/Wed/Thu, 8–9 AM IST.

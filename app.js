@@ -357,3 +357,100 @@ document.addEventListener('DOMContentLoaded', function () {
   startTimer();
 
 })();
+
+
+// ============================================
+// TREENG — site-wide entry points
+// Floating 3D launcher, nav link, footer link.
+// Injected here so all 100+ pages stay in sync from one file.
+// ============================================
+(function () {
+  var TREENG = 'https://treeng.ai';
+
+  function ready(fn) {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
+    else fn();
+  }
+
+  ready(function () {
+
+    // --- 1. Floating 3D launcher -------------------------------------------
+    if (!document.querySelector('.treeng-orb')) {
+      var orb = document.createElement('a');
+      orb.className = 'treeng-orb';
+      orb.href = TREENG;
+      orb.target = '_blank';
+      orb.rel = 'noopener noreferrer';
+      orb.setAttribute('aria-label', 'Open Treeng — run a free diagnostic');
+      orb.innerHTML =
+        '<span class="treeng-orb__label"><b>Treeng</b> &mdash; run a free diagnostic</span>' +
+        '<span class="treeng-orb__core">' +
+          '<span class="treeng-orb__ring"></span>' +
+          '<span class="treeng-orb__ring treeng-orb__ring--2"></span>' +
+          '<span class="treeng-orb__dot"></span>' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" ' +
+            'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+            '<path d="M12 21V12"/>' +
+            '<path d="M12 12 6.5 7.5"/>' +
+            '<path d="M12 12l5.5-4.5"/>' +
+            '<circle cx="12" cy="4" r="2.1"/>' +
+            '<circle cx="5" cy="9" r="2.1"/>' +
+            '<circle cx="19" cy="9" r="2.1"/>' +
+          '</svg>' +
+        '</span>';
+      orb.addEventListener('click', function () {
+        if (typeof gtag === 'function') {
+          gtag('event', 'treeng_click', { source: 'floating_orb', page: location.pathname });
+        }
+      });
+      document.body.appendChild(orb);
+
+      // keep clear of the cookie banner while it is showing
+      var bar = document.getElementById('cookieBar');
+      if (bar) {
+        var lift = function () {
+          var shown = bar.offsetParent !== null && bar.style.display !== 'none';
+          orb.style.bottom = shown ? (bar.offsetHeight + 26) + 'px' : '';
+        };
+        lift();
+        window.addEventListener('resize', lift);
+        if (window.MutationObserver) {
+          new MutationObserver(lift).observe(bar, { attributes: true, attributeFilter: ['style'] });
+        }
+      }
+    }
+
+    // --- 2. Nav: add Platform. where it is missing --------------------------
+    function addNavLink(container, cls) {
+      if (!container) return;
+      if (container.querySelector('a[href="/platform"]')) return;
+      var a = document.createElement('a');
+      if (cls) a.className = cls;
+      a.href = '/platform';
+      a.innerHTML = 'Platform<span class="dot">.</span>';
+      var about = container.querySelector('a[href="/about"]');
+      if (about) container.insertBefore(a, about);
+      else {
+        var cta = container.querySelector('.nav-cta, a[href*="exlprs.com"]');
+        cta ? container.insertBefore(a, cta) : container.appendChild(a);
+      }
+    }
+    addNavLink(document.querySelector('.nav-links'), 'nav-link');
+    addNavLink(document.getElementById('mobileOverlay'), '');
+
+    // --- 3. Footer: retire the "in development" placeholder -----------------
+    Array.prototype.forEach.call(
+      document.querySelectorAll('footer .footer-link'),
+      function (el) {
+        if (el.tagName !== 'SPAN') return;
+        if (!/in development/i.test(el.textContent)) return;
+        var a = document.createElement('a');
+        a.className = 'footer-link';
+        a.href = '/platform';
+        a.innerHTML = 'Platform<span class="dot">.</span>';
+        el.parentNode.replaceChild(a, el);
+      }
+    );
+
+  });
+})();

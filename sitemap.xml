@@ -8,8 +8,52 @@
   <url><loc>https://ssundar.com/simulate</loc><priority>0.9</priority><changefreq>weekly</changefreq><lastmod>2026-02-11</lastmod></url>
   <url><loc>https://ssundar.com/engage</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-02-11</lastmod></url>
   <url><loc>https://ssundar.com/insights</loc><priority>0.9</priority><changefreq>weekly</changefreq><lastmod>2026-03-21</lastmod></url>
+  <url><loc>https://ssundar.com/platform</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-09-12</lastmod></url>
+  <url><loc>https://ssundar.com/work</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-09-12</lastmod></url>
+  <url><loc>https://ssundar.com/testimonials</loc><priority>0.8</priority><changefreq>monthly</changefreq><lastmod>2026-09-12</lastmod></url>
+  <url><loc>https://ssundar.com/about</loc><priority>0.8</priority><changefreq>monthly</changefreq><lastmod>2026-09-12</lastmod></url>
+  <url><loc>https://ssundar.com/academy</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-09-12</lastmod></url>
+  <url><loc>https://ssundar.com/consulting</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-09-12</lastmod></url>
+  <url><loc>https://ssundar.com/workshops</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-09-12</lastmod></url>
+  <url><loc>https://ssundar.com/play-labs</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-09-12</lastmod></url>
 
   <!-- Insight Articles -->
+  <url>
+    <loc>https://ssundar.com/insight-blameless-postmortem-took-the-fall</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ssundar.com/insight-policy-instead-of-a-decision</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ssundar.com/insight-deliverable-was-the-dependency</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ssundar.com/insight-handover-complete-judgment-wasnt</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ssundar.com/insight-judgment-isnt-taught-its-surfaced</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ssundar.com/insight-train-the-trainer-system-decision</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://ssundar.com/insight-prediction-got-cheap-signals</loc>
     <lastmod>2026-09-04</lastmod>

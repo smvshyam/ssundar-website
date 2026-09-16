@@ -1,0 +1,2091 @@
+{
+  "nodes": [
+    {
+      "id": "app_js",
+      "label": "app.js",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "ssundar_src_app_animatecounter",
+      "label": "animateCounter()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L43"
+    },
+    {
+      "id": "ssundar_src_app_updateparallax",
+      "label": "updateParallax()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L68"
+    },
+    {
+      "id": "ssundar_src_app_fire",
+      "label": "fire()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L264"
+    },
+    {
+      "id": "ssundar_src_app_starttimer",
+      "label": "startTimer()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L307"
+    },
+    {
+      "id": "ssundar_src_app_stoptimer",
+      "label": "stopTimer()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L319"
+    },
+    {
+      "id": "jspdf_min_js",
+      "label": "jspdf.min.js",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_e",
+      "label": "e()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L51"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_n",
+      "label": "n()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L51"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_a",
+      "label": "a()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L51"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_o",
+      "label": "o()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L51"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_s",
+      "label": "s()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L51"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_h",
+      "label": "h()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L57"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_f",
+      "label": "f()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_d",
+      "label": "d()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_p",
+      "label": "p()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_g",
+      "label": "g()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_m",
+      "label": "m()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_v",
+      "label": "v()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_b",
+      "label": "b()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_y",
+      "label": "y()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_l",
+      "label": "L()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67"
+    },
+    {
+      "id": "ssundar_src_jspdf_min",
+      "label": "_()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L75"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_k",
+      "label": "k()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_i",
+      "label": "I()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_c",
+      "label": "C()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_j",
+      "label": "j()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_st",
+      "label": "St()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_ct",
+      "label": "Ct()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_jt",
+      "label": "jt()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_mt",
+      "label": "Mt()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_et",
+      "label": "Et()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_qt",
+      "label": "qt()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_dt",
+      "label": "Dt()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_rt",
+      "label": "Rt()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_ie",
+      "label": "Ie()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_ce",
+      "label": "Ce()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_re",
+      "label": "Re()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L229"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_te",
+      "label": "Te()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L229"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_ue",
+      "label": "Ue()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L261"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_ze",
+      "label": "ze()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L268"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_he",
+      "label": "He()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L268"
+    },
+    {
+      "id": "ssundar_src_jspdf_min_t",
+      "label": "t()",
+      "file_type": "code",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397"
+    },
+    {
+      "id": "posts_json",
+      "label": "posts.json",
+      "file_type": "code",
+      "source_file": "posts.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "ssundar_src_posts_posts",
+      "label": "posts",
+      "file_type": "code",
+      "source_file": "posts.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "agents_md",
+      "label": "AGENTS.md",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "ssundar_src_agents_agents_md_instructions_for_any_ai_working_on_ssundar_src",
+      "label": "AGENTS.md — Instructions for Any AI Working on ssundar-src",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "ssundar_src_agents_who_works_here",
+      "label": "WHO WORKS HERE",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "ssundar_src_agents_jarvis_openclaw",
+      "label": "JARVIS (OpenClaw)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L6"
+    },
+    {
+      "id": "ssundar_src_agents_claude_cowork_mode_anthropic_desktop_app",
+      "label": "Claude (Cowork Mode — Anthropic Desktop App)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L12"
+    },
+    {
+      "id": "ssundar_src_agents_communication_protocol_real_time",
+      "label": "COMMUNICATION PROTOCOL (real-time)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L18"
+    },
+    {
+      "id": "ssundar_src_agents_mandatory_protocol_read_before_modifying_anything",
+      "label": "MANDATORY PROTOCOL — READ BEFORE MODIFYING ANYTHING",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L26"
+    },
+    {
+      "id": "ssundar_src_agents_step_1_read_changelog_md",
+      "label": "Step 1: Read CHANGELOG.md",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L28"
+    },
+    {
+      "id": "ssundar_src_agents_step_2_check_for_pending_changes",
+      "label": "Step 2: Check for pending changes",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L34"
+    },
+    {
+      "id": "ssundar_src_agents_step_3_log_your_changes",
+      "label": "Step 3: Log your changes",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L37"
+    },
+    {
+      "id": "ssundar_src_agents_step_4_don_t_deploy_without_confirming",
+      "label": "Step 4: Don't deploy without confirming",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L45"
+    },
+    {
+      "id": "ssundar_src_agents_site_architecture_rules",
+      "label": "SITE ARCHITECTURE RULES",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L50"
+    },
+    {
+      "id": "ssundar_src_agents_nav_structure_7_links_this_order",
+      "label": "Nav structure (7 links, this order)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L52"
+    },
+    {
+      "id": "ssundar_src_agents_footer_rules",
+      "label": "Footer rules",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L61"
+    },
+    {
+      "id": "ssundar_src_agents_brand_rules",
+      "label": "Brand rules",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L67"
+    },
+    {
+      "id": "ssundar_src_agents_tracking_must_be_on_every_page",
+      "label": "Tracking (must be on EVERY page)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L73"
+    },
+    {
+      "id": "ssundar_src_agents_new_articles",
+      "label": "New articles",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L77"
+    },
+    {
+      "id": "ssundar_src_agents_deploy",
+      "label": "Deploy",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L83"
+    },
+    {
+      "id": "ssundar_src_agents_do_not",
+      "label": "DO NOT",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L88"
+    },
+    {
+      "id": "changelog_md",
+      "label": "CHANGELOG.md",
+      "file_type": "document",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "ssundar_src_changelog_changelog_md_ssundar_agent_message_bus",
+      "label": "CHANGELOG.md — SSUNDAR Agent Message Bus",
+      "file_type": "document",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "ssundar_src_changelog_2026_05_28_seo_monitor_jarvis_blog_publisher_claude",
+      "label": "2026-05-28 — SEO Monitor (JARVIS) → Blog Publisher (Claude)",
+      "file_type": "document",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L8"
+    },
+    {
+      "id": "ssundar_src_changelog_what_the_seo_monitor_found",
+      "label": "What the SEO monitor found:",
+      "file_type": "document",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L16"
+    },
+    {
+      "id": "ssundar_src_changelog_also_in_ssundar_src_but_not_in_sitemap_posts_json_orphan_drafts_shyam_s_decision",
+      "label": "Also in ssundar-src but NOT in sitemap/posts.json (orphan drafts — Shyam's decision):",
+      "file_type": "document",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L28"
+    },
+    {
+      "id": "ssundar_src_changelog_keyword_ranking_context",
+      "label": "Keyword ranking context:",
+      "file_type": "document",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L42"
+    },
+    {
+      "id": "ssundar_src_changelog_recommended_deploy_sequence",
+      "label": "Recommended deploy sequence:",
+      "file_type": "document",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L48"
+    },
+    {
+      "id": "ssundar_src_changelog_do_not_deploy_exlprs_yet",
+      "label": "Do NOT deploy EXLPRS yet.",
+      "file_type": "document",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L53"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "links": [
+    {
+      "source": "app_js",
+      "target": "ssundar_src_app_animatecounter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "app_js",
+      "target": "ssundar_src_app_updateparallax",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "app_js",
+      "target": "ssundar_src_app_fire",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L264",
+      "weight": 1.0
+    },
+    {
+      "source": "app_js",
+      "target": "ssundar_src_app_starttimer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L307",
+      "weight": 1.0
+    },
+    {
+      "source": "app_js",
+      "target": "ssundar_src_app_stoptimer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L319",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_app_starttimer",
+      "target": "ssundar_src_app_fire",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L314",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_n",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_a",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_o",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_s",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_h",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_f",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_d",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_p",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_g",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_m",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_v",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_b",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_y",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_n",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_l",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_a",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_s",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_k",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_f",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_i",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_c",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_j",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_o",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_b",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_m",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_st",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_ct",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_jt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_mt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_et",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_qt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_dt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_rt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_h",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_ie",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_ce",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_i",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_a",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_i",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L175",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_a",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L175",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_re",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L229",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_te",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L229",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_ue",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L261",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_ze",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L268",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_he",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L268",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_a",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L331",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_d",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L357",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_t",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_t",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_n",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_t",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_t",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_t",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_t",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_t",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "jspdf_min_js",
+      "target": "ssundar_src_jspdf_min_e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_h",
+      "target": "ssundar_src_jspdf_min_a",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_f",
+      "target": "ssundar_src_jspdf_min_p",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_f",
+      "target": "ssundar_src_jspdf_min_g",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_f",
+      "target": "ssundar_src_jspdf_min_m",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_f",
+      "target": "ssundar_src_jspdf_min_v",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_p",
+      "target": "ssundar_src_jspdf_min_d",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_g",
+      "target": "ssundar_src_jspdf_min_d",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_d",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_v",
+      "target": "ssundar_src_jspdf_min_d",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_b",
+      "target": "ssundar_src_jspdf_min_f",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_b",
+      "target": "ssundar_src_jspdf_min_y",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_a",
+      "target": "ssundar_src_jspdf_min_b",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_k",
+      "target": "ssundar_src_jspdf_min",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_i",
+      "target": "ssundar_src_jspdf_min_e",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_e",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_t",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_s",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_ie",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_ce",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_ue",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_re",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_ze",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_te",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_he",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_l",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_j",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_n",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_et",
+      "target": "ssundar_src_jspdf_min_ct",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_et",
+      "target": "ssundar_src_jspdf_min_mt",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_et",
+      "target": "ssundar_src_jspdf_min_jt",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_h",
+      "target": "ssundar_src_jspdf_min_ct",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_ie",
+      "target": "ssundar_src_jspdf_min_p",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_ie",
+      "target": "ssundar_src_jspdf_min_d",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_i",
+      "target": "ssundar_src_jspdf_min_t",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_a",
+      "target": "ssundar_src_jspdf_min_e",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_a",
+      "target": "ssundar_src_jspdf_min_t",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_re",
+      "target": "ssundar_src_jspdf_min_te",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L229",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_ue",
+      "target": "ssundar_src_jspdf_min_t",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L261",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_ue",
+      "target": "ssundar_src_jspdf_min_j",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L261",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_he",
+      "target": "ssundar_src_jspdf_min_a",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L268",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_he",
+      "target": "ssundar_src_jspdf_min_e",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L268",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_he",
+      "target": "ssundar_src_jspdf_min_v",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L268",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_he",
+      "target": "ssundar_src_jspdf_min_h",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "jspdf.min.js",
+      "source_location": "L277",
+      "weight": 1.0
+    },
+    {
+      "source": "posts_json",
+      "target": "ssundar_src_posts_posts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "posts.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "agents_md",
+      "target": "ssundar_src_agents_agents_md_instructions_for_any_ai_working_on_ssundar_src",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_agents_agents_md_instructions_for_any_ai_working_on_ssundar_src",
+      "target": "ssundar_src_agents_who_works_here",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_agents_who_works_here",
+      "target": "ssundar_src_agents_jarvis_openclaw",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_agents_who_works_here",
+      "target": "ssundar_src_agents_claude_cowork_mode_anthropic_desktop_app",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_agents_who_works_here",
+      "target": "ssundar_src_agents_communication_protocol_real_time",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_agents_agents_md_instructions_for_any_ai_working_on_ssundar_src",
+      "target": "ssundar_src_agents_mandatory_protocol_read_before_modifying_anything",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_agents_mandatory_protocol_read_before_modifying_anything",
+      "target": "ssundar_src_agents_step_1_read_changelog_md",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_agents_mandatory_protocol_read_before_modifying_anything",
+      "target": "ssundar_src_agents_step_2_check_for_pending_changes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_agents_mandatory_protocol_read_before_modifying_anything",
+      "target": "ssundar_src_agents_step_3_log_your_changes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_agents_mandatory_protocol_read_before_modifying_anything",
+      "target": "ssundar_src_agents_step_4_don_t_deploy_without_confirming",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_agents_agents_md_instructions_for_any_ai_working_on_ssundar_src",
+      "target": "ssundar_src_agents_site_architecture_rules",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_agents_site_architecture_rules",
+      "target": "ssundar_src_agents_nav_structure_7_links_this_order",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_agents_site_architecture_rules",
+      "target": "ssundar_src_agents_footer_rules",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_agents_site_architecture_rules",
+      "target": "ssundar_src_agents_brand_rules",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_agents_site_architecture_rules",
+      "target": "ssundar_src_agents_tracking_must_be_on_every_page",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_agents_site_architecture_rules",
+      "target": "ssundar_src_agents_new_articles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_agents_site_architecture_rules",
+      "target": "ssundar_src_agents_deploy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_agents_agents_md_instructions_for_any_ai_working_on_ssundar_src",
+      "target": "ssundar_src_agents_do_not",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_md",
+      "target": "ssundar_src_changelog_changelog_md_ssundar_agent_message_bus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_changelog_changelog_md_ssundar_agent_message_bus",
+      "target": "ssundar_src_changelog_2026_05_28_seo_monitor_jarvis_blog_publisher_claude",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_changelog_2026_05_28_seo_monitor_jarvis_blog_publisher_claude",
+      "target": "ssundar_src_changelog_what_the_seo_monitor_found",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_changelog_2026_05_28_seo_monitor_jarvis_blog_publisher_claude",
+      "target": "ssundar_src_changelog_also_in_ssundar_src_but_not_in_sitemap_posts_json_orphan_drafts_shyam_s_decision",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_changelog_2026_05_28_seo_monitor_jarvis_blog_publisher_claude",
+      "target": "ssundar_src_changelog_keyword_ranking_context",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_changelog_2026_05_28_seo_monitor_jarvis_blog_publisher_claude",
+      "target": "ssundar_src_changelog_recommended_deploy_sequence",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_changelog_2026_05_28_seo_monitor_jarvis_blog_publisher_claude",
+      "target": "ssundar_src_changelog_do_not_deploy_exlprs_yet",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_a",
+      "target": "ssundar_src_jspdf_min_l",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "jspdf.min.js",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_f",
+      "target": "ssundar_src_jspdf_min_s",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_d",
+      "target": "ssundar_src_jspdf_min_s",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "jspdf.min.js",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_k",
+      "target": "ssundar_src_jspdf_min_a",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_y",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_g",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_k",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_jt",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_f",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_a",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_dt",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_m",
+      "target": "ssundar_src_jspdf_min_h",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "jspdf.min.js",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_ce",
+      "target": "ssundar_src_jspdf_min_he",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "jspdf.min.js",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_ue",
+      "target": "ssundar_src_jspdf_min_m",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "jspdf.min.js",
+      "source_location": "L261",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_ue",
+      "target": "ssundar_src_jspdf_min_b",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "jspdf.min.js",
+      "source_location": "L261",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_ue",
+      "target": "ssundar_src_jspdf_min_e",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "jspdf.min.js",
+      "source_location": "L261",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_ue",
+      "target": "ssundar_src_jspdf_min_o",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "jspdf.min.js",
+      "source_location": "L261",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_he",
+      "target": "ssundar_src_jspdf_min_o",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "jspdf.min.js",
+      "source_location": "L268",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_he",
+      "target": "ssundar_src_jspdf_min_qt",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "jspdf.min.js",
+      "source_location": "L268",
+      "weight": 1.0
+    },
+    {
+      "source": "ssundar_src_jspdf_min_he",
+      "target": "ssundar_src_jspdf_min_l",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "jspdf.min.js",
+      "source_location": "L277",
+      "weight": 1.0
+    }
+  ]
+}

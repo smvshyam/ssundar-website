@@ -21,12 +21,23 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+# styles.css and app.js are unversioned filenames that change on almost every
+# deploy. A 24h cache meant returning visitors kept the OLD css/js for a full
+# day after a deploy - design fixes and the site-wide nav/footer/launcher
+# injection simply did not reach them. Revalidate instead: the file is still
+# cached, the browser just asks "changed?" first and gets a cheap 304 when not.
 [[headers]]
   for = "/styles.css"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/app.js"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Fonts are genuinely immutable - filename and content both stable.
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

@@ -504,3 +504,178 @@ a.hover-red:hover{color:var(--red)}
   transition:background .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease
 }
 .nav-cta:hover{background:#0a0a0a;border-color:#0a0a0a;transform:translateY(-1px);box-shadow:0 6px 22px rgba(0,0,0,0.28)}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   GHOST WATERMARKS — site-wide cap
+   Individual pages declare these at 260-380px and 3.5% opacity in
+   their own inline <style>, which puts a huge grey slab directly
+   behind the headline and makes it read as muddy. A ghost layer is
+   meant to be texture, not a competing element. Capped here with
+   !important because the page-level rules have higher specificity.
+   ═══════════════════════════════════════════════════════════════ */
+.ghost-layer{
+  font-size:clamp(80px,9vw,150px) !important;
+  color:rgba(255,255,255,0.02) !important;
+}
+.ghost-layer.red{ color:rgba(227,30,36,0.055) !important; }
+.ghost-layer.on-red{ color:rgba(255,255,255,0.07) !important; }
+@media(max-width:1300px){ .ghost-layer{ display:none !important; } }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   TREENG — floating 3D launcher (site-wide, injected by app.js)
+   ═══════════════════════════════════════════════════════════════ */
+.treeng-orb{
+  position:fixed; right:26px; bottom:26px; z-index:9000;
+  display:flex; align-items:center; gap:0;
+  text-decoration:none; -webkit-tap-highlight-color:transparent;
+  perspective:600px;
+}
+.treeng-orb__label{
+  font-family:var(--mono); font-size:10.5px; font-weight:700;
+  letter-spacing:0.14em; text-transform:uppercase; color:#fff;
+  background:#0a0a0a; border:1px solid rgba(255,255,255,0.14);
+  border-right:none; white-space:nowrap; overflow:hidden;
+  max-width:0; opacity:0; padding:13px 0;
+  border-radius:30px 0 0 30px;
+  transition:max-width .42s cubic-bezier(0.16,1,0.3,1), opacity .3s ease, padding .42s cubic-bezier(0.16,1,0.3,1);
+}
+.treeng-orb__label b{ color:var(--red); font-weight:700; }
+.treeng-orb:hover .treeng-orb__label,
+.treeng-orb:focus-visible .treeng-orb__label{ max-width:260px; opacity:1; padding:13px 20px 13px 22px; }
+
+.treeng-orb__core{
+  position:relative; width:58px; height:58px; flex:none;
+  border-radius:50%;
+  background:radial-gradient(circle at 32% 28%, #ff4a50 0%, #e31e24 42%, #8d0f13 100%);
+  box-shadow:
+    0 10px 30px rgba(227,30,36,0.42),
+    0 2px 6px rgba(0,0,0,0.5),
+    inset 0 -6px 14px rgba(0,0,0,0.42),
+    inset 0 5px 12px rgba(255,255,255,0.28);
+  display:grid; place-items:center;
+  transform-style:preserve-3d;
+  animation:treengFloat 4.6s ease-in-out infinite;
+  transition:transform .3s cubic-bezier(0.16,1,0.3,1), box-shadow .3s ease;
+}
+.treeng-orb:hover .treeng-orb__core{
+  transform:translateY(-5px) scale(1.06) rotateX(10deg) rotateY(-10deg);
+  box-shadow:
+    0 20px 46px rgba(227,30,36,0.55),
+    0 3px 8px rgba(0,0,0,0.55),
+    inset 0 -6px 14px rgba(0,0,0,0.42),
+    inset 0 5px 12px rgba(255,255,255,0.34);
+}
+.treeng-orb__core svg{ width:26px; height:26px; display:block; position:relative; z-index:2; }
+
+/* orbiting ring — the 3D cue */
+.treeng-orb__ring{
+  position:absolute; inset:-7px; border-radius:50%;
+  border:1.5px solid rgba(255,255,255,0.34);
+  border-top-color:transparent; border-bottom-color:transparent;
+  animation:treengOrbit 3.4s linear infinite;
+}
+.treeng-orb__ring--2{
+  inset:-12px; border-color:rgba(227,30,36,0.34);
+  border-left-color:transparent; border-right-color:transparent;
+  animation:treengOrbit 5.2s linear infinite reverse;
+}
+/* pulse halo */
+.treeng-orb__core::after{
+  content:''; position:absolute; inset:0; border-radius:50%;
+  box-shadow:0 0 0 0 rgba(227,30,36,0.5);
+  animation:treengPulse 2.8s ease-out infinite;
+}
+/* "new" dot */
+.treeng-orb__dot{
+  position:absolute; top:1px; right:1px; width:12px; height:12px;
+  border-radius:50%; background:#fff; border:2.5px solid #0a0a0a; z-index:3;
+}
+
+@keyframes treengFloat{
+  0%,100%{ transform:translateY(0) rotateX(0deg) rotateY(0deg); }
+  50%    { transform:translateY(-7px) rotateX(7deg) rotateY(-7deg); }
+}
+@keyframes treengOrbit{ from{ transform:rotate(0deg); } to{ transform:rotate(360deg); } }
+@keyframes treengPulse{
+  0%  { box-shadow:0 0 0 0 rgba(227,30,36,0.5); }
+  70% { box-shadow:0 0 0 20px rgba(227,30,36,0); }
+  100%{ box-shadow:0 0 0 0 rgba(227,30,36,0); }
+}
+
+@media(max-width:640px){
+  .treeng-orb{ right:16px; bottom:16px; }
+  .treeng-orb__core{ width:50px; height:50px; }
+  .treeng-orb__core svg{ width:22px; height:22px; }
+  .treeng-orb__label{ display:none; }
+}
+/* keep clear of the cookie banner while it is showing */
+body.cookie-banner-open .treeng-orb{ bottom:calc(26px + var(--cookie-banner-h, 96px)); }
+
+@media (prefers-reduced-motion: reduce){
+  .treeng-orb__core,.treeng-orb__ring,.treeng-orb__core::after{ animation:none; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   TREENG — homepage launch band
+   ═══════════════════════════════════════════════════════════════ */
+.treeng-band{
+  position:relative; overflow:hidden; background:#0a0a0a;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.treeng-band__bg{
+  position:absolute; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(560px 200px at 82% 50%, rgba(227,30,36,0.30) 0%, transparent 70%),
+    radial-gradient(420px 170px at 12% 30%, rgba(227,30,36,0.13) 0%, transparent 72%);
+  animation:treengBandDrift 11s ease-in-out infinite alternate;
+}
+@keyframes treengBandDrift{ from{ transform:translate3d(-2%,0,0) scale(1); } to{ transform:translate3d(2%,0,0) scale(1.07); } }
+.treeng-band__grid{
+  position:absolute; inset:0; z-index:0; pointer-events:none; opacity:0.5;
+  background-image:linear-gradient(rgba(255,255,255,0.045) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,0.045) 1px,transparent 1px);
+  background-size:46px 46px;
+  transform:perspective(320px) rotateX(56deg) scale(1.9);
+  transform-origin:center bottom;
+  mask-image:linear-gradient(to top,#000 0%,transparent 78%);
+  -webkit-mask-image:linear-gradient(to top,#000 0%,transparent 78%);
+}
+.treeng-band__inner{
+  position:relative; z-index:2;
+  max-width:1240px; margin:0 auto; padding:20px var(--px);
+  display:flex; align-items:center; gap:22px; flex-wrap:wrap;
+}
+.treeng-band__pill{
+  font-family:var(--mono); font-size:9.5px; font-weight:700;
+  letter-spacing:0.18em; text-transform:uppercase; color:#fff;
+  background:var(--red); padding:6px 12px; flex:none; line-height:1;
+}
+.treeng-band__text{
+  font-family:var(--body); font-size:clamp(14px,1.15vw,16.5px);
+  line-height:1.5; color:rgba(255,255,255,0.88); flex:1 1 380px; margin:0;
+}
+.treeng-band__text b{ color:#fff; font-weight:600; }
+.treeng-band__cta{
+  font-family:var(--mono); font-size:11px; font-weight:700;
+  letter-spacing:0.1em; text-transform:uppercase; color:#fff;
+  background:transparent; border:1px solid rgba(255,255,255,0.34);
+  padding:12px 20px; text-decoration:none; flex:none; white-space:nowrap;
+  transition:background .2s ease, border-color .2s ease, transform .2s cubic-bezier(0.16,1,0.3,1);
+}
+.treeng-band__cta:hover{ background:var(--red); border-color:var(--red); transform:translateY(-2px); }
+.treeng-band__cta--ghost{ border-color:rgba(255,255,255,0.18); color:rgba(255,255,255,0.7); }
+.treeng-band__cta--ghost:hover{ background:transparent; border-color:#fff; color:#fff; }
+.treeng-band__close{
+  flex:none; background:none; border:none; cursor:pointer; padding:8px;
+  color:rgba(255,255,255,0.34); font-size:18px; line-height:1;
+  transition:color .2s ease;
+}
+.treeng-band__close:hover{ color:#fff; }
+@media(max-width:720px){
+  .treeng-band__inner{ padding:16px var(--px); gap:14px; }
+  .treeng-band__cta--ghost{ display:none; }
+}
+@media (prefers-reduced-motion: reduce){ .treeng-band__bg{ animation:none; } }

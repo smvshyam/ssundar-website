@@ -90,6 +90,46 @@
 
     /* ═══ 01 IDENTITY ══════════════════════════════════════════════ */
     .identity { padding:clamp(120px,16vw,200px) 0 clamp(80px,10vw,130px); }
+    /* the launch band sits under the fixed nav and takes over the top spacing */
+    .treeng-band{ margin-top:94px; }
+    body.has-treeng-band .identity{ padding-top:clamp(56px,7vw,92px); }
+
+    /* hero entry points — the work / the platform */
+    .identity-links{
+      display:grid; gap:1px; background:rgba(255,255,255,0.11);
+      margin-top:52px; max-width:920px;
+    }
+    @media(min-width:780px){ .identity-links{ grid-template-columns:repeat(2,1fr); } }
+    .ilink{
+      background:#0a0a0a; padding:30px 26px 26px; text-decoration:none;
+      display:flex; flex-direction:column; position:relative;
+      transition:background .22s ease, transform .28s cubic-bezier(0.16,1,0.3,1);
+    }
+    .ilink:hover{ background:#121212; transform:translateY(-3px); }
+    .ilink-k{
+      font-family:var(--mono); font-size:10px; font-weight:700;
+      letter-spacing:0.16em; text-transform:uppercase;
+      color:rgba(255,255,255,0.45); margin-bottom:16px;
+    }
+    .ilink-k em{ font-style:normal; color:var(--red); }
+    .ilink-t{
+      font-family:var(--heading); font-weight:700; text-transform:uppercase;
+      font-size:clamp(17px,1.7vw,22px); line-height:1.16; letter-spacing:-0.015em;
+      color:#fff; margin-bottom:12px; transition:color .18s ease;
+    }
+    .ilink:hover .ilink-t{ color:var(--red); }
+    .ilink-d{
+      font-family:var(--body); font-size:14.5px; line-height:1.62;
+      color:rgba(255,255,255,0.6); margin-bottom:20px; flex:1;
+    }
+    .ilink-go{
+      font-family:var(--mono); font-size:10.5px; font-weight:700;
+      letter-spacing:0.11em; text-transform:uppercase; color:var(--red);
+    }
+    .ilink--new::before{
+      content:''; position:absolute; top:0; left:0; right:0; height:2px;
+      background:var(--red);
+    }
     .identity .ghost-layer {
       top:12%; left:-4%; font-size:clamp(150px,23vw,380px);
     }
@@ -324,6 +364,47 @@
 </div>
 
 
+<!-- ══ 00 — TREENG LAUNCH BAND ═══════════════════════════════════ -->
+<aside class="treeng-band" id="treengBand" aria-label="Treeng launch announcement">
+  <div class="treeng-band__bg"></div>
+  <div class="treeng-band__grid"></div>
+  <div class="treeng-band__inner">
+    <span class="treeng-band__pill">Now live</span>
+    <p class="treeng-band__text">
+      <b>Treeng</b> &mdash; the discipline, productised. Sixteen diagnostic engines that grade the
+      evidence behind every finding and hand back an Excel workbook you own. First one is free.
+    </p>
+    <a class="treeng-band__cta" href="https://treeng.ai" target="_blank" rel="noopener noreferrer" data-treeng="band-primary">Run a free diagnostic &rarr;</a>
+    <a class="treeng-band__cta treeng-band__cta--ghost" href="/platform" data-treeng="band-secondary">What it is</a>
+    <button class="treeng-band__close" id="treengBandClose" aria-label="Dismiss announcement">&times;</button>
+  </div>
+</aside>
+
+<script>
+(function(){
+  var b=document.getElementById('treengBand'), c=document.getElementById('treengBandClose');
+  function sync(){
+    if(!b) return;
+    var nav=document.querySelector('.nav');
+    if(nav) b.style.marginTop=nav.offsetHeight+'px';
+    document.body.classList.toggle('has-treeng-band', b.style.display!=='none');
+  }
+  try{ if(localStorage.getItem('ssundar_treeng_band')==='dismissed'&&b) b.style.display='none'; }catch(e){}
+  sync();
+  window.addEventListener('resize',sync);
+  if(c&&b) c.addEventListener('click',function(){
+    b.style.display='none';
+    document.body.classList.remove('has-treeng-band');
+    try{ localStorage.setItem('ssundar_treeng_band','dismissed'); }catch(e){}
+  });
+  document.addEventListener('click',function(e){
+    var a=e.target.closest?e.target.closest('[data-treeng]'):null;
+    if(a&&typeof gtag==='function') gtag('event','treeng_click',{source:a.getAttribute('data-treeng'),page:location.pathname});
+  });
+})();
+</script>
+
+
 <!-- ══ 01 — IDENTITY ═════════════════════════════════════════════ -->
 <section class="band identity">
   <div class="ghost-layer" data-z-speed="0.12">JUDGMENT</div>
@@ -346,6 +427,21 @@
         Built and run inside Fortune 500 operations
         <span class="cred-orgs"><b>Amazon</b> <b>Accenture</b> <b>Cognizant</b></span>
       </p>
+
+      <div class="identity-links">
+        <a class="ilink" href="/work" data-treeng="hero-work">
+          <span class="ilink-k">The work</span>
+          <span class="ilink-t">Five ways in, scoped by depth<span class="dot">.</span></span>
+          <span class="ilink-d">Diagnostic, workshops, the Academy, consulting, licensing.</span>
+          <span class="ilink-go">Explore &rarr;</span>
+        </a>
+        <a class="ilink ilink--new" href="/platform" data-treeng="hero-platform">
+          <span class="ilink-k">The platform <em>&middot; now live</em></span>
+          <span class="ilink-t">Treeng &mdash; the discipline, productised<span class="dot">.</span></span>
+          <span class="ilink-d">Sixteen diagnostic engines. Every finding evidence-graded. Excel you own, not a locked PDF. First one free.</span>
+          <span class="ilink-go">What it is &rarr;</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
