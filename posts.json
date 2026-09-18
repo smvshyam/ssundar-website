@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "The Risk Was Logged. That Was the Whole Point.",
+      "slug": "insight-the-risk-was-logged",
+      "date": "2026-09-18",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "The risk goes on the register at 2:14 in the afternoon, and by 2:15 the room has treated it as handled. It gets a row, a color, an owner, and a status that reads mitigation in progress. Nobody did anything about the problem. Somebody wrote the problem down. The two acts feel identical from inside the room, and that confusion is the entire mechanism.",
+      "readTime": "6 min",
+      "file": "insight-the-risk-was-logged.html",
+      "published": true
+    },
+    {
       "title": "The Postmortem Was Blameless. Somebody Still Took the Fall.",
       "slug": "insight-blameless-postmortem-took-the-fall",
       "date": "2026-09-16",
