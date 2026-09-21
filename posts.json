@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "They Asked for More Data. Nobody Wanted to Decide.",
+      "slug": "insight-asked-for-more-data-nobody-decided",
+      "date": "2026-09-21",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "The decision was on the agenda, in writing, with a date next to it. The room had the authority to make it, and most of them privately understood which option was right. Then someone said the sentence that dissolves every hard meeting: I think we need a bit more data before we commit. That is the most respectable way an organization has ever found to not make a decision.",
+      "readTime": "6 min",
+      "file": "insight-asked-for-more-data-nobody-decided.html",
+      "published": true
+    },
+    {
       "title": "The Risk Was Logged. That Was the Whole Point.",
       "slug": "insight-the-risk-was-logged",
       "date": "2026-09-18",
