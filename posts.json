@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "We Formed a Committee. That Was the Decision.",
+      "slug": "insight-we-formed-a-committee",
+      "date": "2026-09-23",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "The decision had one natural owner, and everyone in the room knew who it was. It was hard, it was expensive to reverse, and it belonged to a single person with the authority to make it. So they formed a committee. By the time the meeting broke, the thing that had needed one signature had eleven stakeholders and a recurring calendar slot, and everyone filed out lighter, because the decision was no longer a decision. It had been promoted to an initiative.",
+      "readTime": "6 min",
+      "file": "insight-we-formed-a-committee.html",
+      "published": true
+    },
+    {
       "title": "They Asked for More Data. Nobody Wanted to Decide.",
       "slug": "insight-asked-for-more-data-nobody-decided",
       "date": "2026-09-21",
