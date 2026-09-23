@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "The Vendor Was Chosen Before the Evaluation Began",
+      "slug": "insight-vendor-chosen-before-evaluation",
+      "date": "2026-09-23",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "The evaluation ran for six weeks. Six vendors, a fourteen-criterion scorecard, three rounds of demos, a cross-functional committee. And a decision that had been made in week zero. The scorecard was not a decision tool. It was an alibi with columns.",
+      "readTime": "6 min",
+      "file": "insight-vendor-chosen-before-evaluation.html",
+      "published": true
+    },
+    {
       "title": "We Formed a Committee. That Was the Decision.",
       "slug": "insight-we-formed-a-committee",
       "date": "2026-09-23",
