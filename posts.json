@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "Everyone Signed Off. Nobody Approved It.",
+      "slug": "insight-everyone-signed-off-nobody-approved",
+      "date": "2026-09-25",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "The document had seven approvals on it by the time it failed. Every box green, every signature real, and not one person had read page three. A signature is supposed to mean I checked this. In a long enough chain it means I saw that someone else did.",
+      "readTime": "6 min",
+      "file": "insight-everyone-signed-off-nobody-approved.html",
+      "published": true
+    },
+    {
       "title": "The Decision Was Reversible. They Treated It Like It Wasn't.",
       "slug": "insight-decision-was-reversible",
       "date": "2026-09-24",
