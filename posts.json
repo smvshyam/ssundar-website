@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "The Decision Was Unanimous. That Should Have Been the Warning.",
+      "slug": "insight-decision-was-unanimous",
+      "date": "2026-09-30",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "The hardest item on the agenda took four minutes. A consequential call, real money on either branch, landed clean and unanimous, and the room broke for coffee feeling it had done something difficult well. The speed of the agreement felt like proof. A hard decision that produces no friction was never actually decided.",
+      "readTime": "6 min",
+      "file": "insight-decision-was-unanimous.html",
+      "published": true
+    },
+    {
       "title": "Starting Had an Owner. Stopping Didn't.",
       "slug": "insight-starting-had-an-owner-stopping-didnt",
       "date": "2026-09-29",
