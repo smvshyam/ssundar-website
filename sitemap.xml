@@ -19,6 +19,12 @@
 
   <!-- Insight Articles -->
   <url>
+    <loc>https://ssundar.com/insight-nobody-wrote-the-fourth-option</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ssundar.com/insight-decision-was-unanimous</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
