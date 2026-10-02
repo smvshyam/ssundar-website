@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "We Reorganized. Nobody Made the Call.",
+      "slug": "insight-reorg-instead-of-a-decision",
+      "date": "2026-10-02",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "The announcement went out at nine on a Tuesday. New reporting lines, a function split in two, a rationale slide, a transition timeline. Everyone understood it was significant. Almost nobody could say what had been decided. Because the thing the reorganization was built to resolve was not on the chart at all.",
+      "readTime": "5 min",
+      "file": "insight-reorg-instead-of-a-decision.html",
+      "published": true
+    },
+    {
       "title": "They Chose From Three Options. Nobody Wrote a Fourth.",
       "slug": "insight-nobody-wrote-the-fourth-option",
       "date": "2026-10-01",
