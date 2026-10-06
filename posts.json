@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "We Ran It by Legal. Legal Made the Call.",
+      "slug": "insight-ran-it-by-legal",
+      "date": "2026-10-06",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "The question was a business call with a clear owner. Instead of making it, the leader said the five most relieving words in corporate life: let us run it by legal. Three weeks later the answer came back, and the decision had been made, just not by the person whose job it was, and not on the question that actually mattered.",
+      "readTime": "6 min",
+      "file": "insight-ran-it-by-legal.html",
+      "published": true
+    },
+    {
       "title": "We Reorganized. Nobody Made the Call.",
       "slug": "insight-reorg-instead-of-a-decision",
       "date": "2026-10-02",
