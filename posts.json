@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "We Priced the Risk of Acting. Nobody Priced the Cost of Waiting.",
+      "slug": "insight-nobody-priced-the-cost-of-waiting",
+      "date": "2026-10-07",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "The downside slide was a model of rigor: scenarios, a sensitivity table, the capital at risk. Then the careful room did what careful rooms do with a hard call and asked for another month to be sure. Nobody put a number on the month. The cost of acting is always priced. The cost of waiting is charged to a future the room will never be asked to reconcile.",
+      "readTime": "5 min",
+      "file": "insight-nobody-priced-the-cost-of-waiting.html",
+      "published": true
+    },
+    {
       "title": "We Ran It by Legal. Legal Made the Call.",
       "slug": "insight-ran-it-by-legal",
       "date": "2026-10-06",
