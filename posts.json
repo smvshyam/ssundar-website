@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "We Benchmarked Against the Best. The Best Were Guessing Too.",
+      "slug": "insight-benchmarked-against-the-best",
+      "date": "2026-10-08",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "The capability review opened, as these reviews now do, with a benchmark slide: what the most admired companies in the sector were doing about the exact question on the table. The room relaxed. The hard part was apparently over. But a benchmark never tells you what is correct. It tells you what is common, and sells the difference back to you as proof.",
+      "readTime": "5 min",
+      "file": "insight-benchmarked-against-the-best.html",
+      "published": true
+    },
+    {
       "title": "We Priced the Risk of Acting. Nobody Priced the Cost of Waiting.",
       "slug": "insight-nobody-priced-the-cost-of-waiting",
       "date": "2026-10-07",
