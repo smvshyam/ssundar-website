@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "We Had a Precedent. We Called It a Decision.",
+      "slug": "insight-precedent-not-a-decision",
+      "date": "2026-10-09",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "The question on the table was genuinely new. The answer arrived in under a minute, and it was old: a version of this had come up before, and what the company did then had worked. But a precedent tells you what you once did. It never tells you whether it still applies.",
+      "readTime": "5 min",
+      "file": "insight-precedent-not-a-decision.html",
+      "published": true
+    },
+    {
       "title": "We Benchmarked Against the Best. The Best Were Guessing Too.",
       "slug": "insight-benchmarked-against-the-best",
       "date": "2026-10-08",
