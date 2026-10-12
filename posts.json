@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "We Owned the Decision. Nobody Owned the Assumption.",
+      "slug": "insight-nobody-owned-the-assumption",
+      "date": "2026-10-12",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "The review was thorough, which was the first sign something was wrong. The governance held up beautifully, every signature in place. The result was still a quarter of what the plan promised. Nobody opened slide four, where the assumption that doomed it had been sitting unwatched for eighteen months.",
+      "readTime": "5 min",
+      "file": "insight-nobody-owned-the-assumption.html",
+      "published": true
+    },
+    {
       "title": "We Had a Precedent. We Called It a Decision.",
       "slug": "insight-precedent-not-a-decision",
       "date": "2026-10-09",
