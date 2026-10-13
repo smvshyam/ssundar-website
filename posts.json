@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "The Decision Was Defensible. That Was the Problem.",
+      "slug": "insight-decision-was-defensible",
+      "date": "2026-10-13",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "The hardest call on the agenda drew the room to a third question neither option answered: not which one would work, but which one would be easier to explain if it didn't. By the time the call was made it had collected a remarkable amount of cover and almost no scrutiny of whether it was right.",
+      "readTime": "5 min",
+      "file": "insight-decision-was-defensible.html",
+      "published": true
+    },
+    {
       "title": "We Owned the Decision. Nobody Owned the Assumption.",
       "slug": "insight-nobody-owned-the-assumption",
       "date": "2026-10-12",
