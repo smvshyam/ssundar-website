@@ -473,4 +473,10 @@
   <!-- Legal Pages -->
   <url><loc>https://ssundar.com/privacy</loc><priority>0.3</priority><changefreq>yearly</changefreq><lastmod>2026-03-25</lastmod></url>
   <url><loc>https://ssundar.com/terms</loc><priority>0.3</priority><changefreq>yearly</changefreq><lastmod>2026-03-25</lastmod></url>
+  <url>
+    <loc>https://ssundar.com/insight-solved-the-problem-we-could-solve</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

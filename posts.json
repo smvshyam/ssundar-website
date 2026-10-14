@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "We Solved the Problem We Could Solve.",
+      "slug": "insight-solved-the-problem-we-could-solve",
+      "date": "2026-10-14",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "The question on the table had no clean answer, so the room quietly found one next to it that did. By lunch there was a plan, a timeline, and the satisfaction of a hard day's work. The plan solved a real problem. Just not the one that had called the meeting.",
+      "readTime": "5 min",
+      "file": "insight-solved-the-problem-we-could-solve.html",
+      "published": true
+    },
+    {
       "title": "The Decision Was Defensible. That Was the Problem.",
       "slug": "insight-decision-was-defensible",
       "date": "2026-10-13",
