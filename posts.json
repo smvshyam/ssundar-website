@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "The Outcome Was Bad. So the Decision Must Have Been.",
+      "slug": "insight-outcome-bad-blamed-the-decision",
+      "date": "2026-10-15",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "A failed decision gets a two-hour review and a verdict everyone in the room reached before the first slide. An almost identical call that happened to land the other way gets applause two floors up. The only variable separating the two leaders was the one neither of them controlled.",
+      "readTime": "5 min",
+      "file": "insight-outcome-bad-blamed-the-decision.html",
+      "published": true
+    },
+    {
       "title": "We Solved the Problem We Could Solve.",
       "slug": "insight-solved-the-problem-we-could-solve",
       "date": "2026-10-14",
