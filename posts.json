@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "The Decision Was Final. Until the Next Meeting.",
+      "slug": "insight-decision-final-until-next-meeting",
+      "date": "2026-10-16",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "A real decision gets made on a Tuesday and quietly reopened the following week, relitigated at full price by a slightly different room that calls it diligence. The same answer comes out. The cost was never the second meeting. It was the conviction that drained out of execution while everyone waited to see whether the call would survive the next agenda.",
+      "readTime": "6 min",
+      "file": "insight-decision-final-until-next-meeting.html",
+      "published": true
+    },
+    {
       "title": "The Outcome Was Bad. So the Decision Must Have Been.",
       "slug": "insight-outcome-bad-blamed-the-decision",
       "date": "2026-10-15",
