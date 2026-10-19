@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "The Decision Went Up. The Context Stayed Down.",
+      "slug": "insight-decision-went-up-context-stayed-down",
+      "date": "2026-10-19",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "A hard call gets sent upstairs to someone senior enough to own it and too far from the work to make it well. Escalation looks like rigor and functions like a transfer: the problem and its liability rise while the context stays on the floor where it was gathered, so the organization ends up applying its thinnest judgment to its heaviest decisions.",
+      "readTime": "6 min",
+      "file": "insight-decision-went-up-context-stayed-down.html",
+      "published": true
+    },
+    {
       "title": "The Decision Was Final. Until the Next Meeting.",
       "slug": "insight-decision-final-until-next-meeting",
       "date": "2026-10-16",
