@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "Nobody Argued for the Plan We Chose.",
+      "slug": "insight-nobody-argued-for-the-plan-we-chose",
+      "date": "2026-10-21",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "Two coherent plans, two owners who believed in them, and a room that resolved the disagreement by splitting the difference. The compromise is the most respectable way an organization has of not making a decision: a plan that is the arithmetic mean of two convictions and the honest expression of neither, with an advocate for nobody. It is not the resolution of the disagreement. It is the disagreement, sealed inside a plan where it keeps doing its damage out of view.",
+      "readTime": "6 min",
+      "file": "insight-nobody-argued-for-the-plan-we-chose.html",
+      "published": true
+    },
+    {
       "title": "The First Number Won. Nobody Asked Where It Came From.",
       "slug": "insight-first-number-won",
       "date": "2026-10-20",
