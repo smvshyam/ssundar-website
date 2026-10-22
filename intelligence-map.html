@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="/fonts.css">
 <link rel="stylesheet" href="styles.css">
 <style>
-html,body{background:#060606;color:#fff;overflow:hidden;height:100%;overscroll-behavior:none}
+html,body{background:#060606;color:#fff;overflow:hidden;height:100%;width:100%;max-width:100vw;overscroll-behavior:none}
 .nav{position:fixed}
 #stage{position:fixed;inset:0;overflow:hidden;cursor:grab;touch-action:none;
   background:radial-gradient(1200px 700px at 50% 44%,rgba(227,30,36,.11) 0%,transparent 70%),#060606}
@@ -54,7 +54,7 @@ html,body{background:#060606;color:#fff;overflow:hidden;height:100%;overscroll-b
   border:1px solid rgba(255,255,255,.14);box-shadow:0 20px 50px rgba(0,0,0,.75);
   transition:opacity .4s ease,border-color .25s ease,box-shadow .25s ease}
 .lens:hover{border-color:var(--red);box-shadow:0 24px 58px rgba(227,30,36,.26)}
-.lens.big{width:420px;border-color:var(--red);box-shadow:0 0 0 1px var(--red),0 30px 76px rgba(0,0,0,.85)}
+.lens.big{width:460px;border-color:var(--red);box-shadow:0 0 0 1px var(--red),0 30px 76px rgba(0,0,0,.85)}
 .lens .lk{font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.17em;
   text-transform:uppercase;color:var(--red);display:block;margin-bottom:9px;padding-bottom:7px;
   border-bottom:1px solid rgba(227,30,36,.28)}
@@ -64,20 +64,21 @@ html,body{background:#060606;color:#fff;overflow:hidden;height:100%;overscroll-b
 .lens.big li{font-size:14px;line-height:1.6;margin-bottom:11px}
 .lens li:last-child{margin-bottom:0}
 .lens li::before{content:'';position:absolute;left:0;top:7px;width:4px;height:4px;background:var(--red)}
-.lens .zoom{font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.14em;
-  text-transform:uppercase;color:rgba(255,255,255,.34);display:block;margin-top:11px}
+.lens .zoom{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--red);display:block;margin-top:12px;padding-top:9px;
+  border-top:1px solid rgba(227,30,36,.26)}
 .lens:hover .zoom{color:var(--red)}
 .lens.big .zoom{display:none}
 
 .prog{position:fixed;left:0;top:0;height:2px;background:var(--red);width:0;z-index:60;transition:width .3s linear}
-.crumb{position:fixed;left:clamp(14px,4vw,40px);top:98px;z-index:40;display:flex;gap:8px;align-items:center;
+.crumb{position:fixed;left:clamp(10px,3vw,34px);top:98px;max-width:60vw;flex-wrap:wrap;z-index:40;display:flex;gap:8px;align-items:center;
   font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 .crumb button{background:none;border:none;color:rgba(255,255,255,.5);cursor:pointer;font:inherit;padding:0}
 .crumb button:hover{color:#fff}
 .crumb i{color:rgba(255,255,255,.22);font-style:normal}
 .crumb b{color:var(--red)}
 
-.lens-bar{position:fixed;left:clamp(14px,4vw,40px);top:130px;z-index:40;display:flex;flex-direction:column;gap:5px;
+.lens-bar{position:fixed;left:clamp(10px,3vw,34px);top:130px;max-width:46vw;z-index:40;display:flex;flex-direction:column;gap:5px;
   opacity:0;transform:translateX(-10px);pointer-events:none;transition:opacity .35s ease,transform .35s ease}
 .lens-bar.show{opacity:1;transform:none;pointer-events:auto}
 .lens-bar button{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.1em;
@@ -86,7 +87,7 @@ html,body{background:#060606;color:#fff;overflow:hidden;height:100%;overscroll-b
 .lens-bar button:hover{color:#fff;border-color:rgba(255,255,255,.36)}
 .lens-bar button.on{color:#fff;background:var(--red);border-color:var(--red)}
 
-.ttag{position:fixed;right:clamp(14px,4vw,40px);top:98px;z-index:40;text-align:right;max-width:300px;
+.ttag{position:fixed;right:clamp(10px,3vw,34px);top:98px;z-index:40;text-align:right;max-width:min(300px,30vw);
   opacity:0;transition:opacity .4s ease;pointer-events:none}
 .ttag.show{opacity:1}
 .ttag .e{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.17em;
@@ -346,13 +347,15 @@ STAGES.forEach(function(st,i){
 });
 
 /* ── camera ──────────────────────────────────────────────── */
-var cam={yaw:0,pitch:-12,dist:2100,tx:0,ty:0,tz:0};
-var tgt={yaw:0,pitch:-12,dist:2100,tx:0,ty:0,tz:0};
+var cam={yaw:0,pitch:-11,dist:2000,tx:0,ty:0,tz:0};
+var tgt={yaw:0,pitch:-11,dist:2000,tx:0,ty:0,tz:0};
 var active=-1, zoomed=-1, lensFilter=null, W=0,H=0;
 
+var fitK=1;
 function size(){ W=stage.clientWidth; H=stage.clientHeight;
+  fitK=Math.min(1.1,Math.max(0.5,1500/Math.max(W,700)));
   svg.setAttribute('viewBox','0 0 '+W+' '+H); svg.setAttribute('width',W); svg.setAttribute('height',H); }
-window.addEventListener('resize',size); size();
+window.addEventListener('resize',function(){ size(); go(active,zoomed); }); size();
 
 function project(p){
   var cy=Math.cos(cam.yaw*D2R), sy=Math.sin(cam.yaw*D2R);
@@ -361,14 +364,15 @@ function project(p){
   var x1= x*cy + z*sy, z1=-x*sy + z*cy;        // yaw
   var y2= y*cx - z1*sx, z2= y*sx + z1*cx;      // pitch
   var d = cam.dist + z2;
-  if(d<60) d=60;
+  var behind = d < 80;                 // at or behind the camera plane
+  if(behind) d = 80;
   var s = FOCAL/d;
-  return { sx:W/2 + x1*s, sy:H*0.47 + y2*s, s:s, d:d };
+  return { sx:W/2 + x1*s, sy:H*0.47 + y2*s, s:s, d:d, behind:behind };
 }
 
 function visible(n){
   if(n.kind==='core')  return active<0;
-  if(n.kind==='stage') return active<0 || n.i===active;
+  if(n.kind==='stage') return active<0 || (n.i===active && zoomed<0);
   if(n.kind==='lens'){
     if(n.si!==active) return false;
     if(zoomed>=0)     return n.li===zoomed;
@@ -379,8 +383,8 @@ function visible(n){
 
 function draw(){
   for(var i=0;i<nodes.length;i++){
-    var n=nodes[i], p=project(n), vis=visible(n);
-    var sc=Math.max(.25,Math.min(1.9,p.s*(n.kind==='lens'&&zoomed>=0?1.25:1)));
+    var n=nodes[i], p=project(n), vis=visible(n) && !p.behind;
+    var sc=Math.max(.3,Math.min(1.55,p.s));
     n.el.style.transform='translate3d('+(p.sx)+'px,'+(p.sy)+'px,0) translate(-50%,-50%) scale('+sc.toFixed(3)+')';
     n.el.style.zIndex=String(Math.round(9000-p.d));
     var o=0;
@@ -395,7 +399,11 @@ function draw(){
   }
   for(var k=0;k<wires.length;k++){
     var w=wires[k], A=project(w.a), B=project(w.b);
-    var on = w.a._o>0.12 && w.b._o>0.12;
+    var on = w.a._o>0.12 && w.b._o>0.12 && !A.behind && !B.behind;
+    if(on){
+      var len=Math.hypot(B.sx-A.sx,B.sy-A.sy);
+      if(len > Math.max(W,H)*1.1) on=false;      // nothing sweeps the viewport
+    }
     w.el.setAttribute('x1',A.sx.toFixed(1)); w.el.setAttribute('y1',A.sy.toFixed(1));
     w.el.setAttribute('x2',B.sx.toFixed(1)); w.el.setAttribute('y2',B.sy.toFixed(1));
     w.el.style.opacity = on ? (w.el.getAttribute('class').indexOf('branch')>=0?'.5':'.3') : '0';
@@ -405,10 +413,10 @@ function draw(){
 /* single rAF loop: everything eases, nothing jumps */
 var raf=null;
 function loop(){
-  var k=0.12, done=true;
+  var k=0.075, done=true;
   ['yaw','pitch','dist','tx','ty','tz'].forEach(function(p){
     var d=tgt[p]-cam[p];
-    if(Math.abs(d)>0.01){ cam[p]+=d*k; done=false; } else cam[p]=tgt[p];
+    if(Math.abs(d)>0.05){ cam[p]+=d*k; done=false; } else cam[p]=tgt[p];
   });
   draw();
   raf = done ? null : requestAnimationFrame(loop);
@@ -420,14 +428,14 @@ function go(si,li){
   stopTour();
   active=si; zoomed=li;
   if(si<0){
-    tgt.yaw=0; tgt.pitch=-12; tgt.dist=2100; tgt.tx=tgt.ty=tgt.tz=0;
+    tgt.yaw=0; tgt.pitch=-11; tgt.dist=2000*fitK; tgt.tx=tgt.ty=tgt.tz=0;
     ttag.classList.remove('show'); lensEl.classList.remove('show');
     crumb.innerHTML='';
   } else {
     var st=STAGES[si];
     if(li<0){
       tgt.tx=st.x; tgt.ty=st.y; tgt.tz=st.z;
-      tgt.yaw=-(st.a+90); tgt.pitch=-7; tgt.dist=1520;
+      tgt.yaw=-(st.a+90); tgt.pitch=-7; tgt.dist=1560*fitK;
       ttag.querySelector('.e').textContent=st.eyebrow;
       ttag.querySelector('h3').textContent=st.head;
       ttag.querySelector('p').textContent=st.sub;
@@ -435,7 +443,7 @@ function go(si,li){
     } else {
       var L=st.lens[li];
       tgt.tx=L.x; tgt.ty=L.y; tgt.tz=L.z;
-      tgt.yaw=-(st.a+90); tgt.pitch=-4; tgt.dist=760;
+      tgt.yaw=-(st.a+90); tgt.pitch=-6; tgt.dist=900*fitK;
       ttag.querySelector('.e').textContent=st.eyebrow+' · '+L.title;
       ttag.querySelector('h3').textContent=L.title;
       ttag.querySelector('p').textContent=st.head;
