@@ -679,3 +679,125 @@ body.cookie-banner-open .treeng-orb{ bottom:calc(26px + var(--cookie-banner-h, 9
   .treeng-band__cta--ghost{ display:none; }
 }
 @media (prefers-reduced-motion: reduce){ .treeng-band__bg{ animation:none; } }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   SERVICE-LINE PAGE KIT  (2026-10-22)
+   Shared components for the four-tier portfolio: Work Intelligence,
+   capability strategy, capability architecture, activation, services.
+   Defined once here so new pages stay lean and stay consistent.
+   ═══════════════════════════════════════════════════════════════ */
+.sl{background:#0a0a0a;color:#fff}
+.sl .band{position:relative;overflow:hidden}
+.sl .wrap{max-width:1240px;margin:0 auto;padding:0 var(--px);position:relative;z-index:2}
+.sl .rule{height:1px;background:rgba(255,255,255,0.09)}
+.sl .rule-red{height:2px;background:var(--red);max-width:150px}
+
+.sl .sec{padding:clamp(64px,7.5vw,104px) 0}
+.sl .kick{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:0.2em;
+  color:var(--red);display:flex;align-items:center;gap:12px;margin-bottom:22px;text-transform:uppercase}
+.sl .kick::after{content:'';flex:1;height:1px;background:rgba(227,30,36,0.3);max-width:120px}
+.sl h2.head{font-family:var(--heading);font-weight:700;text-transform:uppercase;
+  font-size:clamp(26px,2.9vw,40px);line-height:1.05;letter-spacing:-0.025em;color:#fff;margin:0 0 18px}
+.sl p.body{font-family:var(--body);font-size:clamp(15.5px,1.1vw,17px);line-height:1.76;
+  color:rgba(255,255,255,0.78);margin:0 0 18px}
+.sl p.body:last-child{margin-bottom:0}
+.sl p.body strong{color:#fff;font-weight:600}
+.sl p.body a,.sl .inlink{color:var(--red);text-decoration:none;border-bottom:1px solid rgba(227,30,36,0.4)}
+
+/* two-column: sticky heading left, argument right */
+.sl .two{display:grid;gap:clamp(28px,4vw,64px)}
+@media(min-width:980px){.sl .two{grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr)}
+  .sl .two-l{position:sticky;top:118px;align-self:start}}
+
+/* hero */
+.sl .hero{padding:clamp(112px,13vw,168px) 0 clamp(52px,6vw,76px)}
+.sl .hero h1{font-family:var(--heading);font-weight:700;text-transform:uppercase;
+  font-size:clamp(38px,4.6vw,66px);line-height:0.98;letter-spacing:-0.03em;margin:0 0 24px;color:#fff}
+.sl .hero h1 .soft{color:rgba(255,255,255,0.82)}
+.sl .lede{font-family:var(--body);font-size:clamp(16px,1.25vw,19px);line-height:1.62;
+  color:rgba(255,255,255,0.88);margin:0 0 16px;max-width:62ch}
+.sl .sub{font-family:var(--body);font-size:clamp(15px,1.05vw,16.5px);line-height:1.68;
+  color:rgba(255,255,255,0.66);margin:0 0 32px;max-width:64ch}
+.sl .pill{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:10.5px;
+  font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:22px}
+.sl .pill::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--red)}
+
+/* buttons */
+.sl .acts{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.sl .btn-r,.sl .btn-g{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:700;
+  letter-spacing:0.09em;text-transform:uppercase;padding:17px 32px;text-decoration:none;
+  transition:transform .2s cubic-bezier(0.16,1,0.3,1),box-shadow .2s ease,border-color .2s ease,background .2s ease}
+.sl .btn-r{background:var(--red);color:#fff;border:1px solid var(--red)}
+.sl .btn-r:hover{transform:translateY(-3px);box-shadow:0 14px 38px rgba(227,30,36,0.36)}
+.sl .btn-g{color:#fff;border:1px solid rgba(255,255,255,0.26);background:transparent}
+.sl .btn-g:hover{border-color:#fff;background:rgba(255,255,255,0.06)}
+.sl .trust{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.1em;
+  text-transform:uppercase;color:rgba(255,255,255,0.42);margin-top:20px}
+
+/* stat strip */
+.sl .stats{display:grid;gap:1px;background:rgba(255,255,255,0.11);margin-top:clamp(48px,6vw,76px)}
+@media(min-width:760px){.sl .stats{grid-template-columns:repeat(4,1fr)}}
+.sl .stat{background:#0a0a0a;padding:26px 22px}
+.sl .stat b{display:block;font-family:var(--heading);font-weight:700;font-size:clamp(24px,2.5vw,34px);
+  line-height:1;letter-spacing:-0.025em;color:#fff;margin-bottom:8px}
+.sl .stat span{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:0.11em;
+  text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.75}
+
+/* 3D offer / capability cards */
+.sl .deck{display:grid;gap:1px;background:rgba(255,255,255,0.11);margin-top:44px;perspective:1600px}
+@media(min-width:680px){.sl .deck{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.sl .deck.four{grid-template-columns:repeat(4,1fr)}
+  .sl .deck.three{grid-template-columns:repeat(3,1fr)}}
+.sl .card3{background:#0a0a0a;padding:28px 24px;text-decoration:none;display:flex;flex-direction:column;
+  position:relative;transform-style:preserve-3d;
+  transition:transform .45s cubic-bezier(0.16,1,0.3,1),background .25s ease,box-shadow .35s ease}
+.sl .card3:hover{background:#131313;transform:translateZ(44px) rotateX(3deg) rotateY(-3deg);
+  box-shadow:0 34px 70px rgba(0,0,0,0.6),0 0 44px rgba(227,30,36,0.14);z-index:3}
+.sl .card3 .c-k{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:0.15em;
+  text-transform:uppercase;color:var(--red);display:block;margin-bottom:14px}
+.sl .card3 h3{font-family:var(--heading);font-weight:700;text-transform:uppercase;font-size:clamp(16px,1.5vw,20px);
+  line-height:1.16;color:#fff;margin:0 0 11px;transition:color .18s ease}
+.sl .card3:hover h3{color:var(--red)}
+.sl .card3 p{font-family:var(--body);font-size:13.5px;line-height:1.6;color:rgba(255,255,255,0.6);margin:0 0 16px;flex:1}
+.sl .card3 .c-go{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.11em;
+  text-transform:uppercase;color:var(--red)}
+.sl .card3.is-new::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--red)}
+
+/* loop / flow row */
+.sl .loop{display:grid;gap:1px;background:rgba(255,255,255,0.11);margin-top:44px}
+@media(min-width:900px){.sl .loop{grid-template-columns:repeat(4,1fr)}}
+.sl .loop > div{background:#0a0a0a;padding:26px 22px;position:relative}
+.sl .loop b{display:block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.18em;
+  color:var(--red);margin-bottom:12px}
+.sl .loop p{font-family:var(--body);font-size:13.5px;line-height:1.6;color:rgba(255,255,255,0.68);margin:0}
+
+/* definition rows */
+.sl .rows{margin-top:44px;border-top:1px solid rgba(255,255,255,0.14)}
+.sl .row{display:grid;gap:6px 30px;padding:22px 0;border-bottom:1px solid rgba(255,255,255,0.09)}
+@media(min-width:860px){.sl .row{grid-template-columns:clamp(150px,19%,220px) 1fr auto;align-items:baseline}}
+.sl .row .r-k{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.11em;
+  text-transform:uppercase;color:var(--red)}
+.sl .row .r-v{font-family:var(--body);font-size:15px;line-height:1.62;color:rgba(255,255,255,0.8)}
+.sl .row .r-t{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:0.1em;
+  text-transform:uppercase;color:rgba(255,255,255,0.4);white-space:nowrap}
+
+/* note */
+.sl .note{font-family:var(--mono);font-size:10.5px;letter-spacing:0.04em;color:rgba(255,255,255,0.42);
+  line-height:1.95;max-width:76ch;margin-top:32px}
+.sl .note a{color:var(--red);text-decoration:none}
+
+/* CTA band */
+.sl .cta{background:var(--red);padding:clamp(68px,8vw,110px) 0}
+.sl .cta-in{display:grid;gap:32px;align-items:center}
+@media(min-width:900px){.sl .cta-in{grid-template-columns:1.1fr auto}}
+.sl .cta h2{font-family:var(--heading);font-weight:700;text-transform:uppercase;
+  font-size:clamp(30px,4vw,56px);line-height:0.98;letter-spacing:-0.03em;color:#fff;margin:0 0 18px}
+.sl .cta p{font-family:var(--body);font-size:clamp(15.5px,1.2vw,18px);line-height:1.62;
+  color:rgba(255,255,255,0.95);max-width:56ch;margin:0}
+.sl .cta-btn{display:inline-block;background:#0a0a0a;color:#fff;font-family:var(--mono);font-size:12.5px;
+  font-weight:700;letter-spacing:0.09em;text-transform:uppercase;padding:19px 38px;text-decoration:none;
+  white-space:nowrap;transition:transform .2s cubic-bezier(0.16,1,0.3,1),box-shadow .2s ease}
+.sl .cta-btn:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,0,0,0.42)}
+.sl .cta-note{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.1em;
+  text-transform:uppercase;color:rgba(255,255,255,0.78);margin-top:14px}

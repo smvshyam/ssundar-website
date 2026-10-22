@@ -99,7 +99,8 @@
       display:grid; gap:1px; background:rgba(255,255,255,0.11);
       margin-top:52px; max-width:920px;
     }
-    @media(min-width:780px){ .identity-links{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:720px){ .identity-links{ grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:1180px){ .identity-links{ grid-template-columns:repeat(4,1fr); } }
     .ilink{
       background:#0a0a0a; padding:30px 26px 26px; text-decoration:none;
       display:flex; flex-direction:column; position:relative;
@@ -346,12 +347,14 @@
   <div class="nav-inner">
     <a href="/"><img src="logo.png" alt="SSUNDAR." class="nav-logo-img"></a>
     <div class="nav-links">
-      <a class="nav-link" href="/insights">Writing<span class="dot">.</span></a>
-      <a class="nav-link" href="/evidence">Evidence<span class="dot">.</span></a>
-      <a class="nav-link" href="/work">Work<span class="dot">.</span></a>
+    <a class="nav-link" href="/insights">Writing<span class="dot">.</span></a>
+    <a class="nav-link" href="/evidence">Evidence<span class="dot">.</span></a>
+    <a class="nav-link" href="/work">Work<span class="dot">.</span></a>
+    <a class="nav-link" href="/work-intelligence">Intelligence<span class="dot">.</span></a>
+    <a class="nav-link" href="/platform">Platform<span class="dot">.</span></a>
     <a class="nav-link" href="/about">About<span class="dot">.</span></a>
-      <a class="nav-cta" href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer">Discover your judgment gap →</a>
-    </div>
+    <a class="nav-cta" href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer">Discover your judgment gap &rarr;</a>
+  </div>
     <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -359,8 +362,10 @@
   <a href="/insights">Writing<span class="dot">.</span></a>
   <a href="/evidence">Evidence<span class="dot">.</span></a>
   <a href="/work">Work<span class="dot">.</span></a>
+  <a href="/work-intelligence">Intelligence<span class="dot">.</span></a>
+  <a href="/platform">Platform<span class="dot">.</span></a>
   <a href="/about">About<span class="dot">.</span></a>
-  <a href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer" style="color:var(--red)">Discover your judgment gap →</a>
+  <a href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer" style="color:var(--red)">Discover your judgment gap &rarr;</a>
 </div>
 
 
@@ -371,11 +376,11 @@
   <div class="treeng-band__inner">
     <span class="treeng-band__pill">Now live</span>
     <p class="treeng-band__text">
-      <b>Treeng</b> &mdash; the discipline, productised. Sixteen diagnostic engines that grade the
-      evidence behind every finding and hand back an Excel workbook you own. First one is free.
+      <b>Work Intelligence</b> &mdash; a new service line. An AI intelligence layer over the systems you already
+      run, turning capability into a continuous, predictive signal. One level above program design.
     </p>
-    <a class="treeng-band__cta" href="https://treeng.ai" target="_blank" rel="noopener noreferrer" data-treeng="band-primary">Run a free diagnostic &rarr;</a>
-    <a class="treeng-band__cta treeng-band__cta--ghost" href="/platform" data-treeng="band-secondary">What it is</a>
+    <a class="treeng-band__cta" href="/work-intelligence" data-treeng="band-primary">See the service line &rarr;</a>
+    <a class="treeng-band__cta treeng-band__cta--ghost" href="/intelligence-map" data-treeng="band-secondary">The map</a>
     <button class="treeng-band__close" id="treengBandClose" aria-label="Dismiss announcement">&times;</button>
   </div>
 </aside>
@@ -389,13 +394,13 @@
     if(nav) b.style.marginTop=nav.offsetHeight+'px';
     document.body.classList.toggle('has-treeng-band', b.style.display!=='none');
   }
-  try{ if(localStorage.getItem('ssundar_treeng_band')==='dismissed'&&b) b.style.display='none'; }catch(e){}
+  try{ if(localStorage.getItem('ssundar_wi_band')==='dismissed'&&b) b.style.display='none'; }catch(e){}
   sync();
   window.addEventListener('resize',sync);
   if(c&&b) c.addEventListener('click',function(){
     b.style.display='none';
     document.body.classList.remove('has-treeng-band');
-    try{ localStorage.setItem('ssundar_treeng_band','dismissed'); }catch(e){}
+    try{ localStorage.setItem('ssundar_wi_band','dismissed'); }catch(e){}
   });
   document.addEventListener('click',function(e){
     var a=e.target.closest?e.target.closest('[data-treeng]'):null;
@@ -429,20 +434,32 @@
       </p>
 
       <div class="identity-links">
-        <a class="ilink" href="/work" data-treeng="hero-work">
-          <span class="ilink-k">The work</span>
-          <span class="ilink-t">Five ways in, scoped by depth<span class="dot">.</span></span>
-          <span class="ilink-d">Diagnostic, workshops, the Academy, consulting, licensing.</span>
+        <a class="ilink" href="/capability-strategy" data-treeng="hero-t1">
+          <span class="ilink-k">Tier 01</span>
+          <span class="ilink-t">Capability strategy<span class="dot">.</span></span>
+          <span class="ilink-d">What capability is actually for, before anyone builds anything.</span>
           <span class="ilink-go">Explore &rarr;</span>
         </a>
-        <a class="ilink ilink--new" href="/platform" data-treeng="hero-platform">
-          <span class="ilink-k">The platform <em>&middot; now live</em></span>
-          <span class="ilink-t">Treeng &mdash; the discipline, productised<span class="dot">.</span></span>
-          <span class="ilink-d">Sixteen diagnostic engines. Every finding evidence-graded. Excel you own, not a locked PDF. First one free.</span>
+        <a class="ilink" href="/capability-architecture" data-treeng="hero-t2">
+          <span class="ilink-k">Tier 02</span>
+          <span class="ilink-t">Capability architecture<span class="dot">.</span></span>
+          <span class="ilink-d">The systems that make capability structural rather than episodic.</span>
+          <span class="ilink-go">Explore &rarr;</span>
+        </a>
+        <a class="ilink ilink--new" href="/work-intelligence" data-treeng="hero-t3">
+          <span class="ilink-k">Tier 03 <em>&middot; new</em></span>
+          <span class="ilink-t">Work Intelligence<span class="dot">.</span></span>
+          <span class="ilink-d">An AI intelligence layer over the systems you already run. Sense, connect, predict, act.</span>
           <span class="ilink-go">What it is &rarr;</span>
         </a>
+        <a class="ilink" href="/platform" data-treeng="hero-t4">
+          <span class="ilink-k">Tier 04</span>
+          <span class="ilink-t">Treeng<span class="dot">.</span></span>
+          <span class="ilink-d">Sixteen diagnostic engines. Every finding evidence-graded. Free to start.</span>
+          <span class="ilink-go">Open &rarr;</span>
+        </a>
       </div>
-    </div>
+  </div>
   </div>
 </section>
 
@@ -720,12 +737,14 @@
         <a class='footer-link' href='/simulate'>Simulate<span class="dot">.</span></a>
         <a class='footer-link' href='/insights'>Insights<span class="dot">.</span></a>
         <a class='footer-link' href='/engage'>Engage<span class="dot">.</span></a>
-        <span class="footer-link" style="color:rgba(255,255,255,0.28);cursor:default">Platform &mdash; in development</span>
+        <a class='footer-link' href='/work-intelligence'>Work Intelligence<span class="dot">.</span></a>
+        <a class='footer-link' href='/services'>Services<span class="dot">.</span></a>
+        <a class='footer-link' href='/platform'>Platform<span class="dot">.</span></a>
       </div>
       <div>
         <a href="mailto:shyam@ssundar.com" class="footer-link">shyam@ssundar.com</a>
         <a href="https://linkedin.com/in/shyamsundarmv" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn &rarr;</a>
-        
+
         <p style="font-family:var(--body);font-size:13px;font-weight:500;color:rgba(255,255,255,0.2);margin-top:4px">Working globally</p>
       </div>
     </div>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SSUNDAR — Capability Brochure</title>
+<meta name="description" content="SSUNDAR capability brochure: four tiers — capability strategy, capability architecture, Work Intelligence and Treeng productised diagnostics.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="/fonts.css">
+<style>
+:root{--red:#E31E24;--ink:#0a0a0a;--mut:#5b6170;--line:#e2e4ea;
+  --h:'Chakra Petch','Impact','Arial Black',sans-serif;
+  --m:'JetBrains Mono','SF Mono',Consolas,monospace;
+  --b:'Inter Tight','Helvetica Neue',Arial,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0;background:#d9dde4;color:var(--ink);font-family:var(--b);-webkit-font-smoothing:antialiased}
+.bar{position:sticky;top:0;z-index:9;background:var(--ink);color:#fff;padding:11px clamp(14px,3vw,26px);
+  display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.bar b{font-family:var(--h);text-transform:uppercase;letter-spacing:.04em;font-size:15px}
+.bar span{font-family:var(--m);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.bar .sp{flex:1}
+.bar button,.bar a{font-family:var(--m);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--red);color:#fff;border:1px solid var(--red);padding:9px 16px;cursor:pointer;text-decoration:none}
+.bar a.ghost{background:transparent;border-color:rgba(255,255,255,.3)}
+.page{width:210mm;min-height:297mm;margin:9mm auto;background:#fff;padding:15mm 15mm 13mm;
+  position:relative;box-shadow:0 10px 38px rgba(0,0,0,.16)}
+@page{size:A4;margin:0}
+@media print{html,body{background:#fff}.bar{display:none}
+  .page{margin:0;box-shadow:none;page-break-after:always}.page:last-child{page-break-after:auto}}
+.eyebrow{font-family:var(--m);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);
+  display:flex;align-items:center;gap:8px;margin-bottom:9px}
+.eyebrow i{width:20px;height:2px;background:var(--red);display:inline-block}
+h1{font-family:var(--h);font-size:31px;line-height:1.02;margin:0 0 9px;text-transform:uppercase;letter-spacing:-.02em}
+h1 span{color:var(--red)}
+.lede{font-size:12px;line-height:1.55;color:var(--mut);margin:0 0 14px;max-width:62ch}
+h2{font-family:var(--h);font-size:13px;letter-spacing:.04em;text-transform:uppercase;margin:16px 0 8px;
+  padding-bottom:5px;border-bottom:2px solid var(--red);display:flex;justify-content:space-between;align-items:baseline}
+h2 em{font-family:var(--m);font-size:8.5px;letter-spacing:.12em;color:var(--mut);font-style:normal;text-transform:none}
+p{font-size:10.6px;line-height:1.52;margin:0 0 7px}
+table{width:100%;border-collapse:collapse;font-size:10px;margin-top:3px}
+th{text-align:left;font-family:var(--m);font-size:8.2px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--mut);padding:5px 7px;border-bottom:1.5px solid var(--ink)}
+td{padding:6px 7px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.4}
+td:first-child{font-weight:600;white-space:nowrap;width:30%}
+td.t{font-family:var(--m);font-size:8.4px;letter-spacing:.07em;text-transform:uppercase;color:var(--mut);
+  white-space:nowrap;width:19%}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:4px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:4px}
+.c{border:1px solid var(--line);border-top:3px solid var(--red);padding:9px 11px;background:#fafbfc}
+.c b{display:block;font-family:var(--h);text-transform:uppercase;font-size:11px;margin-bottom:4px;letter-spacing:.01em}
+.c p{font-size:9.7px;margin:0;color:#2a3140;line-height:1.45}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:5px 0 3px}
+.flow div{border:1.5px solid var(--ink);padding:8px 9px;position:relative;background:#fff}
+.flow b{display:block;font-family:var(--m);font-size:9px;letter-spacing:.16em;color:var(--red);margin-bottom:4px}
+.flow span{font-size:9.7px;line-height:1.42;display:block}
+.flow div:not(:last-child)::after{content:"\2192";position:absolute;right:-8px;top:36%;font-size:12px;color:var(--mut);background:#fff;padding:0 1px}
+.quote{border-left:3px solid var(--red);background:#fdf3f3;padding:7px 12px;margin:9px 0;font-size:11px;line-height:1.5;color:#2a3140}
+ul{margin:3px 0 7px;padding-left:15px}li{font-size:10.2px;line-height:1.46;margin-bottom:3px}
+.pill{display:inline-block;font-family:var(--m);font-size:8px;letter-spacing:.1em;border:1px solid var(--red);
+  border-radius:999px;padding:3px 9px;margin:0 4px 4px 0;color:#2a3140;text-transform:uppercase}
+.foot{position:absolute;left:15mm;right:15mm;bottom:8mm;display:flex;justify-content:space-between;
+  font-family:var(--m);font-size:8px;color:var(--mut);letter-spacing:.07em;border-top:1px solid var(--line);padding-top:5px}
+.tier{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.tier .n{font-family:var(--h);font-size:19px;color:var(--red);line-height:1}
+.tier h3{font-family:var(--h);text-transform:uppercase;font-size:12px;margin:0 0 3px;letter-spacing:.01em}
+.tier p{font-size:9.9px;margin:0;color:#2a3140;line-height:1.45}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <b>SSUNDAR<span style="color:var(--red)">.</span></b>
+  <span>Capability brochure &middot; 4 pages &middot; A4</span>
+  <div class="sp"></div>
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <a class="ghost" href="/services">Back to services</a>
+</div>
+
+<!-- ═══ PAGE 1 ═══ -->
+<section class="page">
+  <div class="eyebrow"><i></i>SSUNDAR &middot; Capability brochure &middot; 2026</div>
+  <h1>Judgment-centered <span>leadership design.</span></h1>
+  <p class="lede">I build judgment into organisations. Not training programs. Four tiers, scoped by how deep the problem actually goes &mdash; from deciding what capability is for, through the architecture that makes it structural, to the intelligence layer that keeps it alive and the diagnostics that make it self-serve.</p>
+
+  <div class="quote">Most organisations arrive asking for a program. Where the diagnosis says the problem is structural &mdash; measurement, context or decision rights &mdash; a program spends credibility and solves nothing. Diagnosis comes first, always.</div>
+
+  <h2>The portfolio <em>four tiers, one discipline</em></h2>
+  <div class="tier"><div class="n">01</div><div><h3>Capability strategy</h3>
+    <p>What capability is actually for, before anyone builds anything. Fractional CHRO and CLO advisory, capability function strategy, go-to-market positioning, judgment architecture consulting.</p></div></div>
+  <div class="tier"><div class="n">02</div><div><h3>Capability architecture</h3>
+    <p>The systems that make capability structural rather than episodic. Leadership operating systems, competency and measurement architectures, trainer certification, licensed methodology.</p></div></div>
+  <div class="tier"><div class="n">03</div><div><h3>Work Intelligence</h3>
+    <p>An AI intelligence layer over the systems a client already runs. Sense, connect, predict, act &mdash; continuous capability signal designed bottom-up from the individual, and owned by the client.</p></div></div>
+  <div class="tier"><div class="n">04</div><div><h3>Productised diagnostics</h3>
+    <p>Treeng: sixteen diagnostic engines that grade the evidence behind every finding and export board-ready output in minutes. The self-serve front door to everything above.</p></div></div>
+
+  <h2>Who it is for <em>people-intensive operations where capability is the product</em></h2>
+  <div class="g3">
+    <div class="c"><b>Operations &amp; delivery</b><p>You own the floor and the number. The first signal that someone is struggling is currently the exit interview.</p></div>
+    <div class="c"><b>CHRO &middot; L&amp;D &middot; OD</b><p>Programs land well and vanish within a month. You are asked to prove impact without a research project.</p></div>
+    <div class="c"><b>CFO &middot; CEO &middot; board</b><p>Attrition and ramp are the largest controllable levers in a people-heavy operation. Both move when capability is seen early.</p></div>
+  </div>
+  <p style="margin-top:9px">Sales-as-a-service, customer experience, shared services, global capability centres and large delivery organisations &mdash; and any enterprise with a mature competency model and an approved AI stack not yet pointed at its own people.</p>
+
+  <div class="foot"><span>SSUNDAR &middot; Capability brochure</span><span>ssundar.com &middot; treeng.ai</span><span>1 / 4</span></div>
+</section>
+
+<!-- ═══ PAGE 2 ═══ -->
+<section class="page">
+  <h2 style="margin-top:0">Tier 01 &mdash; capability strategy <em>decide before you build</em></h2>
+  <table>
+    <tr><th>Engagement</th><th>What it is</th><th>Shape</th></tr>
+    <tr><td>Fractional CHRO / CLO</td><td>Senior capability judgement in the leadership forum without a full-time hire. Owns the capability agenda and hands it over when the internal appointment is right.</td><td class="t">Retained</td></tr>
+    <tr><td>Capability function strategy</td><td>What the function is for, how it is structured, what it stops doing, and the measurement it will be held to. Usually follows a new CHRO or a restructure.</td><td class="t">3&ndash;6 months</td></tr>
+    <tr><td>Go-to-market &amp; positioning</td><td>For capability businesses and L&amp;D providers: where the offer differentiates, what to retire, how to price against outcomes rather than days.</td><td class="t">Project</td></tr>
+    <tr><td>Judgment architecture</td><td>Where AI deployment is outpacing the judgment layer it lands on. Root cause classified as skills, structure, measurement or context before any design begins.</td><td class="t">Audit first</td></tr>
+  </table>
+
+  <h2>Tier 02 &mdash; capability architecture <em>the measure of an architecture is whether it runs without its architect</em></h2>
+  <table>
+    <tr><th>Engagement</th><th>What it is</th><th>Shape</th></tr>
+    <tr><td>Leadership operating systems</td><td>Designed from a blank page: the decisions leaders at each altitude must make well, the behaviours that produce them, and the measurement that proves it moved.</td><td class="t">Multi-quarter</td></tr>
+    <tr><td>Competency &amp; measurement</td><td>Competency identification through observable indicators, rubrics, pre/mid/post evaluation and the governance that keeps calibration honest.</td><td class="t">Per function</td></tr>
+    <tr><td>Train-the-Trainer Academy</td><td>A certified internal facilitator community under manager-calibrated rubrics, so facilitation is built rather than rented in perpetuity.</td><td class="t">60 days</td></tr>
+    <tr><td>AI-first workshops</td><td>Judgment and productivity under AI conditions &mdash; what changes about decision quality when execution becomes instant. Not prompt engineering.</td><td class="t">90&ndash;120 min</td></tr>
+    <tr><td>Play Labs&trade; licensing</td><td>Methodology licensed to consultancies, partner networks and internal teams. Referral, co-delivery or full licence.</td><td class="t">Application</td></tr>
+  </table>
+
+  <div class="quote"><b>The licensing principle.</b> Program IP is licensed per cohort or annually, with facilitator certification billed separately. Editable source is never handed over for a one-time fee &mdash; a program whose source has been handed over drifts within two cohorts: anchors soften, hard scenarios get cut, and measurement quietly disappears because it is the most uncomfortable part to run.</div>
+
+  <div class="foot"><span>SSUNDAR &middot; Capability brochure</span><span>shyam@ssundar.com</span><span>2 / 4</span></div>
+</section>
+
+<!-- ═══ PAGE 3 ═══ -->
+<section class="page">
+  <div class="eyebrow"><i></i>Tier 03 &middot; the new service line</div>
+  <h1 style="font-size:25px">Work Intelligence: <span>from programs to a capability operating system.</span></h1>
+  <p class="lede">Every large operation already generates the signal it needs to see capability continuously &mdash; in its dialers, CRMs, quality tools, learning platforms and HR systems. Almost none connect that signal at the level of the person. Capability stays managed in arrears and by bucket.</p>
+
+  <h2>The loop <em>sense &middot; connect &middot; predict &middot; act</em></h2>
+  <div class="flow">
+    <div><b>SENSE</b><span>Capability signals from quality, transcripts, system behaviour, conversion, tenure, learning and HR events &mdash; each read where it already sits</span></div>
+    <div><b>CONNECT</b><span>One living capability record per associate, leader and trainer, mapped to the client&rsquo;s own competency and indicator model</span></div>
+    <div><b>PREDICT</b><span>Readiness, risk and next-best intervention per person per week &mdash; explainable to the indicator and the timestamp</span></div>
+    <div><b>ACT</b><span>Proactive nudges inside the tools people already use. Every correction becomes new signal</span></div>
+  </div>
+  <p style="margin-top:8px">Human-in-the-loop by design: the system recommends, leaders decide. Outputs are a capability trajectory per cohort, a weekly readiness view for every leader, and one number finance can read &mdash; attrition and ramp cost avoided.</p>
+
+  <h2>Five surfaces, one engine <em>where it lands inside a client</em></h2>
+  <table>
+    <tr><th>Surface</th><th>What it enables</th><th>Buyer</th></tr>
+    <tr><td>Learning &amp; OD</td><td>Continuous reinforcement after every program; cohorts connected to learning, quality and HR data</td><td class="t">Head of L&amp;D / OD</td></tr>
+    <tr><td>Operations</td><td>Precision coaching at individual level; person-specific recommendations replace cluster refreshers</td><td class="t">Operations</td></tr>
+    <tr><td>Leadership assessment</td><td>Psychometrics plus observed behaviour, calibrated and normed</td><td class="t">CHRO / Talent</td></tr>
+    <tr><td>Trainer &amp; quality</td><td>Certification rubrics, observations and calibration as a live quality-intelligence view</td><td class="t">Training / Quality</td></tr>
+    <tr><td>Client &amp; account</td><td>Business-review narratives powered by people intelligence</td><td class="t">Account</td></tr>
+  </table>
+
+  <h2>Under the hood <em>sovereign, compact, on the client&rsquo;s own stack</em></h2>
+  <div class="g4">
+    <div class="c"><b>Ontology</b><p>The client&rsquo;s competency model as observable indicators, anchors and evidence rules. This is the asset.</p></div>
+    <div class="c"><b>Calibration</b><p>Real examples scored by calibrated raters under a Gage R&amp;R-style protocol. Reliability over correctness.</p></div>
+    <div class="c"><b>Model layer</b><p>The approved enterprise assistant, or a compact open-weight model fine-tuned inside the client tenancy. Swappable.</p></div>
+    <div class="c"><b>Learning loop</b><p>Every manager correction becomes signal. Monthly re-tuning; drift and bias checked against human calibration.</p></div>
+  </div>
+  <p style="margin-top:8px"><b>No workforce data leaves the client. No external model is trained on it.</b> The capability graph and the ontology are the enduring asset &mdash; owned by the client, on the balance sheet, not in a subscription.</p>
+
+  <div class="foot"><span>SSUNDAR &middot; Work Intelligence</span><span>ssundar.com/work-intelligence</span><span>3 / 4</span></div>
+</section>
+
+<!-- ═══ PAGE 4 ═══ -->
+<section class="page">
+  <h2 style="margin-top:0">The 120-day activation <em>one process &middot; one floor &middot; one number</em></h2>
+  <div class="flow">
+    <div><b>1&ndash;30 SENSE</b><span>Map every signal an individual generates in one process; enable data access; connect the first dataset; capture the baseline; deliver the 30/60/90</span></div>
+    <div><b>31&ndash;60 BUILD</b><span>Ontology locked; first labelled set calibrated; first model or agent live on one leader&rsquo;s teams; weekly readiness report in frontline leaders&rsquo; hands</span></div>
+    <div><b>61&ndash;90 ACTIVATE</b><span>Nudges running inside existing tools; assessment layer live for the leadership cohort; weekly 30-minute reviews</span></div>
+    <div><b>91&ndash;120 SCALE</b><span>Value read-out with operations, people and finance; decision gate; roadmap for the next three processes</span></div>
+  </div>
+  <p style="margin-top:8px"><b>Enablers and guardrails.</b> Data access from day one, in writing &mdash; the single accelerator. Zero disruption to service levels or quality processes. No change to incentives or ranking during activation. A decision gate at day 90. Every artefact handed over weekly, inside the client&rsquo;s own tools.</p>
+
+  <h2>How the service line earns <em>five revenue lines</em></h2>
+  <table>
+    <tr><th>Revenue line</th><th>Priced against</th><th>Shape</th></tr>
+    <tr><td>Activation engagement</td><td>Cost avoided on one floor &mdash; attrition, ramp, re-work</td><td class="t">120-day fixed</td></tr>
+    <tr><td>Leadership assessment</td><td>Per leader, per cycle</td><td class="t">Recurring</td></tr>
+    <tr><td>Ontology &amp; calibration</td><td>Per process or per function</td><td class="t">Design + stewardship</td></tr>
+    <tr><td>Program IP under licence</td><td>Per cohort or annual</td><td class="t">Licensed</td></tr>
+    <tr><td>Productised diagnostics</td><td>Per seat / per organisation</td><td class="t">Self-serve</td></tr>
+  </table>
+
+  <h2>Tier 04 &mdash; Treeng <em>productised diagnostics</em></h2>
+  <p>Sixteen diagnostic engines for L&amp;D, HR, operations, strategy, analytics, procurement and compliance. Named methodologies &mdash; Kirkpatrick-Phillips, ADDIE, Lean, Ishikawa &mdash; not a proprietary black box. Every finding carries a confidence grade of A, B or C based on the strength of the data behind it, and the engine names the data that would move a C up a grade. Output is an Excel workbook with live formulas and a deck you own outright. Free to start.</p>
+
+  <h2>Working together <em>how an engagement begins</em></h2>
+  <p>Start with the diagnostic. It names where judgment is breaking &mdash; which decisions, at which altitude, under which conditions &mdash; and that determines which tier is the right instrument. If the diagnosis says the problem is not capability, the engagement ends there and I say so.</p>
+  <div style="margin-top:7px">
+    <span class="pill">Diagnosis first</span><span class="pill">Sovereign data</span><span class="pill">Client-owned ontology</span><span class="pill">Explainable</span><span class="pill">Human-in-the-loop</span><span class="pill">One floor first</span><span class="pill">Decision gate at day 90</span><span class="pill">Handover is the deliverable</span>
+  </div>
+  <p style="margin-top:10px"><b>Delivered globally, onsite or virtual.</b> Commercial terms, scoping and contracting run through EXLPRS, the delivery practice.</p>
+
+  <div class="foot"><span>Shyam Sundar MV &middot; shyam@ssundar.com</span><span>ssundar.com &middot; treeng.ai &middot; linkedin.com/in/shyamsundarmv</span><span>4 / 4</span></div>
+</section>
+
+</body>
+</html>

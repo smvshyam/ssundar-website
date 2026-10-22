@@ -18,6 +18,14 @@
 
 /testimonials   /testimonials.html  200
 
+/work-intelligence  /work-intelligence.html  200
+/intelligence-map   /intelligence-map.html   200
+/activation         /activation.html         200
+/capability-strategy     /capability-strategy.html     200
+/capability-architecture /capability-architecture.html 200
+/services           /services.html           200
+/brochure           /ssundar-capability-brochure.html 200
+
 # Retired duplicate pages -> canonical destinations (301)
 /blog           /insights           301!
 /case-studies   /evidence           301!

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work Intelligence — The Map | SSUNDAR.</title>
+  <meta name="description" content="Work Intelligence explored as an interactive map: six stages, seven lenses each. Sense, connect, predict, act — the capability operating system, navigable in three dimensions.">
+  <meta property="og:title" content="Work Intelligence — The Map | SSUNDAR.">
+  <meta property="og:description" content="Six stages, seven lenses each. The capability operating system, navigable in three dimensions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ssundar.com/intelligence-map">
+  <meta property="og:image" content="https://ssundar.com/og-default.png">
+  <link rel="canonical" href="https://ssundar.com/intelligence-map">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+
+<style>
+  html,body{background:#060606;color:#fff;overflow:hidden;height:100%}
+  .nav{position:fixed}
+
+  /* ── Stage ──────────────────────────────────────────────── */
+  .scene{
+    position:fixed; inset:0; top:0;
+    perspective:1500px; perspective-origin:50% 48%;
+    cursor:grab; touch-action:none; overflow:hidden;
+    background:
+      radial-gradient(1100px 620px at 50% 42%, rgba(227,30,36,0.10) 0%, transparent 68%),
+      radial-gradient(900px 500px at 18% 78%, rgba(227,30,36,0.045) 0%, transparent 70%),
+      #060606;
+  }
+  .scene.grabbing{ cursor:grabbing; }
+  .world{
+    position:absolute; left:50%; top:48%; width:0; height:0;
+    transform-style:preserve-3d; will-change:transform;
+    transition:transform .85s cubic-bezier(0.22,1,0.28,1);
+  }
+  .world.free{ transition:none; }
+
+  /* floor grid for depth cueing */
+  .floor{
+    position:absolute; left:-1600px; top:-1600px; width:3200px; height:3200px;
+    transform:rotateX(90deg) translateZ(-420px);
+    background-image:
+      linear-gradient(rgba(255,255,255,0.055) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,0.055) 1px,transparent 1px);
+    background-size:160px 160px;
+    mask-image:radial-gradient(circle at 50% 50%, #000 0%, transparent 72%);
+    -webkit-mask-image:radial-gradient(circle at 50% 50%, #000 0%, transparent 72%);
+    pointer-events:none;
+  }
+
+  .node{ position:absolute; transform-style:preserve-3d; }
+  .bill{ transform-style:preserve-3d; }
+
+  /* ── Core ───────────────────────────────────────────────── */
+  .core{
+    width:300px; margin:-150px 0 0 -150px; padding:30px 26px;
+    border:1px solid rgba(227,30,36,0.5); background:rgba(10,10,10,0.94);
+    box-shadow:0 0 0 1px rgba(255,255,255,0.05), 0 40px 90px rgba(0,0,0,0.8),
+               0 0 70px rgba(227,30,36,0.2);
+    text-align:center;
+  }
+  .core .k{
+    font-family:var(--mono); font-size:9.5px; font-weight:700;
+    letter-spacing:0.22em; text-transform:uppercase; color:var(--red); margin-bottom:14px;
+  }
+  .core h1{
+    font-family:var(--heading); font-weight:700; text-transform:uppercase;
+    font-size:30px; line-height:0.98; letter-spacing:-0.02em; margin:0 0 12px;
+  }
+  .core p{
+    font-family:var(--body); font-size:12.5px; line-height:1.55;
+    color:rgba(255,255,255,0.64); margin:0;
+  }
+
+  /* ── Stage pillars ──────────────────────────────────────── */
+    .stage, .core{ transition:opacity .35s ease, filter .35s ease, border-color .25s ease, background .25s ease, box-shadow .25s ease; }
+  .stage{
+    width:214px; margin:-82px 0 0 -107px; padding:20px 18px;
+    border:1px solid rgba(255,255,255,0.14); background:rgba(12,12,12,0.93);
+    cursor:pointer; text-align:left;
+    box-shadow:0 26px 60px rgba(0,0,0,0.72);
+    transition:border-color .25s ease, background .25s ease, box-shadow .25s ease;
+  }
+  .stage:hover{ border-color:var(--red); background:#141414; box-shadow:0 30px 70px rgba(227,30,36,0.26); }
+  .stage.on{ border-color:var(--red); background:#161616; box-shadow:0 0 0 1px var(--red), 0 30px 70px rgba(227,30,36,0.3); }
+  .stage .n{
+    font-family:var(--mono); font-size:9px; font-weight:700;
+    letter-spacing:0.2em; color:var(--red); display:block; margin-bottom:10px;
+  }
+  .stage h2{
+    font-family:var(--heading); font-weight:700; text-transform:uppercase;
+    font-size:17px; line-height:1.12; letter-spacing:-0.012em; margin:0 0 9px; color:#fff;
+  }
+  .stage .sub{
+    font-family:var(--body); font-size:12px; line-height:1.5;
+    color:rgba(255,255,255,0.56); margin:0 0 12px;
+  }
+  .stage .go{
+    font-family:var(--mono); font-size:9px; font-weight:700;
+    letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.4);
+  }
+  .stage:hover .go,.stage.on .go{ color:var(--red); }
+
+  /* ── Branch leaves ──────────────────────────────────────── */
+  .leaf{
+    width:210px; margin:-64px 0 0 -105px; padding:15px 15px 14px;
+    border:1px solid rgba(255,255,255,0.13); background:rgba(14,14,14,0.96);
+    box-shadow:0 20px 48px rgba(0,0,0,0.72);
+    opacity:0; pointer-events:none;
+    transition:opacity .4s ease, filter .4s ease;
+  }
+  .leaf.show{ pointer-events:auto; }
+  .leaf .lk{
+    font-family:var(--mono); font-size:8.5px; font-weight:700;
+    letter-spacing:0.17em; text-transform:uppercase; color:var(--red);
+    display:block; margin-bottom:9px; padding-bottom:7px;
+    border-bottom:1px solid rgba(227,30,36,0.26);
+  }
+  .leaf ul{ margin:0; padding:0; list-style:none; }
+  .leaf li{
+    font-family:var(--body); font-size:11.5px; line-height:1.5;
+    color:rgba(255,255,255,0.76); padding-left:11px; position:relative; margin-bottom:7px;
+  }
+  .leaf li:last-child{ margin-bottom:0; }
+  .leaf li::before{ content:''; position:absolute; left:0; top:7px; width:4px; height:4px; background:var(--red); }
+
+  /* ── Connectors ─────────────────────────────────────────── */
+  .link{
+    position:absolute; height:1px; transform-origin:0 50%;
+    background:linear-gradient(90deg, rgba(227,30,36,0.55), rgba(227,30,36,0.06));
+    pointer-events:none;
+  }
+  .link.leafline{ background:linear-gradient(90deg, rgba(255,255,255,0.26), rgba(255,255,255,0.03)); opacity:0; transition:opacity .4s ease; }
+  .link.leafline.show{ opacity:1; }
+
+  /* ── HUD ────────────────────────────────────────────────── */
+  .hud{
+    position:fixed; left:0; right:0; bottom:0; z-index:40;
+    padding:14px clamp(16px,4vw,40px) 18px;
+    display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    background:linear-gradient(to top, rgba(6,6,6,0.96) 55%, transparent);
+    pointer-events:none;
+  }
+  .hud > *{ pointer-events:auto; }
+  .chip{
+    font-family:var(--mono); font-size:9.5px; font-weight:700;
+    letter-spacing:0.12em; text-transform:uppercase;
+    color:rgba(255,255,255,0.62); background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.16); padding:9px 13px;
+    cursor:pointer; transition:all .18s ease; white-space:nowrap;
+  }
+  .chip:hover{ color:#fff; border-color:rgba(255,255,255,0.4); }
+  .chip.on{ color:#fff; background:var(--red); border-color:var(--red); }
+  .hud .spacer{ flex:1; min-width:8px; }
+  .hint{
+    font-family:var(--mono); font-size:9px; letter-spacing:0.1em;
+    text-transform:uppercase; color:rgba(255,255,255,0.3); white-space:nowrap;
+  }
+
+  .lens{
+    position:fixed; left:clamp(16px,4vw,40px); top:104px; z-index:40;
+    display:flex; flex-direction:column; gap:5px;
+    opacity:0; transform:translateX(-10px); pointer-events:none;
+    transition:opacity .35s ease, transform .35s ease;
+  }
+  .lens.show{ opacity:1; transform:none; pointer-events:auto; }
+  .lens .lh{
+    font-family:var(--mono); font-size:8.5px; font-weight:700;
+    letter-spacing:0.18em; text-transform:uppercase;
+    color:rgba(255,255,255,0.32); margin-bottom:3px;
+  }
+  .lens button{
+    font-family:var(--mono); font-size:9.5px; font-weight:700;
+    letter-spacing:0.1em; text-transform:uppercase; text-align:left;
+    color:rgba(255,255,255,0.6); background:rgba(0,0,0,0.6);
+    border:1px solid rgba(255,255,255,0.12); padding:7px 11px; cursor:pointer;
+    transition:all .18s ease;
+  }
+  .lens button:hover{ color:#fff; border-color:rgba(255,255,255,0.36); }
+  .lens button.on{ color:#fff; background:var(--red); border-color:var(--red); }
+
+  .title-tag{
+    position:fixed; right:clamp(16px,4vw,40px); top:104px; z-index:40;
+    text-align:right; max-width:280px;
+    opacity:0; transition:opacity .4s ease; pointer-events:none;
+  }
+  .title-tag.show{ opacity:1; }
+  .title-tag .e{
+    font-family:var(--mono); font-size:9px; font-weight:700;
+    letter-spacing:0.18em; text-transform:uppercase; color:var(--red); display:block; margin-bottom:8px;
+  }
+  .title-tag h3{
+    font-family:var(--heading); font-weight:700; text-transform:uppercase;
+    font-size:clamp(17px,2vw,25px); line-height:1.1; margin:0 0 8px; color:#fff;
+  }
+  .title-tag p{
+    font-family:var(--body); font-size:12px; line-height:1.5;
+    color:rgba(255,255,255,0.56); margin:0;
+  }
+
+  @media(max-width:820px){
+    .lens{ top:auto; bottom:70px; left:10px; flex-direction:row; flex-wrap:wrap; max-width:calc(100% - 20px); }
+    .lens .lh{ display:none; }
+    .title-tag{ display:none; }
+    .hint{ display:none; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .world{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/"><img src="logo.png" alt="SSUNDAR." class="nav-logo-img"></a>
+    <div class="nav-links">
+    <a class="nav-link" href="/insights">Writing<span class="dot">.</span></a>
+    <a class="nav-link" href="/evidence">Evidence<span class="dot">.</span></a>
+    <a class="nav-link" href="/work">Work<span class="dot">.</span></a>
+    <a class="nav-link" href="/platform">Platform<span class="dot">.</span></a>
+    <a class="nav-link" href="/about">About<span class="dot">.</span></a>
+    <a class="nav-cta" href="/work-intelligence">Work Intelligence &rarr;</a>
+  </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-label="Navigation">
+  <a href="/insights">Writing<span class="dot">.</span></a>
+  <a href="/evidence">Evidence<span class="dot">.</span></a>
+  <a href="/work">Work<span class="dot">.</span></a>
+  <a href="/platform">Platform<span class="dot">.</span></a>
+  <a href="/about">About<span class="dot">.</span></a>
+  <a href="/work-intelligence" style="color:var(--red)">Work Intelligence &rarr;</a>
+</div>
+
+<div class="scene" id="scene">
+  <div class="world" id="world">
+    <div class="floor"></div>
+  </div>
+</div>
+
+<div class="lens" id="lens" aria-label="Lenses">
+  <span class="lh">Lens</span>
+</div>
+
+<div class="title-tag" id="ttag">
+  <span class="e"></span><h3></h3><p></p>
+</div>
+
+<div class="hud" id="hud">
+  <button class="chip on" data-go="-1">Overview</button>
+  <div class="spacer"></div>
+  <span class="hint">Drag to orbit &middot; scroll to zoom &middot; &larr;&rarr; to step</span>
+</div>
+
+<script src="app.js"></script>
+<script src="cookie-consent.js"></script>
+<script>
+(function(){
+"use strict";
+
+/* ═══════════ DATA — six stages, seven lenses each ═══════════ */
+var LENSES = [
+  ['what','What it is'],['why','Why it matters'],['how','How it works'],
+  ['who','Who owns it'],['proof','Evidence'],['guard','Guardrails'],['out','What you get']
+];
+
+var STAGES = [
+{ id:'opportunity', n:'01', short:'Opportunity',
+  eyebrow:'01 — The opportunity',
+  head:'Capability is generated daily and read quarterly',
+  sub:'The signal every operation already has.',
+  b:{
+   what:['Dialers, CRMs, quality tools, learning platforms and HR systems each capture a piece of the capability story','Frontline leaders generate hours of operational signal a day','Almost none of it is connected at the level of the person'],
+   why:['Capability is managed in arrears and by bucket — quartiles, defect clusters','Programs are measured by satisfaction in the room','The 21 days after a program are the highest-leverage window and the least instrumented'],
+   how:['Enterprise AI is now inside the building: approved assistants, premium licences, internal analytics on conversation data','Mature capability functions already own competency models, indicators, rubrics and calibration','Operations leaders have stopped asking for training and started asking for predictability'],
+   who:['Operations and delivery leaders who own attrition and ramp','CHROs and L&D leaders who own programs and assessment','Technology teams building people analytics without an ontology'],
+   proof:['Behavioural architectures already exist; what is missing is capture, connection and inference','Hand-tracked cohorts show the signal is there to be read'],
+   guard:['Build on what works; change nothing in the room','Respect the floor: no new tools, no change to how people are measured','Scale the architecture, not the headcount'],
+   out:['A market where every client already has the data and the AI, and lacks the design','A service line one level above program design and delivery']
+  }},
+{ id:'offering', n:'02', short:'The offering',
+  eyebrow:'02 — The offering',
+  head:'An AI intelligence layer over the systems a client already runs',
+  sub:'Sense · Connect · Predict · Act. Bottom-up from the individual.',
+  b:{
+   what:['A capability-strategy engagement, not a software sale','A living capability record per associate, leader and trainer','Continuous capability signal replacing quarterly snapshots','Precision coaching: the right intervention, for the right person, at the right moment'],
+   why:['The next edge in people-intensive operations is people intelligence, not more dashboards','Every program becomes a continuous asset rather than a calendar event','Leaders move from reporting the past to shaping the next quarter'],
+   how:['SENSE: quality, transcripts, system behaviour, conversion, tenure, learning and HR events — each where it sits','CONNECT: one unified capability record per person','PREDICT: readiness, risk and next-best intervention, per person, per week','ACT: proactive nudges inside the tools people already use'],
+   who:['Owned by the client; designed by SSUNDAR; run jointly by operations and people functions','Technology hosts; L&D curates the ontology; operations drives the actions'],
+   proof:['Competency × indicator models already exist in mature functions','Human-in-the-loop by design: the system recommends, leaders decide'],
+   guard:['Sovereign by design: data never leaves the client','Explainable to the indicator and the timestamp','Model layer swappable; the capability graph is the enduring asset'],
+   out:['A capability trajectory per cohort','A weekly "who is ready, who needs what" for every leader','One number finance can read: attrition and ramp cost avoided']
+  }},
+{ id:'surfaces', n:'03', short:'Surfaces',
+  eyebrow:'03 — Where it lands',
+  head:'Five surfaces, one engine',
+  sub:'Activate where value is fastest; scale where value is largest.',
+  b:{
+   what:['Learning & OD: continuous reinforcement after every program','Operations: precision coaching at individual level','Leadership assessment: independent, evidence-based, calibrated','Trainer & quality system: live calibration intelligence','Client & account: business reviews powered by people intelligence'],
+   why:['L&D activates fastest on data it already owns','Operations carries the largest value: attrition and ramp','Assessment is recurring and cannot be built in-house quickly','The account surface turns workforce intelligence into growth'],
+   how:['Connect cohorts to learning, quality and HR data; run the reinforcement loop','Person-level recommendations replace cluster-based refreshers','Psychometrics plus observed behaviour, normed and calibrated','Monthly observations become a live inter-rater view'],
+   who:['Head of L&D / OD · Operations and delivery leadership','CHRO / Talent · Training and quality leadership','Account and client delivery leaders'],
+   proof:['Each surface reuses scorecards, charters and rubrics the client already has','Sequencing is proven: fastest data first, largest value second'],
+   guard:['No new tool for the floor to learn','No change to how people are ranked or rewarded','Each surface goes live only when its data connection is proven'],
+   out:['Sequence: L&D first, operations second, assessment third','One 120-day activation covers the first two','Every surface after that scales on the client’s own stack']
+  }},
+{ id:'engine', n:'04', short:'Engine',
+  eyebrow:'04 — Under the hood',
+  head:'Sovereign, compact, built on the stack they already own',
+  sub:'Ontology · Calibration · Model · Loop.',
+  b:{
+   what:['The client’s competency model translated into observable indicators, anchors and evidence rules — the asset','A labelled, calibrated example set scored under a Gage R&R-style protocol','Either the approved enterprise assistant and agents, or a compact open-weight model (7–8B class) fine-tuned on the client’s own data'],
+   why:['Capability scoring is a classification problem — where compact models and enterprise assistants excel','Rented, generic intelligence lives outside the building; designed intelligence lives inside it','The value is in the design, not the engineering'],
+   how:['Label two to three thousand real examples with calibrated raters','Parameter-efficient fine-tuning, or agents on the approved stack','Serve inside the tenancy; transcription and retrieval inside the boundary','Monthly re-tuning; drift and bias checked against human calibration'],
+   who:['Technology hosts; L&D owns the labels; operations owns the actions','SSUNDAR designs the ontology, the labelling protocol and the evaluation harness — and hands all three over'],
+   proof:['Reliability over correctness: the system, not the individual, defines the standard','Manager calibration is the labelling gold standard'],
+   guard:['No workforce data leaves the client; no external model is trained on it','Every score explainable to the indicator and the timestamp','Stack-agnostic by design'],
+   out:['A capability engine that compounds every week it runs','An owned asset on the balance sheet, not a subscription']
+  }},
+{ id:'activation', n:'05', short:'120 days',
+  eyebrow:'05 — The activation',
+  head:'One process. Sense, build, show the trajectory.',
+  sub:'One floor first. Decision gate at day 90.',
+  b:{
+   what:['Days 1–30: map every signal; connect the first dataset; baseline; 30/60/90','Days 31–60: ontology locked; first calibrated set; readiness report live for frontline leaders','Days 61–90: nudges running inside existing tools; assessment layer live for the leadership cohort','Days 91–120: value read-out with operations, people and finance'],
+   why:['Demonstration earns conviction faster than description','One floor, one leader, one number is the fastest yes','Everything learned is reusable on the next process'],
+   how:['On the floor with the process owners, not in a conference room','Weekly 30-minute reviews with operations and people leadership','Every artefact handed over weekly, inside the client’s own tools'],
+   who:['Sponsor: L&D / OD · Carrier: CHRO','Floor owners: process director and associate director','Executive read-out: COO and delivery lead · Data: Technology · Value: Finance'],
+   proof:['Data access from day one — the single accelerator','Baseline captured before anything changes','Success defined in week one, in operations language'],
+   guard:['Zero disruption to service levels or quality processes','No change to incentives during activation','Decision gate at day 90'],
+   out:['The first continuous capability trajectory the client has seen','A per-person readiness report every frontline leader is using','A funded roadmap for the next three processes']
+  }},
+{ id:'model', n:'06', short:'Business model',
+  eyebrow:'06 — The business model',
+  head:'Five revenue lines — priced on outcomes, recurring by design',
+  sub:'How the service line earns, and keeps earning.',
+  b:{
+   what:['Activation engagement: 120 days, priced against cost avoided on one floor','Leadership assessment: per leader, per cycle, recurring','Ontology & calibration design: per process, with annual stewardship','Program IP under licence, facilitator certification billed separately','Productised diagnostics: Treeng as the self-serve front door'],
+   why:['Operations budgets are larger and more outcome-driven than learning budgets','Assessment science and calibration cannot be built in-house quickly','Licensed IP keeps the designer in the room every time a cohort runs'],
+   how:['Lead with the activation; convert to assessment and stewardship','License programs; never hand over editable source for a one-time fee','Use Treeng to qualify and scale beyond consulting hours'],
+   who:['First clients: sales-as-a-service, customer experience, shared services, GCCs, large delivery organisations','Any enterprise with a mature competency model and an approved AI stack not yet pointed at its own people'],
+   proof:['Built by a practitioner who has designed the programs, the measurement and the governance','Treeng already ships sixteen diagnostic engines as the productised expression of the same thinking'],
+   guard:['People, not scores, at the centre','Built to be owned, extended and audited by the client'],
+   out:['A service line one level above program design and delivery','Strategy → architecture → delivery, and now the intelligence that keeps all three alive']
+  }}
+];
+
+/* ═══════════ BUILD THE 3D WORLD ═══════════ */
+var world  = document.getElementById('world');
+var scene  = document.getElementById('scene');
+var lensEl = document.getElementById('lens');
+var ttag   = document.getElementById('ttag');
+var hud    = document.getElementById('hud');
+
+var RING = 850;     // stage orbit radius
+var LEAF = 395;     // leaf orbit radius around a stage
+var D2R  = Math.PI/180;
+
+var stageEls = [], leafEls = [], linkEls = [];
+
+function place(el, x, y, z){
+  el.style.transform = 'translate3d('+x+'px,'+y+'px,'+z+'px)';
+  el._p = {x:x,y:y,z:z};
+}
+
+/* connector from a->b in 3D (drawn as a thin rotated bar, billboarded) */
+function connector(ax,ay,az,bx,by,bz,cls){
+  var dx=bx-ax, dy=by-ay, dz=bz-az;
+  var len=Math.sqrt(dx*dx+dy*dy+dz*dz);
+  var el=document.createElement('div');
+  el.className='link'+(cls?' '+cls:'');
+  el.style.width=len+'px';
+  var yaw   = Math.atan2(dz,dx)/D2R;
+  var pitch = Math.asin(dy/(len||1))/D2R;
+  el.style.transform='translate3d('+ax+'px,'+ay+'px,'+az+'px) rotateY('+(-yaw)+'deg) rotateZ('+pitch+'deg)';
+  world.appendChild(el);
+  return el;
+}
+
+/* core */
+var core=document.createElement('div');
+core.className='node bill core'; core._kind='core';
+core.innerHTML='<span class="k">Work Intelligence</span>'+
+  '<h1>From programs<br>to intelligence<span class="dot">.</span></h1>'+
+  '<p>An always-on capability operating system, designed bottom-up from the individual.</p>';
+place(core,0,0,0); world.appendChild(core);
+
+/* stages on a ring in the XZ plane, lifted slightly on Y in alternation */
+STAGES.forEach(function(st,i){
+  var a = (i/STAGES.length)*360 - 90;
+  var x = Math.cos(a*D2R)*RING;
+  var z = Math.sin(a*D2R)*RING;
+  var y = (i%2===0? -60 : 60);
+  st._pos={x:x,y:y,z:z,a:a};
+
+  var el=document.createElement('div');
+  el.className='node bill stage'; el._kind='stage'; el._idx=i;
+  el.setAttribute('role','button'); el.tabIndex=0;
+  el.innerHTML='<span class="n">'+st.n+'</span><h2>'+st.head+'</h2>'+
+               '<p class="sub">'+st.sub+'</p><span class="go">Open &rarr;</span>';
+  place(el,x,y,z); world.appendChild(el);
+  el.addEventListener('click',function(e){ e.stopPropagation(); focusStage(i); });
+  el.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); focusStage(i);} });
+  stageEls.push(el);
+
+  linkEls.push(connector(0,0,0,x,y,z));
+
+  /* seven leaves orbiting this stage, on a tilted ring */
+  st._leaves=[];
+  LENSES.forEach(function(L,j){
+    var la=(j/LENSES.length)*360;
+    var lx=x+Math.cos(la*D2R)*LEAF;
+    var ly=y+Math.sin(la*D2R)*LEAF*0.52;
+    var lz=z+Math.sin(la*D2R)*LEAF*0.62;
+    var lf=document.createElement('div');
+    lf.className='node bill leaf'; lf._kind='leaf'; lf._idx=i;
+    lf.dataset.lens=L[0]; lf.dataset.stage=i;
+    lf.innerHTML='<span class="lk">'+L[1]+'</span><ul>'+
+      st.b[L[0]].map(function(t){return '<li>'+t+'</li>';}).join('')+'</ul>';
+    place(lf,lx,ly,lz); world.appendChild(lf);
+    var ln=connector(x,y,z,lx,ly,lz,'leafline');
+    st._leaves.push({el:lf,link:ln,lens:L[0]});
+    leafEls.push(lf);
+  });
+});
+
+/* ═══════════ CAMERA ═══════════ */
+var cam={yaw:0,pitch:-14,dist:-260,tx:0,ty:0,tz:0};
+var active=-1, lens=null;
+
+/* camera-space depth of a world point, matching the .world transform order */
+function depthOf(p){
+  var cy=Math.cos(cam.yaw*D2R), sy=Math.sin(cam.yaw*D2R);
+  var cx=Math.cos(cam.pitch*D2R), sx=Math.sin(cam.pitch*D2R);
+  var x=p.x-cam.tx, y=p.y-cam.ty, z=p.z-cam.tz;
+  var z1=-x*sy + z*cy;        // rotateY
+  var z2= y*sx + z1*cx;       // rotateX
+  return z2 + cam.dist;       // larger = nearer the viewer
+}
+
+function render(){
+  world.style.transform =
+    'translateZ('+cam.dist+'px) rotateX('+cam.pitch+'deg) rotateY('+cam.yaw+'deg)'+
+    'translate3d('+(-cam.tx)+'px,'+(-cam.ty)+'px,'+(-cam.tz)+'px)';
+  var inv='rotateY('+(-cam.yaw)+'deg) rotateX('+(-cam.pitch)+'deg)';
+  for(var i=0;i<world.children.length;i++){
+    var c=world.children[i];
+    if(!(c.classList && c.classList.contains('bill') && c._p)) continue;
+    c.style.transform='translate3d('+c._p.x+'px,'+c._p.y+'px,'+c._p.z+'px) '+inv;
+    /* depth cue: cards behind the ring recede rather than collide */
+    var d=depthOf(c._p);
+    var t=Math.max(0,Math.min(1,(d+RING)/(RING*2)));   // 0 far .. 1 near
+    var k=c._kind, o, blur=0;
+
+    if(active<0){
+      /* overview: everything in the ring, depth-cued */
+      o = (k==='core') ? 1 : (k==='leaf' ? 0 : 0.3+t*0.7);
+      blur = (k!=='core' && t<0.45) ? (0.45-t)*5 : 0;
+    } else {
+      /* focused: isolate the active stage and its lenses */
+      if(k==='core'){ o=0; }
+      else if(k==='stage'){ o = (c._idx===active) ? 1 : 0; }
+      else { o = c.classList.contains('show') ? (0.42+t*0.58) : 0; }
+    }
+
+    c.style.opacity=o;
+    c.style.pointerEvents = o<0.08 ? 'none' : '';
+    c.style.zIndex=String(Math.round(1000+d));
+    c.style.filter = blur>0 ? 'blur('+blur.toFixed(2)+'px)' : 'none';
+  }
+}
+
+function focusStage(i){
+  active=i;
+  var st=STAGES[i], p=st._pos;
+  cam.tx=p.x; cam.ty=p.y; cam.tz=p.z;
+  cam.yaw=-(p.a+90); cam.pitch=-6; cam.dist=40;
+  stageEls.forEach(function(e,k){ e.classList.toggle('on',k===i); });
+  STAGES.forEach(function(s,k){
+    s._leaves.forEach(function(L){
+      var on = (k===i) && (!lens || lens===L.lens);
+      L.el.classList.toggle('show',on);
+      L.link.classList.toggle('show',on);
+    });
+  });
+  ttag.querySelector('.e').textContent=st.eyebrow;
+  ttag.querySelector('h3').textContent=st.head;
+  ttag.querySelector('p').textContent=st.sub;
+  ttag.classList.add('show');
+  lensEl.classList.add('show');
+  hud.querySelectorAll('.chip').forEach(function(c){ c.classList.toggle('on', c.dataset.go===String(i)); });
+  render();
+}
+
+function overview(){
+  active=-1; lens=null;
+  cam={yaw:0,pitch:-14,dist:-260,tx:0,ty:0,tz:0};
+  stageEls.forEach(function(e){ e.classList.remove('on'); });
+  leafEls.forEach(function(e){ e.classList.remove('show'); });
+  document.querySelectorAll('.leafline').forEach(function(e){ e.classList.remove('show'); });
+  ttag.classList.remove('show'); lensEl.classList.remove('show');
+  lensEl.querySelectorAll('button').forEach(function(b){ b.classList.remove('on'); });
+  hud.querySelectorAll('.chip').forEach(function(c){ c.classList.toggle('on', c.dataset.go==='-1'); });
+  render();
+}
+
+/* ═══════════ CONTROLS ═══════════ */
+STAGES.forEach(function(st,i){
+  var c=document.createElement('button');
+  c.className='chip'; c.dataset.go=String(i);
+  c.textContent=st.n+' '+st.short;
+  hud.insertBefore(c, hud.querySelector('.spacer'));
+  c.addEventListener('click',function(){ focusStage(i); });
+});
+hud.querySelector('[data-go="-1"]').addEventListener('click',overview);
+
+LENSES.forEach(function(L){
+  var b=document.createElement('button');
+  b.textContent=L[1]; b.dataset.lens=L[0];
+  lensEl.appendChild(b);
+  b.addEventListener('click',function(){
+    lens = (lens===L[0]) ? null : L[0];
+    lensEl.querySelectorAll('button').forEach(function(x){ x.classList.toggle('on', x.dataset.lens===lens); });
+    if(active>=0) focusStage(active);
+  });
+});
+
+/* drag to orbit */
+var drag=null;
+scene.addEventListener('pointerdown',function(e){
+  if(e.target.closest('.stage,.leaf,.chip,.lens,.nav')) return;
+  drag={x:e.clientX,y:e.clientY,yaw:cam.yaw,pitch:cam.pitch};
+  world.classList.add('free'); scene.classList.add('grabbing');
+  scene.setPointerCapture(e.pointerId);
+});
+scene.addEventListener('pointermove',function(e){
+  if(!drag) return;
+  cam.yaw   = drag.yaw   + (e.clientX-drag.x)*0.28;
+  cam.pitch = Math.max(-72, Math.min(42, drag.pitch - (e.clientY-drag.y)*0.22));
+  render();
+});
+function endDrag(){ drag=null; world.classList.remove('free'); scene.classList.remove('grabbing'); }
+scene.addEventListener('pointerup',endDrag);
+scene.addEventListener('pointercancel',endDrag);
+
+/* wheel to dolly */
+scene.addEventListener('wheel',function(e){
+  e.preventDefault();
+  world.classList.add('free');
+  cam.dist = Math.max(-1500, Math.min(800, cam.dist - e.deltaY*0.6));
+  render();
+  clearTimeout(scene._wt);
+  scene._wt=setTimeout(function(){ world.classList.remove('free'); },140);
+},{passive:false});
+
+/* keyboard */
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){ overview(); }
+  else if(e.key==='ArrowRight'){ focusStage(active<0?0:(active+1)%STAGES.length); }
+  else if(e.key==='ArrowLeft'){ focusStage(active<0?STAGES.length-1:(active-1+STAGES.length)%STAGES.length); }
+});
+
+scene.addEventListener('click',function(e){
+  if(!e.target.closest('.stage,.leaf,.chip,.lens,.nav')) overview();
+});
+
+render();
+})();
+</script>
+</body>
+</html>
