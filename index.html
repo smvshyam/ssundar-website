@@ -1,435 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSUNDAR. — Judgment-Centered Leadership Design</title>
-  <meta name="description" content="AI can't exercise judgment under pressure. That's the gap I design for. Judgment-centered leadership design from an operator who built and ran these systems inside Fortune 500 operations — not an advisor who recommended them.">
-  <meta property="og:title" content="SSUNDAR. — Judgment-Centered Leadership Design">
-  <meta property="og:description" content="AI can't exercise judgment under pressure. That's the gap I design for. Judgment-centered leadership design from an operator who built and ran these systems from within.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ssundar.com/">
-  <meta property="og:image" content="https://ssundar.com/og-default.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <link rel="canonical" href="https://ssundar.com/">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SSUNDAR. — Judgment-Centered Leadership Design">
-  <meta name="twitter:description" content="AI can't exercise judgment under pressure. That's the gap I design for.">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="/fonts.css">
-  <link rel="stylesheet" href="styles.css">
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Shyam Sundar MV",
-    "url": "https://ssundar.com",
-    "jobTitle": "Performance Systems Architect",
-    "description": "Judgment-centered leadership design. Built and ran performance systems inside Fortune 500 operations.",
-    "sameAs": ["https://linkedin.com/in/shyamsundarmv"],
-    "knowsAbout": [
-      "Judgment-Centered Leadership Design",
-      "Performance Systems Architecture",
-      "Leadership Development",
-      "AI and Organizational Capability",
-      "Global Capability Centers"
-    ],
-    "alumniOf": [
-      { "@type": "Organization", "name": "Amazon" },
-      { "@type": "Organization", "name": "Accenture" },
-      { "@type": "Organization", "name": "Cognizant" }
-    ]
-  }
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SSUNDAR. — AI-Era Capability Architecture</title>
+<meta name="description" content="AI absorbed the work. Nobody rebuilt the people model. Capability strategy, capability architecture, Work Intelligence and AI diagnostics — built and run from inside Fortune 500 operations.">
+<meta property="og:title" content="SSUNDAR. — AI-Era Capability Architecture">
+<meta property="og:description" content="AI absorbed the work. Nobody rebuilt the people model.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ssundar.com/">
+<meta property="og:image" content="https://ssundar.com/og-default.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<link rel="canonical" href="https://ssundar.com/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="/fonts.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+html{scroll-behavior:auto}
+body{background:#040404;color:#fff}
+.nav{position:fixed}
 
-  <style>
-    /* ═══ PAGE SHELL ═══════════════════════════════════════════════ */
-    body { background:#0a0a0a; color:#fff; }
+/* ── the track: scroll length drives camera travel ── */
+.track{position:relative;height:1155vh}
+.vp{position:sticky;top:0;height:100vh;overflow:hidden;
+  background:radial-gradient(1200px 760px at 50% 48%,rgba(227,30,36,.13) 0%,transparent 72%),#040404}
+.corridor{position:absolute;inset:0;pointer-events:none;z-index:0}
+.cline{position:absolute;left:50%;top:50%;height:1px;transform-origin:0 50%;
+  background:linear-gradient(90deg,rgba(227,30,36,.75),rgba(227,30,36,0))}
+.tie{position:absolute;left:50%;top:50%;height:3px;margin-left:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.72) 16%,rgba(255,255,255,.72) 84%,transparent)}
+.tie::after{content:'';position:absolute;left:50%;top:-1px;bottom:-1px;width:9%;margin-left:-4.5%;
+  background:var(--red);box-shadow:0 0 16px rgba(227,30,36,.95)}
+.pyl{position:absolute;left:50%;top:50%;width:3px;
+  background:linear-gradient(to top,var(--red),rgba(227,30,36,0));box-shadow:0 0 18px rgba(227,30,36,.55)}
+.horizon{position:absolute;left:0;right:0;top:50%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(227,30,36,.6),transparent);
+  box-shadow:0 0 100px 34px rgba(227,30,36,.17)}
+.vig{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(1000px 640px at 50% 50%,transparent 0%,rgba(4,4,4,.3) 56%,rgba(4,4,4,.93) 90%)}
 
-    .band     { position:relative; overflow:hidden; }
-    .wrap     { max-width:1240px; margin:0 auto; padding:0 var(--px); position:relative; z-index:2; }
-    .rule     { height:1px; background:rgba(255,255,255,0.09); }
-    .rule-red { height:2px; background:var(--red); max-width:180px; }
+/* ── gates ── */
+.gates{position:absolute;inset:0;z-index:2}
+.gate{position:absolute;left:50%;top:50%;width:min(1080px,86vw);
+  transform:translate(-50%,-50%);opacity:0;will-change:transform,opacity;text-align:center}
+.g-k{font-family:var(--mono);font-size:clamp(9.5px,.78vw,11px);font-weight:700;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:9px;margin-bottom:22px}
+.g-k::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--red)}
+.g-h1{font-family:var(--heading);font-weight:700;text-transform:uppercase;
+  font-size:clamp(40px,7vw,108px);line-height:.9;letter-spacing:-.04em;margin:0 0 26px;
+  text-shadow:0 10px 60px rgba(0,0,0,.95)}
+.g-h2{font-family:var(--heading);font-weight:700;text-transform:uppercase;
+  font-size:clamp(28px,4.4vw,66px);line-height:.98;letter-spacing:-.032em;margin:0 0 26px;
+  text-shadow:0 8px 50px rgba(0,0,0,.95)}
+.g-h1 .soft,.g-h2 .soft{color:rgba(255,255,255,.62)}
+.g-lede{font-family:var(--body);font-size:clamp(15px,1.3vw,20px);line-height:1.6;
+  color:rgba(255,255,255,.84);max-width:60ch;margin:0 auto;text-shadow:0 2px 24px rgba(0,0,0,.95)}
+.g-scroll{display:block;margin-top:40px;font-family:var(--mono);font-size:10px;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.44);animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0);opacity:.44}50%{transform:translateY(6px);opacity:.85}}
 
-    /* Ghost typography — parallax depth layer */
-    .ghost-layer {
-      position:absolute; pointer-events:none; user-select:none; z-index:0;
-      font-family:var(--heading); font-weight:700; text-transform:uppercase;
-      line-height:0.78; letter-spacing:-0.04em; white-space:nowrap;
-      color:rgba(255,255,255,0.035);
-    }
-    .ghost-layer.red { color:rgba(227,30,36,0.10); }
-    .ghost-layer.on-red { color:rgba(255,255,255,0.11); }
+.g-row,.g-grid,.g-loop{display:grid;gap:1px;background:rgba(255,255,255,.14);margin-top:34px;text-align:left}
+@media(min-width:720px){.g-row{grid-template-columns:repeat(3,1fr)}
+  .g-grid{grid-template-columns:repeat(4,1fr)}.g-loop{grid-template-columns:repeat(4,1fr)}}
+.g-row>div,.g-grid>div,.g-loop>div{background:rgba(6,6,6,.94);padding:24px 20px}
+.g-row b,.g-grid b{display:block;font-family:var(--heading);font-weight:700;
+  font-size:clamp(26px,2.7vw,40px);line-height:1;letter-spacing:-.03em;color:#fff;margin-bottom:10px}
+.g-grid b i{font-style:normal;color:var(--red);font-size:.62em}
+.g-row span,.g-grid span,.g-loop span{font-family:var(--body);font-size:13px;line-height:1.55;
+  color:rgba(255,255,255,.64);display:block}
+.g-loop b{display:block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.2em;
+  color:var(--red);margin-bottom:11px}
 
-    .sec-num {
-      font-family:var(--mono); font-size:11px; font-weight:700;
-      letter-spacing:0.2em; color:var(--red);
-      display:flex; align-items:center; gap:14px; margin-bottom:30px;
-    }
-    .sec-num::after { content:''; flex:1; height:1px; background:rgba(227,30,36,0.28); max-width:220px; }
+.g-cred{display:flex;gap:clamp(16px,2.4vw,38px);justify-content:center;flex-wrap:wrap;margin:0 0 26px}
+.g-cred b{font-family:var(--heading);font-weight:700;text-transform:uppercase;
+  font-size:clamp(14px,1.4vw,21px);letter-spacing:.02em;color:rgba(255,255,255,.9)}
 
-    /* ═══ NAV ══════════════════════════════════════════════════════ */
-    /* Nav sits on a WHITE bar (styles.css: .nav{background:var(--white)}),
-       so this must be a filled button — white-on-white is invisible. */
-    .nav-cta {
-      font-family:var(--mono); font-size:11px; font-weight:700;
-      letter-spacing:0.09em; text-transform:uppercase;
-      color:#fff !important; background:var(--red);
-      text-decoration:none; border:1px solid var(--red);
-      padding:11px 18px; display:inline-block; line-height:1;
-      transition:background .18s ease, border-color .18s ease, box-shadow .18s ease, transform .18s ease;
-      white-space:nowrap;
-    }
-    .nav-cta:hover {
-      background:#0a0a0a; border-color:#0a0a0a;
-      transform:translateY(-1px);
-      box-shadow:0 6px 22px rgba(0,0,0,0.28);
-    }
+.g-tiers{display:grid;gap:1px;background:rgba(255,255,255,.14);margin-top:34px;text-align:left}
+@media(min-width:760px){.g-tiers{grid-template-columns:repeat(4,1fr)}}
+.g-tiers a{background:rgba(6,6,6,.94);padding:26px 20px;text-decoration:none;display:block;
+  transition:background .25s ease,transform .3s cubic-bezier(.16,1,.3,1)}
+.g-tiers a:hover{background:#141414;transform:translateY(-4px)}
+.g-tiers a.hot{box-shadow:inset 0 2px 0 var(--red)}
+.g-tiers i{font-style:normal;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.2em;
+  color:var(--red);display:block;margin-bottom:12px}
+.g-tiers b{display:block;font-family:var(--heading);font-weight:700;text-transform:uppercase;
+  font-size:clamp(15px,1.4vw,19px);line-height:1.14;color:#fff;margin-bottom:9px}
+.g-tiers span{font-family:var(--body);font-size:12.5px;line-height:1.5;color:rgba(255,255,255,.58)}
 
-    /* ═══ 01 IDENTITY ══════════════════════════════════════════════ */
-    .identity { padding:clamp(120px,16vw,200px) 0 clamp(80px,10vw,130px); }
+.g-link{display:inline-block;margin-top:28px;font-family:var(--mono);font-size:11px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--red);text-decoration:none;
+  border-bottom:1px solid rgba(227,30,36,.45);padding-bottom:4px}
+.g-acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:36px}
+.g-btn{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  padding:18px 34px;text-decoration:none;background:var(--red);color:#fff;border:1px solid var(--red);
+  transition:transform .2s cubic-bezier(.16,1,.3,1),box-shadow .2s ease}
+.g-btn:hover{transform:translateY(-3px);box-shadow:0 16px 42px rgba(227,30,36,.45)}
+.g-btn--g{background:rgba(4,4,4,.6);border-color:rgba(255,255,255,.3)}
+.g-btn--g:hover{border-color:#fff;background:rgba(255,255,255,.08)}
 
-
-    /* ══════════ THE RUN — driver's-POV 3D corridor ══════════ */
-    .run{ position:relative; min-height:clamp(640px,96vh,1000px); display:flex; align-items:center;
-          padding:clamp(130px,15vw,190px) 0 clamp(70px,8vw,110px); overflow:hidden; background:#050505; }
-    .run-stage{ position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none;
-                perspective:620px; perspective-origin:62% 50%; }
-    .run-world{ position:absolute; left:62%; top:50%; width:0; height:0;
-                transform-style:preserve-3d; transition:transform .5s ease-out; }
-    .run-ties,.run-signals,.run-rail{ position:absolute; left:0; top:0; transform-style:preserve-3d; }
-    .run-road{ display:none }
-
-    /* road ties: horizontal bars at road level, rushing out of the vanishing point */
-    .tie{ position:absolute; left:-1100px; width:2200px; height:5px;
-          background:linear-gradient(90deg,transparent,rgba(255,255,255,.62) 18%,rgba(255,255,255,.62) 82%,transparent);
-          animation:rush 3.1s linear infinite; }
-    .tie i{ position:absolute; left:50%; width:170px; margin-left:-85px; top:-1px; bottom:-1px;background:var(--red); box-shadow:0 0 18px rgba(227,30,36,.9); }
-    @keyframes rush{
-      from{ transform:translate3d(0,150px,-2900px); opacity:0 }
-      10% { opacity:1 }
-      85% { opacity:.9 }
-      to  { transform:translate3d(0,150px,460px); opacity:0 }
-    }
-
-    /* side pylons streaming past at the edge of vision */
-    .run-rail--l{ left:-560px } .run-rail--r{ left:560px }
-    .pylon{ position:absolute; width:6px; height:240px; top:-30px;
-            background:linear-gradient(to top,var(--red),rgba(227,30,36,0));box-shadow:0 0 22px rgba(227,30,36,.6);
-            animation:pyl 3.1s linear infinite; }
-    @keyframes pyl{
-      from{ transform:translate3d(0,0,-2900px); opacity:0 }
-      12% { opacity:.95 }
-      to  { transform:translate3d(0,0,460px); opacity:0 }
-    }
-
-    /* AI signal particles through the corridor */
-    .sig{ position:absolute; width:3px; height:3px; background:#fff; border-radius:50%;
-          box-shadow:0 0 12px rgba(255,255,255,.9); animation:sigfly 5s linear infinite; }
-    @keyframes sigfly{
-      from{ transform:translate3d(0,0,-2900px); opacity:0 }
-      12% { opacity:.95 } 80%{ opacity:.5 }
-      to  { transform:translate3d(0,0,460px); opacity:0 }
-    }
-
-    .run-horizon{ position:absolute; left:0; right:0; top:50%; height:1px;
-      background:linear-gradient(90deg,transparent,rgba(227,30,36,.55),transparent);
-      box-shadow:0 0 90px 30px rgba(227,30,36,.16); }
-    .run-vignette{ position:absolute; inset:0;
-      background:radial-gradient(1000px 620px at 58% 50%, transparent 0%, rgba(5,5,5,.18) 54%, rgba(5,5,5,.8) 88%);
-    }
-
-    .run-copy{ position:relative; z-index:3 }
-    .run-copy::before{ content:''; position:absolute; left:calc(var(--px) * -1); right:34%; top:-60px; bottom:-60px;
-      background:linear-gradient(90deg, rgba(5,5,5,.94) 0 58%, rgba(5,5,5,0)); pointer-events:none; z-index:-1 }
-    @media(max-width:980px){ .run-copy::before{ right:0; background:rgba(5,5,5,.86) } }
-    .run-k{ font-family:var(--mono); font-size:10.5px; font-weight:700; letter-spacing:.22em;
-      text-transform:uppercase; color:var(--red); display:inline-flex; align-items:center; gap:9px; margin-bottom:24px }
-    .run-k::before{ content:''; width:7px; height:7px; border-radius:50%; background:var(--red);
-      box-shadow:0 0 0 0 rgba(227,30,36,.6); animation:rk 2.4s ease-out infinite }
-    @keyframes rk{ 70%{ box-shadow:0 0 0 10px rgba(227,30,36,0) } 100%{ box-shadow:0 0 0 0 rgba(227,30,36,0) } }
-    .run-h1{ font-family:var(--heading); font-weight:700; text-transform:uppercase; max-width:17ch;
-      font-size:clamp(38px,5.4vw,82px); line-height:0.93; letter-spacing:-.035em; margin:0 0 30px;
-      text-shadow:0 6px 44px rgba(0,0,0,.95) }
-    .run-h1 .soft{ color:rgba(255,255,255,.72) }
-    .run-lede{ font-family:var(--body); font-size:clamp(16px,1.35vw,20px); line-height:1.6;
-      color:rgba(255,255,255,.92); max-width:52ch; margin:0 0 16px; text-shadow:0 2px 22px rgba(0,0,0,.95) }
-    .run-lede.dim{ color:rgba(255,255,255,.68); font-size:clamp(15px,1.15vw,17.5px) }
-    .run-acts{ display:flex; gap:12px; flex-wrap:wrap; margin:34px 0 22px }
-    .run-btn{ display:inline-block; background:var(--red); color:#fff; font-family:var(--mono);
-      font-size:12px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
-      padding:18px 34px; text-decoration:none; border:1px solid var(--red);
-      transition:transform .2s cubic-bezier(.16,1,.3,1), box-shadow .2s ease }
-    .run-btn:hover{ transform:translateY(-3px); box-shadow:0 16px 42px rgba(227,30,36,.42) }
-    .run-btn--g{ background:rgba(5,5,5,.65); border-color:rgba(255,255,255,.3) }
-    .run-btn--g:hover{ border-color:#fff; background:rgba(255,255,255,.08) }
-    .run-meta{ font-family:var(--mono); font-size:10.5px; font-weight:700; letter-spacing:.11em;
-      text-transform:uppercase; color:rgba(255,255,255,.5); margin:0 }
-    .run-meta .cred-orgs{ display:inline-flex; gap:14px; margin-left:12px }
-    .run-meta b{ color:#fff }
-    .run .identity-links{ margin-top:clamp(44px,5vw,64px) }
-
-    @media(max-width:720px){ .run-stage{ opacity:.5 } .run-meta .cred-orgs{ display:flex; margin:10px 0 0 } }
-    @media (prefers-reduced-motion: reduce){
-      .tie,.pylon,.sig,.run-k::before{ animation:none !important }
-      .run-stage{ opacity:.3 }
-    }
-
-    /* the launch band sits under the fixed nav and takes over the top spacing */
-    .treeng-band{ margin-top:94px; }
-    body.has-treeng-band .identity{ padding-top:clamp(56px,7vw,92px); }
-
-    /* hero entry points — the work / the platform */
-    .identity-links{
-      display:grid; gap:1px; background:rgba(255,255,255,0.11);
-      margin-top:52px; max-width:920px;
-    }
-    @media(min-width:720px){ .identity-links{ grid-template-columns:repeat(2,1fr); } }
-    @media(min-width:1180px){ .identity-links{ grid-template-columns:repeat(4,1fr); } }
-    .ilink{
-      background:#0a0a0a; padding:30px 26px 26px; text-decoration:none;
-      display:flex; flex-direction:column; position:relative;
-      transition:background .22s ease, transform .28s cubic-bezier(0.16,1,0.3,1);
-    }
-    .ilink:hover{ background:#121212; transform:translateY(-3px); }
-    .ilink-k{
-      font-family:var(--mono); font-size:10px; font-weight:700;
-      letter-spacing:0.16em; text-transform:uppercase;
-      color:rgba(255,255,255,0.45); margin-bottom:16px;
-    }
-    .ilink-k em{ font-style:normal; color:var(--red); }
-    .ilink-t{
-      font-family:var(--heading); font-weight:700; text-transform:uppercase;
-      font-size:clamp(17px,1.7vw,22px); line-height:1.16; letter-spacing:-0.015em;
-      color:#fff; margin-bottom:12px; transition:color .18s ease;
-    }
-    .ilink:hover .ilink-t{ color:var(--red); }
-    .ilink-d{
-      font-family:var(--body); font-size:14.5px; line-height:1.62;
-      color:rgba(255,255,255,0.6); margin-bottom:20px; flex:1;
-    }
-    .ilink-go{
-      font-family:var(--mono); font-size:10.5px; font-weight:700;
-      letter-spacing:0.11em; text-transform:uppercase; color:var(--red);
-    }
-    .ilink--new::before{
-      content:''; position:absolute; top:0; left:0; right:0; height:2px;
-      background:var(--red);
-    }
-    .identity .ghost-layer {
-      top:12%; left:-4%; font-size:clamp(150px,23vw,380px);
-    }
-    .identity h1 {
-      font-family:var(--heading); font-weight:700; text-transform:uppercase;
-      font-size:clamp(40px,6.8vw,104px); line-height:0.92; letter-spacing:-0.035em;
-      margin-bottom:44px; max-width:19ch;
-    }
-    /* Readability: second clause stays clearly legible, hierarchy via weight of colour not disappearance */
-    .identity h1 .soft { color:rgba(255,255,255,0.66); }
-    .identity-lede {
-      font-family:var(--body); font-size:clamp(17px,1.6vw,23px);
-      line-height:1.6; color:rgba(255,255,255,0.82);
-      max-width:62ch; margin-bottom:24px;
-    }
-    .identity-lede.dim { color:rgba(255,255,255,0.70); }
-    .identity-cred {
-      font-family:var(--mono); font-size:12px; font-weight:700;
-      letter-spacing:0.1em; text-transform:uppercase;
-      color:rgba(255,255,255,0.5); line-height:2.1;
-    }
-    .identity-cred b { color:#fff; }
-    .cred-orgs { display:flex; flex-wrap:wrap; gap:0 26px; margin-top:6px; }
-    .cred-orgs b { position:relative; padding-left:16px; }
-    .cred-orgs b::before {
-      content:''; position:absolute; left:0; top:50%; transform:translateY(-50%);
-      width:6px; height:6px; background:var(--red);
-    }
-
-    /* ═══ 02 ARGUMENT ══════════════════════════════════════════════ */
-    .argument { padding:clamp(90px,11vw,150px) 0; }
-    .argument .ghost-layer { top:4%; right:-6%; font-size:clamp(130px,19vw,300px); }
-    .arg-head {
-      font-family:var(--heading); font-weight:700; text-transform:uppercase;
-      font-size:clamp(30px,3.9vw,60px); line-height:1.0; letter-spacing:-0.025em;
-      max-width:19ch; margin-bottom:16px;
-    }
-    .arg-block { padding:44px 0; border-top:1px solid rgba(255,255,255,0.09); }
-    .arg-block:first-of-type { margin-top:56px; }
-    .arg-kicker {
-      font-family:var(--mono); font-size:11px; font-weight:700;
-      letter-spacing:0.16em; text-transform:uppercase;
-      color:var(--red); display:block; margin-bottom:14px;
-    }
-    .arg-block h3 {
-      font-family:var(--heading); font-weight:700; text-transform:uppercase;
-      font-size:clamp(20px,2.1vw,30px); line-height:1.12; letter-spacing:-0.015em;
-      color:#fff; max-width:22ch;
-    }
-    .arg-body p {
-      font-family:var(--body); font-size:clamp(15.5px,1.1vw,17.5px);
-      line-height:1.75; color:rgba(255,255,255,0.76); margin-bottom:18px;
-    }
-    .arg-body p:last-child { margin-bottom:0; }
-    .arg-body strong { color:#fff; font-weight:600; }
-    .arg-body em { font-style:italic; color:#fff; }
-    .arg-pull {
-      border-left:3px solid var(--red); padding:6px 0 6px 26px; margin:26px 0 0;
-      font-family:var(--body); font-size:clamp(17px,1.45vw,21px);
-      line-height:1.48; color:#fff; font-weight:500;
-    }
-
-    /* ═══ 03 EVIDENCE ══════════════════════════════════════════════ */
-    .evidence { padding:clamp(90px,11vw,150px) 0; }
-    .evidence .ghost-layer { bottom:6%; left:-5%; font-size:clamp(130px,20vw,320px); }
-    .ev-grid { display:grid; gap:1px; background:rgba(255,255,255,0.11); margin-top:60px; }
-    @media(min-width:900px){ .ev-grid { grid-template-columns:repeat(3,1fr); } }
-    .ev-card {
-      background:#0a0a0a; padding:44px 34px; position:relative;
-      transition:background .3s ease;
-    }
-    .ev-card::before {
-      content:''; position:absolute; top:0; left:0; width:0; height:3px;
-      background:var(--red); transition:width .5s cubic-bezier(0.16,1,0.3,1);
-    }
-    .ev-card:hover::before { width:100%; }
-    .ev-card:hover { background:#111; }
-    .ev-sector {
-      font-family:var(--mono); font-size:10.5px; font-weight:700;
-      letter-spacing:0.13em; text-transform:uppercase;
-      color:var(--red); margin-bottom:12px; display:block;
-    }
-    .ev-kind {
-      font-family:var(--heading); font-weight:700; text-transform:uppercase;
-      font-size:20px; line-height:1.14; color:#fff; margin-bottom:30px;
-    }
-    .ev-figure {
-      font-family:var(--heading); font-weight:700;
-      font-size:clamp(38px,4vw,56px); line-height:1; letter-spacing:-0.03em;
-      color:#fff; margin-bottom:10px; display:flex; align-items:baseline; gap:10px;
-    }
-    .ev-figure .from { color:rgba(255,255,255,0.42); }
-    .ev-figure .arw  { color:var(--red); font-size:0.62em; }
-    .ev-figure-sub {
-      font-family:var(--body); font-size:14.5px; line-height:1.5;
-      color:rgba(255,255,255,0.68); margin-bottom:24px;
-    }
-    .ev-meta {
-      border-top:1px solid rgba(255,255,255,0.11); padding-top:18px;
-      font-family:var(--mono); font-size:11px; font-weight:700;
-      letter-spacing:0.07em; text-transform:uppercase;
-      color:rgba(255,255,255,0.55); line-height:1.95;
-    }
-    .ev-note {
-      margin-top:36px; font-family:var(--mono); font-size:11px;
-      letter-spacing:0.05em; color:rgba(255,255,255,0.42);
-      line-height:1.9; max-width:80ch;
-    }
-
-    /* ═══ 04 METHOD ════════════════════════════════════════════════ */
-    .method { padding:clamp(90px,11vw,150px) 0; }
-    .method .ghost-layer { top:14%; right:-4%; font-size:clamp(120px,17vw,260px); }
-    .method p {
-      font-family:var(--body); font-size:clamp(15.5px,1.1vw,17.5px);
-      line-height:1.75; color:rgba(255,255,255,0.76); margin-bottom:18px;
-    }
-    .method strong { color:#fff; font-weight:600; }
-    .method-link {
-      display:inline-block; margin-top:14px;
-      font-family:var(--mono); font-size:12px; font-weight:700;
-      letter-spacing:0.1em; text-transform:uppercase;
-      color:var(--red); text-decoration:none;
-      border-bottom:1px solid rgba(227,30,36,0.45); padding-bottom:4px;
-      transition:border-color .18s ease, letter-spacing .18s ease;
-    }
-    .method-link:hover { border-bottom-color:var(--red); letter-spacing:0.13em; }
-
-    /* ═══ 05 WRITING ═══════════════════════════════════════════════ */
-    .writing { padding:clamp(90px,11vw,150px) 0; }
-    .w-list { margin-top:56px; border-top:1px solid rgba(255,255,255,0.11); }
-    .w-item {
-      display:grid; grid-template-columns:auto 1fr; gap:0 28px;
-      text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.11);
-      padding:32px 0; transition:padding-left .25s cubic-bezier(0.16,1,0.3,1);
-    }
-    .w-item:hover { padding-left:18px; }
-    .w-idx {
-      font-family:var(--mono); font-size:11px; font-weight:700;
-      color:var(--red); letter-spacing:0.1em; padding-top:7px;
-    }
-    .w-item h4 {
-      font-family:var(--heading); font-weight:700; text-transform:uppercase;
-      font-size:clamp(19px,2vw,27px); line-height:1.16; letter-spacing:-0.012em;
-      color:#fff; margin-bottom:10px; transition:color .18s ease;
-    }
-    .w-item:hover h4 { color:var(--red); }
-    .w-item p {
-      font-family:var(--body); font-size:15px; line-height:1.6;
-      color:rgba(255,255,255,0.62); max-width:74ch;
-    }
-    .w-all {
-      display:inline-block; margin-top:38px;
-      font-family:var(--mono); font-size:12px; font-weight:700;
-      letter-spacing:0.1em; text-transform:uppercase;
-      color:rgba(255,255,255,0.65); text-decoration:none;
-      transition:color .18s ease, letter-spacing .18s ease;
-    }
-    .w-all:hover { color:var(--red); letter-spacing:0.13em; }
-
-    /* ═══ 06 CTA ═══════════════════════════════════════════════════ */
-    .cta { background:var(--red); padding:clamp(90px,11vw,150px) 0; }
-    .cta .ghost-layer { top:8%; right:-3%; font-size:clamp(140px,21vw,340px); }
-    .cta h2 {
-      font-family:var(--heading); font-weight:700; text-transform:uppercase;
-      font-size:clamp(36px,5.4vw,86px); line-height:0.94; letter-spacing:-0.035em;
-      color:#fff; margin-bottom:28px; max-width:15ch;
-    }
-    .cta p {
-      font-family:var(--body); font-size:clamp(16px,1.3vw,20px);
-      line-height:1.6; color:rgba(255,255,255,0.95);
-      max-width:58ch; margin-bottom:46px;
-    }
-    .cta-btn {
-      display:inline-block; background:#0a0a0a; color:#fff;
-      font-family:var(--mono); font-size:13px; font-weight:700;
-      letter-spacing:0.1em; text-transform:uppercase;
-      padding:22px 44px; text-decoration:none;
-      transition:transform .2s cubic-bezier(0.16,1,0.3,1), box-shadow .2s ease;
-    }
-    .cta-btn:hover { transform:translateY(-3px); box-shadow:0 14px 40px rgba(0,0,0,0.4); }
-    .cta-sub {
-      margin-top:24px; font-family:var(--mono); font-size:11px;
-      letter-spacing:0.08em; color:rgba(255,255,255,0.8);
-    }
-
-    /* ═══ FOOTER ═══════════════════════════════════════════════════ */
-    .f-links { display:flex; flex-wrap:wrap; gap:26px; margin-bottom:44px; }
-    .f-links a {
-      font-family:var(--mono); font-size:12px; font-weight:700;
-      letter-spacing:0.08em; text-transform:uppercase;
-      color:rgba(255,255,255,0.6); text-decoration:none; transition:color .18s ease;
-    }
-    .f-links a:hover { color:var(--red); }
-    .f-legal { display:flex; flex-wrap:wrap; gap:18px; margin-top:14px; }
-    .f-legal a {
-      font-family:var(--mono); font-size:10px; letter-spacing:0.06em;
-      text-transform:uppercase; color:rgba(255,255,255,0.3); text-decoration:none;
-    }
-    .f-legal a:hover { color:rgba(255,255,255,0.6); }
-
-    /* ═══ RESPONSIVE ═══════════════════════════════════════════════ */
-    @media(max-width:860px){
-      .grid-asym, .grid-asym-r { grid-template-columns:1fr !important; gap:24px !important; }
-      .w-item { grid-template-columns:1fr; gap:8px; }
-      .w-idx { padding-top:0; }
-      .ghost-layer { display:none; }
-    }
-  </style>
+/* progress + chapter rail */
+.rail{position:fixed;right:clamp(12px,2vw,28px);top:50%;transform:translateY(-50%);z-index:40;
+  display:flex;flex-direction:column;gap:12px}
+.rail button{width:9px;height:9px;border-radius:50%;border:1px solid rgba(255,255,255,.34);
+  background:transparent;cursor:pointer;padding:0;transition:all .25s ease}
+.rail button.on{background:var(--red);border-color:var(--red);transform:scale(1.5)}
+.pbar{position:fixed;left:0;top:0;height:2px;background:var(--red);width:0;z-index:50}
+.skip{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:40;
+  font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,.4);background:rgba(4,4,4,.7);border:1px solid rgba(255,255,255,.16);
+  padding:9px 16px;cursor:pointer}
+.skip:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+@media(max-width:720px){.rail{display:none}.g-grid,.g-loop,.g-row{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){.g-scroll{animation:none}}
+</style>
 </head>
 <body>
 
-<!-- ══ NAV ═══════════════════════════════════════════════════════ -->
 <nav class="nav">
   <div class="nav-inner">
     <a href="/"><img src="logo.png" alt="SSUNDAR." class="nav-logo-img"></a>
@@ -455,369 +143,72 @@
   <a href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer" style="color:var(--red)">See the AI capability gap &rarr;</a>
 </div>
 
+<div class="pbar" id="pbar"></div>
+<div class="rail" id="rail"></div>
+<button class="skip" id="skip">Skip the run &darr;</button>
 
-<!-- ══ 00 — TREENG LAUNCH BAND ═══════════════════════════════════ -->
-<aside class="treeng-band" id="treengBand" aria-label="Treeng launch announcement">
-  <div class="treeng-band__bg"></div>
-  <div class="treeng-band__grid"></div>
-  <div class="treeng-band__inner">
-    <span class="treeng-band__pill">Now live</span>
-    <p class="treeng-band__text">
-      <b>Work Intelligence</b> &mdash; a new service line. An AI intelligence layer over the systems you already
-      run, turning capability into a continuous, predictive signal. One level above program design.
-    </p>
-    <a class="treeng-band__cta" href="/work-intelligence" data-treeng="band-primary">See the service line &rarr;</a>
-    <a class="treeng-band__cta treeng-band__cta--ghost" href="/intelligence-map" data-treeng="band-secondary">The map</a>
-    <button class="treeng-band__close" id="treengBandClose" aria-label="Dismiss announcement">&times;</button>
+<div class="track" id="track">
+  <div class="vp">
+    <div class="corridor" id="corridor"></div>
+    <div class="horizon"></div>
+    <div class="vig"></div>
+    <div class="gates" id="gates"><div class="gate" data-z="900" data-kind="open">
+   <span class="g-k">AI-era capability architecture</span>
+   <h1 class="g-h1">AI absorbed<br>the work<span class="dot">.</span><br><span class="soft">Nobody rebuilt<br>the people model.</span></h1>
+   <p class="g-lede">Execution is instant and effectively free. The constraint moved upstream &mdash; to how fast
+      an organisation can see what its people can actually do.</p>
+   <span class="g-scroll">Scroll to run the track &darr;</span></div><div class="gate" data-z="2250" data-kind="stat">
+   <span class="g-k">The inflection</span>
+   <h2 class="g-h2">Every operation already generates<br>the signal<span class="dot">.</span> <span class="soft">Almost none connect it.</span></h2>
+   <div class="g-row">
+     <div><b>5+</b><span>Systems capturing capability<br>signal in a typical operation</span></div>
+     <div><b>21</b><span>Days after a program &mdash; the<br>least instrumented window</span></div>
+     <div><b>0</b><span>Of it connected at<br>the level of the person</span></div>
+   </div></div><div class="gate" data-z="3600" data-kind="value">
+   <span class="g-k">24+ years &middot; built and run from inside</span>
+   <h2 class="g-h2">Not advice<span class="dot">.</span> <span class="soft">Accountability for whether the number moved.</span></h2>
+   <div class="g-cred"><b>Amazon</b><b>Accenture</b><b>Cognizant</b><b>Sutherland</b><b>Aegis</b></div>
+   <p class="g-lede">Learning architecture for a global compliance function. Training and quality across two of
+      the largest digital-advertising operations in the world. The largest annual new-hire ramp in a
+      25,000-person services business. Named employers, sector-only outcomes &mdash; by contract.</p></div><div class="gate" data-z="4950" data-kind="proof">
+   <span class="g-k">Field evidence &middot; sourced, sector-only</span>
+   <h2 class="g-h2">Numbers that can be walked<br>through line by line<span class="dot">.</span></h2>
+   <div class="g-grid">
+     <div><b>77&nbsp;&rarr;&nbsp;93<i>%</i></b><span>Quality score on an escalated account, inside 90 days, while headcount ramped 70%</span></div>
+     <div><b>70&nbsp;&rarr;&nbsp;89<i>%</i></b><span>CSAT across a 1,600-person operation</span></div>
+     <div><b>10,000<i>+</i></b><span>Professionals trained across 10+ sectors</span></div>
+     <div><b>100<i>%</i></b><span>Would recommend &mdash; every response captured, three cohorts</span></div>
+   </div>
+   <a class="g-link" href="/evidence">Every figure, with its source &rarr;</a></div><div class="gate" data-z="6300" data-kind="tiers">
+   <span class="g-k">The portfolio</span>
+   <h2 class="g-h2">Four tiers<span class="dot">.</span> <span class="soft">Scoped by depth, not by price.</span></h2>
+   <div class="g-tiers">
+     <a href="/capability-strategy"><i>01</i><b>Capability strategy</b><span>What capability is for, before anyone builds</span></a>
+     <a href="/capability-architecture"><i>02</i><b>Capability architecture</b><span>Systems, not events. Handover is the deliverable</span></a>
+     <a href="/work-intelligence" class="hot"><i>03</i><b>Work Intelligence</b><span>The AI layer over the systems you already run</span></a>
+     <a href="/platform"><i>04</i><b>Treeng</b><span>Sixteen AI diagnostic engines. Free to start</span></a>
+   </div></div><div class="gate" data-z="7650" data-kind="loop">
+   <span class="g-k">Work Intelligence &middot; the loop</span>
+   <h2 class="g-h2">Sense<span class="dot">.</span> Connect<span class="dot">.</span> Predict<span class="dot">.</span> Act<span class="dot">.</span></h2>
+   <div class="g-loop">
+     <div><b>SENSE</b><span>Quality, transcripts, system behaviour, tenure, learning and HR events &mdash; read where they already sit</span></div>
+     <div><b>CONNECT</b><span>One living capability record per person, mapped to your own competency model</span></div>
+     <div><b>PREDICT</b><span>Readiness, risk and next-best intervention, per person, per week</span></div>
+     <div><b>ACT</b><span>Nudges inside the tools people already use. Every correction becomes signal</span></div>
+   </div>
+   <a class="g-link" href="/intelligence-map">Open the 3D map &rarr;</a></div><div class="gate" data-z="9000" data-kind="close">
+   <span class="g-k">One floor first</span>
+   <h2 class="g-h1">Start where the<br>number lives<span class="dot">.</span></h2>
+   <p class="g-lede">A 120-day activation takes one process, one leader and one number. Data access from day one.
+      A decision gate at day 90. If the diagnosis says the problem is not capability, it ends there and I say so.</p>
+   <div class="g-acts">
+     <a class="g-btn" href="/activation">See the 120-day activation &rarr;</a>
+     <a class="g-btn g-btn--g" href="/services">The full offer</a>
+   </div></div></div>
   </div>
-</aside>
-
-<script>
-(function(){
-  var b=document.getElementById('treengBand'), c=document.getElementById('treengBandClose');
-  function sync(){
-    if(!b) return;
-    var nav=document.querySelector('.nav');
-    if(nav) b.style.marginTop=nav.offsetHeight+'px';
-    document.body.classList.toggle('has-treeng-band', b.style.display!=='none');
-  }
-  try{ if(localStorage.getItem('ssundar_wi_band')==='dismissed'&&b) b.style.display='none'; }catch(e){}
-  sync();
-  window.addEventListener('resize',sync);
-  if(c&&b) c.addEventListener('click',function(){
-    b.style.display='none';
-    document.body.classList.remove('has-treeng-band');
-    try{ localStorage.setItem('ssundar_wi_band','dismissed'); }catch(e){}
-  });
-  document.addEventListener('click',function(e){
-    var a=e.target.closest?e.target.closest('[data-treeng]'):null;
-    if(a&&typeof gtag==='function') gtag('event','treeng_click',{source:a.getAttribute('data-treeng'),page:location.pathname});
-  });
-})();
-</script>
-
-
-<!-- ══ 01 — IDENTITY ═════════════════════════════════════════════ -->
-<!-- ══ 01 — THE RUN (driver's-POV 3D simulation) ═══════════════ -->
-<section class="band run" id="run">
-  <div class="run-stage" aria-hidden="true">
-    <div class="run-world">
-      <div class="run-road"></div>
-      <div class="run-ties" id="runTies"></div>
-      <div class="run-rail run-rail--l" id="railL"></div>
-      <div class="run-rail run-rail--r" id="railR"></div>
-      <div class="run-signals" id="runSignals"></div>
-    </div>
-    <div class="run-horizon"></div>
-    <div class="run-vignette"></div>
-  </div>
-
-  <div class="wrap run-copy">
-    <div class="fade-in"><span class="run-k">AI-era capability architecture</span></div>
-    <h1 class="run-h1 slide-up">AI absorbed the work<span class="dot">.</span><br>
-      <span class="soft">Nobody rebuilt the people model.</span></h1>
-    <div class="slide-up">
-      <p class="run-lede">
-        Execution is now instant and effectively free. The constraint moved upstream &mdash; to how fast
-        an organisation can see what its people can actually do, and act on it before the quarter closes.
-      </p>
-      <p class="run-lede dim">
-        Programs answer that in arrears. Dashboards answer it by bucket. I build the intelligence layer
-        that answers it per person, per week, on the systems you already run.
-      </p>
-      <div class="run-acts">
-        <a class="run-btn" href="/work-intelligence">Work Intelligence &rarr;</a>
-        <a class="run-btn run-btn--g" href="/intelligence-map">Open the 3D map</a>
-      </div>
-      <p class="run-meta">Built and run inside Fortune 500 operations
-        <span class="cred-orgs"><b>Amazon</b> <b>Accenture</b> <b>Cognizant</b></span></p>
-    </div>
-
-    <div class="identity-links">
-      <a class="ilink" href="/capability-strategy">
-        <span class="ilink-k">Tier 01</span>
-        <span class="ilink-t">Capability strategy<span class="dot">.</span></span>
-        <span class="ilink-d">What capability is for in an AI-first operating model, before anyone builds.</span>
-        <span class="ilink-go">Explore &rarr;</span></a>
-      <a class="ilink" href="/capability-architecture">
-        <span class="ilink-k">Tier 02</span>
-        <span class="ilink-t">Capability architecture<span class="dot">.</span></span>
-        <span class="ilink-d">The systems that make capability structural rather than episodic.</span>
-        <span class="ilink-go">Explore &rarr;</span></a>
-      <a class="ilink ilink--new" href="/work-intelligence">
-        <span class="ilink-k">Tier 03 <em>&middot; new</em></span>
-        <span class="ilink-t">Work Intelligence<span class="dot">.</span></span>
-        <span class="ilink-d">An AI layer over the systems you already run. Sense, connect, predict, act.</span>
-        <span class="ilink-go">What it is &rarr;</span></a>
-      <a class="ilink" href="/platform">
-        <span class="ilink-k">Tier 04</span>
-        <span class="ilink-t">Treeng<span class="dot">.</span></span>
-        <span class="ilink-d">Sixteen AI diagnostic engines. Every finding evidence-graded. Free to start.</span>
-        <span class="ilink-go">Open &rarr;</span></a>
-    </div>
-  </div>
-</section>
+</div>
 
 <div class="rule"></div>
-
-
-<!-- ══ 02 — THE ARGUMENT ═════════════════════════════════════════ -->
-<section class="band argument">
-  <div class="ghost-layer" data-z-speed="0.08">THE ARGUMENT</div>
-  <div class="wrap">
-    <div class="fade-in"><span class="sec-num">02 &mdash; The Argument</span></div>
-    <h2 class="arg-head slide-up">The constraint moved upstream. Almost nobody redesigned for it<span class="dot">.</span></h2>
-    <div class="rule-red line-draw"></div>
-
-    <div class="arg-block grid-asym slide-up">
-      <div>
-        <span class="arg-kicker">i. The inflection</span>
-        <h3>AI did not reduce the demand for capability. It relocated it.</h3>
-      </div>
-      <div class="arg-body">
-        <p>
-          Drafting, summarizing, modelling, first-pass analysis on structured problems &mdash; all of it
-          now happens faster than any human can supervise in real time. The intuitive conclusion is
-          that organizations need less from their people. The opposite is true. When execution
-          becomes cheap and instantaneous, the binding constraint moves upstream to the quality of
-          the decision that sets execution in motion.
-        </p>
-        <p>
-          A poor call no longer costs you a slow quarter. It propagates at machine speed, across
-          every downstream system that was waiting on it. <strong>The cost of weak judgment has gone up,
-          not down &mdash; and it compounds faster than it used to.</strong>
-        </p>
-      </div>
-    </div>
-
-    <div class="arg-block grid-asym slide-up">
-      <div>
-        <span class="arg-kicker">ii. Why the standard response fails</span>
-        <h3>Training transfers knowledge. Knowledge is the thing AI commoditized.</h3>
-      </div>
-      <div class="arg-body">
-        <p>
-          Most organizations answer the capability question by buying more content. The logic is
-          intuitive and wrong. A manager who can recall a framework is not more valuable in 2026 &mdash;
-          the framework is one prompt away, better formatted than the one they memorized.
-        </p>
-        <p>
-          What stays scarce is the capacity to decide <em>which</em> framework applies when the
-          situation is ambiguous, the inputs conflict, and the decision cannot wait. That capacity
-          is not knowledge. It is judgment, and judgment does not transfer through content delivery.
-        </p>
-        <div class="arg-pull">
-          This is why the measurement problem never resolves. Completion and satisfaction measure
-          the delivery of knowledge. The organization is trying to buy something knowledge delivery
-          does not produce.
-        </div>
-      </div>
-    </div>
-
-    <div class="arg-block grid-asym slide-up">
-      <div>
-        <span class="arg-kicker">iii. What judgment-design is</span>
-        <h3>Start from the decisions being made badly. Not from the ideal leader.</h3>
-      </div>
-      <div class="arg-body">
-        <p>
-          Judgment-design inverts the sequence. Rather than asking what leaders ought to know, it
-          asks which specific decisions in <em>this</em> organization are made badly &mdash; by whom, under
-          what conditions, with what consequence. Those decisions become the design unit. The
-          intervention is built backward from them: the reps, the pressure, the feedback loop, the
-          escalation path, the accountability structure that makes the better decision the natural one.
-        </p>
-        <p>
-          This is architecture, not curriculum. And it frequently concludes that the fix is structural
-          rather than educational &mdash; authority misaligned with accountability, escalation paths that
-          route around the person who should decide, measurement that quietly rewards the wrong call.
-          <strong>A competency framework cannot see any of this</strong>, because it begins from a model of
-          the ideal leader rather than from the decisions the organization is actually getting wrong.
-        </p>
-      </div>
-    </div>
-
-    <div class="arg-block grid-asym slide-up">
-      <div>
-        <span class="arg-kicker">iv. Why the operator position matters</span>
-        <h3>An advisor optimizes the recommendation. An operator optimizes what survives.</h3>
-      </div>
-      <div class="arg-body">
-        <p>
-          This method is only available to someone who has carried the outcome. I built and ran these
-          systems inside Fortune 500 operations, where the measure was whether the number moved &mdash; not
-          whether the recommendation was well received.
-        </p>
-        <p>
-          That position teaches what advisory work structurally cannot: which constraints are real and
-          which are negotiable, where an elegant design fails on contact with an operating floor, and
-          how long change actually takes once it has to survive attrition, quarter-end, and a
-          reorganization nobody warned you about.
-        </p>
-        <p>
-          <strong>The distinction is the entire method.</strong> It is also why the evidence below is stated
-          as operational outcomes rather than institutional scale &mdash; the numbers are meant to survive
-          diligence, not to impress at a distance.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-
-<!-- ══ 03 — FIELD EVIDENCE ═══════════════════════════════════════ -->
-<section class="band evidence">
-  <div class="ghost-layer red" data-z-speed="0.1">EVIDENCE</div>
-  <div class="wrap">
-    <div class="fade-in"><span class="sec-num">03 &mdash; Field Evidence</span></div>
-    <h2 class="arg-head slide-up" style="margin-bottom:16px">Three kinds of proof. Every figure sourced<span class="dot">.</span></h2>
-    <div class="rule-red line-draw"></div>
-
-    <div class="ev-grid stagger-in">
-      <div class="ev-card stagger-child">
-        <span class="ev-sector">Technical Support &middot; 27 Lines of Business</span>
-        <p class="ev-kind">Quality turnaround</p>
-        <p class="ev-figure">
-          <span class="from">77</span><span class="arw">&rarr;</span><span data-count="93" data-suffix="%">93%</span>
-        </p>
-        <p class="ev-figure-sub">Quality score on an escalated account</p>
-        <div class="ev-meta">
-          Turned inside 90 days of implementation<br>
-          Headcount ramping 70%
-        </div>
-      </div>
-
-      <div class="ev-card stagger-child">
-        <span class="ev-sector">Business Process Outsourcing</span>
-        <p class="ev-kind">CSAT turnaround</p>
-        <p class="ev-figure">
-          <span class="from">70</span><span class="arw">&rarr;</span><span data-count="89" data-suffix="%">89%</span>
-        </p>
-        <p class="ev-figure-sub">Customer satisfaction across a 1,600-person operation</p>
-        <div class="ev-meta">
-          90 days<br>
-          Separate engagement
-        </div>
-      </div>
-
-      <div class="ev-card stagger-child">
-        <span class="ev-sector">Technical Support &middot; New-Hire Cohorts</span>
-        <p class="ev-kind">New-hire capability</p>
-        <p class="ev-figure">
-          <span class="from">79</span><span class="arw">&rarr;</span><span data-count="89" data-suffix="%">89%</span>
-        </p>
-        <p class="ev-figure-sub">30-day CSAT, new-hire cohort</p>
-        <div class="ev-meta">
-          Second cohort: 88% &rarr; 98%<br>
-          Measured at 30 days
-        </div>
-      </div>
-    </div>
-
-    <p class="ev-note fade-in">
-      Client identities and commercially sensitive detail remain confidential by contract,
-      including where the engagement is well known. Figures are stated at sector level and
-      every one traces to a source document. Nothing appears here that cannot be walked
-      through, line by line, in a room.
-    </p>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-
-<!-- ══ 04 — HOW I WORK ═══════════════════════════════════════════ -->
-<section class="band method">
-  <div class="ghost-layer" data-z-speed="0.09">METHOD</div>
-  <div class="wrap">
-    <div class="fade-in"><span class="sec-num">04 &mdash; How I Work</span></div>
-    <div class="grid-asym slide-up" style="margin-top:8px">
-      <div>
-        <h2 class="arg-head" style="margin-bottom:18px">Diagnosis first<span class="dot">.</span> Always<span class="dot">.</span></h2>
-        <div class="rule-red line-draw"></div>
-      </div>
-      <div>
-        <p>
-          Every engagement opens with a diagnosis of which decisions are failing and why &mdash; before any
-          design work begins. The root cause gets classified: skills, structure, measurement, or
-          context. Each demands a fundamentally different response, and a misclassified root cause
-          does not produce a weaker intervention. It produces the wrong one.
-        </p>
-        <p>
-          That diagnosis sometimes concludes that a learning intervention is the wrong instrument
-          entirely &mdash; that the constraint is structural, and no amount of capability work will move it
-          until the structure changes. <strong>When that is the finding, I say so in writing.</strong>
-          Architecture before intervention; evidence required at close.
-        </p>
-        <p style="margin-bottom:0">
-          Engagements run through EXLPRS, where the diagnostic, the programs, and the commercial
-          terms live.
-        </p>
-        <a class="method-link" href="https://exlprs.com" target="_blank" rel="noopener noreferrer">EXLPRS &mdash; the practice &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-
-<!-- ══ 05 — WRITING ══════════════════════════════════════════════ -->
-<section class="band writing">
-  <div class="wrap">
-    <div class="fade-in"><span class="sec-num">05 &mdash; Writing</span></div>
-    <h2 class="arg-head slide-up" style="margin-bottom:16px">The reasoning, in long form<span class="dot">.</span></h2>
-    <div class="rule-red line-draw"></div>
-
-    <div class="w-list">
-      <a class="w-item fade-in" href="/insight-judgment-vs-competency">
-        <span class="w-idx">01</span>
-        <div>
-          <h4>The competency model is dead. Here's what replaces it.</h4>
-          <p>Competency frameworks describe the ideal leader and measure distance from the description. Judgment architecture starts from the decisions being made badly &mdash; and is auditable.</p>
-        </div>
-      </a>
-      <a class="w-item fade-in" href="/insight-simulation-data">
-        <span class="w-idx">02</span>
-        <div>
-          <h4>What 500+ leadership simulations reveal about how executives actually decide</h4>
-          <p>Aggregate patterns from simulated decision-making under pressure. Where judgment breaks by function, tenure, and organizational scale &mdash; and which failure modes repeat.</p>
-        </div>
-      </a>
-      <a class="w-item fade-in" href="/decision-velocity-leadership-metric">
-        <span class="w-idx">03</span>
-        <div>
-          <h4>Decision velocity: the leadership metric nobody tracks</h4>
-          <p>Organizations measure engagement, completion, and effectiveness. None of it captures how fast a good decision travels &mdash; which is the thing that actually compounds.</p>
-        </div>
-      </a>
-    </div>
-
-    <a class="w-all" href="/insights">Full archive &rarr;</a>
-  </div>
-</section>
-
-
-<!-- ══ 06 — CTA ══════════════════════════════════════════════════ -->
-<section class="band cta">
-  <div class="ghost-layer on-red" data-z-speed="0.12">THE GAP</div>
-  <div class="wrap">
-    <h2 class="slide-up">Find your judgment gap<span class="dot" style="color:#0a0a0a">.</span></h2>
-    <div class="slide-up">
-      <p>
-        A structured diagnostic that names where judgment is breaking in your organization &mdash;
-        which decisions, at which altitude, under which conditions. It runs on EXLPRS.
-      </p>
-      <a class="cta-btn" href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer">Start the diagnostic &rarr;</a>
-      <p class="cta-sub">No cost &middot; No slides &middot; Runs on EXLPRS</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══ FOOTER ════════════════════════════════════════════════════ -->
 <footer class="footer">
   <section class="section" style="padding-top:80px;padding-bottom:40px">
     <span style="font-family:var(--heading);font-weight:700;font-size:24px;letter-spacing:0.06em;text-transform:uppercase;color:#fff">SSUNDAR<span class="dot">.</span></span>
@@ -858,44 +249,125 @@
   </section>
 </footer>
 
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shyam Sundar MV",
+    "url": "https://ssundar.com",
+    "jobTitle": "Performance Systems Architect",
+    "description": "Judgment-centered leadership design. Built and ran performance systems inside Fortune 500 operations.",
+    "sameAs": ["https://linkedin.com/in/shyamsundarmv"],
+    "knowsAbout": [
+      "Judgment-Centered Leadership Design",
+      "Performance Systems Architecture",
+      "Leadership Development",
+      "AI and Organizational Capability",
+      "Global Capability Centers"
+    ],
+    "alumniOf": [
+      { "@type": "Organization", "name": "Amazon" },
+      { "@type": "Organization", "name": "Accenture" },
+      { "@type": "Organization", "name": "Cognizant" }
+    ]
+  }
+  </script>
 
 <script>
 (function(){
-  var ties=document.getElementById('runTies'), sigs=document.getElementById('runSignals'),
-      L=document.getElementById('railL'), R=document.getElementById('railR');
-  if(!ties) return;
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var N = reduce ? 6 : 22;
-  for(var i=0;i<N;i++){
-    var t=document.createElement('div'); t.className='tie';
-    t.style.animationDelay = (-(i*(3.1/N))).toFixed(3)+'s';
-    t.innerHTML='<i></i>'; ties.appendChild(t);
+  "use strict";
+  var Z0=900, TOTAL=10400, FOCAL=760, NEAR=120, FAR=2600;
+  var track=document.getElementById('track'), vp=track.querySelector('.vp'),
+      corridor=document.getElementById('corridor'), gatesEl=document.getElementById('gates'),
+      pbar=document.getElementById('pbar'), rail=document.getElementById('rail');
+  var gates=[].slice.call(gatesEl.querySelectorAll('.gate')).map(function(e){
+    return {el:e, z:+e.dataset.z}; });
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* corridor geometry */
+  var TIES=[], PYL=[];
+  for(var i=0;i<(reduce?8:26);i++){
+    var t=document.createElement('div'); t.className='tie'; corridor.appendChild(t);
+    TIES.push({el:t, z:i*(TOTAL/(reduce?8:26))});
   }
-  for(var j=0;j<(reduce?4:14);j++){
-    ['l','r'].forEach(function(side){
-      var p=document.createElement('div'); p.className='pylon';
-      p.style.animationDelay=(-(j*(3.1/14))).toFixed(3)+'s';
-      (side==='l'?L:R).appendChild(p);
+  for(var j=0;j<(reduce?6:20);j++){
+    ['l','r'].forEach(function(s){
+      var p=document.createElement('div'); p.className='pyl'; corridor.appendChild(p);
+      PYL.push({el:p, z:j*(TOTAL/(reduce?6:20)), side:s==='l'?-1:1});
     });
   }
-  for(var k=0;k<(reduce?0:26);k++){
-    var s=document.createElement('div'); s.className='sig';
-    s.style.left=(Math.random()*1100-550).toFixed(0)+'px';
-    s.style.top=(Math.random()*420-230).toFixed(0)+'px';
-    s.style.animationDelay=(-(Math.random()*4.6)).toFixed(2)+'s';
-    s.style.animationDuration=(3.6+Math.random()*2.4).toFixed(2)+'s';
-    sigs.appendChild(s);
+
+  var W=0,H=0;
+  function size(){ W=vp.clientWidth; H=vp.clientHeight; }
+  window.addEventListener('resize',size,{passive:true}); size();
+
+  var camZ=0, targetZ=0;
+  function proj(z){ var d=z-camZ; return {d:d, s:FOCAL/Math.max(d,NEAR)}; }
+
+  function frame(){
+    camZ += (targetZ-camZ)*0.14;
+    if(Math.abs(targetZ-camZ)<0.4) camZ=targetZ;
+
+    /* ties: road level, recycled ahead of the camera */
+    for(var i=0;i<TIES.length;i++){
+      var T=TIES[i], d=T.z-camZ;
+      while(d<NEAR){ T.z+=TOTAL; d=T.z-camZ; }
+      while(d>TOTAL){ T.z-=TOTAL; d=T.z-camZ; }
+      var s=FOCAL/d, w=2600*s, y=190*s;
+      T.el.style.transform='translate(-50%,'+y.toFixed(1)+'px) scaleX('+(w/2600).toFixed(4)+')';
+      T.el.style.width='2600px';
+      T.el.style.opacity=Math.max(0,Math.min(.95,(1-d/FAR))).toFixed(3);
+    }
+    for(var k=0;k<PYL.length;k++){
+      var P=PYL[k], pd=P.z-camZ;
+      while(pd<NEAR){ P.z+=TOTAL; pd=P.z-camZ; }
+      while(pd>TOTAL){ P.z-=TOTAL; pd=P.z-camZ; }
+      var ps=FOCAL/pd;
+      P.el.style.transform='translate('+(P.side*560*ps).toFixed(1)+'px,'+(-30*ps).toFixed(1)+'px)';
+      P.el.style.height=(240*ps).toFixed(1)+'px';
+      P.el.style.opacity=Math.max(0,Math.min(.9,(1-pd/FAR))).toFixed(3);
+    }
+
+    /* gates */
+    var nearest=0, nd=1e9;
+    for(var g=0;g<gates.length;g++){
+      var G=gates[g], gd=G.z-camZ;
+      var o=0, sc=1;
+      if(gd>-500 && gd<FAR){
+        var t=1-Math.min(1,Math.max(0,gd/1250));          /* 0 far .. 1 here */
+        o = gd<0 ? Math.max(0,1+gd/520) : Math.pow(t,1.35);
+        sc = 0.72+0.28*t + (gd<0 ? (-gd/500)*0.5 : 0);
+      }
+      G.el.style.opacity=o.toFixed(3);
+      G.el.style.transform='translate(-50%,-50%) scale('+sc.toFixed(3)+') translateZ(0)';
+      G.el.style.pointerEvents = o>0.6 ? 'auto':'none';
+      var ad=Math.abs(gd); if(ad<nd){ nd=ad; nearest=g; }
+    }
+    rail.querySelectorAll('button').forEach(function(b,bi){ b.classList.toggle('on',bi===nearest); });
+    requestAnimationFrame(frame);
   }
-  /* parallax: the corridor banks with the pointer */
-  var world=document.querySelector('.run-world'), stage=document.getElementById('run');
-  if(world && stage && !reduce){
-    stage.addEventListener('pointermove',function(e){
-      var r=stage.getBoundingClientRect();
-      var dx=(e.clientX-r.left)/r.width-0.5, dy=(e.clientY-r.top)/r.height-0.5;
-      world.style.transform='rotateY('+(dx*7).toFixed(2)+'deg) rotateX('+(-dy*4).toFixed(2)+'deg)';
+
+  function onScroll(){
+    var max=track.offsetHeight-window.innerHeight;
+    var p=Math.max(0,Math.min(1,window.scrollY/Math.max(max,1)));
+    targetZ=Z0+p*(TOTAL-Z0);
+    pbar.style.width=(p*100).toFixed(2)+'%';
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+
+  gates.forEach(function(G,i){
+    var b=document.createElement('button'); b.setAttribute('aria-label','Chapter '+(i+1));
+    rail.appendChild(b);
+    b.addEventListener('click',function(){
+      var max=track.offsetHeight-window.innerHeight;
+      window.scrollTo({top:Math.max(0,((G.z-Z0)/(TOTAL-Z0))*max), behavior:'smooth'});
     });
-    stage.addEventListener('pointerleave',function(){ world.style.transform=''; });
-  }
+  });
+  document.getElementById('skip').addEventListener('click',function(){
+    window.scrollTo({top:track.offsetHeight-window.innerHeight+10, behavior:'smooth'});
+  });
+
+  onScroll(); camZ=targetZ; frame();
 })();
 </script>
 <script src="app.js"></script>
