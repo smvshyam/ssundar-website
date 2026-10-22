@@ -40,3 +40,13 @@
 /embedded-advantage           /fractional-clo-india              301!
 /illusion-of-bench-strength   /insight-ic-to-manager             301!
 
+
+# Internal files: hard 404 even if a deploy accidentally includes them
+/CLAUDE.md       /404.html  404!
+/AGENTS.md       /404.html  404!
+/CHANGELOG.md    /404.html  404!
+/SEND_QUEUE.md   /404.html  404!
+/*.md            /404.html  404!
+/*.ps1           /404.html  404!
+/.env            /404.html  404!
+/.deploy-config  /404.html  404!

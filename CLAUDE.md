@@ -90,6 +90,11 @@ details. `deploy-ssundar-live.ps1` now excludes `.md`, `.ps1`, `.bat`, `.env*`,
 `.deploy-config`, `.pem` and `.key`, aborts if any survive the filter, and
 asserts those URLs return 404 after every deploy. Do not weaken those checks.
 If you add an internal note to this folder, give it one of those extensions.
+**2026-10-23 recurrence:** the blog publisher's own deploy re-exposed these files
+because its zip had no exclusions. Its scheduled prompt now excludes them and
+asserts 404 after every deploy, and `_redirects` force-404s `/*.md`, `/*.ps1`,
+`/.env` and `/.deploy-config` so even a leaking bundle cannot serve them.
+
 
 ---
 
