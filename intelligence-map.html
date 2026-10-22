@@ -201,6 +201,55 @@
     color:rgba(255,255,255,0.56); margin:0;
   }
 
+
+  /* ── Transport controls ─────────────────────────────────── */
+  .play{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.13em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:1px solid var(--red);
+    padding:10px 16px;cursor:pointer;white-space:nowrap;transition:all .18s ease;
+  }
+  .play:hover{box-shadow:0 8px 26px rgba(227,30,36,.42);transform:translateY(-1px)}
+  .play .ic{width:0;height:0;border-left:9px solid #fff;border-top:6px solid transparent;border-bottom:6px solid transparent}
+  .play.on .ic{width:9px;height:11px;border:none;background:
+    linear-gradient(to right,#fff 0 3px,transparent 3px 6px,#fff 6px 9px)}
+  .step{
+    font-family:var(--mono);font-size:13px;font-weight:700;color:rgba(255,255,255,.7);
+    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.18);
+    width:34px;height:34px;line-height:1;cursor:pointer;transition:all .18s ease;
+  }
+  .step:hover{color:#fff;border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.1)}
+  .hud .hint{
+    font-family:var(--mono);font-size:9px;letter-spacing:.09em;text-transform:uppercase;
+    color:rgba(255,255,255,.34);white-space:normal;text-align:right;max-width:290px;line-height:1.7;
+  }
+  .prog{position:fixed;left:0;top:0;height:2px;background:var(--red);width:0;z-index:60;
+    transition:width .25s linear;pointer-events:none}
+
+  /* ── First-run onboarding ───────────────────────────────── */
+  .ob{position:fixed;inset:0;z-index:70;display:grid;place-items:center;
+    background:rgba(4,4,4,.86);backdrop-filter:blur(3px);padding:24px}
+  .ob[hidden]{display:none}
+  .ob-in{max-width:620px;text-align:center}
+  .ob .k{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--red);display:block;margin-bottom:18px}
+  .ob h2{font-family:var(--heading);font-weight:700;text-transform:uppercase;
+    font-size:clamp(24px,3.4vw,40px);line-height:1.02;letter-spacing:-.025em;margin:0 0 14px;color:#fff}
+  .ob > .ob-in > p{font-family:var(--body);font-size:15px;line-height:1.62;
+    color:rgba(255,255,255,.7);margin:0 auto 30px;max-width:48ch}
+  .ob-g{display:grid;gap:1px;background:rgba(255,255,255,.12);margin-bottom:28px;text-align:left}
+  @media(min-width:640px){.ob-g{grid-template-columns:repeat(3,1fr)}}
+  .ob-g div{background:#0b0b0b;padding:18px 16px}
+  .ob-g b{display:block;font-family:var(--mono);font-size:9.5px;font-weight:700;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+  .ob-g span{font-family:var(--body);font-size:13px;line-height:1.5;color:rgba(255,255,255,.72)}
+  .ob-a{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .ob-a button{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.11em;
+    text-transform:uppercase;padding:14px 26px;cursor:pointer;border:1px solid}
+  .ob-a .p{background:var(--red);border-color:var(--red);color:#fff}
+  .ob-a .s{background:transparent;border-color:rgba(255,255,255,.28);color:#fff}
+  .ob-a .s:hover{border-color:#fff}
+
   @media(max-width:820px){
     .lens{ top:auto; bottom:70px; left:10px; flex-direction:row; flex-wrap:wrap; max-width:calc(100% - 20px); }
     .lens .lh{ display:none; }
@@ -251,10 +300,33 @@
   <span class="e"></span><h3></h3><p></p>
 </div>
 
+<div class="prog" id="prog"></div>
+
+<div class="ob" id="ob" hidden>
+  <div class="ob-in">
+    <span class="k">Work Intelligence &mdash; the map</span>
+    <h2>Six stages<span class="dot">.</span> Seven lenses each<span class="dot">.</span></h2>
+    <p>The whole service line laid out in three dimensions. Play the tour and it walks you through,
+       or take the controls yourself.</p>
+    <div class="ob-g">
+      <div><b>Play the tour</b><span>Auto-advances through all six stages. Click anything to take over.</span></div>
+      <div><b>Click a card</b><span>Opens that stage and fans out its seven lenses around it.</span></div>
+      <div><b>Drag &amp; scroll</b><span>Drag to orbit the scene, scroll to move closer, Esc to pull back out.</span></div>
+    </div>
+    <div class="ob-a">
+      <button class="p" id="obPlay">&#9654;&nbsp;&nbsp;Play the tour</button>
+      <button class="s" id="obSkip">Explore it myself</button>
+    </div>
+  </div>
+</div>
+
 <div class="hud" id="hud">
+  <button class="play" id="play"><span class="ic"></span><span id="playLbl">Play tour</span></button>
+  <button class="step" id="prev" aria-label="Previous stage">&#8249;</button>
+  <button class="step" id="next" aria-label="Next stage">&#8250;</button>
   <button class="chip on" data-go="-1">Overview</button>
   <div class="spacer"></div>
-  <span class="hint">Drag to orbit &middot; scroll to zoom &middot; &larr;&rarr; to step</span>
+  <span class="hint">Click a stage to open it &middot; drag to orbit &middot; scroll to zoom &middot; Esc to pull back</span>
 </div>
 
 <script src="app.js"></script>
@@ -560,6 +632,7 @@ scene.addEventListener('wheel',function(e){
 
 /* keyboard */
 document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'||e.key==='ArrowLeft'||e.key==='ArrowRight'){ if(typeof stopTour==='function') stopTour(); }
   if(e.key==='Escape'){ overview(); }
   else if(e.key==='ArrowRight'){ focusStage(active<0?0:(active+1)%STAGES.length); }
   else if(e.key==='ArrowLeft'){ focusStage(active<0?STAGES.length-1:(active-1+STAGES.length)%STAGES.length); }
@@ -567,6 +640,57 @@ document.addEventListener('keydown',function(e){
 
 scene.addEventListener('click',function(e){
   if(!e.target.closest('.stage,.leaf,.chip,.lens,.nav')) overview();
+});
+
+
+/* ═══════════ GUIDED TOUR ═══════════ */
+var TOUR_MS=7000, tour=null, tourT=null, progEl=document.getElementById('prog');
+var playBtn=document.getElementById('play'), playLbl=document.getElementById('playLbl');
+
+function setProg(pct){ progEl.style.width=pct+'%'; }
+
+function tourTick(){
+  var i = (active<0) ? 0 : (active+1)%STAGES.length;
+  focusStage(i);
+  setProg(((i+1)/STAGES.length)*100);
+  tourT=setTimeout(tourTick,TOUR_MS);
+}
+function startTour(){
+  if(tour) return;
+  tour=true; playBtn.classList.add('on'); playLbl.textContent='Pause';
+  if(active<0){ focusStage(0); setProg((1/STAGES.length)*100); }
+  tourT=setTimeout(tourTick,TOUR_MS);
+}
+function stopTour(){
+  tour=null; clearTimeout(tourT); tourT=null;
+  playBtn.classList.remove('on'); playLbl.textContent='Play tour';
+  setProg(0);
+}
+function toggleTour(){ tour?stopTour():startTour(); }
+
+playBtn.addEventListener('click',function(e){ e.stopPropagation(); toggleTour(); });
+document.getElementById('next').addEventListener('click',function(e){
+  e.stopPropagation(); stopTour(); focusStage(active<0?0:(active+1)%STAGES.length); });
+document.getElementById('prev').addEventListener('click',function(e){
+  e.stopPropagation(); stopTour(); focusStage(active<0?STAGES.length-1:(active-1+STAGES.length)%STAGES.length); });
+
+/* any manual interaction hands control back to the user */
+['pointerdown','wheel'].forEach(function(ev){
+  scene.addEventListener(ev,function(){ if(tour) stopTour(); },{passive:true});
+});
+
+/* ═══════════ FIRST-RUN ONBOARDING ═══════════ */
+var ob=document.getElementById('ob');
+function closeOb(){ ob.hidden=true; try{localStorage.setItem('ssundar_map_seen','1');}catch(e){} }
+try{ if(!localStorage.getItem('ssundar_map_seen')) ob.hidden=false; }catch(e){ ob.hidden=false; }
+document.getElementById('obPlay').addEventListener('click',function(){ closeOb(); startTour(); });
+document.getElementById('obSkip').addEventListener('click',closeOb);
+ob.addEventListener('click',function(e){ if(e.target===ob) closeOb(); });
+
+/* space bar toggles the tour */
+document.addEventListener('keydown',function(e){
+  if(e.key===' '&&!ob.hidden===false){ }
+  if(e.key===' '){ e.preventDefault(); toggleTour(); }
 });
 
 render();
