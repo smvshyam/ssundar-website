@@ -50,26 +50,64 @@ html,body{background:#060606;color:#fff;overflow:hidden;height:100%;width:100%;m
   text-transform:uppercase;color:rgba(255,255,255,.42)}
 .stage:hover .go,.stage.on .go{color:var(--red)}
 
-.lens{width:240px;padding:16px 16px 14px;cursor:pointer;background:rgba(13,13,13,.97);
+.lens{width:286px;padding:20px 20px 16px;cursor:pointer;background:rgba(13,13,13,.97);
   border:1px solid rgba(255,255,255,.14);box-shadow:0 20px 50px rgba(0,0,0,.75);
   transition:opacity .4s ease,border-color .25s ease,box-shadow .25s ease}
 .lens:hover{border-color:var(--red);box-shadow:0 24px 58px rgba(227,30,36,.26)}
-.lens.big{width:460px;border-color:var(--red);box-shadow:0 0 0 1px var(--red),0 30px 76px rgba(0,0,0,.85)}
-.lens .lk{font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.17em;
+.lens.big{width:520px;border-color:var(--red);box-shadow:0 0 0 1px var(--red),0 30px 76px rgba(0,0,0,.85)}
+.lens .lk{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.17em;
   text-transform:uppercase;color:var(--red);display:block;margin-bottom:9px;padding-bottom:7px;
   border-bottom:1px solid rgba(227,30,36,.28)}
 .lens ul{margin:0;padding:0;list-style:none}
-.lens li{font-family:var(--body);font-size:11.5px;line-height:1.5;color:rgba(255,255,255,.78);
-  padding-left:11px;position:relative;margin-bottom:7px}
-.lens.big li{font-size:14px;line-height:1.6;margin-bottom:11px}
+.lens li{font-family:var(--body);font-size:14px;line-height:1.56;color:rgba(255,255,255,.86);
+  padding-left:13px;position:relative;margin-bottom:10px}
+.lens.big li{font-size:16.5px;line-height:1.62;margin-bottom:13px}
 .lens li:last-child{margin-bottom:0}
 .lens li::before{content:'';position:absolute;left:0;top:7px;width:4px;height:4px;background:var(--red)}
-.lens .zoom{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.14em;
+.lens .zoom{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;
   text-transform:uppercase;color:var(--red);display:block;margin-top:12px;padding-top:9px;
   border-top:1px solid rgba(227,30,36,.26)}
 .lens:hover .zoom{color:var(--red)}
+.lens .mag{position:absolute;top:12px;right:12px;width:24px;height:24px;display:grid;place-items:center;
+  border:1px solid rgba(227,30,36,.5);color:var(--red);font-family:var(--mono);font-size:13px;
+  font-weight:700;line-height:1;transition:all .2s ease}
+.lens:hover .mag{background:var(--red);color:#fff;border-color:var(--red)}
+.lens.big .mag{display:none}
+.lens{position:relative}
 .lens.big .zoom{display:none}
 
+
+.panel{position:fixed;left:0;right:0;top:0;bottom:0;z-index:30;pointer-events:none;
+  display:flex;align-items:center;justify-content:center;padding:150px clamp(16px,5vw,96px) 92px}
+.panel[hidden]{display:none}
+.panel-in{width:100%;max-width:1320px;display:grid;gap:14px;pointer-events:auto;
+  grid-template-columns:repeat(auto-fit,minmax(252px,1fr))}
+.panel.zoom .panel-in{max-width:760px;grid-template-columns:1fr}
+.lcard{background:rgba(12,12,12,.97);border:1px solid rgba(255,255,255,.15);
+  padding:20px 20px 17px;position:relative;cursor:pointer;
+  opacity:0;transform:translateY(16px) scale(.97);
+  transition:opacity .45s ease,transform .45s cubic-bezier(.16,1,.3,1),border-color .25s ease,box-shadow .25s ease}
+.lcard.in{opacity:1;transform:none}
+.lcard:hover{border-color:var(--red);box-shadow:0 20px 50px rgba(227,30,36,.24)}
+.panel.zoom .lcard{padding:34px 34px 30px;border-color:var(--red);cursor:default;
+  box-shadow:0 0 0 1px var(--red),0 34px 80px rgba(0,0,0,.85)}
+.lcard .lk{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--red);display:block;margin-bottom:11px;padding-bottom:9px;
+  border-bottom:1px solid rgba(227,30,36,.28)}
+.panel.zoom .lcard .lk{font-size:12px;margin-bottom:18px;padding-bottom:13px}
+.lcard ul{margin:0;padding:0;list-style:none}
+.lcard li{font-family:var(--body);font-size:14px;line-height:1.58;color:rgba(255,255,255,.86);
+  padding-left:13px;position:relative;margin-bottom:10px}
+.panel.zoom .lcard li{font-size:17px;line-height:1.65;margin-bottom:15px}
+.lcard li:last-child{margin-bottom:0}
+.lcard li::before{content:'';position:absolute;left:0;top:7px;width:4px;height:4px;background:var(--red)}
+.lcard .mag{position:absolute;top:14px;right:14px;width:24px;height:24px;display:grid;place-items:center;
+  border:1px solid rgba(227,30,36,.5);color:var(--red);font-family:var(--mono);font-size:13px;
+  font-weight:700;line-height:1;transition:all .2s ease}
+.lcard:hover .mag{background:var(--red);color:#fff}
+.panel.zoom .lcard .mag{display:none}
+@media(max-width:720px){.panel{padding:120px 12px 110px}
+  .panel-in{grid-template-columns:1fr;max-height:62vh;overflow-y:auto}}
 .prog{position:fixed;left:0;top:0;height:2px;background:var(--red);width:0;z-index:60;transition:width .3s linear}
 .crumb{position:fixed;left:clamp(10px,3vw,34px);top:98px;max-width:60vw;flex-wrap:wrap;z-index:40;display:flex;gap:8px;align-items:center;
   font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
@@ -198,6 +236,7 @@ html,body{background:#060606;color:#fff;overflow:hidden;height:100%;width:100%;m
   <div id="layer"></div>
 </div>
 
+<div class="panel" id="panel" hidden></div>
 <div class="crumb" id="crumb"></div>
 <div class="lens-bar" id="lens"></div>
 <div class="ttag" id="ttag"><span class="e"></span><h3></h3><p></p></div>
@@ -311,7 +350,7 @@ var stage=document.getElementById('stage'), layer=document.getElementById('layer
     lensEl=document.getElementById('lens'), ttag=document.getElementById('ttag'),
     crumb=document.getElementById('crumb');
 
-var FOCAL=820, RING=1180, LEAF=620, D2R=Math.PI/180;
+var FOCAL=820, RING=1180, LEAF=560, D2R=Math.PI/180;
 var nodes=[], wires=[];
 
 function mk(cls,html){ var e=document.createElement('div'); e.className=cls; if(html)e.innerHTML=html;
@@ -334,10 +373,15 @@ STAGES.forEach(function(st,i){
 
   st.lens=LENSES.map(function(L,j){
     var la=(j/LENSES.length)*360-90;
-    var o={x:st.x+Math.cos(la*D2R)*LEAF*1.15, y:st.y+Math.sin(la*D2R)*LEAF*0.62,
-           z:st.z+Math.cos(la*D2R)*LEAF*0.34 + Math.sin(la*D2R)*LEAF*0.28, kind:'lens', si:i, li:j, key:L[0],
+    /* lay the ring in the CAMERA'S view plane for this stage, not world axes,
+       so all seven stay in frame when the camera swings round to face it */
+    var rx=Math.cos((a+90)*D2R), rz=Math.sin((a+90)*D2R);   // view-right vector
+    var RX=LEAF*1.55, RY=LEAF*0.62;
+    var o={x:st.x + rx*Math.cos(la*D2R)*RX,
+           y:st.y + Math.sin(la*D2R)*RY,
+           z:st.z + rz*Math.cos(la*D2R)*RX, kind:'lens', si:i, li:j, key:L[0],
            title:L[1], lines:st.b[L[0]]};
-    o.el=mk('n lens','<span class="lk">'+L[1]+'</span><ul>'+
+    o.el=mk('n lens','<span class="mag">+</span><span class="lk">'+L[1]+'</span><ul>'+
       o.lines.map(function(t){return '<li>'+t+'</li>';}).join('')+'</ul>'+
       '<span class="zoom">Zoom in &rarr;</span>');
     o.el.addEventListener('click',function(e){ e.stopPropagation(); go(i,j); });
@@ -347,6 +391,28 @@ STAGES.forEach(function(st,i){
 });
 
 /* ── camera ──────────────────────────────────────────────── */
+
+var panel=document.getElementById('panel');
+function renderPanel(si,li){
+  if(si<0){ panel.hidden=true; panel.innerHTML=''; panel.classList.remove('zoom'); return; }
+  var st=STAGES[si];
+  var list = li>=0 ? [st.lens[li]]
+                   : st.lens.filter(function(L){ return !lensFilter || L.key===lensFilter; });
+  panel.classList.toggle('zoom', li>=0);
+  panel.innerHTML='<div class="panel-in">'+list.map(function(L){
+    return '<div class="lcard" data-li="'+L.li+'">'+
+           (li>=0?'':'<span class="mag">+</span>')+
+           '<span class="lk">'+L.title+'</span><ul>'+
+           L.lines.map(function(t){return '<li>'+t+'</li>';}).join('')+'</ul></div>';
+  }).join('')+'</div>';
+  panel.hidden=false;
+  var cards=panel.querySelectorAll('.lcard');
+  Array.prototype.forEach.call(cards,function(c,n){
+    setTimeout(function(){ c.classList.add('in'); }, 60+n*55);
+    if(li<0) c.addEventListener('click',function(){ go(si, +c.dataset.li); });
+  });
+}
+
 var cam={yaw:0,pitch:-11,dist:2000,tx:0,ty:0,tz:0};
 var tgt={yaw:0,pitch:-11,dist:2000,tx:0,ty:0,tz:0};
 var active=-1, zoomed=-1, lensFilter=null, W=0,H=0;
@@ -373,11 +439,7 @@ function project(p){
 function visible(n){
   if(n.kind==='core')  return active<0;
   if(n.kind==='stage') return active<0 || (n.i===active && zoomed<0);
-  if(n.kind==='lens'){
-    if(n.si!==active) return false;
-    if(zoomed>=0)     return n.li===zoomed;
-    return !lensFilter || n.key===lensFilter;
-  }
+  if(n.kind==='lens') return false;   /* rendered by the panel, not in 3D */
   return true;
 }
 
@@ -435,7 +497,7 @@ function go(si,li){
     var st=STAGES[si];
     if(li<0){
       tgt.tx=st.x; tgt.ty=st.y; tgt.tz=st.z;
-      tgt.yaw=-(st.a+90); tgt.pitch=-7; tgt.dist=1560*fitK;
+      tgt.yaw=-(st.a+90); tgt.pitch=-9; tgt.dist=1950*fitK;
       ttag.querySelector('.e').textContent=st.eyebrow;
       ttag.querySelector('h3').textContent=st.head;
       ttag.querySelector('p').textContent=st.sub;
@@ -443,7 +505,7 @@ function go(si,li){
     } else {
       var L=st.lens[li];
       tgt.tx=L.x; tgt.ty=L.y; tgt.tz=L.z;
-      tgt.yaw=-(st.a+90); tgt.pitch=-6; tgt.dist=900*fitK;
+      tgt.yaw=-(st.a+90); tgt.pitch=-9; tgt.dist=2250*fitK;
       ttag.querySelector('.e').textContent=st.eyebrow+' · '+L.title;
       ttag.querySelector('h3').textContent=L.title;
       ttag.querySelector('p').textContent=st.head;
@@ -452,6 +514,7 @@ function go(si,li){
     }
     ttag.classList.add('show'); lensEl.classList.add('show');
   }
+  renderPanel(si,li);
   STAGES.forEach(function(s,k){ s.el.classList.toggle('on',k===si); });
   nodes.forEach(function(n){ if(n.kind==='lens') n.el.classList.toggle('big',n.si===si&&n.li===zoomed); });
   hud.querySelectorAll('.chip').forEach(function(c){ c.classList.toggle('on',c.dataset.go===String(si)); });

@@ -14,7 +14,10 @@
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Cache-Control = "public, max-age=3600"
+    # Clean URLs (/intelligence-map) do NOT match "/*.html", so a max-age here
+    # silently served stale pages for up to an hour after every deploy.
+    # Revalidate by default; only /fonts/* is immutable.
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/*.html"

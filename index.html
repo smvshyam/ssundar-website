@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-17GGZ3QCQF"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag("js",new Date());gtag("config","G-17GGZ3QCQF");</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SSUNDAR. — AI-Era Capability Architecture</title>
 <meta name="description" content="AI absorbed the work. Nobody rebuilt the people model. Capability strategy, capability architecture, Work Intelligence and AI diagnostics — built and run from inside Fortune 500 operations.">
 <meta property="og:title" content="SSUNDAR. — AI-Era Capability Architecture">
 <meta property="og:description" content="AI absorbed the work. Nobody rebuilt the people model.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ssundar.com/">
+<meta property="og:type" content="website"><meta property="og:url" content="https://ssundar.com/">
 <meta property="og:image" content="https://ssundar.com/og-default.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <link rel="canonical" href="https://ssundar.com/">
@@ -18,77 +20,70 @@
 <link rel="stylesheet" href="/fonts.css">
 <link rel="stylesheet" href="styles.css">
 <style>
-html{scroll-behavior:auto}
 body{background:#040404;color:#fff}
 .nav{position:fixed}
-
-/* ── the track: scroll length drives camera travel ── */
-.track{position:relative;height:1155vh}
+.track{position:relative;height:1141vh}
 .vp{position:sticky;top:0;height:100vh;overflow:hidden;
-  background:radial-gradient(1200px 760px at 50% 48%,rgba(227,30,36,.13) 0%,transparent 72%),#040404}
-.corridor{position:absolute;inset:0;pointer-events:none;z-index:0}
-.cline{position:absolute;left:50%;top:50%;height:1px;transform-origin:0 50%;
-  background:linear-gradient(90deg,rgba(227,30,36,.75),rgba(227,30,36,0))}
-.tie{position:absolute;left:50%;top:50%;height:3px;margin-left:0;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.72) 16%,rgba(255,255,255,.72) 84%,transparent)}
+  background:radial-gradient(1200px 780px at 50% 60%,rgba(227,30,36,.12) 0%,transparent 72%),#040404}
+
+/* corridor — runs on its own clock */
+.rt{position:absolute;inset:0;z-index:0;pointer-events:none}
+.rt-h{position:absolute;left:0;right:0;top:58%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(227,30,36,.55),transparent);
+  box-shadow:0 0 110px 36px rgba(227,30,36,.15)}
+.tie{position:absolute;left:50%;top:58%;height:3px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.7) 16%,rgba(255,255,255,.7) 84%,transparent)}
 .tie::after{content:'';position:absolute;left:50%;top:-1px;bottom:-1px;width:9%;margin-left:-4.5%;
   background:var(--red);box-shadow:0 0 16px rgba(227,30,36,.95)}
-.pyl{position:absolute;left:50%;top:50%;width:3px;
-  background:linear-gradient(to top,var(--red),rgba(227,30,36,0));box-shadow:0 0 18px rgba(227,30,36,.55)}
-.horizon{position:absolute;left:0;right:0;top:50%;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(227,30,36,.6),transparent);
-  box-shadow:0 0 100px 34px rgba(227,30,36,.17)}
-.vig{position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(1000px 640px at 50% 50%,transparent 0%,rgba(4,4,4,.3) 56%,rgba(4,4,4,.93) 90%)}
+.pyl{position:absolute;left:50%;top:58%;width:3px;
+  background:linear-gradient(to top,var(--red),rgba(227,30,36,0));box-shadow:0 0 18px rgba(227,30,36,.5)}
+.rt-v{position:absolute;inset:0;background:
+  linear-gradient(to bottom,rgba(4,4,4,.74) 0%,rgba(4,4,4,.3) 44%,rgba(4,4,4,.12) 58%,rgba(4,4,4,.92) 100%)}
 
-/* ── gates ── */
+/* gates — scroll drives zoom + fade */
 .gates{position:absolute;inset:0;z-index:2}
-.gate{position:absolute;left:50%;top:50%;width:min(1080px,86vw);
+.gate{position:absolute;left:50%;top:48%;width:min(1080px,88vw);
   transform:translate(-50%,-50%);opacity:0;will-change:transform,opacity;text-align:center}
 .g-k{font-family:var(--mono);font-size:clamp(9.5px,.78vw,11px);font-weight:700;letter-spacing:.24em;
   text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:9px;margin-bottom:22px}
 .g-k::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--red)}
 .g-h1{font-family:var(--heading);font-weight:700;text-transform:uppercase;
-  font-size:clamp(40px,7vw,108px);line-height:.9;letter-spacing:-.04em;margin:0 0 26px;
+  font-size:clamp(40px,7vw,106px);line-height:.9;letter-spacing:-.04em;margin:0 0 26px;
   text-shadow:0 10px 60px rgba(0,0,0,.95)}
 .g-h2{font-family:var(--heading);font-weight:700;text-transform:uppercase;
-  font-size:clamp(28px,4.4vw,66px);line-height:.98;letter-spacing:-.032em;margin:0 0 26px;
+  font-size:clamp(28px,4.4vw,64px);line-height:.98;letter-spacing:-.032em;margin:0 0 26px;
   text-shadow:0 8px 50px rgba(0,0,0,.95)}
 .g-h1 .soft,.g-h2 .soft{color:rgba(255,255,255,.62)}
 .g-lede{font-family:var(--body);font-size:clamp(15px,1.3vw,20px);line-height:1.6;
-  color:rgba(255,255,255,.84);max-width:60ch;margin:0 auto;text-shadow:0 2px 24px rgba(0,0,0,.95)}
-.g-scroll{display:block;margin-top:40px;font-family:var(--mono);font-size:10px;font-weight:700;
+  color:rgba(255,255,255,.88);max-width:60ch;margin:0 auto;text-shadow:0 2px 24px rgba(0,0,0,.95)}
+.g-scroll{display:block;margin-top:42px;font-family:var(--mono);font-size:10px;font-weight:700;
   letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.44);animation:bob 2.4s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0);opacity:.44}50%{transform:translateY(6px);opacity:.85}}
-
 .g-row,.g-grid,.g-loop{display:grid;gap:1px;background:rgba(255,255,255,.14);margin-top:34px;text-align:left}
 @media(min-width:720px){.g-row{grid-template-columns:repeat(3,1fr)}
   .g-grid{grid-template-columns:repeat(4,1fr)}.g-loop{grid-template-columns:repeat(4,1fr)}}
-.g-row>div,.g-grid>div,.g-loop>div{background:rgba(6,6,6,.94);padding:24px 20px}
+.g-row>div,.g-grid>div,.g-loop>div{background:rgba(7,7,7,.93);padding:24px 21px}
 .g-row b,.g-grid b{display:block;font-family:var(--heading);font-weight:700;
   font-size:clamp(26px,2.7vw,40px);line-height:1;letter-spacing:-.03em;color:#fff;margin-bottom:10px}
 .g-grid b i{font-style:normal;color:var(--red);font-size:.62em}
 .g-row span,.g-grid span,.g-loop span{font-family:var(--body);font-size:13px;line-height:1.55;
-  color:rgba(255,255,255,.64);display:block}
+  color:rgba(255,255,255,.66);display:block}
 .g-loop b{display:block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.2em;
   color:var(--red);margin-bottom:11px}
-
 .g-cred{display:flex;gap:clamp(16px,2.4vw,38px);justify-content:center;flex-wrap:wrap;margin:0 0 26px}
 .g-cred b{font-family:var(--heading);font-weight:700;text-transform:uppercase;
-  font-size:clamp(14px,1.4vw,21px);letter-spacing:.02em;color:rgba(255,255,255,.9)}
-
+  font-size:clamp(14px,1.4vw,21px);color:rgba(255,255,255,.9)}
 .g-tiers{display:grid;gap:1px;background:rgba(255,255,255,.14);margin-top:34px;text-align:left}
 @media(min-width:760px){.g-tiers{grid-template-columns:repeat(4,1fr)}}
-.g-tiers a{background:rgba(6,6,6,.94);padding:26px 20px;text-decoration:none;display:block;
+.g-tiers a{background:rgba(7,7,7,.93);padding:26px 21px;text-decoration:none;display:block;
   transition:background .25s ease,transform .3s cubic-bezier(.16,1,.3,1)}
-.g-tiers a:hover{background:#141414;transform:translateY(-4px)}
+.g-tiers a:hover{background:#151515;transform:translateY(-4px)}
 .g-tiers a.hot{box-shadow:inset 0 2px 0 var(--red)}
 .g-tiers i{font-style:normal;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.2em;
   color:var(--red);display:block;margin-bottom:12px}
 .g-tiers b{display:block;font-family:var(--heading);font-weight:700;text-transform:uppercase;
   font-size:clamp(15px,1.4vw,19px);line-height:1.14;color:#fff;margin-bottom:9px}
 .g-tiers span{font-family:var(--body);font-size:12.5px;line-height:1.5;color:rgba(255,255,255,.58)}
-
 .g-link{display:inline-block;margin-top:28px;font-family:var(--mono);font-size:11px;font-weight:700;
   letter-spacing:.12em;text-transform:uppercase;color:var(--red);text-decoration:none;
   border-bottom:1px solid rgba(227,30,36,.45);padding-bottom:4px}
@@ -99,19 +94,18 @@ body{background:#040404;color:#fff}
 .g-btn:hover{transform:translateY(-3px);box-shadow:0 16px 42px rgba(227,30,36,.45)}
 .g-btn--g{background:rgba(4,4,4,.6);border-color:rgba(255,255,255,.3)}
 .g-btn--g:hover{border-color:#fff;background:rgba(255,255,255,.08)}
-
-/* progress + chapter rail */
 .rail{position:fixed;right:clamp(12px,2vw,28px);top:50%;transform:translateY(-50%);z-index:40;
   display:flex;flex-direction:column;gap:12px}
 .rail button{width:9px;height:9px;border-radius:50%;border:1px solid rgba(255,255,255,.34);
   background:transparent;cursor:pointer;padding:0;transition:all .25s ease}
 .rail button.on{background:var(--red);border-color:var(--red);transform:scale(1.5)}
 .pbar{position:fixed;left:0;top:0;height:2px;background:var(--red);width:0;z-index:50}
-.skip{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:40;
+.skip{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:40;
   font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   color:rgba(255,255,255,.4);background:rgba(4,4,4,.7);border:1px solid rgba(255,255,255,.16);
   padding:9px 16px;cursor:pointer}
 .skip:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+footer.footer{position:relative;z-index:2;background:#040404}
 @media(max-width:720px){.rail{display:none}.g-grid,.g-loop,.g-row{grid-template-columns:1fr 1fr}}
 @media (prefers-reduced-motion:reduce){.g-scroll{animation:none}}
 </style>
@@ -149,28 +143,27 @@ body{background:#040404;color:#fff}
 
 <div class="track" id="track">
   <div class="vp">
-    <div class="corridor" id="corridor"></div>
-    <div class="horizon"></div>
-    <div class="vig"></div>
-    <div class="gates" id="gates"><div class="gate" data-z="900" data-kind="open">
+    <div class="rt" id="rt"><div class="rt-h"></div></div>
+    <div class="rt-v"></div>
+    <div class="gates" id="gates"><div class="gate" data-z="900">
    <span class="g-k">AI-era capability architecture</span>
    <h1 class="g-h1">AI absorbed<br>the work<span class="dot">.</span><br><span class="soft">Nobody rebuilt<br>the people model.</span></h1>
    <p class="g-lede">Execution is instant and effectively free. The constraint moved upstream &mdash; to how fast
       an organisation can see what its people can actually do.</p>
-   <span class="g-scroll">Scroll to run the track &darr;</span></div><div class="gate" data-z="2250" data-kind="stat">
+   <span class="g-scroll">Scroll &darr;</span></div><div class="gate" data-z="2250">
    <span class="g-k">The inflection</span>
    <h2 class="g-h2">Every operation already generates<br>the signal<span class="dot">.</span> <span class="soft">Almost none connect it.</span></h2>
    <div class="g-row">
      <div><b>5+</b><span>Systems capturing capability<br>signal in a typical operation</span></div>
      <div><b>21</b><span>Days after a program &mdash; the<br>least instrumented window</span></div>
      <div><b>0</b><span>Of it connected at<br>the level of the person</span></div>
-   </div></div><div class="gate" data-z="3600" data-kind="value">
+   </div></div><div class="gate" data-z="3600">
    <span class="g-k">24+ years &middot; built and run from inside</span>
    <h2 class="g-h2">Not advice<span class="dot">.</span> <span class="soft">Accountability for whether the number moved.</span></h2>
    <div class="g-cred"><b>Amazon</b><b>Accenture</b><b>Cognizant</b><b>Sutherland</b><b>Aegis</b></div>
    <p class="g-lede">Learning architecture for a global compliance function. Training and quality across two of
       the largest digital-advertising operations in the world. The largest annual new-hire ramp in a
-      25,000-person services business. Named employers, sector-only outcomes &mdash; by contract.</p></div><div class="gate" data-z="4950" data-kind="proof">
+      25,000-person services business. Named employers, sector-only outcomes &mdash; by contract.</p></div><div class="gate" data-z="4950">
    <span class="g-k">Field evidence &middot; sourced, sector-only</span>
    <h2 class="g-h2">Numbers that can be walked<br>through line by line<span class="dot">.</span></h2>
    <div class="g-grid">
@@ -179,7 +172,7 @@ body{background:#040404;color:#fff}
      <div><b>10,000<i>+</i></b><span>Professionals trained across 10+ sectors</span></div>
      <div><b>100<i>%</i></b><span>Would recommend &mdash; every response captured, three cohorts</span></div>
    </div>
-   <a class="g-link" href="/evidence">Every figure, with its source &rarr;</a></div><div class="gate" data-z="6300" data-kind="tiers">
+   <a class="g-link" href="/evidence">Every figure, with its source &rarr;</a></div><div class="gate" data-z="6300">
    <span class="g-k">The portfolio</span>
    <h2 class="g-h2">Four tiers<span class="dot">.</span> <span class="soft">Scoped by depth, not by price.</span></h2>
    <div class="g-tiers">
@@ -187,7 +180,7 @@ body{background:#040404;color:#fff}
      <a href="/capability-architecture"><i>02</i><b>Capability architecture</b><span>Systems, not events. Handover is the deliverable</span></a>
      <a href="/work-intelligence" class="hot"><i>03</i><b>Work Intelligence</b><span>The AI layer over the systems you already run</span></a>
      <a href="/platform"><i>04</i><b>Treeng</b><span>Sixteen AI diagnostic engines. Free to start</span></a>
-   </div></div><div class="gate" data-z="7650" data-kind="loop">
+   </div></div><div class="gate" data-z="7650">
    <span class="g-k">Work Intelligence &middot; the loop</span>
    <h2 class="g-h2">Sense<span class="dot">.</span> Connect<span class="dot">.</span> Predict<span class="dot">.</span> Act<span class="dot">.</span></h2>
    <div class="g-loop">
@@ -196,7 +189,7 @@ body{background:#040404;color:#fff}
      <div><b>PREDICT</b><span>Readiness, risk and next-best intervention, per person, per week</span></div>
      <div><b>ACT</b><span>Nudges inside the tools people already use. Every correction becomes signal</span></div>
    </div>
-   <a class="g-link" href="/intelligence-map">Open the 3D map &rarr;</a></div><div class="gate" data-z="9000" data-kind="close">
+   <a class="g-link" href="/intelligence-map">Open the 3D map &rarr;</a></div><div class="gate" data-z="9000">
    <span class="g-k">One floor first</span>
    <h2 class="g-h1">Start where the<br>number lives<span class="dot">.</span></h2>
    <p class="g-lede">A 120-day activation takes one process, one leader and one number. Data access from day one.
@@ -247,9 +240,7 @@ body{background:#040404;color:#fff}
       <p style="font-family:var(--mono);font-size:9px;font-weight:500;color:rgba(255,255,255,0.12);letter-spacing:0.04em">Judgment-Centered Leadership Design&trade;, Multi-Skilled Talent Pools&trade;, Performance Engine Integration&trade;, and Strategic Products &amp; AI&trade; are trademarks of SSUNDAR.</p>
     </div>
   </section>
-</footer>
-
-<script type="application/ld+json">
+</footer><script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -276,70 +267,67 @@ body{background:#040404;color:#fff}
 <script>
 (function(){
   "use strict";
-  var Z0=900, TOTAL=10400, FOCAL=760, NEAR=120, FAR=2600;
-  var track=document.getElementById('track'), vp=track.querySelector('.vp'),
-      corridor=document.getElementById('corridor'), gatesEl=document.getElementById('gates'),
-      pbar=document.getElementById('pbar'), rail=document.getElementById('rail');
-  var gates=[].slice.call(gatesEl.querySelectorAll('.gate')).map(function(e){
-    return {el:e, z:+e.dataset.z}; });
+  var Z0=900, TOTAL=10500, FOCAL=760;
+  var track=document.getElementById('track'), rt=document.getElementById('rt'),
+      gatesEl=document.getElementById('gates'), pbar=document.getElementById('pbar'),
+      rail=document.getElementById('rail');
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var gates=[].slice.call(gatesEl.querySelectorAll('.gate')).map(function(e){return {el:e,z:+e.dataset.z};});
 
-  /* corridor geometry */
-  var TIES=[], PYL=[];
-  for(var i=0;i<(reduce?8:26);i++){
-    var t=document.createElement('div'); t.className='tie'; corridor.appendChild(t);
-    TIES.push({el:t, z:i*(TOTAL/(reduce?8:26))});
+  /* ── corridor: independent clock, never touches scroll position ── */
+  var NEAR=110, SPAN=4200, TIES=[], PYL=[];
+  for(var i=0,nT=reduce?8:24;i<nT;i++){
+    var t=document.createElement('div'); t.className='tie'; rt.appendChild(t);
+    TIES.push({el:t,z:NEAR+(i/nT)*SPAN}); }
+  for(var j=0,nP=reduce?6:16;j<nP;j++){ ['l','r'].forEach(function(s){
+    var p=document.createElement('div'); p.className='pyl'; rt.appendChild(p);
+    PYL.push({el:p,z:NEAR+(j/nP)*SPAN,side:s==='l'?-1:1}); }); }
+
+  var base=165, boost=0, last=performance.now();
+
+  /* ── gates: scroll drives zoom + fade ── */
+  var camZ=Z0, targetZ=Z0;
+  function onScroll(){
+    var max=track.offsetHeight-window.innerHeight;
+    var p=Math.max(0,Math.min(1,window.scrollY/Math.max(max,1)));
+    targetZ=Z0+p*(TOTAL-Z0);
+    pbar.style.width=(p*100).toFixed(2)+'%';
+    boost=Math.min(620,boost+90);          /* scrolling leans on the throttle */
   }
-  for(var j=0;j<(reduce?6:20);j++){
-    ['l','r'].forEach(function(s){
-      var p=document.createElement('div'); p.className='pyl'; corridor.appendChild(p);
-      PYL.push({el:p, z:j*(TOTAL/(reduce?6:20)), side:s==='l'?-1:1});
-    });
-  }
+  window.addEventListener('scroll',onScroll,{passive:true});
 
-  var W=0,H=0;
-  function size(){ W=vp.clientWidth; H=vp.clientHeight; }
-  window.addEventListener('resize',size,{passive:true}); size();
+  function frame(now){
+    var dt=Math.min(0.05,(now-last)/1000); last=now;
 
-  var camZ=0, targetZ=0;
-  function proj(z){ var d=z-camZ; return {d:d, s:FOCAL/Math.max(d,NEAR)}; }
-
-  function frame(){
-    camZ += (targetZ-camZ)*0.14;
-    if(Math.abs(targetZ-camZ)<0.4) camZ=targetZ;
-
-    /* ties: road level, recycled ahead of the camera */
+    /* track */
+    boost*=0.93;
+    var v=(base+boost)*dt;
     for(var i=0;i<TIES.length;i++){
-      var T=TIES[i], d=T.z-camZ;
-      while(d<NEAR){ T.z+=TOTAL; d=T.z-camZ; }
-      while(d>TOTAL){ T.z-=TOTAL; d=T.z-camZ; }
-      var s=FOCAL/d, w=2600*s, y=190*s;
-      T.el.style.transform='translate(-50%,'+y.toFixed(1)+'px) scaleX('+(w/2600).toFixed(4)+')';
-      T.el.style.width='2600px';
-      T.el.style.opacity=Math.max(0,Math.min(.95,(1-d/FAR))).toFixed(3);
+      var T=TIES[i]; T.z-=v; if(T.z<NEAR) T.z+=SPAN;
+      var s=FOCAL/T.z; T.el.style.width='2600px';
+      T.el.style.transform='translate(-50%,'+(170*s).toFixed(1)+'px) scaleX('+s.toFixed(4)+')';
+      T.el.style.opacity=Math.max(0,Math.min(.9,1-T.z/SPAN)).toFixed(3);
     }
     for(var k=0;k<PYL.length;k++){
-      var P=PYL[k], pd=P.z-camZ;
-      while(pd<NEAR){ P.z+=TOTAL; pd=P.z-camZ; }
-      while(pd>TOTAL){ P.z-=TOTAL; pd=P.z-camZ; }
-      var ps=FOCAL/pd;
-      P.el.style.transform='translate('+(P.side*560*ps).toFixed(1)+'px,'+(-30*ps).toFixed(1)+'px)';
-      P.el.style.height=(240*ps).toFixed(1)+'px';
-      P.el.style.opacity=Math.max(0,Math.min(.9,(1-pd/FAR))).toFixed(3);
+      var P=PYL[k]; P.z-=v; if(P.z<NEAR) P.z+=SPAN;
+      var ps=FOCAL/P.z;
+      P.el.style.transform='translate('+(P.side*540*ps).toFixed(1)+'px,'+(-26*ps).toFixed(1)+'px)';
+      P.el.style.height=(230*ps).toFixed(1)+'px';
+      P.el.style.opacity=Math.max(0,Math.min(.85,1-P.z/SPAN)).toFixed(3);
     }
 
-    /* gates */
+    /* gates ease toward the scroll target so nothing snaps */
+    camZ += (targetZ-camZ)*0.09;
     var nearest=0, nd=1e9;
     for(var g=0;g<gates.length;g++){
-      var G=gates[g], gd=G.z-camZ;
-      var o=0, sc=1;
-      if(gd>-500 && gd<FAR){
-        var t=1-Math.min(1,Math.max(0,gd/1250));          /* 0 far .. 1 here */
-        o = gd<0 ? Math.max(0,1+gd/520) : Math.pow(t,1.35);
-        sc = 0.72+0.28*t + (gd<0 ? (-gd/500)*0.5 : 0);
+      var G=gates[g], gd=G.z-camZ, o=0, sc=1;
+      if(gd>-520 && gd<2200){
+        var t2=1-Math.min(1,Math.max(0,gd/1250));
+        o  = gd<0 ? Math.max(0,1+gd/520) : Math.pow(t2,1.35);
+        sc = 0.74+0.26*t2 + (gd<0 ? (-gd/520)*0.45 : 0);
       }
       G.el.style.opacity=o.toFixed(3);
-      G.el.style.transform='translate(-50%,-50%) scale('+sc.toFixed(3)+') translateZ(0)';
+      G.el.style.transform='translate(-50%,-50%) scale('+sc.toFixed(3)+')';
       G.el.style.pointerEvents = o>0.6 ? 'auto':'none';
       var ad=Math.abs(gd); if(ad<nd){ nd=ad; nearest=g; }
     }
@@ -347,27 +335,19 @@ body{background:#040404;color:#fff}
     requestAnimationFrame(frame);
   }
 
-  function onScroll(){
-    var max=track.offsetHeight-window.innerHeight;
-    var p=Math.max(0,Math.min(1,window.scrollY/Math.max(max,1)));
-    targetZ=Z0+p*(TOTAL-Z0);
-    pbar.style.width=(p*100).toFixed(2)+'%';
-  }
-  window.addEventListener('scroll',onScroll,{passive:true});
-
   gates.forEach(function(G,i){
     var b=document.createElement('button'); b.setAttribute('aria-label','Chapter '+(i+1));
     rail.appendChild(b);
     b.addEventListener('click',function(){
       var max=track.offsetHeight-window.innerHeight;
-      window.scrollTo({top:Math.max(0,((G.z-Z0)/(TOTAL-Z0))*max), behavior:'smooth'});
+      window.scrollTo({top:Math.max(0,((G.z-Z0)/(TOTAL-Z0))*max),behavior:'smooth'});
     });
   });
   document.getElementById('skip').addEventListener('click',function(){
-    window.scrollTo({top:track.offsetHeight-window.innerHeight+10, behavior:'smooth'});
+    window.scrollTo({top:track.offsetHeight-window.innerHeight+10,behavior:'smooth'});
   });
 
-  onScroll(); camZ=targetZ; frame();
+  onScroll(); camZ=targetZ; requestAnimationFrame(frame);
 })();
 </script>
 <script src="app.js"></script>
