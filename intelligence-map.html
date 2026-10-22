@@ -36,22 +36,22 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);overf
 .node{position:absolute;transform:translate(-50%,-50%);cursor:pointer}
 .node:hover{filter:brightness(1.1)}
 
-.hub{width:400px;padding:30px 32px 26px;background:var(--glass2);border:1px solid var(--line);
+.hub{width:440px;padding:34px 36px 30px;background:var(--glass2);border:1px solid var(--line);
   box-shadow:0 30px 80px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.05);text-align:left;transition:box-shadow .5s}
 .hub::before{content:"";position:absolute;left:0;top:0;right:0;height:2px;background:var(--acc)}
 .hub .eyebrow{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
   color:var(--acc);display:flex;align-items:center;gap:10px}
 .hub .eyebrow i{display:inline-block;width:26px;height:2px;background:var(--acc)}
-.hub h2{margin:14px 0 10px;font-family:var(--heading);font-size:34px;font-weight:700;line-height:1.04;
+.hub h2{margin:14px 0 10px;font-family:var(--heading);font-size:38px;font-weight:700;line-height:1.04;
   letter-spacing:-.015em;text-transform:uppercase;text-wrap:balance}
-.hub .title{font-size:16px;color:var(--muted);line-height:1.5}
+.hub .title{font-size:17.5px;color:var(--muted);line-height:1.5}
 .hub .meta{margin-top:14px;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.14em;
   text-transform:uppercase;color:var(--acc)}
 .hub .ring{position:absolute;inset:-14px;border:1px solid var(--acc);opacity:0;transform:scale(.96);transition:opacity .6s,transform .6s}
 .group.focus .hub .ring{opacity:.5;transform:scale(1)}
 .group.focus .hub{box-shadow:0 30px 90px rgba(0,0,0,.65),0 0 80px rgba(227,30,36,.28)}
 
-.branch{width:340px;padding:22px 24px;background:var(--glass);border:1px solid var(--line);
+.branch{width:360px;padding:24px 26px;background:var(--glass);border:1px solid var(--line);
   box-shadow:0 20px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.04);
   opacity:0;transform:translate(-50%,-50%) scale(.55);
   transition:opacity .7s cubic-bezier(.2,.7,.2,1) calc(.3s + var(--i)*.09s),
@@ -63,19 +63,19 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);overf
 .branch .lab{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:10.5px;font-weight:700;
   letter-spacing:.18em;text-transform:uppercase;color:var(--acc);padding-bottom:10px;border-bottom:1px solid rgba(227,30,36,.28)}
 .branch ul{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
-.branch li{position:relative;padding-left:16px;font-size:14.5px;line-height:1.45;color:var(--fg)}
+.branch li{position:relative;padding-left:16px;font-size:15.5px;line-height:1.45;color:var(--fg)}
 .branch li::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;background:var(--acc)}
-.branch li.first{font-weight:600;font-size:15.5px}
+.branch li.first{font-weight:600;font-size:16.5px}
 
-.root{width:480px;padding:40px 38px 34px;background:var(--glass2);border:1px solid rgba(227,30,36,.5);text-align:center;
+.root{width:900px;padding:64px 60px 54px;background:var(--glass2);border:1px solid rgba(227,30,36,.5);text-align:center;
   box-shadow:0 40px 100px rgba(0,0,0,.65),0 0 120px rgba(227,30,36,.12)}
-.root .k{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--acc)}
-.root h1{margin:18px 0 12px;font-family:var(--heading);font-size:44px;font-weight:700;letter-spacing:-.02em;
+.root .k{font-family:var(--mono);font-size:16px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--acc)}
+.root h1{margin:26px 0 18px;font-family:var(--heading);font-size:84px;font-weight:700;letter-spacing:-.02em;
   line-height:.98;text-transform:uppercase}
-.root .tag{font-size:16px;color:var(--muted);line-height:1.5}
-.root .stats{display:flex;justify-content:center;gap:26px;margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
-.root .stats div{font-family:var(--mono);font-size:9.5px;font-weight:700;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
-.root .stats b{display:block;font-family:var(--heading);font-size:24px;color:#fff;letter-spacing:0;margin-bottom:4px}
+.root .tag{font-size:26px;color:var(--muted);line-height:1.5}
+.root .stats{display:flex;justify-content:center;gap:48px;margin-top:36px;padding-top:30px;border-top:1px solid var(--line)}
+.root .stats div{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+.root .stats b{display:block;font-family:var(--heading);font-size:42px;color:#fff;letter-spacing:0;margin-bottom:4px}
 
 #spokes{position:absolute;left:0;top:0;width:4800px;height:4800px;overflow:visible;pointer-events:none}
 #spokes path{fill:none;stroke:var(--acc);stroke-width:2.5;stroke-linecap:round;opacity:.45;stroke-dasharray:var(--len);
@@ -117,7 +117,11 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);overf
   background:radial-gradient(ellipse at 50% 40%,#160607 0%,#050505 62%);transition:opacity 1s,visibility 1s;padding:24px}
 #intro.off{opacity:0;visibility:hidden}
 #intro .card{text-align:center;max-width:620px}
-#intro .orb{position:relative;width:min(200px,50vw);height:min(200px,50vw);margin:0 auto 34px}
+#intro .ldbar{width:min(420px,80vw);height:3px;background:rgba(255,255,255,.1);margin:0 auto;position:relative;overflow:hidden;animation:rise 1s .6s both}
+#intro .ldbar i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--acc);box-shadow:0 0 18px var(--acc);transition:width .25s linear}
+#intro .ldpct{margin-top:14px;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--fg);animation:rise 1s .7s both}
+#intro .sub{margin-top:28px}
+#intro p{min-height:1.6em}
 #intro .orb .core{position:absolute;inset:26px;background:var(--acc);
   box-shadow:0 0 60px rgba(227,30,36,.6),inset 0 -8px 20px rgba(0,0,0,.45);display:grid;place-items:center}
 #intro .orb .core b{font-family:var(--heading);font-size:28px;color:#fff;letter-spacing:-.02em}
@@ -141,7 +145,7 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);overf
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 
 @media (max-width:640px){.btn{padding:11px 12px}.btn .t{display:none}.btn.primary .t{display:inline}#hint{display:none}
-  .hub{width:320px}.branch{width:290px}.root{width:360px}}
+  .hub{width:320px}.branch{width:290px}.root{width:560px;padding:44px 36px}.root h1{font-size:56px}}
 @media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation-duration:.01ms!important}}
 </style>
 </head>
@@ -192,12 +196,12 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);overf
 
 <div id="intro">
   <div class="card">
-    <div class="orb"><div class="core"><b>WI</b></div></div>
     <div class="kicker">SSUNDAR &middot; Work Intelligence</div>
-    <h1>From programs<br>to intelligence<span style="color:var(--acc)">.</span></h1>
-    <p>The whole service line as one map. Six stages, seven lenses each, fifty stops. Let it fly, or take the controls.</p>
-    <button id="start">Begin<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-    <div class="sub">Guided &middot; about three minutes</div>
+    <h1>Loading the map<span style="color:var(--acc)">.</span></h1>
+    <p id="ldmsg">Placing six stages</p>
+    <div class="ldbar"><i id="ldfill"></i></div>
+    <div class="ldpct" id="ldpct">0%</div>
+    <div class="sub">Six stages &middot; seven lenses each &middot; fifty stops</div>
   </div>
 </div>
 
@@ -209,7 +213,7 @@ const LENSES=[['what','What it is'],['why','Why it matters'],['how','How it work
 const STAGES=[{"id": "opportunity", "short": "Opportunity", "n": "01", "eyebrow": "01 — The opportunity", "head": "Capability is generated daily and read quarterly", "sub": "The signal every operation already has.", "rot": -5, "b": {"what": {"lines": ["Dialers, CRMs, quality tools, learning platforms and HR systems each capture a piece of the capability story", "Frontline leaders generate hours of operational signal a day", "Almost none of it is connected at the level of the person"]}, "why": {"lines": ["Capability is managed in arrears and by bucket — quartiles, defect clusters", "Programs are measured by satisfaction in the room", "The 21 days after a program are the highest-leverage window and the least instrumented"]}, "how": {"lines": ["Enterprise AI is now inside the building: approved assistants, premium licences, internal analytics on conversation data", "Mature capability functions already own competency models, indicators, rubrics and calibration", "Operations leaders have stopped asking for training and started asking for predictability"]}, "who": {"lines": ["Operations and delivery leaders who own attrition and ramp", "CHROs and L&D leaders who own programs and assessment", "Technology teams building people analytics without an ontology"]}, "proof": {"lines": ["Behavioural architectures already exist; what is missing is capture, connection and inference", "Hand-tracked cohorts show the signal is there to be read"]}, "guard": {"lines": ["Build on what works; change nothing in the room", "Respect the floor: no new tools, no change to how people are measured", "Scale the architecture, not the headcount"]}, "out": {"lines": ["A market where every client already has the data and the AI, and lacks the design", "A service line one level above program design and delivery"]}}}, {"id": "offering", "short": "The offering", "n": "02", "eyebrow": "02 — The offering", "head": "An AI intelligence layer over the systems a client already runs", "sub": "Sense · Connect · Predict · Act. Bottom-up from the individual.", "rot": 4, "b": {"what": {"lines": ["A capability-strategy engagement, not a software sale", "A living capability record per associate, leader and trainer", "Continuous capability signal replacing quarterly snapshots", "Precision coaching: the right intervention, for the right person, at the right moment"]}, "why": {"lines": ["The next edge in people-intensive operations is people intelligence, not more dashboards", "Every program becomes a continuous asset rather than a calendar event", "Leaders move from reporting the past to shaping the next quarter"]}, "how": {"lines": ["SENSE: quality, transcripts, system behaviour, conversion, tenure, learning and HR events — each where it sits", "CONNECT: one unified capability record per person", "PREDICT: readiness, risk and next-best intervention, per person, per week", "ACT: proactive nudges inside the tools people already use"]}, "who": {"lines": ["Owned by the client; designed by SSUNDAR; run jointly by operations and people functions", "Technology hosts; L&D curates the ontology; operations drives the actions"]}, "proof": {"lines": ["Competency × indicator models already exist in mature functions", "Human-in-the-loop by design: the system recommends, leaders decide"]}, "guard": {"lines": ["Sovereign by design: data never leaves the client", "Explainable to the indicator and the timestamp", "Model layer swappable; the capability graph is the enduring asset"]}, "out": {"lines": ["A capability trajectory per cohort", "A weekly \"who is ready, who needs what\" for every leader", "One number finance can read: attrition and ramp cost avoided"]}}}, {"id": "surfaces", "short": "Surfaces", "n": "03", "eyebrow": "03 — Where it lands", "head": "Five surfaces, one engine", "sub": "Activate where value is fastest; scale where value is largest.", "rot": -3, "b": {"what": {"lines": ["Learning & OD: continuous reinforcement after every program", "Operations: precision coaching at individual level", "Leadership assessment: independent, evidence-based, calibrated", "Trainer & quality system: live calibration intelligence", "Client & account: business reviews powered by people intelligence"]}, "why": {"lines": ["L&D activates fastest on data it already owns", "Operations carries the largest value: attrition and ramp", "Assessment is recurring and cannot be built in-house quickly", "The account surface turns workforce intelligence into growth"]}, "how": {"lines": ["Connect cohorts to learning, quality and HR data; run the reinforcement loop", "Person-level recommendations replace cluster-based refreshers", "Psychometrics plus observed behaviour, normed and calibrated", "Monthly observations become a live inter-rater view"]}, "who": {"lines": ["Head of L&D / OD · Operations and delivery leadership", "CHRO / Talent · Training and quality leadership", "Account and client delivery leaders"]}, "proof": {"lines": ["Each surface reuses scorecards, charters and rubrics the client already has", "Sequencing is proven: fastest data first, largest value second"]}, "guard": {"lines": ["No new tool for the floor to learn", "No change to how people are ranked or rewarded", "Each surface goes live only when its data connection is proven"]}, "out": {"lines": ["Sequence: L&D first, operations second, assessment third", "One 120-day activation covers the first two", "Every surface after that scales on the client’s own stack"]}}}, {"id": "engine", "short": "Engine", "n": "04", "eyebrow": "04 — Under the hood", "head": "Sovereign, compact, built on the stack they already own", "sub": "Ontology · Calibration · Model · Loop.", "rot": 5, "b": {"what": {"lines": ["The client’s competency model translated into observable indicators, anchors and evidence rules — the asset", "A labelled, calibrated example set scored under a Gage R&R-style protocol", "Either the approved enterprise assistant and agents, or a compact open-weight model (7–8B class) fine-tuned on the client’s own data"]}, "why": {"lines": ["Capability scoring is a classification problem — where compact models and enterprise assistants excel", "Rented, generic intelligence lives outside the building; designed intelligence lives inside it", "The value is in the design, not the engineering"]}, "how": {"lines": ["Label two to three thousand real examples with calibrated raters", "Parameter-efficient fine-tuning, or agents on the approved stack", "Serve inside the tenancy; transcription and retrieval inside the boundary", "Monthly re-tuning; drift and bias checked against human calibration"]}, "who": {"lines": ["Technology hosts; L&D owns the labels; operations owns the actions", "SSUNDAR designs the ontology, the labelling protocol and the evaluation harness — and hands all three over"]}, "proof": {"lines": ["Reliability over correctness: the system, not the individual, defines the standard", "Manager calibration is the labelling gold standard"]}, "guard": {"lines": ["No workforce data leaves the client; no external model is trained on it", "Every score explainable to the indicator and the timestamp", "Stack-agnostic by design"]}, "out": {"lines": ["A capability engine that compounds every week it runs", "An owned asset on the balance sheet, not a subscription"]}}}, {"id": "activation", "short": "120 days", "n": "05", "eyebrow": "05 — The activation", "head": "One process. Sense, build, show the trajectory.", "sub": "One floor first. Decision gate at day 90.", "rot": -4, "b": {"what": {"lines": ["Days 1–30: map every signal; connect the first dataset; baseline; 30/60/90", "Days 31–60: ontology locked; first calibrated set; readiness report live for frontline leaders", "Days 61–90: nudges running inside existing tools; assessment layer live for the leadership cohort", "Days 91–120: value read-out with operations, people and finance"]}, "why": {"lines": ["Demonstration earns conviction faster than description", "One floor, one leader, one number is the fastest yes", "Everything learned is reusable on the next process"]}, "how": {"lines": ["On the floor with the process owners, not in a conference room", "Weekly 30-minute reviews with operations and people leadership", "Every artefact handed over weekly, inside the client’s own tools"]}, "who": {"lines": ["Sponsor: L&D / OD · Carrier: CHRO", "Floor owners: process director and associate director", "Executive read-out: COO and delivery lead · Data: Technology · Value: Finance"]}, "proof": {"lines": ["Data access from day one — the single accelerator", "Baseline captured before anything changes", "Success defined in week one, in operations language"]}, "guard": {"lines": ["Zero disruption to service levels or quality processes", "No change to incentives during activation", "Decision gate at day 90"]}, "out": {"lines": ["The first continuous capability trajectory the client has seen", "A per-person readiness report every frontline leader is using", "A funded roadmap for the next three processes"]}}}, {"id": "model", "short": "Business model", "n": "06", "eyebrow": "06 — The business model", "head": "Five revenue lines — priced on outcomes, recurring by design", "sub": "How the service line earns, and keeps earning.", "rot": 3, "b": {"what": {"lines": ["Activation engagement: 120 days, priced against cost avoided on one floor", "Leadership assessment: per leader, per cycle, recurring", "Ontology & calibration design: per process, with annual stewardship", "Program IP under licence, facilitator certification billed separately", "Productised diagnostics: Treeng as the self-serve front door"]}, "why": {"lines": ["Operations budgets are larger and more outcome-driven than learning budgets", "Assessment science and calibration cannot be built in-house quickly", "Licensed IP keeps the designer in the room every time a cohort runs"]}, "how": {"lines": ["Lead with the activation; convert to assessment and stewardship", "License programs; never hand over editable source for a one-time fee", "Use Treeng to qualify and scale beyond consulting hours"]}, "who": {"lines": ["First clients: sales-as-a-service, customer experience, shared services, GCCs, large delivery organisations", "Any enterprise with a mature competency model and an approved AI stack not yet pointed at its own people"]}, "proof": {"lines": ["Built by a practitioner who has designed the programs, the measurement and the governance", "Treeng already ships sixteen diagnostic engines as the productised expression of the same thinking"]}, "guard": {"lines": ["People, not scores, at the centre", "Built to be owned, extended and audited by the client"]}, "out": {"lines": ["A service line one level above program design and delivery", "Strategy → architecture → delivery, and now the intelligence that keeps all three alive"]}}}];
 
 /* ======================= LAYOUT ======================= */
-const W=4800, CX=2400, CY=2400, RING=1500, BR=500;
+const W=4800, CX=2400, CY=2400, RING=1240, RX=1560, RY=820, BR=480;
 const world=document.getElementById('world'), spokes=document.getElementById('spokes');
 const rad=d=>d*Math.PI/180;
 const rot=(x,y,d)=>{const c=Math.cos(rad(d)),s=Math.sin(rad(d));return [x*c-y*s,x*s+y*c];};
@@ -221,12 +225,12 @@ rootEl.innerHTML=`<div class="k">Work Intelligence</div><h1>From programs<br>to 
 <div class="tag">An always-on capability operating system, designed bottom-up from the individual.</div>
 <div class="stats"><div><b>6</b>stages</div><div><b>7</b>lenses</div><div><b>120</b>days</div><div><b>0</b>data leaves</div></div>`;
 world.appendChild(rootEl);
-NODES.push({el:rootEl,x:CX,y:CY,w:480,h:380,r:0,type:'root'});
+NODES.push({el:rootEl,x:CX,y:CY,w:900,h:620,r:0,type:'root'});
 
 const hubAngles=[-90,-30,30,90,150,210];
 const groups=[];
 STAGES.forEach((st,i)=>{
-  const a=hubAngles[i], hx=CX+RING*Math.cos(rad(a)), hy=CY+RING*Math.sin(rad(a));
+  const a=hubAngles[i], hx=CX+RX*Math.cos(rad(a)), hy=CY+RY*Math.sin(rad(a));
   const g=document.createElement('div'); g.className='group';
   g.style.left=hx+'px'; g.style.top=hy+'px'; g.style.transform=`rotate(${st.rot}deg)`;
   let svg=`<svg class="links" viewBox="0 0 1800 1800">`; const bpos=[];
@@ -239,7 +243,7 @@ STAGES.forEach((st,i)=>{
   const hub=document.createElement('div'); hub.className='node hub'; hub.style.left='0px'; hub.style.top='0px';
   hub.innerHTML=`<div class="ring"></div><div class="eyebrow"><i></i>${st.eyebrow}</div><h2>${st.head}</h2><div class="title">${st.sub}</div><div class="meta">Stage ${st.n} of 06</div>`;
   g.appendChild(hub);
-  NODES.push({el:hub,x:hx,y:hy,w:400,h:250,r:st.rot,type:'hub',stage:i});
+  NODES.push({el:hub,x:hx,y:hy,w:440,h:270,r:st.rot,type:'hub',stage:i});
   LENSES.forEach(([key,label],j)=>{
     const d=st.b[key]; const [bx,by]=bpos[j];
     const el=document.createElement('div'); el.className='node branch';
@@ -247,7 +251,7 @@ STAGES.forEach((st,i)=>{
     el.innerHTML=`<div class="lab">${label}</div><ul>${d.lines.map((l,k)=>`<li class="${k===0?'first':''}">${l}</li>`).join('')}</ul>`;
     g.appendChild(el);
     const [wx,wy]=rot(bx,by,st.rot);
-    NODES.push({el,x:hx+wx,y:hy+wy,w:340,h:70+d.lines.length*54,r:st.rot,type:'branch',stage:i,key});
+    NODES.push({el,x:hx+wx,y:hy+wy,w:360,h:76+d.lines.length*58,r:st.rot,type:'branch',stage:i,key});
   });
   world.appendChild(g); groups.push(g);
 });
@@ -255,12 +259,13 @@ STAGES.forEach((st,i)=>{
 let sp='';
 STAGES.forEach((st,i)=>{
   const a=hubAngles[i];
-  const x0=CX+300*Math.cos(rad(a)), y0=CY+300*Math.sin(rad(a));
-  const x1=CX+(RING-250)*Math.cos(rad(a)), y1=CY+(RING-250)*Math.sin(rad(a));
-  const mx=CX+(RING/2)*Math.cos(rad(a+14)), my=CY+(RING/2)*Math.sin(rad(a+14));
+  const ex=Math.cos(rad(a)), ey=Math.sin(rad(a));
+  const x0=CX+460*ex, y0=CY+250*ey;
+  const x1=CX+(RX-260)*ex, y1=CY+(RY-150)*ey;
+  const mx=CX+(RX*0.52)*Math.cos(rad(a+14)), my=CY+(RY*0.52)*Math.sin(rad(a+14));
   const len=Math.hypot(x1-x0,y1-y0)*1.08;
   sp+=`<path d="M${x0} ${y0} Q${mx} ${my} ${x1} ${y1}" style="--len:${len.toFixed(0)};--i:${i}"/>`;
-  const tx=CX+(RING/2+60)*Math.cos(rad(a+22)), ty=CY+(RING/2+60)*Math.sin(rad(a+22));
+  const tx=CX+(RX*0.52+60)*Math.cos(rad(a+22)), ty=CY+(RY*0.52+40)*Math.sin(rad(a+22));
   sp+=`<text x="${tx}" y="${ty}" text-anchor="middle" style="--i:${i}">${st.n} ${st.short.toUpperCase()}</text>`;
 });
 spokes.innerHTML=sp;
@@ -302,11 +307,13 @@ function flyTo(t,dur){
 }
 function targetFor(s){
   const hudH=vh<700?150:190, navH=96;
-  if(s.type==='overview') return {x:CX,y:CY+140,s:Math.min(vw/4000,(vh-hudH-navH-40)/3700),r:0};
+  const avail=vh-hudH-navH;                 /* vertical space between nav and HUD */
+  const yShift=(hudH-navH)/2;               /* screen px to shift content so it centres in that space */
+  if(s.type==='overview'){ const sc=Math.min(vw/3900,avail/2080); return {x:CX,y:CY+yShift/sc,s:sc,r:0}; }
   const n=nodeFor(s);
-  if(s.type==='root') return {x:n.x,y:n.y+70,s:Math.min(vw/600,(vh-hudH-navH-60)/560,1.25),r:0};
-  if(s.type==='hub') return {x:n.x,y:n.y+60,s:Math.max(.22,Math.min(vw/1500,(vh-hudH-navH)/1450,1)),r:n.r};
-  return {x:n.x,y:n.y+40,s:Math.max(.5,Math.min(vw/420,(vh-hudH-navH-40)/(n.h+140),1.45)),r:n.r};
+  if(s.type==='root'){ const sc=Math.min(vw/1040,avail/760,1.1); return {x:n.x,y:n.y+yShift/sc,s:sc,r:0}; }
+  if(s.type==='hub'){ const sc=Math.max(.24,Math.min(vw/1500,avail/1380,1)); return {x:n.x,y:n.y+yShift/sc,s:sc,r:n.r}; }
+  { const sc=Math.max(.5,Math.min(vw/440,(avail-40)/(n.h+140),1.5)); return {x:n.x,y:n.y+yShift/sc,s:sc,r:n.r}; }
 }
 
 /* ======================= STATE ======================= */
@@ -413,14 +420,27 @@ sizeBg(); drawBg();
 /* ======================= START ======================= */
 let started=false;
 cam.x=CX;cam.y=CY;cam.s=1.9;cam.r=0;render();
-function begin(){ started=true;
+function begin(){ if(started) return; started=true;
   document.getElementById('intro').classList.add('off');
   document.getElementById('hud').classList.add('on');
   setTimeout(()=>spokes.classList.add('on'),500);
   go(0,2200);
 }
-document.getElementById('start').onclick=begin;
-try{ if(localStorage.getItem('ssundar_map_v4')){ begin(); } else localStorage.setItem('ssundar_map_v4','1'); }catch(e){}
+/* 5-second loader with status bar, then the map opens itself */
+(function(){
+  const fill=document.getElementById('ldfill'), pct=document.getElementById('ldpct'), msg=document.getElementById('ldmsg');
+  const msgs=[[0,'Placing six stages'],[22,'Drawing forty-two lenses'],[48,'Threading the connectors'],[70,'Calibrating the camera'],[90,'Ready']];
+  const T=5000, t0=performance.now();
+  function tick(now){
+    const u=Math.min(1,(now-t0)/T), e=u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2;
+    const p=Math.round(e*100);
+    fill.style.width=p+'%'; pct.textContent=p+'%';
+    for(const [at,m] of msgs) if(p>=at) msg.textContent=m;
+    if(u<1) requestAnimationFrame(tick); else setTimeout(begin,350);
+  }
+  requestAnimationFrame(tick);
+  document.getElementById('intro').addEventListener('click',begin);   /* click skips */
+})();
 </script>
 </body>
 </html>
