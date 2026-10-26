@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "Nobody Decided This. It Became the Strategy Anyway.",
+      "slug": "insight-nobody-decided-this-became-strategy",
+      "date": "2026-10-26",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "A new executive asks why the company works the way it does, and the room goes quiet before someone says this is just how we do things. No one in that room decided the practice. It accreted from a hundred small, reasonable, local calls, none of them large enough to trip the wire that would summon a real decision, until the sum became a strategy and the strategy hardened into identity. Your governance only scrutinizes what announces itself as a decision, which means your largest commitments, the ones that arrived as defaults, were never examined at all.",
+      "readTime": "5 min",
+      "file": "insight-nobody-decided-this-became-strategy.html",
+      "published": true
+    },
+    {
       "title": "We Gave the Team Ownership. We Kept the Authority.",
       "slug": "insight-gave-ownership-kept-authority",
       "date": "2026-10-23",
