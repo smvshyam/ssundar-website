@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "We Stress-Tested the Decision. The Decision Picked the Test.",
+      "slug": "insight-stress-tested-the-decision",
+      "date": "2026-10-27",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "A decision is basically made, and then, almost as a courtesy to rigor, someone is asked to play devil's advocate. But the challenge you appoint cannot land. The challenger is chosen by the decider, scheduled by the decider, and depends on the decider's goodwill, so the pushback arrives with exactly enough force to be seen and not one degree more, and always at the end, after the decision has set and reversing would cost an hour of shared momentum. The ritual does not produce scrutiny. It produces immunity: a certificate of due diligence that makes the decision harder to reopen, not better. You did not build a mechanism that catches bad decisions. You built one that launders confident ones.",
+      "readTime": "5 min",
+      "file": "insight-stress-tested-the-decision.html",
+      "published": true
+    },
+    {
       "title": "Nobody Decided This. It Became the Strategy Anyway.",
       "slug": "insight-nobody-decided-this-became-strategy",
       "date": "2026-10-26",
