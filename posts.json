@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "One Story Decided It. The Data Never Got a Turn.",
+      "slug": "insight-one-story-decided-it",
+      "date": "2026-10-28",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "A single vivid failure overrode forty quiet successes, and nobody in the room noticed they had decided by the rarest case in the dataset.",
+      "readTime": "5 min",
+      "file": "insight-one-story-decided-it.html",
+      "published": true
+    },
+    {
       "title": "We Stress-Tested the Decision. The Decision Picked the Test.",
       "slug": "insight-stress-tested-the-decision",
       "date": "2026-10-27",
