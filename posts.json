@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "The Facts Didn't Change. The Sentence Did.",
+      "slug": "insight-the-facts-didnt-change",
+      "date": "2026-10-29",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "The same proposal flips from approved to deferred when only the opening sentence changes, and the room never notices the wording cast the heaviest vote.",
+      "readTime": "6 min",
+      "file": "insight-the-facts-didnt-change.html",
+      "published": true
+    },
+    {
       "title": "One Story Decided It. The Data Never Got a Turn.",
       "slug": "insight-one-story-decided-it",
       "date": "2026-10-28",
