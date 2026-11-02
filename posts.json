@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "We Gathered the Evidence. The Evidence Agreed With Us.",
+      "slug": "insight-evidence-agreed-with-us",
+      "date": "2026-11-02",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "A room decides first, then commissions the analysis to prove it right. The deck comes back thorough, rigorous and entirely confirmatory, because a search that starts from the answer can raise your confidence but never lower it. You did not gather evidence for the decision. You gathered permission for it, and filed the permission under evidence.",
+      "readTime": "6 min",
+      "file": "insight-evidence-agreed-with-us.html",
+      "published": true
+    },
+    {
       "title": "Every Case Like This Failed. Ours Was Different.",
       "slug": "insight-ours-was-different",
       "date": "2026-10-30",
