@@ -299,14 +299,16 @@ document.addEventListener('DOMContentLoaded', function () {
 // SSUNDAR GA4 Event Tracking v1.0
 // Key events (marked in GA4 admin): engage_submit, engage_click, article_read. Also: platform_click
 (function () {
-  if (typeof gtag !== 'function') return;
-
+  // gtag is injected by cookie-consent.js AFTER consent, which may be after this
+  // script runs. Never bail at load time — resolve gtag at fire time instead.
   var pagePath = window.location.pathname.replace(/\/$/, '') || '/';
   var pageTitle = document.title || pagePath;
-  var isArticle = /\/(insight-|what-200|competency-model|why-leadership|gcc-borrowed)/.test(pagePath);
+  var isArticle = /\/(insight-|what-200|competency-model|why-leadership|gcc-borrowed)/.test(pagePath)
+    || !!document.querySelector('link[href*="blog.css"]');
 
   function fire(eventName, params) {
-    gtag('event', eventName, Object.assign({ page_path: pagePath, page_title: pageTitle }, params || {}));
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', eventName, Object.assign({ page_path: pagePath, page_title: pageTitle }, params || {}));
   }
 
   // 1. CTA CLICK TRACKING
