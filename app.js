@@ -230,13 +230,23 @@ document.addEventListener('DOMContentLoaded', function () {
           if (r.ok) {
             form.style.display = 'none';
             document.getElementById('formSuccess').style.display = 'block';
+            // GA4 key event — the only number that maps to pipeline. No PII sent.
+            if (typeof gtag === 'function') {
+              gtag('event', 'engage_submit', {
+                page_path: location.pathname,
+                employees: (document.getElementById('employees') || {}).value || '',
+                timeline: (document.getElementById('timeline') || {}).value || ''
+              });
+            }
           } else {
             btn.textContent = 'Submit Inquiry.';
             btn.style.opacity = '1';
             btn.style.pointerEvents = 'auto';
+            if (typeof gtag === 'function') gtag('event', 'engage_submit_error', { status: r.status });
             alert('Submission failed. Email shyam@ssundar.com directly.');
           }
         }).catch(function() {
+          if (typeof gtag === 'function') gtag('event', 'engage_submit_error', { status: 'network' });
           btn.textContent = 'Submit Inquiry.';
           btn.style.opacity = '1';
           btn.style.pointerEvents = 'auto';
@@ -287,7 +297,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // SSUNDAR GA4 Event Tracking v1.0
-// Key events: engage_click, platform_click, article_read
+// Key events (marked in GA4 admin): engage_submit, engage_click, article_read. Also: platform_click
 (function () {
   if (typeof gtag !== 'function') return;
 
