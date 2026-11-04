@@ -544,4 +544,10 @@
   <url><loc>https://ssundar.com/insight-ours-was-different</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://ssundar.com/insight-evidence-agreed-with-us</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://ssundar.com/insight-impressive-so-we-stopped-looking</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-11-03</lastmod></url>
+  <url>
+    <loc>https://ssundar.com/insight-spent-too-much-to-stop</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
