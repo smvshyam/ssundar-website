@@ -41,8 +41,33 @@ exports.handler = async (event) => {
     return { statusCode: 400, headers, body: '{"error":"Invalid JSON body"}' };
   }
 
-  const { to_email, to_name, company, role, industry, altitude, zone, pattern_name, hcaptcha_token } = payload;
+  const { to_email, to_name, company, role, industry, altitude, zone, pattern_name, hcaptcha_token, kind, region } = payload;
   if (!to_email) return { statusCode: 400, headers, body: '{"error":"Missing to_email"}' };
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(to_email)) return { statusCode: 400, headers, body: '{"error":"Invalid email"}' };
+
+  // ---- March Bench Diagnosis: send the ONE matching page (India vs rest of world). Never both. ----
+  if (kind === 'diagnosis') {
+    const path = region === 'in' ? '/march-bench-diagnosis-in-6r9qc8fy9qv0' : '/march-bench-diagnosis-gl-yzwfy653kcly';
+    const url = 'https://ssundar.com' + path;
+    try {
+      const r = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          from: 'Shyam Sundar <shyam@ssundar.com>',
+          to: [to_email],
+          subject: 'March Bench Diagnosis — the four-week offer',
+          reply_to: 'shyam@ssundar.com',
+          html: buildDiagnosisEmail(company, url)
+        })
+      });
+      if (!r.ok) { console.error('Resend diagnosis status:', r.status); return { statusCode: 502, headers, body: '{"error":"Email could not be sent"}' }; }
+      return { statusCode: 200, headers, body: '{"success":true}' };
+    } catch (err) {
+      console.error('diagnosis email error:', sanitizeForLog(err.message));
+      return { statusCode: 500, headers, body: '{"error":"Email service temporarily unavailable"}' };
+    }
+  }
 
   // hCaptcha server-side verification
   if (hcaptchaSecret) {
@@ -170,4 +195,17 @@ function buildThankyouEmail(firstName, company, role, industry, altitude, zone, 
   </div>
 </body>
 </html>`;
+}
+
+function buildDiagnosisEmail(company, url) {
+  const safeCompany = (company || '').toString().replace(/[<>&"]/g, '').slice(0, 80);
+  return `<!DOCTYPE html><html><body style="margin:0;padding:0;background:#0a0a0a;font-family:Georgia,serif;">
+  <div style="max-width:600px;margin:20px auto;background:#111;border-top:3px solid #E31E24;padding:36px 40px;color:#fff;">
+    <p style="font-size:11px;letter-spacing:.18em;color:#E31E24;margin:0 0 18px;">SSUNDAR. &middot; MARCH BENCH DIAGNOSIS</p>
+    <h1 style="font-size:24px;line-height:1.2;margin:0 0 16px;color:#fff;">Which of your accounts will be short of trained people in March?</h1>
+    <p style="font-size:15px;line-height:1.7;color:rgba(255,255,255,.8);margin:0 0 18px;">Thank you${safeCompany ? ' &mdash; ' + safeCompany : ''}. The four-week offer, with its fee and what you hold at the end of week four, is on the page below. It is private to this link and not indexed.</p>
+    <p style="margin:0 0 26px;"><a href="${url}" style="display:inline-block;background:#E31E24;color:#fff;text-decoration:none;padding:14px 22px;font-size:13px;letter-spacing:.1em;">OPEN THE DIAGNOSIS OFFER &rarr;</a></p>
+    <p style="font-size:14px;line-height:1.7;color:rgba(255,255,255,.65);margin:0 0 10px;">I will reply myself within 48 hours with a time for the 45-minute working session. If it is faster, WhatsApp +91 96639 74926.</p>
+    <p style="font-size:14px;line-height:1.7;color:rgba(255,255,255,.65);margin:0;">Shyam Sundar MV<br>Founder, SSUNDAR &middot; shyam@ssundar.com</p>
+  </div></body></html>`;
 }

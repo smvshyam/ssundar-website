@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "It Was Precise. Nobody Checked If It Was True.",
+      "slug": "insight-precise-nobody-checked-if-true",
+      "date": "2026-11-06",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "A figure carried to two decimal places ends the conversation a range would have started, and the room mistakes the precision of the number for evidence that it is true. Precision is manufactured inside the model; accuracy has to be earned outside it, against a world that never got a vote. An organization that cannot tell a confident number from a knowable one keeps promoting the nerve to round and calling it rigor.",
+      "readTime": "6 min",
+      "file": "insight-precise-nobody-checked-if-true.html",
+      "published": true
+    },
+    {
       "title": "The Most Senior Person Spoke First. Nobody Decided Anything After That.",
       "slug": "insight-senior-person-spoke-first",
       "date": "2026-11-05",

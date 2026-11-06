@@ -17,6 +17,7 @@
   <url><loc>https://ssundar.com/workshops</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-09-12</lastmod></url>
   <url><loc>https://ssundar.com/play-labs</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-09-12</lastmod></url>
 
+  <url><loc>https://ssundar.com/capability-forward</loc><priority>1.0</priority><changefreq>monthly</changefreq><lastmod>2026-11-06</lastmod></url>
   <url><loc>https://ssundar.com/work-intelligence</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://ssundar.com/intelligence-map</loc><priority>0.8</priority><changefreq>monthly</changefreq><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://ssundar.com/activation</loc><priority>0.8</priority><changefreq>monthly</changefreq><lastmod>2026-10-22</lastmod></url>
@@ -551,4 +552,5 @@
     <priority>0.7</priority>
   </url>
   <url><loc>https://ssundar.com/insight-senior-person-spoke-first</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://ssundar.com/insight-precise-nobody-checked-if-true</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-11-06</lastmod></url>
 </urlset>

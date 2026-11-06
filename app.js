@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var valid = true;
-      ['company', 'role', 'challenge', 'email'].forEach(function (id) {
+      ['challenge', 'seats', 'hireplan', 'budget', 'company', 'role', 'email'].forEach(function (id) {
         var input = document.getElementById(id);
         var error = document.getElementById('err-' + id);
         if (!input || !error) return;
@@ -199,6 +199,10 @@ document.addEventListener('DOMContentLoaded', function () {
           error.classList.remove('show');
         }
       });
+      var _regionEl = form.querySelector('input[name="region"]:checked');
+      var _regionErr = document.getElementById('err-region');
+      if (_regionErr) { _regionErr.textContent = _regionEl ? '' : 'Choose one'; _regionErr.classList.toggle('show', !_regionEl); if (!_regionEl) valid = false; }
+      if (!valid) { var firstBad = form.querySelector('.form-error.show'); var st = firstBad && firstBad.closest('.step'); if (st) { form.querySelectorAll('.step').forEach(function (x) { x.classList.toggle('on', x === st); }); } }
       if (valid) {
         // Bot checks — silent rejection (don't tell bots why)
         var _elapsed = Date.now() - _formLoadTime;
@@ -214,13 +218,18 @@ document.addEventListener('DOMContentLoaded', function () {
         btn.style.opacity = '0.5';
         btn.style.pointerEvents = 'none';
         var fd = new FormData();
-        fd.append('company', document.getElementById('company').value);
-        fd.append('role', document.getElementById('role').value);
-        fd.append('employees', document.getElementById('employees').value);
-        fd.append('challenge', document.getElementById('challenge').value);
-        fd.append('email', document.getElementById('email').value);
-        fd.append('timeline', document.getElementById('timeline') ? document.getElementById('timeline').value : '');
-        fd.append('_subject', 'SSUNDAR. Engagement Inquiry — ' + document.getElementById('company').value);
+        function v(id) { var el = document.getElementById(id); return el ? el.value : ''; }
+        var _region = _regionEl ? _regionEl.value : '';
+        fd.append('company', v('company'));
+        fd.append('role', v('role'));
+        fd.append('email', v('email'));
+        fd.append('account', v('challenge'));
+        fd.append('seats', v('seats'));
+        fd.append('hire_plan', v('hireplan'));
+        fd.append('budget_owner', v('budget'));
+        fd.append('region', _region === 'in' ? 'India' : 'Outside India');
+        fd.append('simulator', v('sim'));
+        fd.append('_subject', 'March Bench Diagnosis — ' + v('company') + ' (' + (_region === 'in' ? 'India' : 'Outside India') + ')');
         // Attach hCaptcha token if available
         var hcToken = document.querySelector('[name="h-captcha-response"]');
         if (hcToken && hcToken.value) fd.append('h-captcha-response', hcToken.value);
@@ -229,13 +238,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }).then(function(r) {
           if (r.ok) {
             form.style.display = 'none';
-            document.getElementById('formSuccess').style.display = 'block';
+            var _succ = document.getElementById('formSuccess'); _succ.style.display = 'block';
+            // Route to the ONE matching diagnosis page. The other is never shown.
+            var _pages = window.__diagPages || {}; var _page = _pages[_region] || '/capability-forward';
+            var _dl = document.getElementById('diagLink'); if (_dl) _dl.href = _page;
+            try { _succ.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e0) {}
+            // Email the same page (best effort)
+            try {
+              fetch('/.netlify/functions/send-thankyou', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ kind: 'diagnosis', region: _region, to_email: v('email'), company: v('company') }) }).catch(function () {});
+            } catch (e1) {}
             // GA4 key event — the only number that maps to pipeline. No PII sent.
             if (typeof gtag === 'function') {
+              var _seats = parseInt(v('seats'), 10) || 0;
               gtag('event', 'engage_submit', {
                 page_path: location.pathname,
-                employees: (document.getElementById('employees') || {}).value || '',
-                timeline: (document.getElementById('timeline') || {}).value || ''
+                region: _region,
+                budget_owner: v('budget').slice(0, 40),
+                seats_band: _seats < 50 ? '<50' : _seats < 200 ? '50-199' : _seats < 500 ? '200-499' : '500+',
+                account_named: v('challenge').trim().length > 20 ? 'yes' : 'no'
               });
             }
           } else {
@@ -376,93 +397,5 @@ document.addEventListener('DOMContentLoaded', function () {
 // Floating 3D launcher, nav link, footer link.
 // Injected here so all 100+ pages stay in sync from one file.
 // ============================================
-(function () {
-  var TREENG = 'https://treeng.ai';
+// Treeng orb and nav 'Platform.' injection removed 2026-11-06: Treeng appears once, in the forecast panel, by design.
 
-  function ready(fn) {
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
-    else fn();
-  }
-
-  ready(function () {
-
-    // --- 1. Floating 3D launcher -------------------------------------------
-    if (!document.querySelector('.treeng-orb')) {
-      var orb = document.createElement('a');
-      orb.className = 'treeng-orb';
-      orb.href = TREENG;
-      orb.target = '_blank';
-      orb.rel = 'noopener noreferrer';
-      orb.setAttribute('aria-label', 'Open Treeng — run a free diagnostic');
-      orb.innerHTML =
-        '<span class="treeng-orb__label"><b>Treeng</b> &mdash; run a free diagnostic</span>' +
-        '<span class="treeng-orb__core">' +
-          '<span class="treeng-orb__ring"></span>' +
-          '<span class="treeng-orb__ring treeng-orb__ring--2"></span>' +
-          '<span class="treeng-orb__dot"></span>' +
-          '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" ' +
-            'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
-            '<path d="M12 21V12"/>' +
-            '<path d="M12 12 6.5 7.5"/>' +
-            '<path d="M12 12l5.5-4.5"/>' +
-            '<circle cx="12" cy="4" r="2.1"/>' +
-            '<circle cx="5" cy="9" r="2.1"/>' +
-            '<circle cx="19" cy="9" r="2.1"/>' +
-          '</svg>' +
-        '</span>';
-      orb.addEventListener('click', function () {
-        if (typeof gtag === 'function') {
-          gtag('event', 'treeng_click', { source: 'floating_orb', page: location.pathname });
-        }
-      });
-      document.body.appendChild(orb);
-
-      // keep clear of the cookie banner while it is showing
-      var bar = document.getElementById('cookieBar');
-      if (bar) {
-        var lift = function () {
-          var shown = bar.offsetParent !== null && bar.style.display !== 'none';
-          orb.style.bottom = shown ? (bar.offsetHeight + 26) + 'px' : '';
-        };
-        lift();
-        window.addEventListener('resize', lift);
-        if (window.MutationObserver) {
-          new MutationObserver(lift).observe(bar, { attributes: true, attributeFilter: ['style'] });
-        }
-      }
-    }
-
-    // --- 2. Nav: add Platform. where it is missing --------------------------
-    function addNavLink(container, cls) {
-      if (!container) return;
-      if (container.querySelector('a[href="/platform"]')) return;
-      var a = document.createElement('a');
-      if (cls) a.className = cls;
-      a.href = '/platform';
-      a.innerHTML = 'Platform<span class="dot">.</span>';
-      var about = container.querySelector('a[href="/about"]');
-      if (about) container.insertBefore(a, about);
-      else {
-        var cta = container.querySelector('.nav-cta, a[href*="exlprs.com"]');
-        cta ? container.insertBefore(a, cta) : container.appendChild(a);
-      }
-    }
-    addNavLink(document.querySelector('.nav-links'), 'nav-link');
-    addNavLink(document.getElementById('mobileOverlay'), '');
-
-    // --- 3. Footer: retire the "in development" placeholder -----------------
-    Array.prototype.forEach.call(
-      document.querySelectorAll('footer .footer-link'),
-      function (el) {
-        if (el.tagName !== 'SPAN') return;
-        if (!/in development/i.test(el.textContent)) return;
-        var a = document.createElement('a');
-        a.className = 'footer-link';
-        a.href = '/platform';
-        a.innerHTML = 'Platform<span class="dot">.</span>';
-        el.parentNode.replaceChild(a, el);
-      }
-    );
-
-  });
-})();

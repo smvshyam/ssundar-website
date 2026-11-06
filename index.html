@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SSUNDAR. — AI-Era Capability Architecture</title>
-<meta name="description" content="AI absorbed the work. Nobody rebuilt the people model. Capability strategy, capability architecture, Work Intelligence and AI diagnostics — built and run from inside Fortune 500 operations.">
-<meta property="og:title" content="SSUNDAR. — AI-Era Capability Architecture">
-<meta property="og:description" content="AI absorbed the work. Nobody rebuilt the people model.">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Know in January whether your March bench will hold | SSUNDAR.</title>
+<meta name="description" content="Most operations lose their margin in the 60 to 90 days after offer, and nobody forecasts them. We do, on your own data, in four weeks. Capability Forward, from SSUNDAR.">
+<meta property="og:title" content="Know in January whether your March bench will hold | SSUNDAR.">
+<meta property="og:description" content="Most operations lose their margin in the 60 to 90 days after offer, and nobody forecasts them. We do, on your own data, in four weeks.">
 <meta property="og:type" content="website"><meta property="og:url" content="https://ssundar.com/">
 <meta property="og:image" content="https://ssundar.com/og-default.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
@@ -16,98 +16,95 @@
 <link rel="stylesheet" href="/fonts.css">
 <link rel="stylesheet" href="styles.css">
 <style>
+/* ---- story page: mobile first, snap panels, no decoration ---- */
+html{scroll-snap-type:y proximity;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{background:#040404;color:#fff}
 .nav{position:fixed}
-.track{position:relative;height:760vh}
-.vp{position:sticky;top:0;height:100vh;overflow:hidden;
-  background:radial-gradient(1200px 780px at 50% 60%,rgba(227,30,36,.12) 0%,transparent 72%),#040404}
-
-/* corridor — runs on its own clock */
-.rt{position:absolute;inset:0;z-index:0;pointer-events:none}
-.rt-h{position:absolute;left:0;right:0;top:58%;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(227,30,36,.55),transparent);
-  box-shadow:0 0 110px 36px rgba(227,30,36,.15)}
-.tie{position:absolute;left:50%;top:58%;height:3px;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.82) 14%,rgba(255,255,255,.82) 86%,transparent)}
-.tie::after{content:'';position:absolute;left:50%;top:-1px;bottom:-1px;width:9%;margin-left:-4.5%;
-  background:var(--red);box-shadow:0 0 16px rgba(227,30,36,.95)}
-.pyl{position:absolute;left:50%;top:58%;width:3px;
-  background:linear-gradient(to top,var(--red),rgba(227,30,36,0));box-shadow:0 0 18px rgba(227,30,36,.5)}
-.rt-v{position:absolute;inset:0;background:
-  linear-gradient(to bottom,rgba(4,4,4,.62) 0%,rgba(4,4,4,.22) 44%,rgba(4,4,4,.08) 58%,rgba(4,4,4,.9) 100%)}
-
-/* gates — scroll drives zoom + fade */
-.gates{position:absolute;inset:0;z-index:2}
-.gate{position:absolute;left:50%;top:48%;width:min(1080px,88vw);padding:34px 28px;
-  background:radial-gradient(ellipse at 50% 50%,rgba(4,4,4,.78) 0%,rgba(4,4,4,.5) 55%,transparent 78%);
-  transform:translate(-50%,-50%);opacity:0;will-change:transform,opacity;text-align:center}
-.g-k{font-family:var(--mono);font-size:clamp(9.5px,.78vw,11px);font-weight:700;letter-spacing:.24em;
-  text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:9px;margin-bottom:22px}
-.g-k::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--red)}
-.g-h1{font-family:var(--heading);font-weight:700;text-transform:uppercase;
-  font-size:clamp(40px,7vw,106px);line-height:.9;letter-spacing:-.04em;margin:0 0 26px;
-  text-shadow:0 10px 60px rgba(0,0,0,.95)}
-.g-h2{font-family:var(--heading);font-weight:700;text-transform:uppercase;
-  font-size:clamp(28px,4.4vw,64px);line-height:.98;letter-spacing:-.032em;margin:0 0 26px;
-  text-shadow:0 8px 50px rgba(0,0,0,.95)}
-.g-h1 .soft,.g-h2 .soft{color:rgba(255,255,255,.62)}
-.g-lede{font-family:var(--body);font-size:clamp(15px,1.3vw,20px);line-height:1.6;
-  color:rgba(255,255,255,.88);max-width:60ch;margin:0 auto;text-shadow:0 2px 24px rgba(0,0,0,.95)}
-.g-scroll{display:block;margin-top:42px;font-family:var(--mono);font-size:10px;font-weight:700;
-  letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.44);animation:bob 2.4s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:translateY(0);opacity:.44}50%{transform:translateY(6px);opacity:.85}}
-.g-row,.g-grid,.g-loop{display:grid;gap:1px;background:rgba(255,255,255,.14);margin-top:34px;text-align:left}
-@media(min-width:720px){.g-row{grid-template-columns:repeat(3,1fr)}
-  .g-grid{grid-template-columns:repeat(4,1fr)}.g-loop{grid-template-columns:repeat(4,1fr)}}
-.g-row>div,.g-grid>div,.g-loop>div{background:rgba(7,7,7,.93);padding:24px 21px}
-.g-row b,.g-grid b{display:block;font-family:var(--heading);font-weight:700;
-  font-size:clamp(26px,2.7vw,40px);line-height:1;letter-spacing:-.03em;color:#fff;margin-bottom:10px}
-.g-grid b i{font-style:normal;color:var(--red);font-size:.62em}
-.g-row span,.g-grid span,.g-loop span{font-family:var(--body);font-size:13px;line-height:1.55;
-  color:rgba(255,255,255,.66);display:block}
-.g-loop b{display:block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.2em;
-  color:var(--red);margin-bottom:11px}
-.g-cred{display:flex;gap:clamp(16px,2.4vw,38px);justify-content:center;flex-wrap:wrap;margin:0 0 26px}
-.g-cred b{font-family:var(--heading);font-weight:700;text-transform:uppercase;
-  font-size:clamp(14px,1.4vw,21px);color:rgba(255,255,255,.9)}
-.g-tiers{display:grid;gap:1px;background:rgba(255,255,255,.14);margin-top:34px;text-align:left}
-@media(min-width:760px){.g-tiers{grid-template-columns:repeat(4,1fr)}}
-.g-tiers a{background:rgba(7,7,7,.93);padding:26px 21px;text-decoration:none;display:block;
-  transition:background .25s ease,transform .3s cubic-bezier(.16,1,.3,1)}
-.g-tiers a:hover{background:#151515;transform:translateY(-4px)}
-.g-tiers a.hot{box-shadow:inset 0 2px 0 var(--red)}
-.g-tiers i{font-style:normal;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.2em;
-  color:var(--red);display:block;margin-bottom:12px}
-.g-tiers b{display:block;font-family:var(--heading);font-weight:700;text-transform:uppercase;
-  font-size:clamp(15px,1.4vw,19px);line-height:1.14;color:#fff;margin-bottom:9px}
-.g-tiers span{font-family:var(--body);font-size:12.5px;line-height:1.5;color:rgba(255,255,255,.58)}
-.g-link{display:inline-block;margin-top:30px;font-family:var(--mono);font-size:12px;font-weight:700;
-  letter-spacing:.11em;text-transform:uppercase;color:#fff;text-decoration:none;
-  background:var(--red);border:1px solid var(--red);padding:16px 30px;
-  box-shadow:0 10px 34px rgba(227,30,36,.35),0 0 0 6px rgba(4,4,4,.85);
-  transition:transform .2s cubic-bezier(.16,1,.3,1),box-shadow .2s ease}
-.g-link:hover{transform:translateY(-3px);box-shadow:0 16px 44px rgba(227,30,36,.5),0 0 0 6px rgba(4,4,4,.85)}
-.g-acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:36px}
-.g-btn{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
-  padding:18px 34px;text-decoration:none;background:var(--red);color:#fff;border:1px solid var(--red);
-  transition:transform .2s cubic-bezier(.16,1,.3,1),box-shadow .2s ease}
-.g-btn:hover{transform:translateY(-3px);box-shadow:0 16px 42px rgba(227,30,36,.45)}
-.g-btn--g{background:rgba(4,4,4,.6);border-color:rgba(255,255,255,.3)}
-.g-btn--g:hover{border-color:#fff;background:rgba(255,255,255,.08)}
-.rail{position:fixed;right:clamp(12px,2vw,28px);top:50%;transform:translateY(-50%);z-index:40;
-  display:flex;flex-direction:column;gap:12px}
-.rail button{width:9px;height:9px;border-radius:50%;border:1px solid rgba(255,255,255,.34);
-  background:transparent;cursor:pointer;padding:0;transition:all .25s ease}
-.rail button.on{background:var(--red);border-color:var(--red);transform:scale(1.5)}
-.pbar{position:fixed;left:0;top:0;height:2px;background:var(--red);width:0;z-index:50}
-.skip{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:40;
-  font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(255,255,255,.4);background:rgba(4,4,4,.7);border:1px solid rgba(255,255,255,.16);
-  padding:9px 16px;cursor:pointer}
-.skip:hover{color:#fff;border-color:rgba(255,255,255,.4)}
-footer.footer{position:relative;z-index:2;background:#040404}
-@media(max-width:720px){.rail{display:none}.g-grid,.g-loop,.g-row{grid-template-columns:1fr 1fr}}
-@media (prefers-reduced-motion:reduce){.g-scroll{animation:none}}
+.pn{min-height:100svh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;
+  padding:calc(78px + env(safe-area-inset-top)) 20px calc(96px + env(safe-area-inset-bottom));position:relative}
+.pn .in{width:100%;max-width:1080px;margin:0 auto}
+.k{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);
+  display:flex;align-items:center;gap:9px;margin:0 0 18px}
+.k::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--red);flex:none}
+h1.t,h2.t{font-family:var(--heading);font-weight:700;text-transform:uppercase;letter-spacing:-.03em;line-height:.96;margin:0 0 18px}
+h1.t{font-size:clamp(34px,8.6vw,92px)}
+h2.t{font-size:clamp(28px,6.4vw,64px)}
+.t .soft{color:rgba(255,255,255,.58)}
+.l{font-family:var(--body);font-size:clamp(16px,1.25vw,19px);line-height:1.6;color:rgba(255,255,255,.88);max-width:62ch;margin:0 0 14px}
+.l strong{color:#fff;font-weight:600}
+.q{font-family:var(--heading);font-weight:700;text-transform:uppercase;font-size:clamp(19px,2.4vw,30px);line-height:1.1;
+  color:#fff;border-left:3px solid var(--red);padding-left:16px;margin:28px 0 0;max-width:30ch}
+.theirs{font-family:var(--body);font-style:italic;font-size:clamp(16px,1.3vw,20px);color:rgba(255,255,255,.7);margin:0 0 10px}
+.grid{display:grid;gap:1px;background:rgba(255,255,255,.14);margin-top:26px}
+.grid>div{background:#0a0a0a;padding:20px 18px}
+.grid b{display:block;font-family:var(--heading);font-weight:700;font-size:clamp(24px,2.6vw,40px);line-height:1;letter-spacing:-.03em;margin-bottom:8px}
+.grid b i{font-style:normal;color:var(--red);font-size:.62em}
+.grid span{font-family:var(--body);font-size:14px;line-height:1.55;color:rgba(255,255,255,.7);display:block}
+.grid .m{display:block;margin-top:8px;font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+@media(min-width:720px){.grid.c3{grid-template-columns:repeat(3,1fr)}.grid.c4{grid-template-columns:repeat(4,1fr)}.grid.c2{grid-template-columns:repeat(2,1fr)}}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:14px 26px;font-family:var(--mono);font-size:12px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:var(--red);color:#fff;border:1px solid var(--red);cursor:pointer}
+.btn.g{background:transparent;border-color:rgba(255,255,255,.3);color:#fff}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.small{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:rgba(255,255,255,.45);line-height:1.6;margin-top:14px}
+.small a{color:var(--red);text-decoration:none}
+/* sector toggle */
+.seg{display:inline-flex;border:1px solid rgba(255,255,255,.22);margin:0 0 6px}
+.seg button{min-height:44px;padding:0 16px;background:transparent;border:0;color:rgba(255,255,255,.6);font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.seg button.on{background:#fff;color:#0a0a0a}
+/* gate stepper */
+.steps{display:flex;gap:6px;margin:22px 0 14px;overflow-x:auto;padding-bottom:4px}
+.steps button{flex:1 0 auto;min-width:64px;min-height:44px;background:#0a0a0a;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.6);
+  font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.steps button.on{border-color:var(--red);color:#fff;box-shadow:inset 0 3px 0 var(--red)}
+.gatecard{background:#0a0a0a;border:1px solid rgba(255,255,255,.14);padding:22px 20px}
+.gatecard h3{font-family:var(--heading);font-weight:700;text-transform:uppercase;font-size:clamp(20px,2.4vw,30px);margin:0 0 10px;line-height:1.05}
+.gatecard .hold,.gatecard .stop{font-family:var(--body);font-size:15px;line-height:1.6;margin:0 0 8px;color:rgba(255,255,255,.85)}
+.gatecard .hold b,.gatecard .stop b{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:4px}
+.gatecard .stop{color:rgba(255,255,255,.62)}
+/* simulator */
+.simwrap{display:grid;gap:14px}
+@media(min-width:900px){.simwrap{grid-template-columns:1.3fr .9fr;align-items:start}}
+.stage{position:relative;background:#070707;border:1px solid rgba(255,255,255,.14);aspect-ratio:4/3;min-height:260px;overflow:hidden;touch-action:pan-y}
+@media(min-width:900px){.stage{aspect-ratio:16/10}}
+.stage canvas{display:block;width:100%;height:100%}
+.readout{position:absolute;left:10px;top:10px;font-family:var(--mono);font-size:11px;line-height:1.5;color:#fff;background:rgba(4,4,4,.72);padding:8px 10px;border-left:2px solid var(--red);max-width:70%}
+.readout b{color:var(--red)}
+.illus{position:absolute;right:10px;bottom:10px;font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.scrub{margin-top:10px}
+.ctl{background:#0a0a0a;border:1px solid rgba(255,255,255,.14);padding:16px}
+.ctl label{display:block;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);margin:10px 0 4px}
+.ctl label output{float:right;color:#fff}
+.ctl input[type=range]{width:100%;height:44px;margin:0;accent-color:#E31E24;background:transparent}
+.ctl .row2{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.verdict{margin-top:14px;padding:16px;background:#0a0a0a;border:1px solid rgba(255,255,255,.14);border-left:3px solid var(--red)}
+.verdict b{display:block;font-family:var(--heading);font-weight:700;text-transform:uppercase;font-size:clamp(20px,2.4vw,30px);line-height:1.05;margin-bottom:8px}
+.verdict p{font-family:var(--body);font-size:15px;line-height:1.55;color:rgba(255,255,255,.8);margin:0}
+.verdict p i{font-style:normal;color:var(--red);font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:4px}
+.verdict.ok{border-left-color:#3fb950}
+.sheetbtn{display:none}
+@media(max-width:899px){
+  .ctl{position:fixed;left:0;right:0;bottom:0;z-index:60;transform:translateY(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);
+    background:#0a0a0a;border:0;border-top:2px solid var(--red);padding:12px 16px calc(16px + env(safe-area-inset-bottom));max-height:62svh;overflow:auto}
+  .ctl.open{transform:none}
+  .sheetbtn{display:inline-flex}
+  .ctl .close{display:block;width:100%;min-height:44px;margin-top:10px;background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+}
+@media(min-width:900px){.ctl .close{display:none}}
+/* fixed bottom progression */
+.go{position:fixed;left:0;right:0;bottom:0;z-index:55;padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  background:linear-gradient(to top,rgba(4,4,4,.96),rgba(4,4,4,.75) 70%,transparent);display:flex;justify-content:center;pointer-events:none}
+.go a{pointer-events:auto;width:100%;max-width:420px;min-height:48px;display:inline-flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:#fff;background:var(--red);border:1px solid var(--red)}
+.go.hide{display:none}
+/* after */
+.after a.row{display:block;text-decoration:none;color:#fff;background:#0a0a0a;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.1)}
+.after a.row b{display:block;font-family:var(--heading);font-weight:700;text-transform:uppercase;font-size:16px;margin-bottom:4px}
+.after a.row span{font-family:var(--body);font-size:14px;color:rgba(255,255,255,.62)}
+.after .list{border-top:1px solid rgba(255,255,255,.14);margin-top:20px}
+footer.footer{scroll-snap-align:start}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 </style>
 </head>
 <body>
@@ -120,9 +117,8 @@ footer.footer{position:relative;z-index:2;background:#040404}
     <a class="nav-link" href="/evidence">Evidence<span class="dot">.</span></a>
     <a class="nav-link" href="/work">Work<span class="dot">.</span></a>
     <a class="nav-link" href="/work-intelligence">Intelligence<span class="dot">.</span></a>
-    <a class="nav-link" href="/platform">Platform<span class="dot">.</span></a>
     <a class="nav-link" href="/about">About<span class="dot">.</span></a>
-    <a class="nav-cta" href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer">See the AI capability gap &rarr;</a>
+    <a class="nav-cta" href="/engage">Start the March Bench Diagnosis &rarr;</a>
   </div>
     <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
@@ -132,98 +128,160 @@ footer.footer{position:relative;z-index:2;background:#040404}
   <a href="/evidence">Evidence<span class="dot">.</span></a>
   <a href="/work">Work<span class="dot">.</span></a>
   <a href="/work-intelligence">Intelligence<span class="dot">.</span></a>
-  <a href="/platform">Platform<span class="dot">.</span></a>
   <a href="/about">About<span class="dot">.</span></a>
-  <a href="https://exlprs.com/#discovery" target="_blank" rel="noopener noreferrer" style="color:var(--red)">See the AI capability gap &rarr;</a>
+  <a href="/engage" style="color:var(--red)">Start the March Bench Diagnosis &rarr;</a>
 </div>
 
-<div class="pbar" id="pbar"></div>
-<div class="rail" id="rail"></div>
-<button class="skip" id="skip">Skip the run &darr;</button>
-
-<div class="track" id="track">
-  <div class="vp">
-    <div class="rt" id="rt"><div class="rt-h"></div></div>
-    <div class="rt-v"></div>
-    <div class="gates" id="gates"><div class="gate" data-z="700">
-   <span class="g-k">AI-era capability architecture</span>
-   <h1 class="g-h1">AI absorbed<br>the work<span class="dot">.</span><br><span class="soft">Nobody rebuilt<br>the people model.</span></h1>
-   <p class="g-lede">Execution is instant and effectively free. The constraint moved upstream &mdash; to how fast
-      an organisation can see what its people can actually do.</p>
-   <span class="g-scroll">Scroll &darr;</span></div><div class="gate" data-z="1900">
-   <span class="g-k">The inflection</span>
-   <h2 class="g-h2">Every operation already generates<br>the signal<span class="dot">.</span> <span class="soft">Almost none connect it.</span></h2>
-   <div class="g-row">
-     <div><b>5+</b><span>Systems capturing capability<br>signal in a typical operation</span></div>
-     <div><b>21</b><span>Days after a program &mdash; the<br>least instrumented window</span></div>
-     <div><b>0</b><span>Of it connected at<br>the level of the person</span></div>
-   </div></div><div class="gate" data-z="3100">
-   <span class="g-k">24+ years &middot; built and run from inside</span>
-   <h2 class="g-h2">Not advice<span class="dot">.</span> <span class="soft">Accountability for whether the number moved.</span></h2>
-   <div class="g-cred"><b>Amazon</b><b>Accenture</b><b>Cognizant</b><b>Sutherland</b><b>Aegis</b></div>
-   <p class="g-lede">Learning architecture for a global compliance function. Training and quality across two of
-      the largest digital-advertising operations in the world. The largest annual new-hire ramp in a
-      25,000-person services business. Named employers, sector-only outcomes &mdash; by contract.</p></div><div class="gate" data-z="4300">
-   <span class="g-k">Field evidence &middot; sourced, sector-only</span>
-   <h2 class="g-h2">Numbers that can be walked<br>through line by line<span class="dot">.</span></h2>
-   <div class="g-grid">
-     <div><b>77&nbsp;&rarr;&nbsp;93<i>%</i></b><span>Quality score on an escalated account, inside 90 days, while headcount ramped 70%</span></div>
-     <div><b>70&nbsp;&rarr;&nbsp;89<i>%</i></b><span>CSAT across a 1,600-person operation</span></div>
-     <div><b>10,000<i>+</i></b><span>Professionals trained across 10+ sectors</span></div>
-     <div><b>100<i>%</i></b><span>Would recommend &mdash; every response captured, three cohorts</span></div>
-   </div>
-   <a class="g-link" href="/evidence">Every figure, with its source &rarr;</a></div><div class="gate" data-z="5500">
-   <span class="g-k">The portfolio</span>
-   <h2 class="g-h2">Four tiers<span class="dot">.</span> <span class="soft">Scoped by depth, not by price.</span></h2>
-   <div class="g-tiers">
-     <a href="/capability-strategy"><i>01</i><b>Capability strategy</b><span>What capability is for, before anyone builds</span></a>
-     <a href="/capability-architecture"><i>02</i><b>Capability architecture</b><span>Systems, not events. Handover is the deliverable</span></a>
-     <a href="/work-intelligence" class="hot"><i>03</i><b>Work Intelligence</b><span>The AI layer over the systems you already run</span></a>
-     <a href="/platform"><i>04</i><b>Treeng</b><span>Sixteen AI diagnostic engines. Free to start</span></a>
-   </div></div><div class="gate" data-z="6700">
-   <span class="g-k">Work Intelligence &middot; the loop</span>
-   <h2 class="g-h2">Sense<span class="dot">.</span> Connect<span class="dot">.</span> Predict<span class="dot">.</span> Act<span class="dot">.</span></h2>
-   <div class="g-loop">
-     <div><b>SENSE</b><span>Quality, transcripts, system behaviour, tenure, learning and HR events &mdash; read where they already sit</span></div>
-     <div><b>CONNECT</b><span>One living capability record per person, mapped to your own competency model</span></div>
-     <div><b>PREDICT</b><span>Readiness, risk and next-best intervention, per person, per week</span></div>
-     <div><b>ACT</b><span>Nudges inside the tools people already use. Every correction becomes signal</span></div>
-   </div>
-   <a class="g-link" href="/intelligence-map">Open the 3D map &rarr;</a></div><div class="gate" data-z="7900">
-   <span class="g-k">One floor first</span>
-   <h2 class="g-h1">Start where the<br>number lives<span class="dot">.</span></h2>
-   <p class="g-lede">A 120-day activation takes one process, one leader and one number. Data access from day one.
-      A decision gate at day 90. If the diagnosis says the problem is not capability, it ends there and I say so.</p>
-   <div class="g-acts">
-     <a class="g-btn" href="/activation">See the 120-day activation &rarr;</a>
-     <a class="g-btn g-btn--g" href="/services">The full offer</a>
-   </div></div></div>
+<!-- 0 · HERO: their question, one line, one ask -->
+<section class="pn" id="p0" data-go="See the leak" data-href="#p1">
+  <div class="in">
+    <h1 class="t">Know in January whether your March bench will hold<span class="dot">.</span></h1>
+    <p class="l">Most operations lose their margin in the 60 to 90 days after offer, and nobody forecasts them. <strong>We do, on your own data, in four weeks.</strong></p>
+    <p class="q">Which account would hurt most if its March bench came in at 70% of plan?</p>
+    <p class="small">Capability Forward &middot; entry point: the March Bench Diagnosis &middot; contact centres, BPO, shared services, GCCs, sales-as-a-service and people-intensive delivery &middot; Asia, North America and Europe</p>
   </div>
-</div>
+</section>
 
-<div class="rule"></div>
+<!-- 1 · THE LEAK -->
+<section class="pn" id="p1" data-go="See the forecast" data-href="#p2">
+  <div class="in">
+    <p class="k">01 &middot; The leak</p>
+    <p class="theirs">&ldquo;It takes four months before a new hire is any use.&rdquo;</p>
+    <h2 class="t">You hire 100 for a requirement of 80<span class="dot">.</span> <span class="soft">The loss happens before anyone is measuring.</span></h2>
+    <p class="l">The shortfall surfaces in a QBR as a line about refreshers and backfill, after the client has felt it. By then the penalty is booked and the team leaders have spent a quarter firefighting. The name for it is time to proficiency, and it is forecastable.</p>
+    <div class="grid c3">
+      <div><b>Never</b><span>Some never reach the floor. Offer-to-floor loss is absorbed as a hiring number, not a capability number.</span></div>
+      <div><b>Late</b><span>Some reach it late. The seat is paid for weeks before it earns.</span></div>
+      <div><b>Gone</b><span>Some leave before they are dependable. New-hire attrition is reported with tenured attrition, so its cause stays hidden.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · THE FORECAST (Treeng appears once, here) -->
+<section class="pn" id="p2" data-go="Model my bench" data-href="#sim">
+  <div class="in">
+    <p class="k">02 &middot; The forecast</p>
+    <p class="theirs">&ldquo;Will I have enough trained people on the floor in March?&rdquo;</p>
+    <h2 class="t">A 90-day forward view of delivery-ready seats against need<span class="dot">.</span></h2>
+    <p class="l">Per account and per cohort: who will be on the floor and proficient at 30, 60 and 90 days, the first week the bench falls below 90% of need, and an honest uncertainty band. Tenured, new-hire and in-ramp attrition modelled separately, so an existing-business gap is seen as early as a ramp gap.</p>
+    <div class="grid c2">
+      <div><b>Runs on</b><span>Dialer statistics, quality scores, attendance, assessments &mdash; cheap signals already in your stack. No new platform. No audio stored. Nobody ranked.</span></div>
+      <div><b>Analysed by</b><span>Treeng, SSUNDAR&rsquo;s own analysis build &mdash; sixteen modules for capability and L&amp;D data &mdash; runs on your extract during the diagnostic. It is the proof the build is real, not a product you buy.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · THE SIMULATOR (centrepiece) -->
+<section class="pn" id="sim" data-go="Ask the one question" data-href="/engage">
+  <div class="in">
+    <p class="k">03 &middot; Model your bench &middot; illustrative</p>
+    <h2 class="t">Feel your number<span class="dot">.</span></h2>
+    <p class="l">Four inputs. The surface is delivery-ready seats across 90 days, cohort by cohort; the line is what you need. Scrub through the quarter. It turns red the first week you fall short.</p>
+    <div class="simwrap">
+      <div>
+        <div class="stage" id="stage">
+          <canvas id="gl"></canvas>
+          <div class="readout" id="readout">Week 1<br><b>0</b> ready against <b>80</b> needed</div>
+          <div class="illus">Illustrative model &middot; not a forecast of your operation</div>
+        </div>
+        <div class="scrub">
+          <label for="t" class="vh">Scrub through the quarter</label>
+          <input type="range" id="t" min="1" max="13" value="13" step="1" style="width:100%;height:44px;accent-color:#E31E24">
+          <p class="small" style="margin-top:2px">Drag the surface to turn it. Scrub for the week. Tap a point for its readout.</p>
+        </div>
+        <button class="btn g sheetbtn" id="sheetbtn" type="button" style="margin-top:10px;width:100%">Set my inputs</button>
+      </div>
+      <div>
+        <div class="ctl" id="ctl" aria-label="Simulator inputs">
+          <label for="seats">Seats needed<output id="o-seats">80</output></label>
+          <input type="range" id="seats" min="20" max="1000" step="5" value="80">
+          <label for="hires">Hires per cohort<output id="o-hires">25</output></label>
+          <input type="range" id="hires" min="5" max="200" step="1" value="25">
+          <label for="floor">Offer-to-floor days<output id="o-floor">45</output></label>
+          <input type="range" id="floor" min="10" max="90" step="1" value="45">
+          <label>Attrition at 30 / 60 / 90 days <output id="o-att">10% / 18% / 25%</output></label>
+          <div class="row2">
+            <input type="range" id="a30" min="0" max="40" step="1" value="10" aria-label="Attrition by day 30">
+            <input type="range" id="a60" min="0" max="60" step="1" value="18" aria-label="Attrition by day 60">
+            <input type="range" id="a90" min="0" max="70" step="1" value="25" aria-label="Attrition by day 90">
+          </div>
+          <button class="close" id="closeSheet" type="button">Done</button>
+        </div>
+        <div class="verdict" id="verdict"><b>Your bench falls short in week 6.</b><p><i>The kind of action the diagnosis returns</i>Pull cohort 3 forward two weeks. Owner: operations lead. Date: before the cohort&rsquo;s current start.</p></div>
+        <div class="acts">
+          <a class="btn" id="simcta" href="/engage">Get this on your real data in four weeks &rarr;</a>
+        </div>
+        <p class="small">The diagnosis replaces these sliders with your dialer, quality, attendance and assessment data, and your controller signs the baseline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · THE FIRST ACTION + THE GATE -->
+<section class="pn" id="p4" data-go="See the proof" data-href="#p5">
+  <div class="in">
+    <p class="k">04 &middot; The first action, then the gate</p>
+    <p class="theirs">&ldquo;Don&rsquo;t give me a dashboard. Tell me what to do this week.&rdquo;</p>
+    <h2 class="t">One owner<span class="dot">.</span> One date<span class="dot">.</span> One number<span class="dot">.</span></h2>
+    <p class="l">Accounts sorted by risk, red first, one recommended action each. The system recommends; a person decides. Four weeks in, you hold the forecast and the first action, and you decide go or no-go. <strong>If the diagnosis finds no material gap, we say so and stop.</strong></p>
+    <div class="steps" id="steps" role="tablist" aria-label="The 120 days">
+      <button role="tab" data-i="0" class="on">Week 0</button><button role="tab" data-i="1">Week 4 &middot; gate</button><button role="tab" data-i="2">Week 8</button><button role="tab" data-i="3">Week 12</button><button role="tab" data-i="4">Week 16 &middot; gate</button>
+    </div>
+    <div class="gatecard" id="gatecard" role="tabpanel"></div>
+    <p class="small">Fixed fee plus a share of the gain the account actually measures. Licensed, not handed over. Nothing new to host. Buys on the operations budget, not the learning budget.</p>
+  </div>
+</section>
+
+<!-- 5 · THE PROOF with sector routing -->
+<section class="pn" id="p5" data-go="After the diagnostic" data-href="#p6">
+  <div class="in">
+    <p class="k">05 &middot; The proof &middot; sector level, with its mechanism</p>
+    <div class="seg" role="group" aria-label="What you own">
+      <button type="button" data-sector="ramp" class="on">I own cost of ramp</button>
+      <button type="button" data-sector="risk">I own risk and evidence</button>
+    </div>
+    <h2 class="t" id="proofHead">Every figure traces to a source<span class="dot">.</span> <span class="soft">And can be walked through in a room.</span></h2>
+    <div class="grid c2" id="proofGrid"></div>
+    <p class="small">Led in-role, stated at sector level by contract. No client names anywhere on this site. <a href="/evidence">Every figure, with its source &rarr;</a></p>
+  </div>
+</section>
+
+<!-- 6 · AFTER THE DIAGNOSTIC (the former menu, sequenced) -->
+<section class="pn after" id="p6" data-go="Ask the one question" data-href="/engage">
+  <div class="in">
+    <p class="k">06 &middot; After the diagnostic</p>
+    <h2 class="t">What happens once the number is on the table<span class="dot">.</span></h2>
+    <p class="l">The diagnosis is the first four weeks of Capability Forward. If you continue, the work runs into loops live (weeks 5 to 8), then declare, measure and transfer (weeks 9 to 16). Everything below is depth behind that decision, not a menu.</p>
+    <div class="list">
+      <a class="row" href="/capability-forward"><b>Capability Forward, in full</b><span>The offer on one page: the three loops, the 120 days, what you hold at each gate.</span></a>
+      <a class="row" href="/work-intelligence"><b>The expansion: Work Intelligence</b><span>Once one account is proven &mdash; the capability operating system across the floor.</span></a>
+      <a class="row" href="/work"><b>The wider portfolio</b><span>Capability strategy and architecture engagements, sequenced after the diagnostic.</span></a>
+      <a class="row" href="https://shyam-careermap.netlify.app/" target="_blank" rel="noopener noreferrer"><b>About Shyam</b><span>Twenty-five years inside Fortune 500 operations, as the operator who ran the systems. The career map, year by year.</span></a>
+    </div>
+    <p class="small" style="margin-top:22px"><strong style="color:#fff">Head of L&amp;D?</strong> You are the person who will see this first. Bring it to your operations lead: the diagnosis is priced against their number and buys on their budget. <a href="/capability-forward">The one-pager to forward &rarr;</a></p>
+  </div>
+</section>
+
+<div class="go" id="go"><a href="#p1" id="goBtn">See the leak</a></div>
+
 <footer class="footer">
   <section class="section" style="padding-top:80px;padding-bottom:40px">
     <span style="font-family:var(--heading);font-weight:700;font-size:24px;letter-spacing:0.06em;text-transform:uppercase;color:#fff">SSUNDAR<span class="dot">.</span></span>
     <div class="red-line-thick" style="margin:20px 0"></div>
-    <p class="footer-tagline mb-24">JUDGMENT-CENTERED LEADERSHIP DESIGN&trade;</p>
-    <p style="font-family:var(--body);font-size:14px;font-weight:500;color:rgba(255,255,255,0.35);max-width:480px;line-height:1.7;margin-bottom:48px">AI-era capability architecture for large operations. Work Intelligence, capability systems and productised diagnostics &mdash; serving leaders across Technology, Financial Services, Healthcare, Manufacturing, Retail, Energy and Global Capability Centers.</p>
+    <p style="font-family:var(--body);font-size:14px;font-weight:500;color:rgba(255,255,255,0.35);max-width:480px;line-height:1.7;margin-bottom:48px">Capability Forward: a 90-day forward view of whether a delivery operation will have the seats it needs, proven on one account in 120 days. Contact centres, BPO, shared services, GCCs, sales-as-a-service and people-intensive delivery. Asia, North America and Europe.</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:440px" class="mb-48">
       <div class="flex flex-col gap-12">
-        <a class='footer-link' href='/systems'>Systems<span class="dot">.</span></a>
-        <a class='footer-link' href='/evidence'>Evidence<span class="dot">.</span></a><a class='footer-link' href='/testimonials'>Participants<span class="dot">.</span></a>
-        <a class='footer-link' href='/process'>Process<span class="dot">.</span></a>
-        <a class='footer-link' href='/simulate'>Simulate<span class="dot">.</span></a>
-        <a class='footer-link' href='/insights'>Insights<span class="dot">.</span></a>
+        <a class='footer-link' href='/capability-forward'>Capability Forward<span class="dot">.</span></a>
+        <a class='footer-link' href='/evidence'>Evidence<span class="dot">.</span></a>
         <a class='footer-link' href='/engage'>Engage<span class="dot">.</span></a>
         <a class='footer-link' href='/work-intelligence'>Work Intelligence<span class="dot">.</span></a>
-        <a class='footer-link' href='/services'>Services<span class="dot">.</span></a>
-        <a class='footer-link' href='/platform'>Platform<span class="dot">.</span></a>
+        <a class='footer-link' href='/work'>Work<span class="dot">.</span></a>
+        <a class='footer-link' href='/insights'>Insights<span class="dot">.</span></a>
+        <a class='footer-link' href='/about'>About<span class="dot">.</span></a>
       </div>
       <div>
         <a href="mailto:shyam@ssundar.com" class="footer-link">shyam@ssundar.com</a>
         <a href="https://linkedin.com/in/shyamsundarmv" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn &rarr;</a>
-
         <p style="font-family:var(--body);font-size:13px;font-weight:500;color:rgba(255,255,255,0.2);margin-top:4px">Working globally</p>
       </div>
     </div>
@@ -237,122 +295,74 @@ footer.footer{position:relative;z-index:2;background:#040404}
         <a href="mailto:legal@ssundar.com?subject=DMCA%20Notice" style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.05em;text-decoration:none;text-transform:uppercase">DMCA</a>
       </div>
       <p style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.2);letter-spacing:0.05em;margin-bottom:6px">&copy; 2026 SSUNDAR. ALL RIGHTS RESERVED. &mdash; DMCA Registered Agent: DMCA-1073290</p>
-      <p style="font-family:var(--mono);font-size:9px;font-weight:500;color:rgba(255,255,255,0.12);letter-spacing:0.04em">Judgment-Centered Leadership Design&trade;, Multi-Skilled Talent Pools&trade;, Performance Engine Integration&trade;, and Strategic Products &amp; AI&trade; are trademarks of SSUNDAR.</p>
     </div>
   </section>
-</footer><script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Shyam Sundar MV",
-    "url": "https://ssundar.com",
-    "jobTitle": "Performance Systems Architect",
-    "description": "Judgment-centered leadership design. Built and ran performance systems inside Fortune 500 operations.",
-    "sameAs": ["https://linkedin.com/in/shyamsundarmv"],
-    "knowsAbout": [
-      "Judgment-Centered Leadership Design",
-      "Performance Systems Architecture",
-      "Leadership Development",
-      "AI and Organizational Capability",
-      "Global Capability Centers"
-    ],
-    "alumniOf": [
-      { "@type": "Organization", "name": "Amazon" },
-      { "@type": "Organization", "name": "Accenture" },
-      { "@type": "Organization", "name": "Cognizant" }
-    ]
-  }
-  </script>
+</footer>
 
+<script src="app.js"></script>
+<script src="/bench-sim.js" defer></script>
 <script>
 (function(){
-  "use strict";
-  var Z0=700, TOTAL=9100, FOCAL=760;
-  var track=document.getElementById('track'), rt=document.getElementById('rt'),
-      gatesEl=document.getElementById('gates'), pbar=document.getElementById('pbar'),
-      rail=document.getElementById('rail');
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var gates=[].slice.call(gatesEl.querySelectorAll('.gate')).map(function(e){return {el:e,z:+e.dataset.z};});
-
-  /* ── corridor: independent clock, never touches scroll position ── */
-  var NEAR=110, SPAN=4200, TIES=[], PYL=[];
-  for(var i=0,nT=reduce?8:24;i<nT;i++){
-    var t=document.createElement('div'); t.className='tie'; rt.appendChild(t);
-    TIES.push({el:t,z:NEAR+(i/nT)*SPAN}); }
-  for(var j=0,nP=reduce?6:16;j<nP;j++){ ['l','r'].forEach(function(s){
-    var p=document.createElement('div'); p.className='pyl'; rt.appendChild(p);
-    PYL.push({el:p,z:NEAR+(j/nP)*SPAN,side:s==='l'?-1:1}); }); }
-
-  var base=165, boost=0, last=performance.now();
-
-  /* ── gates: scroll drives zoom + fade ── */
-  var camZ=Z0, targetZ=Z0;
-  function onScroll(){
-    var max=track.offsetHeight-window.innerHeight;
-    var p=Math.max(0,Math.min(1,window.scrollY/Math.max(max,1)));
-    targetZ=Z0+p*(TOTAL-Z0);
-    pbar.style.width=(p*100).toFixed(2)+'%';
-    boost=Math.min(620,boost+90);          /* scrolling leans on the throttle */
+  /* ---- proof blocks, routed by what the visitor owns ---- */
+  var PROOF={
+    ramp:[
+      ['77&nbsp;&rarr;&nbsp;93<i>%</i>','Quality recovered in 90 days on an escalated technical-support account, while headcount ramped 70% &mdash; which is when quality normally falls.','Mechanism: judgment standards rebuilt at the point of contact, then held'],
+      ['~30<i>%</i>','Fewer new-hire attritions and underperformers in a sales-outsourcing operation.','Mechanism: a competency-measurement and coaching architecture for new hires and their managers'],
+      ['70&nbsp;&rarr;&nbsp;89<i>%</i>','CSAT rebuilt and held across a 1,600-person BPO operation.','Mechanism: fixed at the point of customer contact, then held across the floor'],
+      ['79&nbsp;&rarr;&nbsp;89<i>%</i>','30-day new-hire CSAT measured at the end of the ramp, not the end of training. A second cohort moved 88&nbsp;&rarr;&nbsp;98% on the same measure.','Mechanism: capability built at the point of entry']
+    ],
+    risk:[
+      ['30<i>d</i>&nbsp;&rarr;&nbsp;4<i>d</i>','Resolution time in a compliance operation at a global e-commerce marketplace, with errors down over 90%.','Mechanism: rebuilt by working backwards from the customer; training was the last of five fixes, not the first'],
+      ['77&nbsp;&rarr;&nbsp;93<i>%</i>','Quality recovered in 90 days on an escalated technical-support account, while headcount ramped 70% &mdash; which is when quality normally falls.','Mechanism: judgment standards rebuilt at the point of contact, then held'],
+      ['5.00','Facilitator rating, 100% would recommend, across three live cohorts in Europe and Asia &mdash; scored by participants, not by the facilitator.','For an auditor&rsquo;s question: every figure traces to a source document'],
+      ['70&nbsp;&rarr;&nbsp;89<i>%</i>','CSAT rebuilt and held across a 1,600-person BPO operation.','Mechanism: fixed at the point of customer contact, then held across the floor']
+    ]
+  };
+  var HEAD={ramp:'Every figure traces to a source<span class="dot">.</span> <span class="soft">And can be walked through in a room.</span>',
+            risk:'Proof an auditor can follow<span class="dot">.</span> <span class="soft">Thirty working days to four, errors down over 90%.</span>'};
+  var grid=document.getElementById('proofGrid'), head=document.getElementById('proofHead');
+  function render(sec){
+    grid.innerHTML=PROOF[sec].map(function(r){return '<div><b>'+r[0]+'</b><span>'+r[1]+'</span><em class="m">'+r[2]+'</em></div>';}).join('');
+    head.innerHTML=HEAD[sec];
+    document.querySelectorAll('.seg button').forEach(function(b){b.classList.toggle('on',b.dataset.sector===sec);});
+    try{sessionStorage.setItem('ssundar_sector',sec);}catch(e){}
+    window.__sector=sec;
+    if(window.__simLink) window.__simLink();
   }
-  window.addEventListener('scroll',onScroll,{passive:true});
+  var saved=null; try{saved=sessionStorage.getItem('ssundar_sector');}catch(e){}
+  render(saved==='risk'?'risk':'ramp');
+  document.querySelectorAll('.seg button').forEach(function(b){b.addEventListener('click',function(){render(b.dataset.sector);});});
 
-  function frame(now){
-    var dt=Math.min(0.05,(now-last)/1000); last=now;
+  /* ---- gate stepper ---- */
+  var GATES=[
+    ['Week 0 &middot; Account chosen','Data access agreed in writing. Legal scope signed. One account, one controller to sign the baseline.','Nothing yet. No employee-facing step without your legal sign-off.'],
+    ['Week 4 &middot; First forecast &middot; GATE','The 90-day bench forecast with its uncertainty band and the first week it falls below 90% of need. Attrition by tenure. The agreed baseline in your own numbers. One recommended action with owner, date and number.','Go or no-go. If there is no material gap, we say so and stop. You pay for the diagnosis and nothing more.'],
+    ['Week 8 &middot; Loops live','Step-up targets running: one coaching topic per associate for six weeks against a weekly target the team leader can adjust, with the reason logged.','Pause at any week; everything built so far already sits in your own tools.'],
+    ['Week 12 &middot; Client declaration','Targets by quarter, risks with fixes, bad news first. The first monthly forum with Operations, Training, HR, WFM and Pricing in one room.','Stop here and you keep the forecast model, the indicator set and the forum.'],
+    ['Week 16 &middot; Measured gain &middot; GATE','Behaviour change read at 30, 60 and 90 days against the agreed indicators. Runbook and handover. Your team runs it on your own stack.','Decision to scale, or not. The method stays licensed; nothing is held back as leverage.']
+  ];
+  var card=document.getElementById('gatecard'), steps=document.querySelectorAll('#steps button');
+  function gate(i){card.innerHTML='<h3>'+GATES[i][0]+'</h3><p class="hold"><b>What you hold</b>'+GATES[i][1]+'</p><p class="stop"><b>What you can stop</b>'+GATES[i][2]+'</p>';
+    steps.forEach(function(b){b.classList.toggle('on',+b.dataset.i===i);});}
+  steps.forEach(function(b){b.addEventListener('click',function(){gate(+b.dataset.i);});});
+  gate(0);
 
-    /* track */
-    boost*=0.93;
-    var v=(base+boost)*dt;
-    for(var i=0;i<TIES.length;i++){
-      var T=TIES[i]; T.z-=v; if(T.z<NEAR) T.z+=SPAN;
-      var s=FOCAL/T.z; T.el.style.width='2600px';
-      T.el.style.transform='translate(-50%,'+(170*s).toFixed(1)+'px) scaleX('+s.toFixed(4)+')';
-      T.el.style.opacity=Math.max(0,Math.min(.9,1-T.z/SPAN)).toFixed(3);
-    }
-    for(var k=0;k<PYL.length;k++){
-      var P=PYL[k]; P.z-=v; if(P.z<NEAR) P.z+=SPAN;
-      var ps=FOCAL/P.z;
-      P.el.style.transform='translate('+(P.side*540*ps).toFixed(1)+'px,'+(-26*ps).toFixed(1)+'px)';
-      P.el.style.height=(230*ps).toFixed(1)+'px';
-      P.el.style.opacity=Math.max(0,Math.min(.85,1-P.z/SPAN)).toFixed(3);
-    }
-
-    /* gates ease toward the scroll target so nothing snaps */
-    camZ += (targetZ-camZ)*0.11;
-    var nearest=0, nd=1e9;
-    for(var g=0;g<gates.length;g++){
-      var G=gates[g], gd=G.z-camZ, o=0, sc=1;
-      var A=Math.abs(gd);
-      if(A<380){ o=1; }
-      else if(A<980){ o=1-(A-380)/600; }
-      /* ease the fade so it never looks like a hard cut */
-      o = o<=0?0:(o>=1?1:(o*o*(3-2*o)));
-      /* gentle zoom: approaching gates grow in, passed gates drift past the camera */
-      sc = gd>0 ? 0.90+0.10*o : 1+(-gd/980)*0.22;
-      G.el.style.opacity=o.toFixed(3);
-      G.el.style.transform='translate(-50%,-50%) scale('+sc.toFixed(3)+')';
-      G.el.style.pointerEvents = o>0.7 ? 'auto':'none';
-      if(A<nd){ nd=A; nearest=g; }
-    }
-    rail.querySelectorAll('button').forEach(function(b,bi){ b.classList.toggle('on',bi===nearest); });
-    requestAnimationFrame(frame);
+  /* ---- fixed bottom button follows the story ---- */
+  var go=document.getElementById('go'), goBtn=document.getElementById('goBtn');
+  var panels=document.querySelectorAll('section.pn');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){goBtn.textContent=e.target.dataset.go;
+      var h=e.target.dataset.href; if(h==='/engage'&&window.__simLink){h=window.__simHref||h;} goBtn.setAttribute('href',h);}});},{threshold:.5});
+    panels.forEach(function(p){io.observe(p);});
+    var fo=new IntersectionObserver(function(es){es.forEach(function(e){go.classList.toggle('hide',e.isIntersecting);});},{threshold:.2});
+    fo.observe(document.querySelector('footer.footer'));
   }
-
-  gates.forEach(function(G,i){
-    var b=document.createElement('button'); b.setAttribute('aria-label','Chapter '+(i+1));
-    rail.appendChild(b);
-    b.addEventListener('click',function(){
-      var max=track.offsetHeight-window.innerHeight;
-      window.scrollTo({top:Math.max(0,((G.z-Z0)/(TOTAL-Z0))*max),behavior:'smooth'});
-    });
+  goBtn.addEventListener('click',function(){
+    if(goBtn.getAttribute('href').charAt(0)==='#') return;
+    if(typeof window.gtag==='function') window.gtag('event','question_prompt_click',{from:goBtn.textContent});
   });
-  document.getElementById('skip').addEventListener('click',function(){
-    window.scrollTo({top:track.offsetHeight-window.innerHeight+10,behavior:'smooth'});
-  });
-
-  onScroll(); camZ=targetZ; requestAnimationFrame(frame);
 })();
 </script>
-<script src="app.js"></script>
 <script src="/cookie-consent.js"></script>
 </body>
 </html>
