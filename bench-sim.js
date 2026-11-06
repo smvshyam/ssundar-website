@@ -111,7 +111,7 @@
     var pa = tg.attributes.position;
     for (var i = 0; i < pa.count; i++) {
       var x = pa.getX(i), z = pa.getZ(i), ax = Math.abs(x);
-      var wall = Math.pow(Math.max(0, ax - RW / 2) / 4, 1.4) * 6;              // valley sides
+      var wall = Math.pow(Math.max(0, ax - RW / 2) / 5.5, 1.7) * 5;              // valley sides
       var basin = z > 0.2 ? -1.1 : 0;                                            // reservoir bed behind the dam
       var downstream = z < -0.2 ? -0.35 - Math.max(0, -z - 0.2) * 0.06 : 0;     // gentle fall to the town
       var y = wall + basin + downstream + noise(x * 0.6, z * 0.6) * 0.25 * (0.3 + Math.min(1, ax / 5));
@@ -123,8 +123,8 @@
     // subtle tree clumps on the slopes
     var treeG = new T.ConeGeometry(0.22, 0.7, 6), treeM = new T.MeshStandardMaterial({ color: 0x1f3a22, roughness: 1 });
     for (var t = 0; t < (isMobile ? 70 : 160); t++) { var tx = (Math.random() < 0.5 ? -1 : 1) * (RW / 2 + 0.6 + Math.random() * 4.5), tz = -12 + Math.random() * 24;
-      var ty = Math.pow(Math.max(0, Math.abs(tx) - RW / 2) / 4, 1.4) * 6 + (tz > 0.2 ? -1.1 : 0) + (tz < -0.2 ? -0.35 : 0);
-      var tr = new T.Mesh(treeG, treeM); tr.position.set(tx, ty + 0.3, tz); tr.scale.setScalar(0.7 + Math.random() * 0.8); tr.castShadow = !isMobile; scene.add(tr); }
+      var ty = Math.pow(Math.max(0, Math.abs(tx) - RW / 2) / 5.5, 1.7) * 5 + (tz > 0.2 ? -1.1 : 0) + (tz < -0.2 ? -0.35 : 0);
+      if (tz < -4 && Math.abs(tx) < 7) continue; var tr = new T.Mesh(treeG, treeM); tr.position.set(tx, ty + 0.25, tz); tr.scale.setScalar(0.45 + Math.random() * 0.5); tr.castShadow = !isMobile; scene.add(tr); }
 
     // the dam: slightly curved concrete wall at z≈0, crest at y=H+0.25
     var damShape = new T.Shape(); damShape.moveTo(-RW / 2 - 0.4, -1.3); damShape.lineTo(RW / 2 + 0.4, -1.3); damShape.lineTo(RW / 2 + 0.4, H + 0.25); damShape.lineTo(-RW / 2 - 0.4, H + 0.25); damShape.closePath();
@@ -136,11 +136,11 @@
     for (var r = -3; r <= 3; r++) { var post = new T.Mesh(new T.CylinderGeometry(0.02, 0.02, 0.3, 6), concrete); post.position.set(r * (RW / 6), H + 0.45, -0.9); scene.add(post); }
     // gauge painted on the downstream face (canvas texture)
     var gc = document.createElement('canvas'); gc.width = 256; gc.height = 1024; gaugeCtx = gc.getContext('2d'); gaugeTex = new T.CanvasTexture(gc); gaugeTex.encoding = T.sRGBEncoding;
-    var gauge = new T.Mesh(new T.PlaneGeometry(0.9, 3.55), new T.MeshStandardMaterial({ map: gaugeTex, transparent: true, roughness: 0.7 }));
-    gauge.position.set(RW / 2 - 0.9, (H + 0.25 - 1.3) / 2, -0.95 - 0.08 - 0.01); gauge.rotation.y = Math.PI; scene.add(gauge);
+    var gauge = new T.Mesh(new T.PlaneGeometry(1.25, 3.55), new T.MeshStandardMaterial({ map: gaugeTex, transparent: true, roughness: 0.7 }));
+    gauge.position.set(0.9, (H + 0.25 - 1.3) / 2, -0.95 - 0.08 - 0.01); gauge.rotation.y = Math.PI; scene.add(gauge);
     // warning lamp on the crest
-    lamp = new T.Mesh(new T.SphereGeometry(0.12, 12, 12), new T.MeshStandardMaterial({ color: 0x330000, emissive: 0xE31E24, emissiveIntensity: 0.0 })); lamp.position.set(RW / 2 - 0.9, H + 0.62, -0.9); scene.add(lamp);
-    var lampPost = new T.Mesh(new T.CylinderGeometry(0.03, 0.03, 0.3, 6), concrete); lampPost.position.set(RW / 2 - 0.9, H + 0.45, -0.9); scene.add(lampPost);
+    lamp = new T.Mesh(new T.SphereGeometry(0.12, 12, 12), new T.MeshStandardMaterial({ color: 0x330000, emissive: 0xE31E24, emissiveIntensity: 0.0 })); lamp.position.set(0.9, H + 0.62, -0.9); scene.add(lamp);
+    var lampPost = new T.Mesh(new T.CylinderGeometry(0.03, 0.03, 0.3, 6), concrete); lampPost.position.set(0.9, H + 0.45, -0.9); scene.add(lampPost);
 
     // water surface (reservoir): animated vertex waves, translucent, reflective-ish
     var wg = new T.PlaneGeometry(RW, RL, isMobile ? 40 : 80, isMobile ? 50 : 100); wg.rotateX(-Math.PI / 2);
@@ -197,7 +197,7 @@
   function proj(x, y, z) { var v = new T.Vector3(x, y, z).project(camera); var r = stage.getBoundingClientRect(); return [(v.x * 0.5 + 0.5) * r.width, (0.5 - v.y * 0.5) * r.height]; }
   function labels3D() {
     if (!lab) return; var cur = M.weeks[S.week - 1], h = '';
-    var p = proj(RW / 2 - 0.9, H + 0.75, -0.9); h += '<span class="ln' + (cur.short ? ' red' : '') + '" style="left:' + p[0] + 'px;top:' + p[1] + 'px">' + Math.round(cur.total) + ' / ' + S.seats + ' seats</span>';
+    var p = proj(0.9, H + 0.85, -0.9); h += '<span class="ln' + (cur.short ? ' red' : '') + '" style="left:' + p[0] + 'px;top:' + p[1] + 'px">' + Math.round(cur.total) + ' / ' + S.seats + ' seats</span>';
     var hp = proj(0, 0.9, RL + 1.9); h += '<span class="lw" style="left:' + hp[0] + 'px;top:' + hp[1] + 'px">Holding pond &middot; ' + Math.round(cur.ramp) + ' not yet proficient</span>';
     tribs.forEach(function (tb) { var landW = Math.ceil((tb.start + S.floor) / 7); if (landW > 14) return; var tp = proj(tb.side * (RW / 2 + 2.4), 1.5 + tb.i * 0.12, tb.z);
       h += '<span class="lw' + (S.week >= landW ? ' on' : '') + '" style="left:' + tp[0] + 'px;top:' + tp[1] + 'px">Cohort ' + (tb.i + 1) + ' &middot; ' + (S.week >= landW ? 'flowing' : 'lands wk ' + landW) + '</span>'; });
@@ -227,8 +227,8 @@
     seeps.forEach(function (sp, i) { sp.material.opacity = 0.15 + seepAmt * 0.5 * (0.6 + 0.4 * Math.sin(t * 3 + i)); sp.scale.y = 0.6 + seepAmt * 0.6; sp.position.y = 0.3 - (1 - sp.scale.y) * 1.2; });
     lamp.material.emissiveIntensity = short ? 1.6 + Math.sin(t * 7) * 1.2 : 0.0;
     // camera orbit around the dam
-    var R = isMobile ? 15.5 : 13.0, cx = Math.sin(yaw) * R, cz = -Math.cos(yaw) * R + 0.8;
-    camera.position.set(cx, isMobile ? 7.8 : 6.9, cz); camera.lookAt(0, 0.7, 1.6);
+    var R = isMobile ? 17 : 14.5, cx = Math.sin(yaw) * R, cz = -Math.cos(yaw) * R + 0.8;
+    camera.position.set(cx, isMobile ? 9 : 7.6, cz); camera.lookAt(0, 0.5, 1.2);
     renderer.render(scene, camera); labels3D();
     requestAnimationFrame(frame);
   }
