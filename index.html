@@ -94,7 +94,7 @@ h2.t{font-size:clamp(28px,6.4vw,64px)}
 .legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:rgba(255,255,255,.6)}
 .legend span{display:inline-flex;align-items:center;gap:6px}
 .legend .sw{width:12px;height:12px;display:inline-block}
-.legend .sw.g{background:#6b6b6b}.legend .sw.w{background:#dcdcdc}.legend .sw.a{background:rgba(230,160,64,.5)}.legend .sw.r{background:#E31E24}
+.legend .sw.g{background:#6b6b6b}.legend .sw.b{background:#1b4f8a}.legend .sw.c{background:#3d8fd6}.legend .sw.w{background:#dcdcdc}.legend .sw.a{background:rgba(230,160,64,.5)}.legend .sw.r{background:#E31E24}
 .ctl .f{margin:10px 0 2px}
 .ctl .f label{display:block;margin:0 0 6px}
 .ctl .f label small{text-transform:none;letter-spacing:0;color:rgba(255,255,255,.4);font-weight:400}
@@ -199,7 +199,7 @@ footer.footer{scroll-snap-align:start}
   <div class="in">
     <p class="k">03 &middot; Model your bench &middot; illustrative</p>
     <h2 class="t">Feel your number<span class="dot">.</span></h2>
-    <p class="l">One bar per week: who is delivery-ready on the floor. The white line is the seats you need; the red line is 90% of it. The amber block is people you have hired who cannot earn yet. Bars turn red the week you fall short. Type your own numbers.</p>
+    <p class="l">The reservoir behind the dam is your delivery-ready bench; the town below it is the client. The gauge on the dam marks the seats you need and, in red, 90% of them. Seepage through the dam is attrition. Each cohort is a tributary that only starts flowing the week it lands; until then its water sits in the gated holding pond &mdash; paid for, not earning. Scrub the quarter and watch the level. Type your own numbers.</p>
     <div class="simwrap">
       <div>
         <div class="stage" id="stage">
@@ -208,11 +208,11 @@ footer.footer{scroll-snap-align:start}
           <div class="readout" id="readout"></div>
           <div class="illus">Illustrative model &middot; not a forecast of your operation</div>
         </div>
-        <div class="legend"><span><i class="sw g"></i>Tenured bench</span><span><i class="sw w"></i>New cohorts, proficient</span><span><i class="sw a"></i>Hired, not yet proficient</span><span><i class="sw r"></i>Below 90% of need</span></div>
+        <div class="legend"><span><i class="sw b"></i>Reservoir = ready bench</span><span><i class="sw w"></i>Gauge: seats needed</span><span><i class="sw r"></i>Red mark: 90% &middot; lamp lights when short</span><span><i class="sw a"></i>Holding pond: hired, not yet proficient</span><span><i class="sw c"></i>Tributaries: cohorts landing</span></div>
         <div class="scrub">
           <label for="t" class="vh">Week</label>
           <input type="range" id="t" min="1" max="13" value="13" step="1" style="width:100%;height:44px;accent-color:#E31E24">
-          <p class="small" style="margin-top:2px">Slide for the week. Tap a bar for its number. Drag sideways to turn the chart.</p>
+          <p class="small" style="margin-top:2px">Slide for the week. Drag sideways to walk around the dam.</p>
         </div>
         <button class="btn g sheetbtn" id="sheetbtn" type="button" style="margin-top:10px;width:100%">Enter my numbers</button>
       </div>
@@ -324,6 +324,7 @@ footer.footer{scroll-snap-align:start}
 </footer>
 
 <script src="app.js"></script>
+<script src="/vendor/three.min.js" defer></script>
 <script src="/bench-sim.js" defer></script>
 <script>
 (function(){
