@@ -243,7 +243,11 @@ footer.footer{scroll-snap-align:start}
         <div class="ctl" id="ctl" aria-label="Simulator inputs">
           <div class="geotabs" id="geotabs" role="tablist"></div>
           <p class="watch" id="geowatch"></p>
-          <div class="f"><label for="n-seats">Seats needed on the account</label><input type="number" id="n-seats" inputmode="numeric" min="20" max="1000" step="5" value="120"><input type="range" id="seats" min="20" max="1000" step="5" value="120" aria-label="Seats needed"></div>
+          <div class="row2g">
+            <div class="f"><label for="n-seats">Seats needed in March</label><input type="number" id="n-seats" inputmode="numeric" min="20" max="1000" step="5" value="120"><input type="range" id="seats" min="20" max="1000" step="5" value="120" aria-label="Seats needed"></div>
+            <div class="f"><label for="n-ready">Delivery-ready today</label><input type="number" id="n-ready" inputmode="numeric" min="0" max="1000" step="1" value="92"><input type="range" id="ready" min="0" max="1000" step="1" value="92" aria-label="Delivery-ready seats today"></div>
+          </div>
+          <div class="f"><label for="n-tattr">Tenured attrition <small>(% of the bench lost per month)</small></label><input type="number" id="n-tattr" inputmode="numeric" min="0" max="15" step="1" value="3"><input type="range" id="tattr" min="0" max="15" step="1" value="3" aria-label="Tenured attrition per month"></div>
           <div class="f"><label for="n-hires">Hires per cohort <small>(a cohort starts every 3 weeks)</small></label><input type="number" id="n-hires" inputmode="numeric" min="5" max="200" step="1" value="25"><input type="range" id="hires" min="5" max="200" step="1" value="25" aria-label="Hires per cohort"></div>
           <div class="row2g">
             <div class="f"><label for="n-floor">Offer-to-floor days <small>(graduation)</small></label><input type="number" id="n-floor" inputmode="numeric" min="10" max="90" step="1" value="45"><input type="range" id="floor" min="10" max="90" step="1" value="45" aria-label="Offer-to-floor days"></div>
@@ -257,7 +261,7 @@ footer.footer{scroll-snap-align:start}
             </div></div>
           <div class="f"><label for="n-loss">Never reach the floor <small>(% of offers, no-shows)</small></label><input type="number" id="n-loss" inputmode="numeric" min="0" max="40" step="1" value="8"><input type="range" id="loss" min="0" max="40" step="1" value="8" aria-label="Percent of hires who never reach the floor"></div>
           <button class="btn g" id="copyall" type="button" style="width:100%;margin-top:8px">Copy hire plan and ramp speeds to all selected geographies</button>
-          <p class="small" style="margin-top:8px">Held constant: the bench starts at 93% of need; tenured attrition 3% a month.</p>
+          <p class="small" style="margin-top:8px">A cohort starts every three weeks. Everything else is yours to set.</p>
           <button class="close" id="closeSheet" type="button">Done</button>
         </div>
         <div class="story" id="story"></div>
