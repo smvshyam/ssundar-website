@@ -12,7 +12,7 @@
 
   /* ---------------- model ---------------- */
   var DAYS = 90, STEP = 2, NX = DAYS / STEP + 1;           // 46 columns
-  var COHORT_GAP = 14, FLOOR_LOSS = 0.08, START_BENCH = 0.92, TENURED_ATTR_30D = 0.03, PROF_DAYS = 21;
+  var COHORT_GAP = 21, FLOOR_LOSS = 0.08, START_BENCH = 0.93, TENURED_ATTR_30D = 0.03, PROF_DAYS = 21;
   var P = {}, rows = [], total = [], redWeek = 0, redDay = -1, cohortStarts = [];
 
   function readInputs() {
@@ -49,7 +49,7 @@
     if (!redWeek) return { h: 'Your bench holds through week 13.', i: 'The kind of action the diagnosis returns', p: 'No action. Flag the associates ready for harder work to workforce planning, and re-run the forecast when the next cohort is confirmed.' };
     var k = -1; for (var i = 0; i < cohortStarts.length; i++) { if (cohortStarts[i] + P.F > redDay) { k = i; break; } }
     var p;
-    if (k >= 0 && k < cohortStarts.length) p = 'Pull cohort ' + (k + 1) + ' forward two weeks. Owner: operations lead. Date: before its current start on day ' + cohortStarts[k] + '. That lands ' + Math.round(P.h * (1 - FLOOR_LOSS)) + ' seats on the floor ' + 14 + ' days earlier.';
+    if (k >= 0 && k < cohortStarts.length) p = 'Pull cohort ' + (k + 1) + ' forward two weeks. Owner: operations lead. Date: before its current start on day ' + cohortStarts[k] + '. That lands ' + Math.round(P.h * (1 - FLOOR_LOSS)) + ' seats on the floor 14 days earlier.';
     else if (P.a30 >= 0.15) p = 'Shift two team leaders to new-hire coaching, one topic, for six weeks. Owner: training lead. Date: next Monday. Attrition in the first 30 days is the leak.';
     else p = 'Capture knowledge from notified leavers and raise the next cohort by ' + Math.max(5, Math.round(P.h * 0.2)) + '. Owner: HR and workforce planning. Date: before the next intake.';
     return { h: 'Your bench falls short in week ' + redWeek + '.', i: 'The kind of action the diagnosis returns', p: p };
@@ -78,7 +78,7 @@
   }
 
   /* ---------------- WebGL ---------------- */
-  var gl = null, prog, buf = {}, nTri = 0, yaw = -0.55, pitch = 0.52, dragging = false, lx = 0, autoRot = !reduced, lastT = 0;
+  var gl = null, prog, buf = {}, nTri = 0, yaw = -0.62, pitch = 0.40, dragging = false, lx = 0, autoRot = !reduced, lastT = 0;
   var W = 1, H = 1, dpr = Math.min(2, window.devicePixelRatio || 1);
   function initGL() {
     try { gl = cv.getContext('webgl', { antialias: true, alpha: false, powerPreference: 'low-power' }); } catch (e) { gl = null; }
@@ -108,9 +108,9 @@
       pos[i * 3] = X(d); pos[i * 3 + 1] = Y(v); pos[i * 3 + 2] = Z(r, R - 1);
       var short = total[x] < 0.9 * P.S, future = d > day, top = r === R - 1;
       var cr, cg, cb, ca;
-      if (short) { cr = 0.89; cg = 0.12 + (top ? 0.02 : 0); cb = 0.14; } else { cr = 0.70 + (top ? 0.3 : 0); cg = cr; cb = cr; }
+      if (short) { cr = 0.95; cg = 0.14; cb = 0.16; } else { cr = 0.72 + (top ? 0.28 : 0); cg = cr; cb = cr; }
       if (!top) { cr *= 0.55; cg *= 0.55; cb *= 0.55; }
-      ca = future ? 0.28 : 1.0;
+      ca = future ? 0.22 : 1.0;
       col[i * 4] = cr; col[i * 4 + 1] = cg; col[i * 4 + 2] = cb; col[i * 4 + 3] = ca;
     }
     // normals via finite differences on the stacked top of each row
@@ -131,7 +131,7 @@
       pts.forEach(function (p) { pos[k * 3] = p[0]; pos[k * 3 + 1] = p[1]; pos[k * 3 + 2] = p[2]; nor[k * 3] = 0; nor[k * 3 + 1] = 1; nor[k * 3 + 2] = 0; col[k * 4] = rr; col[k * 4 + 1] = gg; col[k * 4 + 2] = bb; col[k * 4 + 3] = aa; k++; });
       tris.push(s, s + 2, s + 1, s + 1, s + 2, s + 3);
     }
-    quad(Y(P.S), -0.62, 0.62, 0.89, 0.12, 0.14, 0.16);          // need plane
+    quad(Y(P.S), -0.62, 0.62, 1.0, 1.0, 1.0, 0.10);              // need plane (white, faint)
     quad(Y(0.9 * P.S), 0.60, 0.63, 0.89, 0.12, 0.14, 0.9);     // 90% line along the front edge
     // scrub plane at current day
     var sx = X(day), s2 = k;
@@ -146,7 +146,7 @@
   function mat() {
     var aspect = W / H, f = 1 / Math.tan(0.5), near = 0.1, far = 20;
     var proj = [f / aspect, 0, 0, 0, 0, f, 0, 0, 0, 0, (far + near) / (near - far), -1, 0, 0, 2 * far * near / (near - far), 0];
-    var cy = Math.cos(yaw), sy = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch), dist = 2.9;
+    var cy = Math.cos(yaw), sy = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch), dist = 2.15;
     // camera orbit around (0,0.35,0)
     var ex = dist * sy * cp, ey = 0.35 + dist * sp, ez = dist * cy * cp;
     var zx = ex, zy = ey - 0.35, zz = ez, zl = Math.sqrt(zx * zx + zy * zy + zz * zz); zx /= zl; zy /= zl; zz /= zl;
