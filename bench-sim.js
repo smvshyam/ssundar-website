@@ -86,7 +86,7 @@
 
   /* ---------------- THREE scene ---------------- */
   var T = window.THREE, renderer, scene, camera, water, waterMat, holdWater, gaugeTex, gaugeCtx, lamp, tribs = [], seeps = [], town = [], pondGate;
-  var levelCur = 0.9, levelTgt = 0.9, pondCur = 0, pondTgt = 0, yaw = -0.35, yawTgt = -0.35, dragging = false, lx = 0, clock = null, ok = false;
+  var levelCur = 0.9, levelTgt = 0.9, pondCur = 0, pondTgt = 0, yaw = 0.62, yawTgt = 0.62, dragging = false, lx = 0, clock = null, ok = false;
   // world: dam at z=0 facing -z (town side). Reservoir behind (z>0). Water surface y = 0..H
   var H = 2.6, RW = 7.0, RL = 9.0;      // reservoir water max height, width, length
   function levelFor(seats) { return Math.min(1.25, seats / S.seats) * 0.8; } // fraction of H
@@ -97,8 +97,8 @@
     renderer.setPixelRatio(Math.min(isMobile ? 1.5 : 2, window.devicePixelRatio || 1));
     renderer.shadowMap.enabled = !isMobile; renderer.shadowMap.type = T.PCFSoftShadowMap;
     renderer.outputEncoding = T.sRGBEncoding; renderer.toneMapping = T.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
-    scene = new T.Scene(); scene.background = new T.Color(0x0b0f16); scene.fog = new T.Fog(0x0b0f16, 14, 34);
-    camera = new T.PerspectiveCamera(38, 1, 0.1, 100);
+    scene = new T.Scene(); scene.background = new T.Color(0x0b0f16); scene.fog = new T.Fog(0x0b0f16, 22, 48);
+    camera = new T.PerspectiveCamera(34, 1, 0.1, 100);
     // light: low sun from the town side so the dam face and water read
     var hemi = new T.HemisphereLight(0x8fb3ff, 0x1a1410, 0.55); scene.add(hemi);
     var sun = new T.DirectionalLight(0xffe2b8, 1.35); sun.position.set(-6, 9, -7); sun.castShadow = !isMobile;
@@ -137,7 +137,7 @@
     // gauge painted on the downstream face (canvas texture)
     var gc = document.createElement('canvas'); gc.width = 256; gc.height = 1024; gaugeCtx = gc.getContext('2d'); gaugeTex = new T.CanvasTexture(gc); gaugeTex.encoding = T.sRGBEncoding;
     var gauge = new T.Mesh(new T.PlaneGeometry(0.9, 3.55), new T.MeshStandardMaterial({ map: gaugeTex, transparent: true, roughness: 0.7 }));
-    gauge.position.set(RW / 2 - 0.9, (H + 0.25 - 1.3) / 2, -0.95 - 0.08 + 0.005); gauge.rotation.y = Math.PI; scene.add(gauge);
+    gauge.position.set(RW / 2 - 0.9, (H + 0.25 - 1.3) / 2, -0.95 - 0.08 - 0.01); gauge.rotation.y = Math.PI; scene.add(gauge);
     // warning lamp on the crest
     lamp = new T.Mesh(new T.SphereGeometry(0.12, 12, 12), new T.MeshStandardMaterial({ color: 0x330000, emissive: 0xE31E24, emissiveIntensity: 0.0 })); lamp.position.set(RW / 2 - 0.9, H + 0.62, -0.9); scene.add(lamp);
     var lampPost = new T.Mesh(new T.CylinderGeometry(0.03, 0.03, 0.3, 6), concrete); lampPost.position.set(RW / 2 - 0.9, H + 0.45, -0.9); scene.add(lampPost);
@@ -148,7 +148,7 @@
     water = new T.Mesh(wg, waterMat); water.position.set(0, 0, RL / 2 + 0.1); water.receiveShadow = !isMobile; scene.add(water);
     water.userData.base = wg.attributes.position.array.slice();
     // reservoir "body" (dark volume so the level reads from the side)
-    var body = new T.Mesh(new T.BoxGeometry(RW - 0.02, 1, RL - 0.02), new T.MeshStandardMaterial({ color: 0x0d2b4a, transparent: true, opacity: 0.45, roughness: 1 })); body.position.set(0, 0, RL / 2 + 0.1); scene.add(body); water.userData.body = body;
+    var body = new T.Mesh(new T.BoxGeometry(RW - 0.02, 1, RL - 0.02), new T.MeshStandardMaterial({ color: 0x08203a, transparent: true, opacity: 0.55, roughness: 1 })); body.position.set(0, 0, RL / 2 + 0.1); scene.add(body); water.userData.body = body;
 
     // holding pond upstream behind a gate
     var pondW = 2.4, pondL = 2.2, px = 0, pz = RL + 1.9;
@@ -208,7 +208,7 @@
   function frame() {
     var dt = Math.min(0.05, clock.getDelta()), t = clock.elapsedTime;
     levelCur += (levelTgt - levelCur) * Math.min(1, dt * 2.2); pondCur += (pondTgt - pondCur) * Math.min(1, dt * 2.2);
-    if (!dragging) { if (!reduced && !touched) yawTgt = -0.35 + Math.sin(t * 0.18) * 0.16; yaw += (yawTgt - yaw) * Math.min(1, dt * 3); }
+    if (!dragging) { if (!reduced && !touched) yawTgt = 0.62 + Math.sin(t * 0.16) * 0.14; yaw += (yawTgt - yaw) * Math.min(1, dt * 3); }
     var cur = M.weeks[S.week - 1], short = cur.short;
     // water
     var y = levelCur * H; water.position.y = y;
@@ -227,8 +227,8 @@
     seeps.forEach(function (sp, i) { sp.material.opacity = 0.15 + seepAmt * 0.5 * (0.6 + 0.4 * Math.sin(t * 3 + i)); sp.scale.y = 0.6 + seepAmt * 0.6; sp.position.y = 0.3 - (1 - sp.scale.y) * 1.2; });
     lamp.material.emissiveIntensity = short ? 1.6 + Math.sin(t * 7) * 1.2 : 0.0;
     // camera orbit around the dam
-    var cx = Math.sin(yaw) * 11.5, cz = Math.cos(yaw) * 11.5 - 1.0;
-    camera.position.set(cx, 4.6, cz); camera.lookAt(0, 0.9, 1.2);
+    var R = isMobile ? 15.5 : 13.0, cx = Math.sin(yaw) * R, cz = -Math.cos(yaw) * R + 0.8;
+    camera.position.set(cx, isMobile ? 7.8 : 6.9, cz); camera.lookAt(0, 0.7, 1.6);
     renderer.render(scene, camera); labels3D();
     requestAnimationFrame(frame);
   }
@@ -262,7 +262,7 @@
   window.addEventListener('resize', function () { if (useGL) size(); else draw2D(); });
   var moved = false, downX = 0;
   stage.addEventListener('pointerdown', function (e) { dragging = true; moved = false; lx = e.clientX; downX = e.clientX; touched = true; try { stage.setPointerCapture(e.pointerId); } catch (x) {} });
-  stage.addEventListener('pointermove', function (e) { if (!dragging) return; var dx = e.clientX - lx; lx = e.clientX; if (Math.abs(e.clientX - downX) > 6) moved = true; if (useGL) { yaw = Math.max(-1.1, Math.min(0.9, yaw + dx * 0.006)); yawTgt = yaw; } });
+  stage.addEventListener('pointermove', function (e) { if (!dragging) return; var dx = e.clientX - lx; lx = e.clientX; if (Math.abs(e.clientX - downX) > 6) moved = true; if (useGL) { yaw = Math.max(-1.0, Math.min(1.0, yaw - dx * 0.006)); yawTgt = yaw; } });
   stage.addEventListener('pointerup', function (e) { dragging = false; if (!moved && !useGL) { var r = stage.getBoundingClientRect(); $('t').value = Math.max(1, Math.min(WEEKS, Math.ceil((e.clientX - r.left) / r.width * WEEKS))); update(true); } });
   stage.addEventListener('pointercancel', function () { dragging = false; });
   var ctl = $('ctl'), sheetbtn = $('sheetbtn'), closeSheet = $('closeSheet');
