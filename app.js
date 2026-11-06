@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var valid = true;
-      ['challenge', 'seats', 'hireplan', 'budget', 'company', 'role', 'email'].forEach(function (id) {
+      ['account', 'seats', 'hireplan', 'budget', 'company', 'role', 'email'].forEach(function (id) {
         var input = document.getElementById(id);
         var error = document.getElementById('err-' + id);
         if (!input || !error) return;
@@ -223,7 +223,8 @@ document.addEventListener('DOMContentLoaded', function () {
         fd.append('company', v('company'));
         fd.append('role', v('role'));
         fd.append('email', v('email'));
-        fd.append('account', v('challenge'));
+        fd.append('account', v('account'));
+        fd.append('march_exposure', v('challenge'));
         fd.append('seats', v('seats'));
         fd.append('hire_plan', v('hireplan'));
         fd.append('budget_owner', v('budget'));
@@ -245,8 +246,11 @@ document.addEventListener('DOMContentLoaded', function () {
             try { _succ.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e0) {}
             // Email the same page (best effort)
             try {
+              var _mn = document.getElementById('mailNote');
               fetch('/.netlify/functions/send-thankyou', { method: 'POST', headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ kind: 'diagnosis', region: _region, to_email: v('email'), company: v('company') }) }).catch(function () {});
+                body: JSON.stringify({ kind: 'diagnosis', region: _region, to_email: v('email'), company: v('company') }) })
+                .then(function (rr) { if (_mn) _mn.textContent = rr.ok ? 'A copy is on its way to your email.' : 'Bookmark this page; I will send the copy myself with my reply.'; })
+                .catch(function () { if (_mn) _mn.textContent = 'Bookmark this page; I will send the copy myself with my reply.'; });
             } catch (e1) {}
             // GA4 key event — the only number that maps to pipeline. No PII sent.
             if (typeof gtag === 'function') {
@@ -256,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 region: _region,
                 budget_owner: v('budget').slice(0, 40),
                 seats_band: _seats < 50 ? '<50' : _seats < 200 ? '50-199' : _seats < 500 ? '200-499' : '500+',
-                account_named: v('challenge').trim().length > 20 ? 'yes' : 'no'
+                account_named: v('account').trim().length > 3 ? 'yes' : 'no'
               });
             }
           } else {
