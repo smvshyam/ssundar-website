@@ -65,7 +65,7 @@ h2.t{font-size:clamp(28px,6.4vw,64px)}
 .gatecard .stop{color:rgba(255,255,255,.62)}
 /* simulator */
 .simwrap{display:grid;gap:14px}
-@media(min-width:900px){.simwrap{grid-template-columns:1.3fr .9fr;align-items:start}}
+@media(min-width:900px){.simwrap{grid-template-columns:1.25fr .85fr;align-items:start}}
 .stage{position:relative;background:#070707;border:1px solid rgba(255,255,255,.14);aspect-ratio:4/3;min-height:260px;overflow:hidden;touch-action:pan-y}
 @media(min-width:900px){.stage{aspect-ratio:16/10}}
 .stage canvas{display:block;width:100%;height:100%}
@@ -126,15 +126,35 @@ h2.t{font-size:clamp(28px,6.4vw,64px)}
 .summary li{font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:rgba(255,255,255,.65);padding:6px 0;border-top:1px solid rgba(255,255,255,.08)}
 .summary li b{color:#fff}.summary li.red{color:#ff8a8f}.summary li.red b{color:#ff5a60}.summary li[data-on]{box-shadow:inset 3px 0 0 var(--red);padding-left:10px}
 .labels .ln.on{color:#fff;font-weight:700}
+.scorecards{display:grid;gap:12px;margin-top:12px}
+.sc{background:#0a0a0a;border:1px solid rgba(255,255,255,.14);padding:18px 18px 14px;cursor:pointer}
+.sc.on{border-color:rgba(255,255,255,.4)}
+.sc header{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.sc h3{font-family:var(--heading);font-weight:700;text-transform:uppercase;font-size:clamp(18px,2vw,24px);margin:0}
+.sc .hl{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0;padding:6px 10px;border:1px solid}
+.sc.red .hl{color:#ff5a60;border-color:#ff5a60}.sc.amber .hl{color:#ffb84d;border-color:#ffb84d}.sc.green .hl{color:#4cd37a;border-color:#4cd37a}
+.dotst{width:12px;height:12px;border-radius:50%;display:inline-block;background:#4cd37a;flex:none}
+.sc.red .dotst,.dotst.r{background:#E31E24}.sc.amber .dotst{background:#ffb84d}.dotst.g{background:#4cd37a}
+.sc .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.12)}
+@media(min-width:720px){.sc .facts{grid-template-columns:repeat(6,1fr)}}
+.sc .facts div{background:#0a0a0a;padding:10px 8px}
+.sc .facts b{display:block;font-family:var(--heading);font-weight:700;font-size:clamp(22px,2.2vw,30px);line-height:1;color:#fff}
+.sc .facts span{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:4px;line-height:1.3}
+.sc .strip{display:grid;grid-template-columns:repeat(13,1fr);gap:2px;margin-top:12px}
+.sc .strip span{display:block;text-align:center;font-family:var(--mono);font-size:11px;font-weight:700;padding:6px 0 5px;color:#0a0a0a}
+.sc .strip span i{display:block;font-style:normal;font-size:8.5px;font-weight:400;opacity:.7;margin-bottom:2px}
+.sc .strip .g{background:#4cd37a}.sc .strip .r{background:#E31E24;color:#fff}
+.sc .striplbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;color:rgba(255,255,255,.45);margin:6px 0 12px}
+.sc .lbl{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:12px 0 6px}
+.sc .why{list-style:none;margin:0;padding:0}
+.sc .why li{display:grid;grid-template-columns:52px 1fr;gap:10px;padding:8px 0;border-top:1px solid rgba(255,255,255,.08);font-family:var(--body);font-size:14px;line-height:1.5;color:rgba(255,255,255,.78)}
+.sc .why li b{font-family:var(--heading);font-weight:700;font-size:22px;color:#fff;line-height:1}
+.sc .why li em{font-style:normal;color:#fff;font-weight:600}
+.sc .act{margin-top:12px;padding:12px 14px;border-left:3px solid var(--red);background:rgba(227,30,36,.06)}
+.sc .act p{font-family:var(--body);font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.85);margin:0 0 6px}
+.sc .act p b{color:#fff}
+.sc.green .act{border-left-color:#4cd37a;background:rgba(76,211,122,.06)}
 .sheetbtn{display:none}
-@media(max-width:899px){
-  .ctl{position:fixed;left:0;right:0;bottom:0;z-index:60;transform:translateY(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);
-    background:#0a0a0a;border:0;border-top:2px solid var(--red);padding:12px 16px calc(16px + env(safe-area-inset-bottom));max-height:62svh;overflow:auto}
-  .ctl.open{transform:none}
-  .sheetbtn{display:inline-flex}
-  .ctl .close{display:block;width:100%;min-height:44px;margin-top:10px;background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
-}
-@media(min-width:900px){.ctl .close{display:none}}
 /* fixed bottom progression */
 .go{position:fixed;left:0;right:0;bottom:0;z-index:55;padding:10px 16px calc(10px + env(safe-area-inset-bottom));
   background:linear-gradient(to top,rgba(4,4,4,.96),rgba(4,4,4,.75) 70%,transparent);display:flex;justify-content:center;pointer-events:none}
@@ -214,30 +234,22 @@ footer.footer{scroll-snap-align:start}
   </div>
 </section>
 
-<!-- 3 · THE SIMULATOR (centrepiece) -->
+<!-- 3 · THE MODEL (facts and figures) -->
 <section class="pn" id="sim" data-go="Ask the one question" data-href="/engage">
   <div class="in">
     <p class="k">03 &middot; Model your bench, by geography &middot; illustrative</p>
-    <h2 class="t">Feel your number<span class="dot">.</span> <span class="soft">Wherever you are ramping.</span></h2>
-    <p class="l">Each geography you are ramping gets its own reservoir. The water behind the dam is that geography&rsquo;s delivery-ready bench; the town below it is the client. The gauge marks the seats you need and, in red, 90% of them. Seepage is attrition. Each cohort is a tributary that opens the week it graduates to the floor and reaches full flow only when it is proficient; until then its water sits in the gated holding pond &mdash; paid for, not earning. Pick your geographies, type your numbers, scrub the quarter.</p>
+    <h2 class="t">Your number, in black and white<span class="dot">.</span></h2>
+    <p class="l">Pick the geographies you are ramping, type your numbers, and read the result: delivery-ready seats week by week against the seats you need in March, red where you are below 90%, the reasons ranked by how many seats each one costs, and the first action that moves it.</p>
     <div class="geos" id="geos" aria-label="Geographies you are ramping"></div>
     <p class="small" style="margin-top:6px">Up to five at once. Each starts from what we watch first in that market &mdash; illustrative starting points to adjust, not benchmarks.</p>
     <div class="simwrap">
       <div>
-        <div class="stage" id="stage">
-          <canvas id="gl"></canvas>
-          <div class="labels" id="labels" aria-hidden="true"></div>
-          <div class="readout" id="readout"></div>
-          <div class="illus">Illustrative model &middot; not a forecast of your operation</div>
-        </div>
-        <div class="legend"><span><i class="sw b"></i>Reservoir = ready bench</span><span><i class="sw w"></i>Gauge: seats needed</span><span><i class="sw r"></i>Red mark: 90% &middot; lamp lights when short</span><span><i class="sw a"></i>Holding pond: hired, not yet proficient</span><span><i class="sw c"></i>Tributaries: cohorts landing</span></div>
-        <div class="scrub">
-          <label for="t" class="vh">Week</label>
-          <input type="range" id="t" min="1" max="13" value="13" step="1" style="width:100%;height:44px;accent-color:#E31E24">
-          <p class="small" style="margin-top:2px">Slide for the week. Drag sideways to walk around the dams.</p>
-        </div>
         <div class="summary" id="geosummary"></div>
-        <button class="btn g sheetbtn" id="sheetbtn" type="button" style="margin-top:10px;width:100%">Enter my numbers</button>
+        <div class="scorecards" id="scorecards"></div>
+        <div class="acts">
+          <a class="btn" id="simcta" href="/engage">Get this on your real data in four weeks &rarr;</a>
+        </div>
+        <p class="small">Illustrative model, not a forecast of your operation. The diagnosis replaces these inputs with your dialer, quality, attendance and assessment data, per geography, and your controller signs the baseline.</p>
       </div>
       <div>
         <div class="ctl" id="ctl" aria-label="Simulator inputs">
@@ -262,14 +274,8 @@ footer.footer{scroll-snap-align:start}
           <div class="f"><label for="n-loss">Never reach the floor <small>(% of offers, no-shows)</small></label><input type="number" id="n-loss" inputmode="numeric" min="0" max="40" step="1" value="8"><input type="range" id="loss" min="0" max="40" step="1" value="8" aria-label="Percent of hires who never reach the floor"></div>
           <button class="btn g" id="copyall" type="button" style="width:100%;margin-top:8px">Copy hire plan and ramp speeds to all selected geographies</button>
           <p class="small" style="margin-top:8px">A cohort starts every three weeks. Everything else is yours to set.</p>
-          <button class="close" id="closeSheet" type="button">Done</button>
-        </div>
-        <div class="story" id="story"></div>
-        <div class="verdict" id="verdict"></div>
-        <div class="acts">
-          <a class="btn" id="simcta" href="/engage">Get this on your real data in four weeks &rarr;</a>
-        </div>
-        <p class="small">The diagnosis replaces these inputs with your dialer, quality, attendance and assessment data, per geography, and your controller signs the baseline.</p>
+          </div>
+        
       </div>
     </div>
   </div>
@@ -358,8 +364,7 @@ footer.footer{scroll-snap-align:start}
 </footer>
 
 <script src="app.js"></script>
-<script src="/vendor/three.min.js?v=r128" defer></script>
-<script src="/bench-sim.js?v=20261107c" defer></script>
+<script src="/bench-sim.js?v=20261107d" defer></script>
 <script>
 (function(){
   /* ---- proof blocks, routed by what the visitor owns ---- */
