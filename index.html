@@ -76,13 +76,36 @@ h2.t{font-size:clamp(28px,6.4vw,64px)}
 .ctl{background:#0a0a0a;border:1px solid rgba(255,255,255,.14);padding:16px}
 .ctl label{display:block;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);margin:10px 0 4px}
 .ctl label output{float:right;color:#fff}
-.ctl input[type=range]{width:100%;height:44px;margin:0;accent-color:#E31E24;background:transparent}
+.ctl input[type=range]{width:100%;height:36px;margin:0;accent-color:#E31E24;background:transparent}
 .ctl .row2{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
 .verdict{margin-top:14px;padding:16px;background:#0a0a0a;border:1px solid rgba(255,255,255,.14);border-left:3px solid var(--red)}
 .verdict b{display:block;font-family:var(--heading);font-weight:700;text-transform:uppercase;font-size:clamp(20px,2.4vw,30px);line-height:1.05;margin-bottom:8px}
 .verdict p{font-family:var(--body);font-size:15px;line-height:1.55;color:rgba(255,255,255,.8);margin:0}
 .verdict p i{font-style:normal;color:var(--red);font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:4px}
 .verdict.ok{border-left-color:#3fb950}
+.labels{position:absolute;inset:0;pointer-events:none}
+.labels span{position:absolute;transform:translate(-50%,-50%);font-family:var(--mono);font-size:10px;letter-spacing:.06em;white-space:nowrap}
+.labels .lw{color:rgba(255,255,255,.45);transform:translate(-50%,0)}
+.labels .lw.on{color:#fff;font-weight:700}
+.labels .lv{color:#fff;font-weight:700;transform:translate(-50%,-100%)}
+.labels .lv.red{color:#ff5a60}
+.labels .ln{color:rgba(255,255,255,.7);transform:translate(0,-50%);padding-left:6px}
+.labels .ln.red{color:#ff5a60}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:rgba(255,255,255,.6)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend .sw{width:12px;height:12px;display:inline-block}
+.legend .sw.g{background:#6b6b6b}.legend .sw.w{background:#dcdcdc}.legend .sw.a{background:rgba(230,160,64,.5)}.legend .sw.r{background:#E31E24}
+.ctl .f{margin:10px 0 2px}
+.ctl .f label{display:block;margin:0 0 6px}
+.ctl .f label small{text-transform:none;letter-spacing:0;color:rgba(255,255,255,.4);font-weight:400}
+.ctl input[type=number]{width:100%;min-height:44px;background:#040404;border:1px solid rgba(255,255,255,.22);color:#fff;font-family:var(--mono);font-size:16px;padding:0 12px;margin-bottom:2px}
+.ctl input[type=number]:focus{outline:none;border-color:var(--red)}
+.ctl .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.story{margin-top:14px;padding:16px;background:#0a0a0a;border:1px solid rgba(255,255,255,.14)}
+.story p{font-family:var(--body);font-size:15px;line-height:1.55;color:rgba(255,255,255,.82);margin:0 0 10px}
+.story p:last-child{margin:0}
+.story b{color:#fff}
+.verdict .cf{margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.12)}
 .sheetbtn{display:none}
 @media(max-width:899px){
   .ctl{position:fixed;left:0;right:0;bottom:0;z-index:60;transform:translateY(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);
@@ -176,42 +199,43 @@ footer.footer{scroll-snap-align:start}
   <div class="in">
     <p class="k">03 &middot; Model your bench &middot; illustrative</p>
     <h2 class="t">Feel your number<span class="dot">.</span></h2>
-    <p class="l">Four inputs. The surface is delivery-ready seats across 90 days, stacked cohort by cohort; the faint plane is what you need, the red line is 90% of it. Scrub through the quarter. It turns red the first week you fall short.</p>
+    <p class="l">One bar per week: who is delivery-ready on the floor. The white line is the seats you need; the red line is 90% of it. The amber block is people you have hired who cannot earn yet. Bars turn red the week you fall short. Type your own numbers.</p>
     <div class="simwrap">
       <div>
         <div class="stage" id="stage">
           <canvas id="gl"></canvas>
-          <div class="readout" id="readout">Week 1<br><b>0</b> ready against <b>80</b> needed</div>
+          <div class="labels" id="labels" aria-hidden="true"></div>
+          <div class="readout" id="readout">Week 13 &middot; day 90<br><b>94</b> ready against <b>80</b> needed</div>
           <div class="illus">Illustrative model &middot; not a forecast of your operation</div>
         </div>
+        <div class="legend"><span><i class="sw g"></i>Tenured bench</span><span><i class="sw w"></i>New cohorts, proficient</span><span><i class="sw a"></i>Hired, not yet proficient</span><span><i class="sw r"></i>Below 90% of need</span></div>
         <div class="scrub">
-          <label for="t" class="vh">Scrub through the quarter</label>
+          <label for="t" class="vh">Week</label>
           <input type="range" id="t" min="1" max="13" value="13" step="1" style="width:100%;height:44px;accent-color:#E31E24">
-          <p class="small" style="margin-top:2px">Drag the surface to turn it. Scrub for the week. Tap a point for its readout.</p>
+          <p class="small" style="margin-top:2px">Slide for the week. Tap a bar for its number. Drag sideways to turn the chart.</p>
         </div>
-        <button class="btn g sheetbtn" id="sheetbtn" type="button" style="margin-top:10px;width:100%">Set my inputs</button>
+        <button class="btn g sheetbtn" id="sheetbtn" type="button" style="margin-top:10px;width:100%">Enter my numbers</button>
       </div>
       <div>
         <div class="ctl" id="ctl" aria-label="Simulator inputs">
-          <label for="seats">Seats needed<output id="o-seats">80</output></label>
-          <input type="range" id="seats" min="20" max="1000" step="5" value="80">
-          <label for="hires">Hires per cohort<output id="o-hires">15</output></label>
-          <input type="range" id="hires" min="5" max="200" step="1" value="15">
-          <label for="floor">Offer-to-floor days<output id="o-floor">45</output></label>
-          <input type="range" id="floor" min="10" max="90" step="1" value="45">
-          <label>Attrition at 30 / 60 / 90 days <output id="o-att">10% / 18% / 25%</output></label>
-          <div class="row2">
-            <input type="range" id="a30" min="0" max="40" step="1" value="10" aria-label="Attrition by day 30">
-            <input type="range" id="a60" min="0" max="60" step="1" value="18" aria-label="Attrition by day 60">
-            <input type="range" id="a90" min="0" max="70" step="1" value="25" aria-label="Attrition by day 90">
-          </div>
+          <div class="f"><label for="n-seats">Seats needed on the account</label><input type="number" id="n-seats" inputmode="numeric" min="20" max="1000" step="5" value="80"><input type="range" id="seats" min="20" max="1000" step="5" value="80" aria-label="Seats needed"></div>
+          <div class="f"><label for="n-hires">Hires per cohort <small>(a cohort starts every 3 weeks)</small></label><input type="number" id="n-hires" inputmode="numeric" min="5" max="200" step="1" value="15"><input type="range" id="hires" min="5" max="200" step="1" value="15" aria-label="Hires per cohort"></div>
+          <div class="f"><label for="n-floor">Offer-to-floor days <small>(proficient 21 days later)</small></label><input type="number" id="n-floor" inputmode="numeric" min="10" max="90" step="1" value="45"><input type="range" id="floor" min="10" max="90" step="1" value="45" aria-label="Offer-to-floor days"></div>
+          <div class="f"><label>New-hire attrition by day 30 / 60 / 90 <output id="o-att">10% / 18% / 25%</output></label>
+            <div class="row3">
+              <div><input type="number" id="n-a30" inputmode="numeric" min="0" max="40" value="10" aria-label="Attrition by day 30, percent"><input type="range" id="a30" min="0" max="40" step="1" value="10" aria-label="Attrition by day 30"></div>
+              <div><input type="number" id="n-a60" inputmode="numeric" min="0" max="60" value="18" aria-label="Attrition by day 60, percent"><input type="range" id="a60" min="0" max="60" step="1" value="18" aria-label="Attrition by day 60"></div>
+              <div><input type="number" id="n-a90" inputmode="numeric" min="0" max="70" value="25" aria-label="Attrition by day 90, percent"><input type="range" id="a90" min="0" max="70" step="1" value="25" aria-label="Attrition by day 90"></div>
+            </div></div>
+          <p class="small" style="margin-top:8px">Assumptions held constant: the bench starts at 93% of need, tenured attrition 3% a month, 8% of hires never reach the floor.</p>
           <button class="close" id="closeSheet" type="button">Done</button>
         </div>
-        <div class="verdict" id="verdict"><b>Your bench falls short in week 5.</b><p><i>The kind of action the diagnosis returns</i>Pull cohort 1 forward two weeks. Owner: operations lead. Date: before its current start.</p></div>
+        <div class="story" id="story"></div>
+        <div class="verdict" id="verdict"></div>
         <div class="acts">
           <a class="btn" id="simcta" href="/engage">Get this on your real data in four weeks &rarr;</a>
         </div>
-        <p class="small">The diagnosis replaces these sliders with your dialer, quality, attendance and assessment data, and your controller signs the baseline.</p>
+        <p class="small">The diagnosis replaces these inputs with your dialer, quality, attendance and assessment data, and your controller signs the baseline.</p>
       </div>
     </div>
   </div>
