@@ -17,12 +17,10 @@
 <link rel="stylesheet" href="styles.css">
 <style>
 /* ---- story page: mobile first, snap panels, no decoration ---- */
-html{scroll-snap-type:y proximity;scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{background:#040404;color:#fff}
 .nav{position:fixed}
-.pn{min-height:100svh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;
-  padding:calc(78px + env(safe-area-inset-top)) 20px calc(96px + env(safe-area-inset-bottom));position:relative}
+.pn{padding:clamp(40px,5vw,64px) 20px;border-top:1px solid rgba(255,255,255,.1)}
+.pn.hero0{padding-top:calc(92px + env(safe-area-inset-top));border-top:0}
 .pn .in{width:100%;max-width:1080px;margin:0 auto}
 .k{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);
   display:flex;align-items:center;gap:9px;margin:0 0 18px}
@@ -49,20 +47,6 @@ h2.t{font-size:clamp(28px,6.4vw,64px)}
 .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .small{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:rgba(255,255,255,.45);line-height:1.6;margin-top:14px}
 .small a{color:var(--red);text-decoration:none}
-/* sector toggle */
-.seg{display:inline-flex;border:1px solid rgba(255,255,255,.22);margin:0 0 6px}
-.seg button{min-height:44px;padding:0 16px;background:transparent;border:0;color:rgba(255,255,255,.6);font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
-.seg button.on{background:#fff;color:#0a0a0a}
-/* gate stepper */
-.steps{display:flex;gap:6px;margin:22px 0 14px;overflow-x:auto;padding-bottom:4px}
-.steps button{flex:1 0 auto;min-width:64px;min-height:44px;background:#0a0a0a;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.6);
-  font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
-.steps button.on{border-color:var(--red);color:#fff;box-shadow:inset 0 3px 0 var(--red)}
-.gatecard{background:#0a0a0a;border:1px solid rgba(255,255,255,.14);padding:22px 20px}
-.gatecard h3{font-family:var(--heading);font-weight:700;text-transform:uppercase;font-size:clamp(20px,2.4vw,30px);margin:0 0 10px;line-height:1.05}
-.gatecard .hold,.gatecard .stop{font-family:var(--body);font-size:15px;line-height:1.6;margin:0 0 8px;color:rgba(255,255,255,.85)}
-.gatecard .hold b,.gatecard .stop b{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:4px}
-.gatecard .stop{color:rgba(255,255,255,.62)}
 /* simulator */
 .simwrap{display:grid;gap:14px}
 @media(min-width:900px){.simwrap{grid-template-columns:1.25fr .85fr;align-items:start}}
@@ -155,19 +139,30 @@ h2.t{font-size:clamp(28px,6.4vw,64px)}
 .sc .act p b{color:#fff}
 .sc.green .act{border-left-color:#4cd37a;background:rgba(76,211,122,.06)}
 .sheetbtn{display:none}
-/* fixed bottom progression */
-.go{position:fixed;left:0;right:0;bottom:0;z-index:55;padding:10px 16px calc(10px + env(safe-area-inset-bottom));
-  background:linear-gradient(to top,rgba(4,4,4,.96),rgba(4,4,4,.75) 70%,transparent);display:flex;justify-content:center;pointer-events:none}
-.go a{pointer-events:auto;width:100%;max-width:420px;min-height:48px;display:inline-flex;align-items:center;justify-content:center;
-  font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:#fff;background:var(--red);border:1px solid var(--red)}
-.go.hide{display:none}
 /* after */
 .after a.row{display:block;text-decoration:none;color:#fff;background:#0a0a0a;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.1)}
 .after a.row b{display:block;font-family:var(--heading);font-weight:700;text-transform:uppercase;font-size:16px;margin-bottom:4px}
 .after a.row span{font-family:var(--body);font-size:14px;color:rgba(255,255,255,.62)}
 .after .list{border-top:1px solid rgba(255,255,255,.14);margin-top:20px}
-footer.footer{scroll-snap-align:start}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* dense facts */
+.fx{display:grid;gap:1px;background:rgba(255,255,255,.14);margin-top:22px}
+@media(min-width:720px){.fx.c4{grid-template-columns:repeat(4,1fr)}.fx.c3{grid-template-columns:repeat(3,1fr)}.fx.c2{grid-template-columns:repeat(2,1fr)}.fx.c6{grid-template-columns:repeat(6,1fr)}}
+.fx>div{background:#0a0a0a;padding:16px 16px}
+.fx b{display:block;font-family:var(--heading);font-weight:700;font-size:clamp(22px,2.4vw,34px);line-height:1;letter-spacing:-.03em;margin-bottom:6px}
+.fx b i{font-style:normal;color:var(--red);font-size:.62em}
+.fx span{font-family:var(--body);font-size:13.5px;line-height:1.5;color:rgba(255,255,255,.72);display:block}
+.fx .m{display:block;margin-top:6px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.st{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:middle}
+.st.g{background:#4cd37a}.st.r{background:#E31E24}.st.a{background:#ffb84d}
+table.tb{width:100%;border-collapse:collapse;margin-top:22px;font-family:var(--body);font-size:14px;line-height:1.5}
+table.tb th,table.tb td{text-align:left;vertical-align:top;padding:10px 12px;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.82)}
+table.tb th{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);font-weight:700;white-space:nowrap}
+table.tb td b{color:#fff}
+.two{display:grid;gap:24px}@media(min-width:900px){.two{grid-template-columns:1fr 1fr}}
+h2.t{font-size:clamp(24px,4.2vw,44px)}
+h1.t{font-size:clamp(32px,6.6vw,72px)}
 </style>
 </head>
 <body>
@@ -195,40 +190,54 @@ footer.footer{scroll-snap-align:start}
   <a href="/engage" style="color:var(--red)">Start the March Bench Diagnosis &rarr;</a>
 </div>
 
-<!-- 0 · HERO: their question, one line, one ask -->
-<section class="pn" id="p0" data-go="See the leak" data-href="#p1">
+
+<!-- 0 · HERO: the question, the offer, the proof. Static. -->
+<section class="pn hero0" id="p0">
   <div class="in">
     <h1 class="t">Capability is the margin you lose before anyone forecasts it<span class="dot">.</span></h1>
     <p class="l"><strong>Know in January whether your March bench will hold.</strong> We forecast it on your own data in four weeks, name the first action with an owner and a date, and leave your team running the method.</p>
     <p class="q">Which account would hurt most if its March bench came in at 70% of plan?</p>
     <div class="acts" style="margin-top:22px"><a class="btn" href="/engage">Start the March Bench Diagnosis &rarr;</a><a class="btn g" href="#sim">Model my bench first</a></div>
-    <p class="small">Capability Forward &middot; entry point: the March Bench Diagnosis &middot; contact centres, BPO, shared services, GCCs, sales-as-a-service and people-intensive delivery &middot; Asia, North America and Europe</p>
+    <div class="fx c4">
+      <div><b>4 <i>weeks</i></b><span>One account. Forecast, attrition by tenure, signed baseline, one action with its number.</span><em class="m">The March Bench Diagnosis</em></div>
+      <div><b>120 <i>days</i></b><span>Loops live by week 8, client declaration by week 12, measured gain and handover by week 16.</span><em class="m">Capability Forward</em></div>
+      <div><b>2 <i>gates</i></b><span>Week 4 and week 16. Go or no-go at each. If there is no material gap, we say so and stop.</span><em class="m">You can stop</em></div>
+      <div><b>0 <i>new tools</i></b><span>Runs on dialer statistics, quality scores, attendance and assessments you already have. Audio discarded. Nobody ranked.</span><em class="m">Nothing to host</em></div>
+    </div>
+    <p class="small">Capability Forward &middot; entry point: the March Bench Diagnosis &middot; contact centres, BPO, shared services, GCCs, sales-as-a-service and people-intensive delivery &middot; Asia, North America and Europe &middot; fixed fee plus a share of the measured gain, priced on the operations budget</p>
   </div>
 </section>
 
 <!-- 1 · THE LEAK -->
-<section class="pn" id="p1" data-go="See the forecast" data-href="#p2">
+<section class="pn" id="p1">
   <div class="in">
     <p class="k">01 &middot; The leak</p>
     <p class="theirs">&ldquo;It takes four months before a new hire is any use.&rdquo;</p>
     <h2 class="t">You hire 100 for a requirement of 80<span class="dot">.</span> <span class="soft">The loss happens before anyone is measuring.</span></h2>
     <p class="l">The shortfall surfaces in a QBR as a line about refreshers and backfill, after the client has felt it. By then the penalty is booked and the team leaders have spent a quarter firefighting. The name for it is time to proficiency, and it is forecastable.</p>
-    <div class="grid c3">
-      <div><b>Never</b><span>Some never reach the floor. Offer-to-floor loss is absorbed as a hiring number, not a capability number.</span></div>
-      <div><b>Late</b><span>Some reach it late. The seat is paid for weeks before it earns.</span></div>
-      <div><b>Gone</b><span>Some leave before they are dependable. New-hire attrition is reported with tenured attrition, so its cause stays hidden.</span></div>
+    <div class="fx c3">
+      <div><b><i class="st r"></i>Never</b><span>Some never reach the floor. Offer-to-floor loss is absorbed as a hiring number, not a capability number.</span></div>
+      <div><b><i class="st a"></i>Late</b><span>Some reach it late. The seat is paid for weeks before it earns; graduation and proficiency are not the same day.</span></div>
+      <div><b><i class="st r"></i>Gone</b><span>Some leave before they are dependable. New-hire attrition is reported with tenured attrition, so its cause stays hidden.</span></div>
     </div>
   </div>
 </section>
 
-<!-- 2 · THE FORECAST (Treeng appears once, here) -->
-<section class="pn" id="p2" data-go="Model my bench" data-href="#sim">
+<!-- 2 · THE FORECAST -->
+<section class="pn" id="p2">
   <div class="in">
     <p class="k">02 &middot; The forecast</p>
     <p class="theirs">&ldquo;Will I have enough trained people on the floor in March?&rdquo;</p>
     <h2 class="t">A 90-day forward view of delivery-ready seats against need<span class="dot">.</span></h2>
-    <p class="l">Per account and per cohort: who will be on the floor and proficient at 30, 60 and 90 days, the first week the bench falls below 90% of need, and an honest uncertainty band. Tenured, new-hire and in-ramp attrition modelled separately, so an existing-business gap is seen as early as a ramp gap.</p>
-    <div class="grid c2">
+    <table class="tb">
+      <tr><th>Today</th><th>With Capability Forward</th></tr>
+      <tr><td>Lagging metrics in a monthly review</td><td><b>A live 90-day forecast per account</b>, with an honest uncertainty band</td></tr>
+      <tr><td>One attrition number</td><td><b>Tenured, new-hire and in-ramp attrition modelled separately</b></td></tr>
+      <tr><td>Coaching as an activity</td><td><b>One topic per associate for six weeks</b>, against a weekly step-up target</td></tr>
+      <tr><td>A red flag owned by Training</td><td><b>A red flag owned by the organisation</b>, with one named action and a date</td></tr>
+      <tr><td>Bad news in the QBR</td><td><b>An annual declaration to the client</b>: targets by quarter, risks with fixes, bad news first</td></tr>
+    </table>
+    <div class="fx c2">
       <div><b>Runs on</b><span>Dialer statistics, quality scores, attendance, assessments &mdash; cheap signals already in your stack. No new platform. No audio stored. Nobody ranked.</span></div>
       <div><b>Analysed by</b><span>Treeng, SSUNDAR&rsquo;s own analysis build &mdash; sixteen modules for capability and L&amp;D data &mdash; runs on your extract during the diagnostic. It is the proof the build is real, not a product you buy.</span></div>
     </div>
@@ -236,9 +245,9 @@ footer.footer{scroll-snap-align:start}
 </section>
 
 <!-- 3 · THE MODEL (facts and figures) -->
-<section class="pn" id="sim" data-go="Ask the one question" data-href="/engage">
+<section class="pn" id="sim">
   <div class="in">
-    <p class="k">03 &middot; Model your bench, by geography &middot; illustrative</p>
+    <p class="k">03 &middot; Your number, by geography &middot; illustrative model</p>
     <h2 class="t">Your number, in black and white<span class="dot">.</span></h2>
     <p class="l">Pick the geographies you are ramping, type your numbers, and read the result: delivery-ready seats week by week against the seats you need in March, red where you are below 90%, the reasons ranked by how many seats each one costs, and the first action that moves it.</p>
     <div class="geos" id="geos" aria-label="Geographies you are ramping"></div>
@@ -282,53 +291,76 @@ footer.footer{scroll-snap-align:start}
   </div>
 </section>
 
-<!-- 4 · THE FIRST ACTION + THE GATE -->
-<section class="pn" id="p4" data-go="See the proof" data-href="#p5">
+<!-- 4 · THE FIRST ACTION, THEN THE GATES -->
+<section class="pn" id="p4">
   <div class="in">
-    <p class="k">04 &middot; The first action, then the gate</p>
+    <p class="k">04 &middot; The first action, then the gates</p>
     <p class="theirs">&ldquo;Don&rsquo;t give me a dashboard. Tell me what to do this week.&rdquo;</p>
     <h2 class="t">One owner<span class="dot">.</span> One date<span class="dot">.</span> One number<span class="dot">.</span></h2>
-    <p class="l">Accounts sorted by risk, red first, one recommended action each. The system recommends; a person decides. Four weeks in, you hold the forecast and the first action, and you decide go or no-go. <strong>If the diagnosis finds no material gap, we say so and stop.</strong></p>
-    <div class="steps" id="steps" role="tablist" aria-label="The 120 days">
-      <button role="tab" data-i="0" class="on">Week 0</button><button role="tab" data-i="1">Week 4 &middot; gate</button><button role="tab" data-i="2">Week 8</button><button role="tab" data-i="3">Week 12</button><button role="tab" data-i="4">Week 16 &middot; gate</button>
+    <p class="l">Accounts sorted by risk, red first, one recommended action each. The system recommends; a person decides. <strong>If the diagnosis finds no material gap, we say so and stop.</strong></p>
+    <table class="tb">
+      <tr><th>Week</th><th>What you hold</th><th>What you can stop</th></tr>
+      <tr><td><b>0</b></td><td>Account chosen. Data access agreed in writing. Legal scope signed. One controller to sign the baseline.</td><td>Nothing yet. No employee-facing step without your legal sign-off.</td></tr>
+      <tr><td><b><i class="st r"></i>4 &middot; gate</b></td><td>The 90-day bench forecast with its uncertainty band and the first week it falls below 90% of need. Attrition by tenure. The agreed baseline in your own numbers. One action with owner, date and number.</td><td><b>Go or no-go.</b> No material gap: we say so and stop. You pay for the diagnosis and nothing more.</td></tr>
+      <tr><td><b>8</b></td><td>Loops live: one coaching topic per associate for six weeks against a weekly step-up target the team leader can adjust, with the reason logged.</td><td>Pause at any week; everything built so far already sits in your own tools.</td></tr>
+      <tr><td><b>12</b></td><td>Client declaration: targets by quarter, risks with fixes, bad news first. First monthly forum with Operations, Training, HR, WFM and Pricing in one room.</td><td>Stop here and you keep the forecast model, the indicator set and the forum.</td></tr>
+      <tr><td><b><i class="st r"></i>16 &middot; gate</b></td><td>Behaviour change read at 30, 60 and 90 days against the agreed indicators. Runbook and handover. Your team runs it on your own stack.</td><td><b>Decision to scale, or not.</b> The method stays licensed; nothing is held back as leverage.</td></tr>
+    </table>
+    <div class="fx c3">
+      <div><b>Fixed fee + shared gain</b><span>A fixed fee covers the work; a share of the gain the account actually measures is added, so the risk is shared. Priced on the operations budget, not the learning budget.</span></div>
+      <div><b>Licensed, not handed over</b><span>The method, the indicator set and the coaching logic remain licensed. Your team builds and runs everything on your own stack, with our direction.</span></div>
+      <div><b>Nothing new to host</b><span>Transcripts only where signals disagree. Audio discarded. Inside tools your security team has already approved.</span></div>
     </div>
-    <div class="gatecard" id="gatecard" role="tabpanel"></div>
-    <p class="small">Fixed fee plus a share of the gain the account actually measures. Licensed, not handed over. Nothing new to host. Buys on the operations budget, not the learning budget.</p>
   </div>
 </section>
 
-<!-- 5 · THE PROOF with sector routing -->
-<section class="pn" id="p5" data-go="After the diagnostic" data-href="#p6">
+<!-- 5 · THE PROOF -->
+<section class="pn" id="p5">
   <div class="in">
-    <p class="k">05 &middot; The proof &middot; sector level, with its mechanism</p>
-    <div class="seg" role="group" aria-label="What you own">
-      <button type="button" data-sector="ramp" class="on">I own cost of ramp</button>
-      <button type="button" data-sector="risk">I own risk and evidence</button>
+    <p class="k">05 &middot; The proof &middot; sector level, each figure with its mechanism</p>
+    <h2 class="t">Every figure traces to a source<span class="dot">.</span> <span class="soft">And can be walked through in a room.</span></h2>
+    <div class="two">
+      <div>
+        <p class="small" style="margin:0 0 6px"><strong style="color:#fff">If you own cost of ramp</strong> &middot; COO, site head, GCC head, shared services, delivery</p>
+        <div class="fx">
+          <div><b>77&nbsp;&rarr;&nbsp;93<i>%</i></b><span>Quality recovered in 90 days on an escalated technical-support account, while headcount ramped 70% &mdash; which is when quality normally falls.</span><em class="m">Mechanism: judgment standards rebuilt at the point of contact, then held</em></div>
+          <div><b>~30<i>%</i></b><span>Fewer new-hire attritions and underperformers in a sales-outsourcing operation.</span><em class="m">Mechanism: a competency-measurement and coaching architecture for new hires and their managers</em></div>
+          <div><b>70&nbsp;&rarr;&nbsp;89<i>%</i></b><span>CSAT rebuilt and held across a 1,600-person BPO operation.</span><em class="m">Mechanism: fixed at the point of customer contact, then held across the floor</em></div>
+          <div><b>79&nbsp;&rarr;&nbsp;89<i>%</i></b><span>30-day new-hire CSAT measured at the end of the ramp, not the end of training. A second cohort moved 88&nbsp;&rarr;&nbsp;98% on the same measure.</span><em class="m">Mechanism: capability built at the point of entry</em></div>
+        </div>
+      </div>
+      <div>
+        <p class="small" style="margin:0 0 6px"><strong style="color:#fff">If you own risk and evidence</strong> &middot; compliance, quality, regulated operations</p>
+        <div class="fx">
+          <div><b>30<i>d</i>&nbsp;&rarr;&nbsp;4<i>d</i></b><span>Resolution time in a compliance operation at a global e-commerce marketplace, with errors down over 90%.</span><em class="m">Mechanism: rebuilt by working backwards from the customer; training was the last of five fixes, not the first &mdash; which is why it held</em></div>
+          <div><b>5.00</b><span>Facilitator rating, 100% would recommend, across three live cohorts in Europe and Asia &mdash; scored by participants, not by the facilitator.</span><em class="m">For an auditor&rsquo;s question: every figure traces to a source document</em></div>
+          <div><b>3 <i>awards</i></b><span>Brandon Hall Gold 2021, Best Results of a Learning Program. Brandon Hall Silver 2017, Competencies and Skill Development. Golden Peacock National Training Award 2017.</span><em class="m">Externally judged &middot; SLII&reg; and COPC&reg; certified</em></div>
+        </div>
+      </div>
     </div>
-    <h2 class="t" id="proofHead">Every figure traces to a source<span class="dot">.</span> <span class="soft">And can be walked through in a room.</span></h2>
-    <div class="grid c2" id="proofGrid"></div>
     <p class="small">Led in-role, stated at sector level by contract. No client names anywhere on this site. <a href="/evidence">Every figure, with its source &rarr;</a></p>
   </div>
 </section>
 
-<!-- 6 · AFTER THE DIAGNOSTIC (the former menu, sequenced) -->
-<section class="pn after" id="p6" data-go="Ask the one question" data-href="/engage">
+<!-- 6 · WHO, AND AFTER -->
+<section class="pn after" id="p6">
   <div class="in">
-    <p class="k">06 &middot; After the diagnostic</p>
-    <h2 class="t">What happens once the number is on the table<span class="dot">.</span></h2>
-    <p class="l">The diagnosis is the first four weeks of Capability Forward. If you continue, the work runs into loops live (weeks 5 to 8), then declare, measure and transfer (weeks 9 to 16). Everything below is depth behind that decision, not a menu.</p>
+    <p class="k">06 &middot; Who you would be working with, and what comes after</p>
+    <h2 class="t">An operator who built these systems from inside<span class="dot">.</span> <span class="soft">Not an advisor describing them.</span></h2>
+    <div class="fx c3">
+      <div><b>Amazon</b><span>Global learning leadership for the compliance organisation of a large e-commerce marketplace across five countries.</span></div>
+      <div><b>Accenture</b><span>Enterprise transformation; capability programmes across 20+ countries.</span></div>
+      <div><b>Cognizant</b><span>Scale operations and quality systems in high-risk delivery.</span></div>
+    </div>
     <div class="list">
       <a class="row" href="/capability-forward"><b>Capability Forward, in full</b><span>The offer on one page: the three loops, the 120 days, what you hold at each gate.</span></a>
       <a class="row" href="/work-intelligence"><b>The expansion: Work Intelligence</b><span>Once one account is proven &mdash; the capability operating system across the floor.</span></a>
-      <a class="row" href="/work"><b>The wider portfolio</b><span>Capability strategy and architecture engagements, sequenced after the diagnostic.</span></a>
       <a class="row" href="https://shyam-careermap.netlify.app/" target="_blank" rel="noopener noreferrer"><b>About Shyam</b><span>Twenty-five years inside Fortune 500 operations, as the operator who ran the systems. The career map, year by year.</span></a>
     </div>
     <div class="acts" style="margin-top:26px"><a class="btn" href="/engage">Start the March Bench Diagnosis &rarr;</a><a class="btn g" href="/capability-forward">The offer on one page</a></div>
     <p class="small" style="margin-top:22px"><strong style="color:#fff">Head of L&amp;D?</strong> You are the person who will see this first. Bring it to your operations lead: the diagnosis is priced against their number and buys on their budget. <a href="/capability-forward">The one-pager to forward &rarr;</a></p>
   </div>
 </section>
-
-<div class="go" id="go"><a href="#p1" id="goBtn">See the leak</a></div>
 
 <footer class="footer">
   <section class="section" style="padding-top:72px;padding-bottom:36px">
@@ -357,69 +389,7 @@ footer.footer{scroll-snap-align:start}
 </footer>
 
 <script src="app.js"></script>
-<script src="/bench-sim.js?v=20261107d" defer></script>
-<script>
-(function(){
-  /* ---- proof blocks, routed by what the visitor owns ---- */
-  var PROOF={
-    ramp:[
-      ['77&nbsp;&rarr;&nbsp;93<i>%</i>','Quality recovered in 90 days on an escalated technical-support account, while headcount ramped 70% &mdash; which is when quality normally falls.','Mechanism: judgment standards rebuilt at the point of contact, then held'],
-      ['~30<i>%</i>','Fewer new-hire attritions and underperformers in a sales-outsourcing operation.','Mechanism: a competency-measurement and coaching architecture for new hires and their managers'],
-      ['70&nbsp;&rarr;&nbsp;89<i>%</i>','CSAT rebuilt and held across a 1,600-person BPO operation.','Mechanism: fixed at the point of customer contact, then held across the floor'],
-      ['79&nbsp;&rarr;&nbsp;89<i>%</i>','30-day new-hire CSAT measured at the end of the ramp, not the end of training. A second cohort moved 88&nbsp;&rarr;&nbsp;98% on the same measure.','Mechanism: capability built at the point of entry']
-    ],
-    risk:[
-      ['30<i>d</i>&nbsp;&rarr;&nbsp;4<i>d</i>','Resolution time in a compliance operation at a global e-commerce marketplace, with errors down over 90%.','Mechanism: rebuilt by working backwards from the customer; training was the last of five fixes, not the first'],
-      ['77&nbsp;&rarr;&nbsp;93<i>%</i>','Quality recovered in 90 days on an escalated technical-support account, while headcount ramped 70% &mdash; which is when quality normally falls.','Mechanism: judgment standards rebuilt at the point of contact, then held'],
-      ['5.00','Facilitator rating, 100% would recommend, across three live cohorts in Europe and Asia &mdash; scored by participants, not by the facilitator.','For an auditor&rsquo;s question: every figure traces to a source document'],
-      ['70&nbsp;&rarr;&nbsp;89<i>%</i>','CSAT rebuilt and held across a 1,600-person BPO operation.','Mechanism: fixed at the point of customer contact, then held across the floor']
-    ]
-  };
-  var HEAD={ramp:'Every figure traces to a source<span class="dot">.</span> <span class="soft">And can be walked through in a room.</span>',
-            risk:'Proof an auditor can follow<span class="dot">.</span> <span class="soft">Thirty working days to four, errors down over 90%.</span>'};
-  var grid=document.getElementById('proofGrid'), head=document.getElementById('proofHead');
-  function render(sec){
-    grid.innerHTML=PROOF[sec].map(function(r){return '<div><b>'+r[0]+'</b><span>'+r[1]+'</span><em class="m">'+r[2]+'</em></div>';}).join('');
-    head.innerHTML=HEAD[sec];
-    document.querySelectorAll('.seg button').forEach(function(b){b.classList.toggle('on',b.dataset.sector===sec);});
-    try{sessionStorage.setItem('ssundar_sector',sec);}catch(e){}
-    window.__sector=sec;
-    if(window.__simLink) window.__simLink();
-  }
-  var saved=null; try{saved=sessionStorage.getItem('ssundar_sector');}catch(e){}
-  render(saved==='risk'?'risk':'ramp');
-  document.querySelectorAll('.seg button').forEach(function(b){b.addEventListener('click',function(){render(b.dataset.sector);});});
-
-  /* ---- gate stepper ---- */
-  var GATES=[
-    ['Week 0 &middot; Account chosen','Data access agreed in writing. Legal scope signed. One account, one controller to sign the baseline.','Nothing yet. No employee-facing step without your legal sign-off.'],
-    ['Week 4 &middot; First forecast &middot; GATE','The 90-day bench forecast with its uncertainty band and the first week it falls below 90% of need. Attrition by tenure. The agreed baseline in your own numbers. One recommended action with owner, date and number.','Go or no-go. If there is no material gap, we say so and stop. You pay for the diagnosis and nothing more.'],
-    ['Week 8 &middot; Loops live','Step-up targets running: one coaching topic per associate for six weeks against a weekly target the team leader can adjust, with the reason logged.','Pause at any week; everything built so far already sits in your own tools.'],
-    ['Week 12 &middot; Client declaration','Targets by quarter, risks with fixes, bad news first. The first monthly forum with Operations, Training, HR, WFM and Pricing in one room.','Stop here and you keep the forecast model, the indicator set and the forum.'],
-    ['Week 16 &middot; Measured gain &middot; GATE','Behaviour change read at 30, 60 and 90 days against the agreed indicators. Runbook and handover. Your team runs it on your own stack.','Decision to scale, or not. The method stays licensed; nothing is held back as leverage.']
-  ];
-  var card=document.getElementById('gatecard'), steps=document.querySelectorAll('#steps button');
-  function gate(i){card.innerHTML='<h3>'+GATES[i][0]+'</h3><p class="hold"><b>What you hold</b>'+GATES[i][1]+'</p><p class="stop"><b>What you can stop</b>'+GATES[i][2]+'</p>';
-    steps.forEach(function(b){b.classList.toggle('on',+b.dataset.i===i);});}
-  steps.forEach(function(b){b.addEventListener('click',function(){gate(+b.dataset.i);});});
-  gate(0);
-
-  /* ---- fixed bottom button follows the story ---- */
-  var go=document.getElementById('go'), goBtn=document.getElementById('goBtn');
-  var panels=document.querySelectorAll('section.pn');
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){goBtn.textContent=e.target.dataset.go;
-      var h=e.target.dataset.href; if(h==='/engage'&&window.__simLink){h=window.__simHref||h;} goBtn.setAttribute('href',h);}});},{threshold:.5});
-    panels.forEach(function(p){io.observe(p);});
-    var fo=new IntersectionObserver(function(es){es.forEach(function(e){go.classList.toggle('hide',e.isIntersecting);});},{threshold:.2});
-    fo.observe(document.querySelector('footer.footer'));
-  }
-  goBtn.addEventListener('click',function(){
-    if(goBtn.getAttribute('href').charAt(0)==='#') return;
-    if(typeof window.gtag==='function') window.gtag('event','question_prompt_click',{from:goBtn.textContent});
-  });
-})();
-</script>
+<script src="/bench-sim.js?v=20261107e" defer></script>
 <script src="/cookie-consent.js"></script>
 </body>
 </html>
