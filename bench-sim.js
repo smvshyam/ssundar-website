@@ -19,7 +19,7 @@
   function run(p, starts) {
     var weeks = [];
     for (var w = 1; w <= WEEKS; w++) {
-      var d = w * 7, ten = p.seats * START_BENCH * (1 - TEN_ATTR * d / 30), segs = [ten], ramp = 0;
+      var d = Math.min(90, w * 7), ten = p.seats * START_BENCH * (1 - TEN_ATTR * d / 30), segs = [ten], ramp = 0;
       starts.forEach(function (s) { var age = d - s; if (age < 0) { segs.push(0); return; }
         var alive = p.hires * (1 - FLOOR_LOSS) * surv(age, p), ready = alive * prof(age, p); segs.push(ready); ramp += alive - ready; });
       var tot = segs.reduce(function (a, b) { return a + b; }, 0);
@@ -36,11 +36,12 @@
     if (M.red) {
       var redDay = M.red * 7, k = -1;
       for (var i = 0; i < starts.length; i++) { if (starts[i] + S.floor > redDay) { k = i; break; } }
-      if (k >= 0) {
-        var alt = starts.slice(); alt[k] = Math.max(0, alt[k] - 14);
-        var cf = run(S, alt);
-        M.action = { k: k, text: 'Pull cohort ' + (k + 1) + ' forward two weeks (start day ' + alt[k] + ' instead of ' + starts[k] + ').', owner: 'Operations lead', cf: cf,
-          lands: Math.round(S.hires * (1 - FLOOR_LOSS)) };
+      if (k > 0 && starts[k] >= 14) {
+        var alt = starts.slice(); alt[k] = starts[k] - 14;
+        M.action = { k: k, text: 'Pull cohort ' + (k + 1) + ' forward two weeks (start day ' + alt[k] + ' instead of ' + starts[k] + ').', owner: 'Operations lead', cf: run(S, alt) };
+      } else if (k === 0 && S.floor > 24) {
+        var cut = Math.min(14, S.floor - 10), pf = Object.assign({}, S, { floor: S.floor - cut });
+        M.action = { k: 0, text: 'Compress offer-to-floor for cohort 1 from ' + S.floor + ' to ' + (S.floor - cut) + ' days: pre-boarding before day one, classroom in two waves, first live calls under a coach.', owner: 'Training lead with operations', cf: run(pf, starts) };
       } else if (S.a30 >= 15) {
         var p2 = Object.assign({}, S, { a30: Math.round(S.a30 * 0.6), a60: Math.round(S.a60 * 0.75), a90: Math.round(S.a90 * 0.85) });
         M.action = { k: -1, text: 'Shift two team leaders to new-hire coaching, one topic for six weeks. The leak is attrition in the first 30 days.', owner: 'Training lead', cf: run(p2, starts) };
@@ -186,7 +187,7 @@
       h += '<span class="lw' + (x.w === S.week ? ' on' : '') + '" style="left:' + p[0] + 'px;top:' + p[1] + 'px">W' + x.w + '</span>';
       if (x.w <= S.week && (x.w === S.week || x.w === M.red || x.w === 1 || x.w === WEEKS || x.w % 3 === 0)) h += '<span class="lv' + (x.short ? ' red' : '') + '" style="left:' + q[0] + 'px;top:' + q[1] + 'px">' + Math.round(x.total) + '</span>';
     });
-    var n = project(1.16, Y(S.seats), -D * 1.15), m = project(1.16, Y(0.9 * S.seats), -D * 1.15);
+    var n = project(-1.16, Y(S.seats), D * 1.15), m = project(-1.16, Y(0.9 * S.seats), D * 1.15);
     h += '<span class="ln" style="left:' + n[0] + 'px;top:' + n[1] + 'px">' + S.seats + ' needed</span>';
     h += '<span class="ln red" style="left:' + m[0] + 'px;top:' + m[1] + 'px">90% &middot; ' + Math.round(0.9 * S.seats) + '</span>';
     lab.innerHTML = h;
