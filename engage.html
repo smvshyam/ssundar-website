@@ -205,10 +205,10 @@
   });});
   document.querySelectorAll('.eg .prev').forEach(function(b){b.addEventListener('click',function(){show(+b.dataset.prev);});});
   try{
-    var q=new URLSearchParams(location.search);
+    var q=new URLSearchParams(location.search);var GN={in:'India',ph:'Philippines',cn:'China',me:'MENA',za:'South Africa',eu:'Europe',na:'North America',la:'Latin America',anz:'ANZ'};
     if(q.get('seats')){document.getElementById('seats').value=q.get('seats');}
-    if(q.get('hires')){document.getElementById('hireplan').value='Cohorts of '+q.get('hires')+', offer-to-floor '+(q.get('floor')||'?')+' days, attrition '+(q.get('a30')||'?')+'/'+(q.get('a60')||'?')+'/'+(q.get('a90')||'?')+'% at 30/60/90';}
-    if(q.get('red')){document.getElementById('challenge').placeholder='The simulator said: short in week '+q.get('red')+'. Which real account is this?';}
+    if(q.get('hires')){var gs=(q.get('geos')||'').split(',').filter(Boolean).map(function(x){return GN[x]||x;});document.getElementById('hireplan').value=(gs.length?gs.join(' + ')+' · ':'')+(GN[q.get('geo')]?GN[q.get('geo')]+': ':'')+'cohorts of '+q.get('hires')+', offer-to-floor '+(q.get('floor')||'?')+'d, proficient +'+(q.get('prof')||'?')+'d, attrition '+(q.get('a30')||'?')+'/'+(q.get('a60')||'?')+'/'+(q.get('a90')||'?')+'% at 30/60/90';}
+    if(q.get('red')){document.getElementById('challenge').placeholder='The simulator said '+(GN&&GN[q.get('geo')]?GN[q.get('geo')]+' is ':'')+'short in week '+q.get('red')+'. Which real account is this?';}
     document.getElementById('sim').value=location.search.slice(1,300);
     var sec=q.get('sector'); try{sec=sec||sessionStorage.getItem('ssundar_sector');}catch(e){}
     if(sec==='risk'){document.getElementById('strip').innerHTML='<b>30 working days &rarr; 4</b> resolution time in a compliance operation, errors down over 90% &nbsp;&middot;&nbsp; <b>77% &rarr; 93%</b> quality in 90 days, headcount up 70% &nbsp;&middot;&nbsp; <b>5.00</b> facilitator rating, 100% would recommend';}

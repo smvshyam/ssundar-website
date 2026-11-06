@@ -106,6 +106,26 @@ h2.t{font-size:clamp(28px,6.4vw,64px)}
 .story p:last-child{margin:0}
 .story b{color:#fff}
 .verdict .cf{margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.12)}
+.geos{display:grid;gap:6px;grid-template-columns:repeat(2,1fr);margin-top:18px}
+@media(min-width:720px){.geos{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1000px){.geos{grid-template-columns:repeat(5,1fr)}}
+.geos label{display:flex;flex-direction:column;gap:2px;min-height:48px;padding:9px 12px;border:1px solid rgba(255,255,255,.2);background:#0a0a0a;cursor:pointer;position:relative}
+.geos label.on{border-color:var(--red);box-shadow:inset 3px 0 0 var(--red)}
+.geos input{position:absolute;opacity:0;width:1px;height:1px}
+.geos b{font-family:var(--heading);font-weight:700;text-transform:uppercase;font-size:14px;color:#fff}
+.geos span{font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;color:rgba(255,255,255,.45);line-height:1.4}
+.geotabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.geotabs button{min-height:40px;padding:0 12px;background:transparent;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.65);font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.geotabs button.on{background:#fff;color:#0a0a0a;border-color:#fff}
+.watch{font-family:var(--body);font-size:13.5px;line-height:1.5;color:rgba(255,255,255,.7);margin:0 0 8px;padding:10px 12px;border-left:2px solid var(--red);background:rgba(227,30,36,.06)}
+.watch b{color:#fff}.watch em{display:block;margin-top:4px;font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:rgba(255,255,255,.4)}
+.ctl .row2g{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.summary{margin-top:12px;padding:14px 16px;background:#0a0a0a;border:1px solid rgba(255,255,255,.14)}
+.summary p{font-family:var(--body);font-size:15px;color:rgba(255,255,255,.85);margin:0 0 8px}
+.summary ul{list-style:none;margin:0;padding:0}
+.summary li{font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:rgba(255,255,255,.65);padding:6px 0;border-top:1px solid rgba(255,255,255,.08)}
+.summary li b{color:#fff}.summary li.red{color:#ff8a8f}.summary li.red b{color:#ff5a60}.summary li[data-on]{box-shadow:inset 3px 0 0 var(--red);padding-left:10px}
+.labels .ln.on{color:#fff;font-weight:700}
 .sheetbtn{display:none}
 @media(max-width:899px){
   .ctl{position:fixed;left:0;right:0;bottom:0;z-index:60;transform:translateY(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);
@@ -197,9 +217,11 @@ footer.footer{scroll-snap-align:start}
 <!-- 3 · THE SIMULATOR (centrepiece) -->
 <section class="pn" id="sim" data-go="Ask the one question" data-href="/engage">
   <div class="in">
-    <p class="k">03 &middot; Model your bench &middot; illustrative</p>
-    <h2 class="t">Feel your number<span class="dot">.</span></h2>
-    <p class="l">The reservoir behind the dam is your delivery-ready bench; the town below it is the client. The gauge on the dam marks the seats you need and, in red, 90% of them. Seepage through the dam is attrition. Each cohort is a tributary that only starts flowing the week it lands; until then its water sits in the gated holding pond &mdash; paid for, not earning. Scrub the quarter and watch the level. Type your own numbers.</p>
+    <p class="k">03 &middot; Model your bench, by geography &middot; illustrative</p>
+    <h2 class="t">Feel your number<span class="dot">.</span> <span class="soft">Wherever you are ramping.</span></h2>
+    <p class="l">Each geography you are ramping gets its own reservoir. The water behind the dam is that geography&rsquo;s delivery-ready bench; the town below it is the client. The gauge marks the seats you need and, in red, 90% of them. Seepage is attrition. Each cohort is a tributary that opens the week it graduates to the floor and reaches full flow only when it is proficient; until then its water sits in the gated holding pond &mdash; paid for, not earning. Pick your geographies, type your numbers, scrub the quarter.</p>
+    <div class="geos" id="geos" aria-label="Geographies you are ramping"></div>
+    <p class="small" style="margin-top:6px">Up to five at once. Each starts from what we watch first in that market &mdash; illustrative starting points to adjust, not benchmarks.</p>
     <div class="simwrap">
       <div>
         <div class="stage" id="stage">
@@ -212,22 +234,30 @@ footer.footer{scroll-snap-align:start}
         <div class="scrub">
           <label for="t" class="vh">Week</label>
           <input type="range" id="t" min="1" max="13" value="13" step="1" style="width:100%;height:44px;accent-color:#E31E24">
-          <p class="small" style="margin-top:2px">Slide for the week. Drag sideways to walk around the dam.</p>
+          <p class="small" style="margin-top:2px">Slide for the week. Drag sideways to walk around the dams.</p>
         </div>
+        <div class="summary" id="geosummary"></div>
         <button class="btn g sheetbtn" id="sheetbtn" type="button" style="margin-top:10px;width:100%">Enter my numbers</button>
       </div>
       <div>
         <div class="ctl" id="ctl" aria-label="Simulator inputs">
-          <div class="f"><label for="n-seats">Seats needed on the account</label><input type="number" id="n-seats" inputmode="numeric" min="20" max="1000" step="5" value="80"><input type="range" id="seats" min="20" max="1000" step="5" value="80" aria-label="Seats needed"></div>
-          <div class="f"><label for="n-hires">Hires per cohort <small>(a cohort starts every 3 weeks)</small></label><input type="number" id="n-hires" inputmode="numeric" min="5" max="200" step="1" value="15"><input type="range" id="hires" min="5" max="200" step="1" value="15" aria-label="Hires per cohort"></div>
-          <div class="f"><label for="n-floor">Offer-to-floor days <small>(proficient 21 days later)</small></label><input type="number" id="n-floor" inputmode="numeric" min="10" max="90" step="1" value="45"><input type="range" id="floor" min="10" max="90" step="1" value="45" aria-label="Offer-to-floor days"></div>
+          <div class="geotabs" id="geotabs" role="tablist"></div>
+          <p class="watch" id="geowatch"></p>
+          <div class="f"><label for="n-seats">Seats needed on the account</label><input type="number" id="n-seats" inputmode="numeric" min="20" max="1000" step="5" value="120"><input type="range" id="seats" min="20" max="1000" step="5" value="120" aria-label="Seats needed"></div>
+          <div class="f"><label for="n-hires">Hires per cohort <small>(a cohort starts every 3 weeks)</small></label><input type="number" id="n-hires" inputmode="numeric" min="5" max="200" step="1" value="25"><input type="range" id="hires" min="5" max="200" step="1" value="25" aria-label="Hires per cohort"></div>
+          <div class="row2g">
+            <div class="f"><label for="n-floor">Offer-to-floor days <small>(graduation)</small></label><input type="number" id="n-floor" inputmode="numeric" min="10" max="90" step="1" value="45"><input type="range" id="floor" min="10" max="90" step="1" value="45" aria-label="Offer-to-floor days"></div>
+            <div class="f"><label for="n-prof">Speed to proficiency <small>(days after graduation)</small></label><input type="number" id="n-prof" inputmode="numeric" min="7" max="60" step="1" value="21"><input type="range" id="prof" min="7" max="60" step="1" value="21" aria-label="Days from graduation to proficient"></div>
+          </div>
           <div class="f"><label>New-hire attrition by day 30 / 60 / 90 <output id="o-att">10% / 18% / 25%</output></label>
             <div class="row3">
               <div><input type="number" id="n-a30" inputmode="numeric" min="0" max="40" value="10" aria-label="Attrition by day 30, percent"><input type="range" id="a30" min="0" max="40" step="1" value="10" aria-label="Attrition by day 30"></div>
               <div><input type="number" id="n-a60" inputmode="numeric" min="0" max="60" value="18" aria-label="Attrition by day 60, percent"><input type="range" id="a60" min="0" max="60" step="1" value="18" aria-label="Attrition by day 60"></div>
               <div><input type="number" id="n-a90" inputmode="numeric" min="0" max="70" value="25" aria-label="Attrition by day 90, percent"><input type="range" id="a90" min="0" max="70" step="1" value="25" aria-label="Attrition by day 90"></div>
             </div></div>
-          <p class="small" style="margin-top:8px">Assumptions held constant: the bench starts at 93% of need, tenured attrition 3% a month, 8% of hires never reach the floor.</p>
+          <div class="f"><label for="n-loss">Never reach the floor <small>(% of offers, no-shows)</small></label><input type="number" id="n-loss" inputmode="numeric" min="0" max="40" step="1" value="8"><input type="range" id="loss" min="0" max="40" step="1" value="8" aria-label="Percent of hires who never reach the floor"></div>
+          <button class="btn g" id="copyall" type="button" style="width:100%;margin-top:8px">Copy hire plan and ramp speeds to all selected geographies</button>
+          <p class="small" style="margin-top:8px">Held constant: the bench starts at 93% of need; tenured attrition 3% a month.</p>
           <button class="close" id="closeSheet" type="button">Done</button>
         </div>
         <div class="story" id="story"></div>
@@ -235,7 +265,7 @@ footer.footer{scroll-snap-align:start}
         <div class="acts">
           <a class="btn" id="simcta" href="/engage">Get this on your real data in four weeks &rarr;</a>
         </div>
-        <p class="small">The diagnosis replaces these inputs with your dialer, quality, attendance and assessment data, and your controller signs the baseline.</p>
+        <p class="small">The diagnosis replaces these inputs with your dialer, quality, attendance and assessment data, per geography, and your controller signs the baseline.</p>
       </div>
     </div>
   </div>
