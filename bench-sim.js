@@ -47,18 +47,22 @@
     var p = state.params[id], starts = []; for (var s = 0; s < 90; s += COHORT_GAP) starts.push(s);
     var m = run(p, starts); m.action = null;
     if (m.red) {
-      var redDay = m.red * 7, k = -1;
-      for (var i = 0; i < starts.length; i++) { if (starts[i] + p.floor > redDay) { k = i; break; } }
-      if (k > 0 && starts[k] >= 14) { var alt = starts.slice(); alt[k] = starts[k] - 14;
-        m.action = { text: 'Pull cohort ' + (k + 1) + ' forward two weeks (start day ' + alt[k] + ' instead of ' + starts[k] + ').', owner: 'Operations lead', cf: run(p, alt) }; }
-      else if (k === 0 && p.prof > 14) { var pp = Object.assign({}, p, { prof: Math.max(7, p.prof - 7) });
-        m.action = { text: 'Cut speed to proficiency after graduation from ' + p.prof + ' to ' + Math.max(7, p.prof - 7) + ' days: first live work under a coach from day one on the floor, one topic a week.', owner: 'Training lead with operations', cf: run(pp, starts) }; }
-      else if (k === 0 && p.floor > 24) { var cut = Math.min(14, p.floor - 10), pf = Object.assign({}, p, { floor: p.floor - cut });
-        m.action = { text: 'Compress offer-to-floor for cohort 1 from ' + p.floor + ' to ' + (p.floor - cut) + ' days: pre-boarding before day one, classroom in two waves.', owner: 'Training lead with operations', cf: run(pf, starts) }; }
-      else if (p.a30 >= 12) { var p2 = Object.assign({}, p, { a30: Math.round(p.a30 * 0.6), a60: Math.round(p.a60 * 0.75), a90: Math.round(p.a90 * 0.85) });
-        m.action = { text: 'Shift two team leaders to new-hire coaching, one topic for six weeks. The leak is attrition in the first 30 days.', owner: 'Training lead', cf: run(p2, starts) }; }
-      else { var p3 = Object.assign({}, p, { hires: p.hires + Math.max(5, Math.round(p.hires * 0.25)) });
-        m.action = { text: 'Raise the next cohort by ' + Math.max(5, Math.round(p.hires * 0.25)) + ' and capture knowledge from notified leavers.', owner: 'HR and workforce planning', cf: run(p3, starts) }; }
+      var cands = [];
+      starts.forEach(function (st, i) { if (i > 0 && st >= 14) { var alt = starts.slice(); alt[i] = st - 14;
+        cands.push({ text: 'Pull cohort ' + (i + 1) + ' forward two weeks (start day ' + alt[i] + ' instead of ' + st + ').', owner: 'Operations lead', cf: run(p, alt) }); } });
+      if (p.prof > 10) { var pp = Object.assign({}, p, { prof: Math.max(7, p.prof - 7) });
+        cands.push({ text: 'Cut speed to proficiency after graduation from ' + p.prof + ' to ' + Math.max(7, p.prof - 7) + ' days: first live work under a coach from day one on the floor, one topic a week.', owner: 'Training lead with operations', cf: run(pp, starts) }); }
+      if (p.floor > 24) { var cut = Math.min(14, p.floor - 10), pf = Object.assign({}, p, { floor: p.floor - cut });
+        cands.push({ text: 'Compress offer-to-floor from ' + p.floor + ' to ' + (p.floor - cut) + ' days: pre-boarding before day one, classroom in two waves.', owner: 'Training lead with operations', cf: run(pf, starts) }); }
+      if (p.a30 >= 8) { var p2 = Object.assign({}, p, { a30: Math.round(p.a30 * 0.6), a60: Math.round(p.a60 * 0.75), a90: Math.round(p.a90 * 0.85) });
+        cands.push({ text: 'Shift two team leaders to new-hire coaching, one topic for six weeks. The leak is attrition in the first 30 days.', owner: 'Training lead', cf: run(p2, starts) }); }
+      if (p.loss >= 6) { var pl = Object.assign({}, p, { loss: Math.round(p.loss / 2) });
+        cands.push({ text: 'Halve no-shows between offer and day one: a named buddy call in the week before start and a confirmed shift before the offer letter.', owner: 'Recruitment with operations', cf: run(pl, starts) }); }
+      var p3 = Object.assign({}, p, { hires: p.hires + Math.max(5, Math.round(p.hires * 0.25)) });
+      cands.push({ text: 'Raise the next cohort by ' + Math.max(5, Math.round(p.hires * 0.25)) + ' and capture knowledge from notified leavers.', owner: 'HR and workforce planning', cf: run(p3, starts) });
+      function score(c) { var r = c.cf.red ? (reachWeek(c.cf) || 99) : 0; return r * 1000 - c.cf.weeks[WEEKS - 1].total; }
+      cands.sort(function (x, y) { return score(x) - score(y); });
+      m.action = cands[0]; m.alternatives = cands.slice(1, 3);
     }
     return m;
   }
@@ -112,7 +116,7 @@
     if (m.red) { var a = m.action, cfr = reachWeek(a.cf), after = a.cf.red ? (a.cf.red === 1 ? (cfr ? 'reaches the mark in ' + wk(cfr) + ' instead' : 'still short in March') : 'below the mark only from ' + wk(a.cf.red) + (a.cf.lastRed > a.cf.red ? ' to ' + wk(a.cf.lastRed) : '')) : 'never below the mark';
       var reachNow = reachWeek(m), head = m.red === 1 ? (reachNow ? g.name + ': short until ' + wk(reachNow) + '.' : g.name + ': the bench never reaches the mark by March.') : g.name + ': the bench falls short in ' + wk(m.red) + '.';
       verdict.className = 'verdict';
-      verdict.innerHTML = '<b>' + head + '</b><p><i>The first action the diagnosis would return</i>' + a.text + ' Owner: ' + a.owner + '. Date: before the current start.</p><p class="cf"><i>With that one action</i>' + after.charAt(0).toUpperCase() + after.slice(1) + '. Week 13: ' + Math.round(a.cf.weeks[WEEKS - 1].total) + ' of ' + p.seats + '.</p>';
+      verdict.innerHTML = '<b>' + head + '</b><p><i>The first action the diagnosis would return</i>' + a.text + ' Owner: ' + a.owner + '. Date: before the current start.</p><p class="cf"><i>With that one action</i>' + after.charAt(0).toUpperCase() + after.slice(1) + '. Week 13: ' + Math.round(a.cf.weeks[WEEKS - 1].total) + ' of ' + p.seats + '.</p>' + (m.alternatives && m.alternatives.length ? '<p class="cf alt"><i>Next levers, in order</i>' + m.alternatives.map(function (c) { var rr = c.cf.red ? (reachWeek(c.cf) ? 'mark in ' + wk(reachWeek(c.cf)) : 'still short') : 'holds'; return c.text.split(':')[0].split('(')[0].trim() + ' &rarr; ' + rr; }).join(' &middot; ') + '</p>' : '');
     } else { verdict.className = 'verdict ok'; verdict.innerHTML = '<b>' + g.name + ': the bench holds through week 13.</b><p><i>The first action the diagnosis would return</i>No action. Flag the associates ready for harder work to workforce planning.</p>'; }
     if (summary) {
       var shortIds = state.selected.filter(function (x) { return M[x].red; }), worst = null;
