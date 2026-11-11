@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "We Saved the Hardest Decision for the Tiredest Room.",
+      "slug": "insight-hardest-decision-tiredest-room",
+      "date": "2026-11-11",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "The order of an agenda is not an administrative detail. It is a rationing plan for the scarcest resource a company owns: the capacity of a senior room to think hard. Whatever you schedule last gets the depleted, get-me-to-my-next-call judgment of a room that spent its best thinking ratifying a travel policy, and the most consequential decisions, placed last because they matter most, reliably receive the least judgment in the building. Decision fatigue is invisible from the inside, so the tired room mistakes its own lowered standards for decisiveness and never revisits the call.",
+      "readTime": "7 min",
+      "file": "insight-hardest-decision-tiredest-room.html",
+      "published": true
+    },
+    {
       "title": "Everyone Who Chose It Will Be Gone Before the Bill Comes.",
       "slug": "insight-gone-before-the-bill-comes",
       "date": "2026-11-10",
