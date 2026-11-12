@@ -1,6 +1,33 @@
 {
   "posts": [
     {
+      "title": "The Collision of Mental Models",
+      "slug": "collision-of-mental-models",
+      "date": "2026-11-12",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "Most escalations are not knowledge failures. They are two people applying different, unstated models of what good looks like, and discovering the difference at the worst possible moment.",
+      "readTime": "4 min read",
+      "featured": false
+    },
+    {
+      "title": "The Fallacy of the 360 Review",
+      "slug": "fallacy-of-360-review",
+      "date": "2026-11-12",
+      "category": "MEASUREMENT",
+      "excerpt": "A 360 tells you how a leader is experienced. It does not tell you whether their judgment improved. Those are different questions, and only one of them changes what an operation delivers next quarter.",
+      "readTime": "4 min read",
+      "featured": false
+    },
+    {
+      "title": "The Illusion of Bench Strength",
+      "slug": "illusion-of-bench-strength",
+      "date": "2026-11-12",
+      "category": "CAPABILITY ARCHITECTURE",
+      "excerpt": "A bench is only real if it is delivery-ready on the day the account needs it. Counting trained heads is not the same as counting people who can carry the work unsupervised, and the gap between those two numbers is where a quarter goes.",
+      "readTime": "4 min read",
+      "featured": false
+    },
+    {
       "title": "We Saved the Hardest Decision for the Tiredest Room.",
       "slug": "insight-hardest-decision-tiredest-room",
       "date": "2026-11-11",

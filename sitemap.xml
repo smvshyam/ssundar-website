@@ -229,8 +229,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url><loc>https://ssundar.com/insight-compounding-leadership</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-02-11</lastmod></url>
-  <url><loc>https://ssundar.com/insight-judgment-vs-competency</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-02-11</lastmod></url>
   <url><loc>https://ssundar.com/insight-simulation-data</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-02-11</lastmod></url>
   <url><loc>https://ssundar.com/insight-ld-wrong-metrics</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-03-23</lastmod></url>
   <url><loc>https://ssundar.com/insight-escalation-epidemic</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-03-23</lastmod></url>
@@ -478,8 +476,6 @@
     <priority>0.7</priority>
   </url>
   <!-- Legal Pages -->
-  <url><loc>https://ssundar.com/privacy</loc><priority>0.3</priority><changefreq>yearly</changefreq><lastmod>2026-03-25</lastmod></url>
-  <url><loc>https://ssundar.com/terms</loc><priority>0.3</priority><changefreq>yearly</changefreq><lastmod>2026-03-25</lastmod></url>
   <url>
     <loc>https://ssundar.com/insight-solved-the-problem-we-could-solve</loc>
     <lastmod>2026-10-14</lastmod>
@@ -560,4 +556,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url><loc>https://ssundar.com/illusion-of-bench-strength</loc><priority>0.6</priority><changefreq>monthly</changefreq><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://ssundar.com/fallacy-of-360-review</loc><priority>0.6</priority><changefreq>monthly</changefreq><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://ssundar.com/collision-of-mental-models</loc><priority>0.6</priority><changefreq>monthly</changefreq><lastmod>2026-11-12</lastmod></url>
 </urlset>

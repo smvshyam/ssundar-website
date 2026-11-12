@@ -1,3 +1,13 @@
+# ── duplicate-content consolidation (2026-11-12): orphan copies of linked articles ──
+/insight-judgment-vs-competency  /competency-model-is-dead  301!
+/insight-judgment-vs-competency.html  /competency-model-is-dead  301!
+/insight-compounding-leadership  /why-leadership-development-doesnt-compound  301!
+/insight-compounding-leadership.html  /why-leadership-development-doesnt-compound  301!
+
+# ── collapse the www redirect chain to a single hop ──
+http://www.ssundar.com/*   https://ssundar.com/:splat   301!
+https://www.ssundar.com/*  https://ssundar.com/:splat   301!
+
 /terms          /terms.html         200
 /privacy        /privacy.html       200
 /cookie-policy  /cookie-policy.html 200
