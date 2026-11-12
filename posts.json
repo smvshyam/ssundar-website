@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "Every Plan We Approved Assumed the Best Version of Us.",
+      "slug": "insight-plans-assumed-the-best-version-of-us",
+      "date": "2026-11-12",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "A plan is not a prediction. It is a best case wearing a prediction's clothes: every task priced for the rested, undistracted, fully briefed version of a person who does not exist, on a team that never loses the one engineer who understood the integration. The gap between the plan and reality is almost never a competence gap. It is friction and capacity, the ordinary entropy no Gantt chart has a row for, and it was designed into the number the day the plan was approved. The slip did not happen in the last fortnight. It happened in the first hour, in the room, in the arithmetic nobody questioned because it added up.",
+      "readTime": "7 min",
+      "file": "insight-plans-assumed-the-best-version-of-us.html",
+      "published": true
+    },
+    {
       "title": "We Saved the Hardest Decision for the Tiredest Room.",
       "slug": "insight-hardest-decision-tiredest-room",
       "date": "2026-11-11",
