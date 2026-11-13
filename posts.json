@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "The Easiest Decision Got the Longest Meeting.",
+      "slug": "insight-easiest-decision-longest-meeting",
+      "date": "2026-11-13",
+      "category": "JUDGMENT DESIGN",
+      "excerpt": "A long debate is almost always a sign of comprehensibility, not diligence. A decision pulls scrutiny in proportion to how many people feel qualified to argue about it, which has nothing to do with how much it matters, so the room gives an hour to the platform name and four minutes to the architecture that will outlast everyone in it. The length of a debate is not merely unrelated to the stakes. It is inversely related to them: your most important decisions are, by definition, the ones your governance is least equipped to examine, and the volume of the conversation keeps getting mistaken for its depth.",
+      "readTime": "6 min",
+      "file": "insight-easiest-decision-longest-meeting.html",
+      "published": true
+    },
+    {
       "title": "Every Plan We Approved Assumed the Best Version of Us.",
       "slug": "insight-plans-assumed-the-best-version-of-us",
       "date": "2026-11-12",
