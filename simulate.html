@@ -1320,7 +1320,7 @@ async function submitReport(e) {
 
   try {
     // 1. Generate + download PDF immediately
-    SSUNDAR_PDF.generate({
+    var pdfOut = SSUNDAR_PDF.generate({
       name: visitorName,
       email: visitorEmail,
       company: visitorCompany,
@@ -1351,7 +1351,9 @@ async function submitReport(e) {
           industry: indName,
           altitude: S.altitude.toLocaleString(),
           zone: zone.name,
-          pattern_name: AI_REPORT ? (AI_REPORT.pattern_name || '') : ''
+          pattern_name: AI_REPORT ? (AI_REPORT.pattern_name || '') : '',
+          pdf_base64: (pdfOut && pdfOut.base64) || '',
+          pdf_name: (pdfOut && pdfOut.fileName) || ''
         })
       });
       mailOk = mr.ok;
@@ -1366,7 +1368,7 @@ async function submitReport(e) {
     msg.style.color = '#00DC82';
     msg.style.border = '1px solid rgba(0,220,130,0.2)';
     msg.style.background = 'rgba(0,220,130,0.04)';
-    msg.innerHTML = '✓ REPORT DOWNLOADED<br><span style="font-size:10px;color:rgba(0,220,130,0.6);font-weight:500">' + (mailOk ? 'A confirmation has been sent to ' + visitorEmail : 'Your PDF is saved. The confirmation email could not be sent; Shyam will follow up from shyam@ssundar.com') + '</span>';
+    msg.innerHTML = '✓ REPORT DOWNLOADED<br><span style="font-size:10px;color:rgba(0,220,130,0.6);font-weight:500">' + (mailOk ? 'Your report was downloaded and emailed to ' + visitorEmail : 'Your PDF is saved. The confirmation email could not be sent; Shyam will follow up from shyam@ssundar.com') + '</span>';
 
   } catch (err) {
     console.error('PDF error:', err);
@@ -2010,6 +2012,9 @@ var SSUNDAR_PDF = (function() {
     // Save
     var fileName = 'SSUNDAR-Architecture-Report-' + (name || 'Report').replace(/[^a-zA-Z0-9]/g, '-') + '.pdf';
     doc.save(fileName);
+    var __b64 = '';
+    try { __b64 = doc.output('datauristring').split(',')[1] || ''; } catch(e) {}
+    return { fileName: fileName, base64: __b64 };
   }
 
   return { generate: generate };

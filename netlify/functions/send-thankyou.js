@@ -42,7 +42,7 @@ exports.handler = async (event) => {
     return { statusCode: 400, headers, body: '{"error":"Invalid JSON body"}' };
   }
 
-  const { to_email, to_name, company, role, industry, altitude, zone, pattern_name, hcaptcha_token, kind, region } = payload;
+  const { to_email, to_name, company, role, industry, altitude, zone, pattern_name, hcaptcha_token, kind, region, pdf_base64, pdf_name } = payload;
   if (!to_email) return { statusCode: 400, headers, body: '{"error":"Missing to_email"}' };
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(to_email)) return { statusCode: 400, headers, body: '{"error":"Invalid email"}' };
 
@@ -94,6 +94,13 @@ exports.handler = async (event) => {
 
   const firstName = (to_name || '').split(' ')[0] || 'there';
 
+  // Optional PDF attachment generated in the browser. Validate strictly: base64 only, size-capped, pdf only.
+  let attachments;
+  if (typeof pdf_base64 === 'string' && pdf_base64.length > 1000 && pdf_base64.length < 5000000 && /^[A-Za-z0-9+/=]+$/.test(pdf_base64) && pdf_base64.startsWith('JVBER')) {
+    const safeName = String(pdf_name || 'SSUNDAR-Architecture-Report.pdf').replace(/[^A-Za-z0-9._-]/g, '-').slice(0, 80);
+    attachments = [{ filename: safeName.endsWith('.pdf') ? safeName : safeName + '.pdf', content: pdf_base64 }];
+  }
+
   try {
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -104,8 +111,9 @@ exports.handler = async (event) => {
       body: JSON.stringify({
         from: 'Shyam Sundar <shyam@ssundar.com>',
         to: [to_email],
-        subject: `${firstName}, your SSUNDAR. simulation report`,
-        html: buildThankyouEmail(firstName, company, role, industry, altitude, zone, pattern_name),
+        subject: attachments ? `${firstName}, your SSUNDAR. simulation report is attached` : `${firstName}, your SSUNDAR. simulation report`,
+        html: buildThankyouEmail(firstName, company, role, industry, altitude, zone, pattern_name, !!attachments),
+        ...(attachments ? { attachments } : {}),
         reply_to: 'shyam@ssundar.com'
       })
     });
@@ -124,7 +132,7 @@ exports.handler = async (event) => {
   }
 };
 
-function buildThankyouEmail(firstName, company, role, industry, altitude, zone, pattern_name) {
+function buildThankyouEmail(firstName, company, role, industry, altitude, zone, pattern_name, hasPdf) {
   const altitudeDisplay = altitude ? altitude.toLocaleString() : '—';
 
   return `
@@ -163,7 +171,7 @@ function buildThankyouEmail(firstName, company, role, industry, altitude, zone, 
         Hi ${firstName},
       </p>
       <p style="font-size:15px;line-height:1.75;color:rgba(255,255,255,0.6);margin:0 0 16px;">
-        Your simulation report is saved to your device. It contains the full leadership pattern analysis, your decision log, and the SSUNDAR. capability recommendation specific to your profile.
+        ${hasPdf ? 'Your full report is attached to this email as a PDF, so you do not need to save anything. It contains' : 'Your report is available to re-run any time at ssundar.com/simulate. It contains'} the full leadership pattern analysis, your decision log, and the SSUNDAR. capability recommendation specific to your profile.
       </p>
       <p style="font-size:15px;line-height:1.75;color:rgba(255,255,255,0.6);margin:0 0 24px;">
         One honest observation from your run: the gap between your strongest and weakest dimension is where we typically design the most targeted intervention. Most organizations train the average — we architect for the edge cases that actually break performance.
