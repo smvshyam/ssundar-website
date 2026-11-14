@@ -503,3 +503,16 @@ body.intro-active{overflow:hidden}
   display:inline-block
 }
 .sim-interrupt-cta:hover{letter-spacing:0.14em;border-color:var(--red)}
+
+/* DARK-THEME READABILITY FIX (2026-11-14): site body is dark (styles.css), article text was black */
+.article-meta{color:rgba(237,234,228,0.55)}
+.article-content p,.seo-page-content p{color:rgba(237,234,228,0.86)}
+.article-content h2,.article-content h3,.seo-page-content h2,.seo-page-content h3{color:#EDEAE4}
+.article-content blockquote,.seo-page-content blockquote{color:#EDEAE4}
+.article-content ul li,.article-content ol li,.seo-page-content ul li,.seo-page-content ol li{color:rgba(237,234,228,0.82)}
+.article-content strong,.seo-page-content strong{color:#fff}
+.blog-card-excerpt{color:rgba(237,234,228,0.72)}
+.blog-card-meta{color:rgba(237,234,228,0.5)}
+.blog-filter-btn{border-color:rgba(237,234,228,0.25);color:rgba(237,234,228,0.7)}
+.blog-filter-btn:hover{border-color:#EDEAE4;color:#EDEAE4}
+.blog-filter-btn.active{background:#EDEAE4;color:#0B0B0C;border-color:#EDEAE4}
