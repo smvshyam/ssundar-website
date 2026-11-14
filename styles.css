@@ -73,7 +73,7 @@ button{cursor:pointer;font-family:inherit}
   display:inline-flex;align-items:center;gap:0;line-height:1
 }
 .nav-logo-text .dot{color:var(--red);font-size:19px}
-.nav-links{display:flex;gap:30px;align-items:center;margin-left:clamp(36px,7vw,96px)}
+.nav-links{display:flex;gap:clamp(16px,2vw,30px);align-items:center;margin-left:clamp(36px,7vw,96px)}
 .nav-link{
   font-family:var(--body);font-weight:500;font-size:12.5px;
   letter-spacing:0.13em;text-transform:uppercase;color:var(--mute);
