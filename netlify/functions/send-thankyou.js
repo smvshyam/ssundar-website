@@ -104,9 +104,9 @@ exports.handler = async (event) => {
       body: JSON.stringify({
         from: 'Shyam Sundar <shyam@ssundar.com>',
         to: [to_email],
-        subject: `${firstName}, your EXLPRS simulation report is attached`,
+        subject: `${firstName}, your SSUNDAR. simulation report`,
         html: buildThankyouEmail(firstName, company, role, industry, altitude, zone, pattern_name),
-        reply_to: 'shyam@exlprs.com'
+        reply_to: 'shyam@ssundar.com'
       })
     });
 
@@ -134,7 +134,7 @@ function buildThankyouEmail(firstName, company, role, industry, altitude, zone, 
   <div style="max-width:600px;margin:20px auto;background:#111111;border-top:3px solid #E31E24;">
 
     <div style="padding:32px 40px 0;">
-      <img src="https://exlprs.com/exlprs-logo-transparent.png" alt="EXLPRS" style="height:36px;margin-bottom:28px;">
+      <img src="https://ssundar.com/logo-wordmark-light.png" alt="SSUNDAR." width="140" style="height:auto;width:140px;margin-bottom:28px;">
       <p style="font-size:11px;font-family:monospace;color:#E31E24;letter-spacing:0.12em;text-transform:uppercase;margin:0 0 12px">
         SIMULATION COMPLETE
       </p>
@@ -171,26 +171,26 @@ function buildThankyouEmail(firstName, company, role, industry, altitude, zone, 
 
       <!-- CTA -->
       <div style="text-align:center;margin:32px 0;">
-        <a href="https://ssundar.com/consulting.html#engage"
+        <a href="https://ssundar.com/engage?src=sim-email"
            style="display:inline-block;background:#E31E24;color:#ffffff;padding:14px 36px;text-decoration:none;font-size:14px;font-weight:700;letter-spacing:0.05em;font-family:monospace;">
-          DISCUSS YOUR RESULTS →
+          START THE MARCH BENCH DIAGNOSIS →
         </a>
       </div>
 
       <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,0.35);margin:24px 0 4px;">
         Shyam Sundar<br>
-        <span style="color:rgba(255,255,255,0.2)">Founder, EXLPRS LLP · Performance Systems Architecture</span>
+        <span style="color:rgba(255,255,255,0.2)">Founder, SSUNDAR.</span>
       </p>
     </div>
 
     <div style="background:#000000;padding:16px 40px;border-top:1px solid rgba(255,255,255,0.06);">
       <p style="font-size:11px;color:rgba(255,255,255,0.2);margin:0;font-family:monospace;">
-        <a href="https://exlprs.com" style="color:rgba(255,255,255,0.3);text-decoration:none;">exlprs.com</a> ·
-        <a href="https://ssundar.com/simulate.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">Run another simulation</a> ·
-        <a href="https://ssundar.com/insights.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">Research</a>
+        <a href="https://ssundar.com" style="color:rgba(255,255,255,0.3);text-decoration:none;">ssundar.com</a> ·
+        <a href="https://ssundar.com/simulate" style="color:rgba(255,255,255,0.3);text-decoration:none;">Run another simulation</a> ·
+        <a href="https://ssundar.com/insights" style="color:rgba(255,255,255,0.3);text-decoration:none;">Research</a>
       </p>
       <p style="font-size:10px;color:rgba(255,255,255,0.1);margin:6px 0 0;font-family:monospace;">
-        Excellence isn't taught. It's engineered.
+        Know in January whether your March bench will hold.
       </p>
     </div>
   </div>

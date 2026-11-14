@@ -200,7 +200,7 @@ async function handleGenerateScenarios({ industry, scale }, apiKey, HEADERS) {
     return { statusCode: 400, headers: HEADERS, body: JSON.stringify({ error: 'Industry and scale are required' }) };
   }
 
-  const prompt = `You are generating leadership simulation scenarios for an executive development platform called EXLPRS.
+  const prompt = `You are generating leadership simulation scenarios for an executive development platform called SSUNDAR.
 
 Industry: ${safeIndustry}
 Organization scale: ${safeScale}
@@ -277,7 +277,7 @@ async function handleRoundAnalysis({
     return { statusCode: 400, headers: HEADERS, body: JSON.stringify({ error: 'Decision text is required' }) };
   }
 
-  const prompt = `You are an executive performance analyst for EXLPRS, an elite leadership development firm.
+  const prompt = `You are an executive performance analyst for SSUNDAR., an elite leadership development firm.
 
 SIMULATION CONTEXT:
 - Industry: ${safeIndustry}
