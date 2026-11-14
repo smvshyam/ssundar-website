@@ -29,8 +29,9 @@ exports.handler = async (event) => {
   if (event.httpMethod === 'OPTIONS') return { statusCode: 200, headers, body: '' };
   if (event.httpMethod !== 'POST') return { statusCode: 405, headers, body: '{"error":"Method not allowed"}' };
 
-  const apiKey = process.env.RESEND_API_KEY_SSUNDAR;
-  if (!apiKey) return { statusCode: 500, headers, body: '{"error":"RESEND_API_KEY_SSUNDAR not configured"}' };
+  // Netlify currently holds the key as RESEND_API_KEY; accept either name.
+  const apiKey = process.env.RESEND_API_KEY_SSUNDAR || process.env.RESEND_API_KEY;
+  if (!apiKey) return { statusCode: 500, headers, body: '{"error":"Email key not configured"}' };
 
   const hcaptchaSecret = process.env.HCAPTCHA_SECRET;
 

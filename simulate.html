@@ -1337,21 +1337,25 @@ async function submitReport(e) {
       method:'POST', body: new FormData(form), headers:{'Accept':'application/json'}
     }).catch(function(){});
 
-    // 3. Netlify Function — thank you email from shyam@ssundar.com (silent)
-    fetch('/.netlify/functions/send-thankyou', {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({
-        to_email: visitorEmail,
-        to_name: visitorName,
-        company: visitorCompany,
-        role: visitorRole,
-        industry: indName,
-        altitude: S.altitude.toLocaleString(),
-        zone: zone.name,
-        pattern_name: AI_REPORT ? (AI_REPORT.pattern_name || '') : ''
-      })
-    }).catch(function(){});
+    // 3. Netlify Function — thank you email from shyam@ssundar.com
+    var mailOk = false;
+    try {
+      var mr = await fetch('/.netlify/functions/send-thankyou', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({
+          to_email: visitorEmail,
+          to_name: visitorName,
+          company: visitorCompany,
+          role: visitorRole,
+          industry: indName,
+          altitude: S.altitude.toLocaleString(),
+          zone: zone.name,
+          pattern_name: AI_REPORT ? (AI_REPORT.pattern_name || '') : ''
+        })
+      });
+      mailOk = mr.ok;
+    } catch (mailErr) { mailOk = false; }
 
     simTrack('sim_report',{industry:indName,zone:zone.name,role_given:!!visitorRole,company_given:!!visitorCompany},true);
 
@@ -1362,7 +1366,7 @@ async function submitReport(e) {
     msg.style.color = '#00DC82';
     msg.style.border = '1px solid rgba(0,220,130,0.2)';
     msg.style.background = 'rgba(0,220,130,0.04)';
-    msg.innerHTML = '✓ REPORT DOWNLOADED<br><span style="font-size:10px;color:rgba(0,220,130,0.6);font-weight:500">A confirmation has been sent to ' + visitorEmail + '</span>';
+    msg.innerHTML = '✓ REPORT DOWNLOADED<br><span style="font-size:10px;color:rgba(0,220,130,0.6);font-weight:500">' + (mailOk ? 'A confirmation has been sent to ' + visitorEmail : 'Your PDF is saved. The confirmation email could not be sent; Shyam will follow up from shyam@ssundar.com') + '</span>';
 
   } catch (err) {
     console.error('PDF error:', err);
