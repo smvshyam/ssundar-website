@@ -322,18 +322,6 @@
   </section>
 </div>
 
-<!-- ============ PLATFORM INTERRUPT ============ -->
-<div class="sim-interrupt">
-  <div class="section">
-    <div class="sim-interrupt-inner">
-      <span class="sim-interrupt-tag">// LIVE ENVIRONMENT ACTIVE</span>
-      <p class="sim-interrupt-line">You just ran a simulation in a controlled scenario<span class="dot">.</span></p>
-      <p class="sim-interrupt-line sim-interrupt-line--red">Module 04 runs it on your actual organization<span class="dot">.</span></p>
-      <span class="sim-interrupt-cta" style="color:rgba(255,255,255,0.42);border-color:rgba(255,255,255,0.18);cursor:default">The platform is in development</span>
-    </div>
-  </div>
-</div>
-
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
   <section class="section" style="padding-top:72px;padding-bottom:36px">
@@ -361,6 +349,23 @@
   </section>
 </footer>
 
+<script>
+/* ===== Simulator funnel tracking (no personal data) ===== */
+var __simSeen={};
+function simTrack(name,params,once){
+  if(once){if(__simSeen[name+JSON.stringify(params||{})])return;__simSeen[name+JSON.stringify(params||{})]=1;}
+  try{
+    if(typeof window.gtag==='function'){window.gtag('event',name,Object.assign({page_path:'/simulate'},params||{}));}
+    if(typeof window.clarity==='function'){window.clarity('event',name);}
+  }catch(e){}
+}
+function simTag(k,v){try{if(typeof window.clarity==='function')window.clarity('set',k,String(v));}catch(e){}}
+function simToEngage(){
+  var ind='';try{ind=INDUSTRIES.find(function(i){return i.id===S.industry}).name;}catch(e){}
+  simTrack('sim_to_engage',{industry:ind});
+}
+document.addEventListener('DOMContentLoaded',function(){simTrack('sim_view',{},true);});
+</script>
 <script src="app.js"></script>
 <script>
 // ===== STATE =====
@@ -657,6 +662,8 @@ function launchSimulation() {
   document.getElementById('setupPhase').style.display = 'none';
   document.getElementById('briefingPhase').style.display = 'block';
   window.scrollTo(0, 0);
+  var __in=INDUSTRIES.find(function(i){return i.id===S.industry}).name;
+  simTrack('sim_launch',{industry:__in,scale:S.scale},true);simTag('sim_industry',__in);
 }
 
 async function beginSimulation() {
@@ -694,6 +701,7 @@ async function beginSimulation() {
   document.getElementById('briefingPhase').style.display = 'none';
   document.getElementById('gamePhase').style.display = 'grid';
   window.scrollTo(0, 0);
+  simTrack('sim_begin',{},true);
   loadRound();
 }
 
@@ -732,6 +740,7 @@ function freezeRound() {
 // ===== ROUND LOADING =====
 function loadRound() {
   var sc = SCENARIOS[S.round];
+  simTrack('sim_round',{round:S.round+1},true);
   document.getElementById('roundNum').textContent = String(S.round + 1).padStart(2, '0');
   document.getElementById('scenarioTitle').innerHTML = sc.title + '<span class="dot">.</span>';
   document.getElementById('scenarioDesc').textContent = sc.desc;
@@ -974,6 +983,7 @@ async function showResults() {
   window.scrollTo(0, 0);
 
   var zone = getZone(S.altitude);
+  simTrack('sim_complete',{zone:zone.name,altitude:S.altitude},true);simTag('sim_zone',zone.name);
   var indName = INDUSTRIES.find(function(i){return i.id===S.industry}).name;
   var scName = SCALES.find(function(s){return s.id===S.scale}).name;
 
@@ -1057,6 +1067,15 @@ async function showResults() {
   html += '<div id="formMsg" style="display:none;padding:16px;margin-top:12px;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:0.06em;text-align:center"></div>';
   html += '</form>';
   html += '<button class="sim-reset" onclick="resetSimulation()">Run again →</button>';
+  // Bridge to the offer (shown before sharing options)
+  var __ind=indName;
+  html += '<div style="margin:32px 0 8px;padding:28px 28px 30px;border:1px solid rgba(227,30,36,0.45);background:rgba(227,30,36,0.05)">';
+  html += '<p style="font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.12em;color:rgba(255,255,255,0.45);margin-bottom:12px;text-transform:uppercase">What this means for your bench</p>';
+  html += '<p style="font-size:clamp(20px,2.2vw,28px);line-height:1.25;font-weight:600;color:#fff;margin-bottom:10px">Your leaders decided under pressure in four minutes. Your bench decides the same way in March.</p>';
+  html += '<p style="color:rgba(255,255,255,0.62);line-height:1.65;margin-bottom:20px;max-width:60ch">Know in January whether it will hold. One account, four weeks to the first forecast and the first action.</p>';
+  html += '<a href="/engage?src=sim&sector=' + encodeURIComponent(__ind) + '" onclick="simToEngage()" style="display:inline-block;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:#E31E24;color:#fff;padding:16px 26px;text-decoration:none">Start the March Bench Diagnosis &rarr;</a>';
+  html += '</div>';
+
   html += '<div style="margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08)">';
   html += '<p style="font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.12em;color:rgba(255,255,255,0.3);margin-bottom:12px;text-transform:uppercase">CHALLENGE A PEER</p>';
   html += '<div style="display:flex;gap:12px;flex-wrap:wrap">';
@@ -1333,6 +1352,8 @@ async function submitReport(e) {
         pattern_name: AI_REPORT ? (AI_REPORT.pattern_name || '') : ''
       })
     }).catch(function(){});
+
+    simTrack('sim_report',{industry:indName,zone:zone.name,role_given:!!visitorRole,company_given:!!visitorCompany},true);
 
     // Show success
     btn.style.display = 'none';
