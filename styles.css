@@ -893,3 +893,9 @@ p,li{max-width:none}
 /* ---- brand marks (real logo artwork, recoloured for dark ground) ---- */
 .nav-logo-img{height:clamp(24px,2.4vw,30px);width:auto;display:block}
 .footer-logo{height:clamp(44px,5vw,58px);width:auto;display:block;margin-bottom:4px}
+
+/* NAV LOGO FIX (2026-11-16): the global img{max-width:100%} let the logo link shrink to 0px when the nav row filled up. Never let it shrink. */
+.nav-inner>a{flex:0 0 auto}
+.nav-logo-img{max-width:none;flex-shrink:0}
+.nav-links{margin-left:clamp(20px,3vw,56px);gap:clamp(14px,1.6vw,26px)}
+.nav-cta{white-space:nowrap}
