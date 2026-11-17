@@ -75,6 +75,13 @@ and must stay disabled. It deployed a stale tree and caused the divergence above
 Do not create additional deploy scripts. Two deploy paths is what broke this
 site twice; keep it to one.
 
+**API zip deploys do NOT build Netlify Functions** (verified 2026-11-02: every
+zip deploy shows "No functions deployed" and `/simulate` dies until the next
+GitHub-triggered build restores them). So the zip path is only acceptable if
+the GitHub mirror push follows immediately — the push triggers the build that
+ships `netlify/functions/`. Preferred: push to GitHub and let Netlify build;
+skip the zip entirely.
+
 **A deploy replaces the entire site.** Always deploy the complete folder, never
 a subset. Before deploying, sanity-check the file count — a bundle materially
 smaller than ~100 HTML files means something is missing; abort.
@@ -108,7 +115,8 @@ with esbuild.
 - **`styles.css`** — site-wide. `.hero` sets its own dark background and forces white on all descendant text; do not reintroduce a bare `.hero{color:#fff}` (white-on-white regression). `.nav-cta` is a filled red button because the nav bar is white.
 - **`blog.css`** — article typography. Required by every article page.
 - **`fonts.css` + `/fonts/*.woff2`** — self-hosted Chakra Petch, Inter Tight, JetBrains Mono. **Never load Google Fonts from CDN.**
-- **`cookie-consent.js`** — current consent (`localStorage` key `exlprs_cookie_consent`). Analytics never load before consent. `consent.js` is the legacy version.
+- **`cookie-consent.js`** — the ONLY analytics loader (`localStorage` key `exlprs_cookie_consent`). Every page includes `<script src="/cookie-consent.js"></script>` before `</body>`; it injects GA4 + Clarity only after consent. Never add an inline `gtag/js` or Clarity snippet to a page, and never reference the legacy `consent.js` (different key → second banner, GA never loads). Normalised across all 158 pages on 2026-11-02; `blog-template.html` is already clean.
+- **GA4 events** live in `app.js` and resolve `window.gtag` at fire time (consent may arrive after app.js runs). Key events: `engage_submit` (form sent), `engage_click`, `article_read`. Mark new ones in GA4 Admin → Events → star.
 - **`netlify/functions/`** — `analyze.js` (simulation: scenario generation, round scoring, report; Upstash Redis rate limit 10/60s per IP, in-memory fallback) and `send-thankyou.js` (Resend email). **These must ship with every deploy** — a deploy without this folder removes them from production and silently kills `/simulate`.
 
 Env vars are set in the Netlify dashboard only: `ANTHROPIC_API_KEY`,
@@ -136,6 +144,42 @@ npx playwright test tests/destruction_audit.spec.js --reporter=list
 - **Nav and footer are site-wide.** If you change either, change it on every page — 100+ files. Grep for the value, not the wrapper class; the same claim often appears in several different markup shapes.
 
 ---
+
+
+## Front door (BINDING from 2026-11-06)
+
+The offer is **Capability Forward**; the entry point is the **March Bench Diagnosis**; the hero headline is
+"Capability is the margin you lose before anyone forecasts it." with "Know in January whether your March
+bench will hold." as line two (decided 2026-11-06). No third name. The homepage is a STATIC, dense page (decided 2026-11-07: no scroll-snapping, no moving
+button, no stepper, no toggles, no fade-ins): hero (ask + two buttons + four offer facts) → leak → forecast table →
+scorecard model → gates table → all six proof figures with mechanisms → who/after;
+`bench-sim.js` is a plain facts-and-figures model (decided 2026-11-07: NO animation, NO 3D, no bar charts): per
+geography a scorecard — delivery-ready today, needed in March, week-13 forecast, a 13-week red/green strip, reasons
+ranked by seats each leak costs, the first action and its effect. Up to five geographies (India, Philippines, China,
+MENA, South Africa, Europe, North America, Latin America, ANZ) with editable, ILLUSTRATIVE starting points (never
+presented as benchmarks), incl. delivery-ready today, tenured attrition, speed to proficiency after graduation and
+no-show rate. `/vendor/three.min.js` is unreferenced and can be deleted. Buyer's sentence
+first, ours second. Never "AI-era", never a tagline above the headline, never an eleven-tile menu.
+
+- **No prices on the open site.** Engage asks where delivery and budget sit; the success screen and the
+  Resend email (`send-thankyou.js`, `kind:"diagnosis"`) route to ONE unlisted page:
+  India `/march-bench-diagnosis-in-6r9qc8fy9qv0` (₹5,38,400) or rest of world `/march-bench-diagnosis-gl-yzwfy653kcly` (US$24,650).
+  Both are `noindex` (meta + `X-Robots-Tag` in `_headers`), absent from the sitemap, and must never be
+  linked from any public page. `/capability-forward` is the public one-pager, without a fee.
+- **Treeng appears once** (homepage forecast panel) as what runs on the client's data during the
+  diagnostic. No orb, no nav item, no product CTA. Treeng is 16 modules.
+- Nav (updated 2026-11-14 by Shyam's instruction): Writing · Evidence · Work · Intelligence · Simulate · About; CTA `/engage` "Start the March Bench Diagnosis".
+  `app.js` no longer injects anything Treeng-related.
+- Contracting entity is SSUNDAR. EXLPRS is not named as the contracting party anywhere.
+- Cleared figures only: 77→93% (90 days, headcount up 70%); 30 working days→4, errors down over 90%;
+  ~30% fewer new-hire attritions and underperformers; 70→89% CSAT; 79→89% (second cohort 88→98%);
+  5.00 facilitator / 100% would recommend. HOLD (never publish): 22–25%, 30–40%, ~90%, 44 trainers.
+  NEVER: $2.1M, 35%, 97.2%, 82.6→96, "10 to 15% of revenue", client names, city names, "four continents".
+  Geography is "Asia, North America and Europe".
+- GA4 key events: `bench_red_week`, `question_answered`, `engage_submit` (carries region, budget owner,
+  seats band, account_named — no PII).
+- Second pass only after five buyer conversations: the "survives Monday" proof page (every line approved
+  by Shyam) and the "after the diagnostic" restructure of the old menu pages.
 
 ## Claims discipline (BINDING)
 
@@ -168,3 +212,9 @@ LinkedIn posts, newsletters, and thought-leadership content follow
 Source of truth: 365 days of verified LinkedIn analytics (25 Jun 2025 – 24 Jun
 2026): 279,739 impressions → 1,362 followers (205:1), 0.62% avg engagement,
 five days = 41% of annual reach. The gap is conversion and consistency, not reach.
+
+
+## 2026-11-14 additions
+- `/simulate` is in the nav on every page. Simulator funnel events (`sim_view`, `sim_launch`, `sim_begin`, `sim_round`, `sim_complete`, `sim_report`, `sim_to_engage`) live in simulate.html; the PDF is emailed as an attachment by `send-thankyou`, which accepts `RESEND_API_KEY` or `RESEND_API_KEY_SSUNDAR`. EXLPRS branding is retired from emails and AI prompts.
+- SEO hub: `/leadership-skills-training` (targets leadership skills / leadership skills training). Do not mention client or employer names; sector descriptors only (E-commerce GCC etc.).
+- Search Console (22 Oct-10 Nov 2026): 94 impressions, 2 clicks, 8 queries, all brand or misspelled brand; no generic leadership queries yet.
