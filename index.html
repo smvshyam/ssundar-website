@@ -70,6 +70,10 @@ h2.t{font-size:clamp(25px,3.1vw,45px);max-width:22ch}
 .btn.g:hover{background:rgba(237,234,228,.07);border-color:rgba(237,234,228,.5)}
 
 /* ---- fact strip ---- */
+.proofbar{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:baseline;margin-top:30px;padding:16px 20px;border-left:2px solid var(--sand);background:var(--ink-2);font-family:var(--body);font-size:14px;line-height:1.5;color:var(--mute)}
+.proofbar b{color:var(--ivory);font-weight:600;margin-right:6px}
+.proofbar a{color:var(--sand);text-decoration:none;font-size:13px;margin-left:auto;white-space:nowrap}
+.proofbar a:hover{text-decoration:underline}
 .fx{display:grid;gap:1px;background:var(--hair);margin-top:38px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
 @media(min-width:760px){.fx.c4{grid-template-columns:repeat(4,1fr)}.fx.c3{grid-template-columns:repeat(3,1fr)}
   .fx.c2{grid-template-columns:repeat(2,1fr)}.fx.c6{grid-template-columns:repeat(6,1fr)}}
@@ -278,6 +282,7 @@ footer.footer{background:var(--ink);border-top:1px solid var(--hair)}
     <p class="l"><strong>Know in January whether your March bench will hold.</strong> We forecast it on your own data in four weeks, name the first action with an owner and a date, and leave your team running the method.</p>
     <p class="q">Which account would hurt most if its March bench came in at 70% of plan?</p>
     <div class="acts" style="margin-top:22px"><a class="btn" href="/engage">Start the March Bench Diagnosis &rarr;</a><a class="btn g" href="#sim">Model my bench first</a></div>
+    <p class="proofbar"><span><b>77 &rarr; 93%</b> quality in 90 days while headcount ramped 70%</span><span><b>30 days &rarr; 4</b> resolution, errors down over 90%</span><span><b>~30%</b> fewer new-hire attritions and underperformers</span><span><b>Brandon Hall Gold 2021</b> &middot; COPC&reg; certified</span><a href="#p5">Every figure, with its mechanism &darr;</a></p>
     <div class="fx c4">
       <div><b>4 <i>weeks</i></b><span>One account. Forecast, attrition by tenure, signed baseline, one action with its number.</span><em class="m">The March Bench Diagnosis</em></div>
       <div><b>120 <i>days</i></b><span>Loops live by week 8, client declaration by week 12, measured gain and handover by week 16.</span><em class="m">Capability Forward</em></div>
@@ -514,7 +519,7 @@ footer.footer{background:var(--ink);border-top:1px solid var(--hair)}
 </footer>
 
 <script src="app.js"></script>
-<script src="/bench-sim.js?v=20261107e" defer></script>
+<script src="/bench-sim.js?v=20261120a" defer></script>
 <script src="/cookie-consent.js"></script>
 </body>
 </html>

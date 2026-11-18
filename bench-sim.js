@@ -149,5 +149,49 @@
   function signal() { if (M[state.active].red && touched && !firedRed) { firedRed = true; if (typeof window.gtag === 'function') window.gtag('event', 'bench_red_week', { week: M[state.active].red, geo: state.active, geos: state.selected.length }); } }
   function update(fromUser) { readInputs(); computeAll(); renderAll(); link(); if (fromUser) { touched = true; signal(); } }
   try { var q = new URLSearchParams(location.search), gs = (q.get('geos') || '').split(',').filter(function (x) { return geoById[x]; }); if (gs.length) { state.selected = gs.slice(0, 5); state.active = geoById[q.get('geo')] && gs.indexOf(q.get('geo')) >= 0 ? q.get('geo') : gs[0]; } } catch (e) {}
+  /* ---------------- shareable scenario: link + one-page brief (all inputs travel in the URL; no personal data) ---------------- */
+  function encodeScenario() { return state.selected.map(function (id) { return id + ':' + keys.map(function (k) { return state.params[id][k]; }).join(','); }).join(';'); }
+  function applyScenario(str) {
+    var ids = [];
+    String(str || '').split(';').slice(0, 5).forEach(function (part) {
+      var bits = part.split(':'); if (bits.length !== 2 || !geoById[bits[0]]) return;
+      var vals = bits[1].split(','); if (vals.length !== keys.length) return;
+      keys.forEach(function (k, i) { state.params[bits[0]][k] = clamp(k, vals[i]); });
+      ids.push(bits[0]);
+    });
+    if (ids.length) { state.selected = ids; state.active = ids[0]; }
+    return ids.length > 0;
+  }
+  function shareUrl() { return location.origin + '/?s=' + encodeURIComponent(encodeScenario()) + '&geo=' + state.active + '#sim'; }
+  function briefText() {
+    var L = ['Bench forecast, 90 days out. ILLUSTRATIVE MODEL, not a forecast of our operation: inputs are editable starting points, not benchmarks.', ''];
+    state.selected.forEach(function (id) {
+      var p = state.params[id], m = M[id], g = geoById[id], last = m.weeks[WEEKS - 1], reach = reachWeek(m);
+      L.push(g.name + ': ' + p.ready + ' delivery-ready today against ' + p.seats + ' needed in March. ' + (!m.red ? 'Holds all quarter.' : (m.red === 1 ? (reach ? 'Short until week ' + reach + '.' : 'Never reaches 90% of need by March.') : 'Falls below 90% of need in week ' + m.red + '.')) + ' Week 13: ' + Math.round(last.total) + ' of ' + p.seats + '; ' + Math.round(last.lost) + ' seats lost over the quarter.');
+      if (m.red && m.action) { var a = m.action, cfr = reachWeek(a.cf); L.push('  First action: ' + a.text + ' Owner: ' + a.owner + '. Effect: ' + (a.cf.red ? (cfr ? 'reaches the mark in week ' + cfr : 'still short in March') : 'never below the mark') + '; week 13 at ' + Math.round(a.cf.weeks[WEEKS - 1].total) + ' of ' + p.seats + '.'); }
+    });
+    L.push('', 'What this is: SSUNDAR.\'s March Bench Diagnosis replaces these inputs with our own dialer, quality, attendance and assessment data, per geography. Four weeks, one account, nothing new to host, audio discarded, nobody ranked, and the controller signs the baseline. If there is no material gap, it says so and stops.', 'Rerun my scenario: ' + shareUrl(), 'Start: https://ssundar.com/engage');
+    return L.join('\n');
+  }
+  function copyText(t, done) {
+    function fb() { try { var ta = document.createElement('textarea'); ta.value = t; ta.setAttribute('readonly', ''); ta.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); done(true); } catch (e) { done(false); } }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(function () { done(true); }, fb); else fb();
+  }
+  (function addShare() {
+    var acts = cta && cta.parentNode; if (!acts) return;
+    var box = document.createElement('div'); box.className = 'share'; box.style.cssText = 'display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:14px';
+    box.innerHTML = '<button type="button" class="btn" id="copylink" style="background:transparent;border:1px solid var(--hair);color:var(--ivory)">Copy scenario link</button>'
+      + '<button type="button" class="btn" id="copybrief" style="background:transparent;border:1px solid var(--hair);color:var(--ivory)">Copy one-page brief for your COO</button>'
+      + '<span id="sharemsg" role="status" aria-live="polite" style="font-size:13px;color:var(--mute)"></span>';
+    acts.parentNode.insertBefore(box, acts.nextSibling);
+    var msg = box.querySelector('#sharemsg');
+    function flash(t) { msg.textContent = t; setTimeout(function () { msg.textContent = ''; }, 4000); }
+    function ev(n) { if (typeof window.gtag === 'function') window.gtag('event', n, { geos: state.selected.length }); }
+    box.querySelector('#copylink').addEventListener('click', function () { copyText(shareUrl(), function (ok) { flash(ok ? 'Link copied. It reopens this exact scenario.' : 'Could not copy. Select the address bar link instead.'); if (ok) ev('sim_share_link'); }); });
+    box.querySelector('#copybrief').addEventListener('click', function () { copyText(briefText(), function (ok) { flash(ok ? 'Brief copied. Paste it into an email.' : 'Could not copy the brief.'); if (ok) ev('sim_share_brief'); }); });
+  })();
+  var fromShare = false;
+  try { var qs = new URLSearchParams(location.search); if (qs.get('s')) { fromShare = applyScenario(qs.get('s')); if (fromShare && geoById[qs.get('geo')] && state.selected.indexOf(qs.get('geo')) >= 0) state.active = qs.get('geo'); } } catch (e) {}
   buildPicker(); buildTabs(); loadInputs(); update(false);
+  if (fromShare) { var simEl = document.getElementById('sim'); if (simEl && simEl.scrollIntoView) setTimeout(function () { simEl.scrollIntoView(); }, 300); }
 })();
