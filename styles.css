@@ -899,3 +899,8 @@ p,li{max-width:none}
 .nav-logo-img{max-width:none;flex-shrink:0}
 .nav-links{margin-left:clamp(20px,3vw,56px);gap:clamp(14px,1.6vw,26px)}
 .nav-cta{white-space:nowrap}
+
+/* NO SCROLL-REVEAL (2026-11-19): fade-in/slide-up left hero, tiers and CTAs dimmed until extra scroll (audit finding on /work). Everything renders at full contrast immediately, matching the static homepage ruling. */
+.fade-in,.slide-up,.slide-left,.slide-right,.stagger-child{opacity:1!important;transform:none!important;transition:none!important}
+/* keep footer controls clear of the cookie banner */
+body.cookie-banner-open{padding-bottom:var(--cookie-banner-h,96px)}

@@ -78,6 +78,7 @@
   function dismiss(banner) {
     banner.style.transform = 'translateY(120%)';
     banner.style.opacity   = '0';
+    document.body.classList.remove('cookie-banner-open');
     setTimeout(function () {
       if (banner.parentNode) banner.parentNode.removeChild(banner);
     }, 380);
@@ -175,6 +176,8 @@
       if (!document.body) return;
       var banner = createBanner();
       document.body.appendChild(banner);
+      document.body.style.setProperty('--cookie-banner-h', (banner.offsetHeight + 30) + 'px');
+      document.body.classList.add('cookie-banner-open');
       setTimeout(function () { banner.querySelector('button').focus(); }, 120);
     }, 900);
   }
