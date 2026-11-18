@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "She Graduated Nesting on a Tuesday. The Queue Found Out on Thursday.",
+      "slug": "insight-graduated-nesting-queue-found-out-thursday",
+      "date": "2026-11-18",
+      "category": "SYSTEMS ARCHITECTURE",
+      "excerpt": "The batch cleared the mock-call assessment on a Tuesday. On Thursday the queue spiked, and the certificate had nothing to say about it.",
+      "readTime": "7 min",
+      "file": "insight-graduated-nesting-queue-found-out-thursday.html",
+      "published": true
+    },
+    {
       "title": "The QBR Said Refreshers Were Delivered. The Bench Left in March.",
       "slug": "insight-qbr-said-refreshers-bench-left-in-march",
       "date": "2026-11-17",
