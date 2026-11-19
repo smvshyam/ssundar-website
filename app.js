@@ -53,25 +53,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Counter animation for stats
   function animateCounter(el) {
+    /* No counting animation: a crawler, screen reader or fast scroller caught mid-count read wrong figures (e.g. 77 -> 21%). Show the final value, always. */
     if (el.dataset.counted) return;
     el.dataset.counted = '1';
     var target = el.getAttribute('data-count');
     var suffix = el.getAttribute('data-suffix') || '';
     var prefix = el.getAttribute('data-prefix') || '';
-    var isFloat = target.indexOf('.') > -1;
     var end = parseFloat(target);
-    var duration = 1200;
-    var start = performance.now();
-    function step(now) {
-      var elapsed = now - start;
-      var progress = Math.min(elapsed / duration, 1);
-      var eased = 1 - Math.pow(1 - progress, 3);
-      var current = isFloat ? (end * eased).toFixed(1)
-                            : Math.round(end * eased).toLocaleString('en-US');
-      el.textContent = prefix + current + suffix;
-      if (progress < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
+    var isFloat = target.indexOf('.') > -1;
+    el.textContent = prefix + (isFloat ? end.toFixed(1) : Math.round(end).toLocaleString('en-US')) + suffix;
   }
 
   // --- Z-Depth Parallax ---
