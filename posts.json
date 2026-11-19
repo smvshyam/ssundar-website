@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "Everyone Knew Who to Ask. Then She Went on Leave.",
+      "slug": "insight-everyone-knew-who-to-ask-then-she-went-on-leave",
+      "date": "2026-11-19",
+      "category": "SYSTEMS ARCHITECTURE",
+      "excerpt": "The skills matrix showed eleven qualified people. In practice, ten of them routed the hard cases to one. A dependency you can only measure by losing it is not a risk, it is a bill.",
+      "readTime": "7 min",
+      "file": "insight-everyone-knew-who-to-ask-then-she-went-on-leave.html",
+      "published": true
+    },
+    {
       "title": "She Graduated Nesting on a Tuesday. The Queue Found Out on Thursday.",
       "slug": "insight-graduated-nesting-queue-found-out-thursday",
       "date": "2026-11-18",
