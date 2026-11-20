@@ -621,7 +621,7 @@ function updateResources() {
   INDUSTRIES.forEach(function(ind) {
     var b = document.createElement('button');
     b.className = 'cc-ind-btn'; b.setAttribute('data-id', ind.id);
-    b.innerHTML = '<p class="cc-ind-num">' + ind.icon + '</p><p class="cc-ind-name">' + ind.name + '</p>';
+    b.innerHTML = '<p class="cc-ind-name">' + ind.name + '</p>';
     b.onclick = function() {
       S.industry = ind.id;
       ig.querySelectorAll('.cc-ind-btn').forEach(function(x){x.classList.remove('selected')});
