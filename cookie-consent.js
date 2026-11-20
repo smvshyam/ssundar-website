@@ -89,50 +89,44 @@
     banner.id = 'exlprs-cookie-banner';
     banner.setAttribute('role', 'dialog');
     banner.setAttribute('aria-label', 'Cookie consent');
-    banner.setAttribute('aria-modal', 'true');
+    banner.setAttribute('aria-modal', 'false');
 
     banner.style.cssText = [
-      'position:fixed', 'bottom:20px', 'left:50%',
-      'transform:translateX(-50%) translateY(0)',
-      'width:calc(100% - 40px)', 'max-width:760px',
-      'background:#111111',
-      'border:1px solid rgba(255,255,255,0.1)',
-      'border-top:2px solid #E31E24',
-      'padding:20px 24px',
+      'position:fixed', 'bottom:0', 'left:0', 'right:0',
+      'transform:translateY(0)',
+      'background:#0B0B0C',
+      'border-top:1px solid #E31E24',
+      'padding:10px clamp(14px,3vw,32px)',
       'z-index:99999',
-      'box-shadow:0 12px 48px rgba(0,0,0,0.7)',
+      'display:flex', 'flex-wrap:wrap', 'align-items:center', 'justify-content:center', 'gap:8px 20px',
       'transition:transform 0.35s ease,opacity 0.35s ease',
-      'font-family:Georgia,serif',
+      'font-family:var(--body,\'Inter Tight\',system-ui,sans-serif)',
     ].join(';');
 
     // Text block
     var text = document.createElement('p');
-    text.style.cssText = 'margin:0 0 14px;font-size:12px;line-height:1.7;color:rgba(255,255,255,0.5);';
-    text.innerHTML =
-      'We use <strong style="color:rgba(255,255,255,0.75)">strictly necessary</strong> cookies (hCaptcha security) automatically. '
-      + 'With your consent, we also use <strong style="color:rgba(255,255,255,0.75)">Google Analytics 4</strong> and '
-      + '<strong style="color:rgba(255,255,255,0.75)">Microsoft Clarity</strong> to understand how the site is used — '
-      + 'no data is sold or shared for advertising. '
-      + '<a href="privacy.html#cookie-policy" style="color:#E31E24;text-decoration:none;">Cookie Policy</a>';
+    text.style.cssText = 'margin:0;font-size:13px;line-height:1.45;color:rgba(237,234,228,0.72);max-width:720px;';
+    text.innerHTML = 'Analytics (Google Analytics, Microsoft Clarity) only with your consent. Nothing is sold or shared for advertising. Strictly necessary security cookies always run. '
+      + '<a href="privacy.html#cookie-policy" style="color:#C7A977;text-decoration:underline;">Cookie policy</a>';
 
     // Button row
     var row = document.createElement('div');
-    row.style.cssText = 'display:flex;gap:10px;flex-wrap:wrap;align-items:center;';
+    row.style.cssText = 'display:flex;gap:8px;align-items:center;flex-shrink:0;';
 
     function makeBtn(label, primary) {
       var b = document.createElement('button');
       b.textContent = label;
       b.style.cssText = [
-        'padding:8px 22px',
+        'padding:7px 16px',
         'font-size:11px',
         'font-weight:700',
         'letter-spacing:0.08em',
         'text-transform:uppercase',
         'cursor:pointer',
-        'font-family:monospace',
+        'font-family:inherit',
         'border:1px solid ' + (primary ? '#E31E24' : 'rgba(255,255,255,0.2)'),
         'background:' + (primary ? '#E31E24' : 'transparent'),
-        'color:' + (primary ? '#fff' : 'rgba(255,255,255,0.45)'),
+        'color:' + (primary ? '#fff' : 'rgba(237,234,228,0.7)'),
         'white-space:nowrap',
       ].join(';');
       return b;
@@ -163,7 +157,6 @@
 
     row.appendChild(acceptBtn);
     row.appendChild(declineBtn);
-    row.appendChild(manageLink);
 
     banner.appendChild(text);
     banner.appendChild(row);
