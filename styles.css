@@ -908,7 +908,8 @@ body.cookie-banner-open{padding-bottom:var(--cookie-banner-h,96px)}
 /* PROGRAMS DROPDOWN (2026-11-20) */
 .nav-dd{position:relative;display:flex;align-items:center}
 .nav-dd-menu{display:none;position:absolute;top:100%;left:-24px;padding-top:18px;z-index:200}
-.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu{display:block}
+/* only devices with a real hover get the fly-out; on touch, tapping Programs simply opens /programs */
+@media (hover:hover) and (pointer:fine){.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu{display:block}}
 .nav-dd-menu>*{background:#0B0B0C}
 .nav-dd-menu{width:min(760px,92vw)}
 .nav-dd-top{display:block;padding:16px 22px;border:1px solid rgba(237,234,228,.16);border-bottom:0;color:#EDEAE4!important;text-decoration:none;font-size:14px;letter-spacing:.01em;text-transform:none}
