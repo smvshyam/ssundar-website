@@ -904,3 +904,19 @@ p,li{max-width:none}
 .fade-in,.slide-up,.slide-left,.slide-right,.stagger-child{opacity:1!important;transform:none!important;transition:none!important}
 /* keep footer controls clear of the cookie banner */
 body.cookie-banner-open{padding-bottom:var(--cookie-banner-h,96px)}
+
+/* PROGRAMS DROPDOWN (2026-11-20) */
+.nav-dd{position:relative;display:flex;align-items:center}
+.nav-dd-menu{display:none;position:absolute;top:100%;left:-24px;padding-top:18px;z-index:200}
+.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu{display:block}
+.nav-dd-menu>*{background:#0B0B0C}
+.nav-dd-menu{width:min(760px,92vw)}
+.nav-dd-top{display:block;padding:16px 22px;border:1px solid rgba(237,234,228,.16);border-bottom:0;color:#EDEAE4!important;text-decoration:none;font-size:14px;letter-spacing:.01em;text-transform:none}
+.nav-dd-top b{color:var(--red,#E31E24)}
+.nav-dd-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid rgba(237,234,228,.16)}
+.nav-dd-col{padding:16px 20px 18px;border-right:1px solid rgba(237,234,228,.08)}
+.nav-dd-col:last-child{border-right:0}
+.nav-dd-col p{margin:0 0 8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sand,#C7A977)}
+.nav-dd-col a,.nav-dd-all{display:block;padding:6px 0;color:rgba(237,234,228,.86);text-decoration:none;font-size:14px;line-height:1.35;letter-spacing:0;text-transform:none;font-weight:400}
+.nav-dd-col a:hover,.nav-dd-all:hover,.nav-dd-top:hover{color:#fff;text-decoration:underline}
+.nav-dd-all{padding:13px 22px;border:1px solid rgba(237,234,228,.16);border-top:0;color:var(--sand,#C7A977)!important}

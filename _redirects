@@ -24,11 +24,15 @@ https://www.ssundar.com/*  https://ssundar.com/:splat   301!
 /insights       /insights.html      200
 /engage         /engage.html        200
 /work           /work.html          200
-/academy        /academy.html       200
-/consulting     /consulting.html    200
+/academy        /programs#facilitator-certification 301!
+/academy.html   /programs#facilitator-certification 301!
+/consulting     /programs#performance-consulting 301!
+/consulting.html /programs#performance-consulting 301!
 /platform       /platform.html      200
-/play-labs      /play-labs.html     200
-/workshops      /workshops.html     200
+/play-labs      /programs#play-labs 301!
+/play-labs.html /programs#play-labs 301!
+/workshops      /programs#g-lead    301!
+/workshops.html /programs#g-lead    301!
 
 /testimonials   /testimonials.html  200
 
@@ -40,7 +44,9 @@ https://www.ssundar.com/*  https://ssundar.com/:splat   301!
 /activation         /activation.html         200
 /capability-strategy     /capability-strategy.html     200
 /capability-architecture /capability-architecture.html 200
-/services           /services.html           200
+/services           /programs                301!
+/services.html      /programs                301!
+/programs           /programs.html           200
 /brochure           /ssundar-capability-brochure.html 200
 
 # Retired duplicate pages -> canonical destinations (301)
