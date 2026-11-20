@@ -13,7 +13,10 @@ https://www.ssundar.com/*  https://ssundar.com/:splat   301!
 /cookie-policy  /cookie-policy.html 200
 /disclaimer     /disclaimer.html    200
 /about          /about.html         200
-/about-map      /about-map.html     200
+/about-map      /about              301!
+/about-map.html /about              301!
+/about-classic  /about              301!
+/about-classic.html /about          301!
 /systems        /systems.html       200
 /evidence       /evidence.html      200
 /process        /process.html       200
