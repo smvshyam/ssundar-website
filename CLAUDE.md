@@ -168,7 +168,7 @@ first, ours second. Never "AI-era", never a tagline above the headline, never an
   linked from any public page. `/capability-forward` is the public one-pager, without a fee.
 - **Treeng appears once** (homepage forecast panel) as what runs on the client's data during the
   diagnostic. No orb, no nav item, no product CTA. Treeng is 16 modules.
-- Nav (updated 2026-11-14 by Shyam's instruction): Writing · Evidence · Work · Intelligence · Simulate · About; CTA `/engage` "Start the March Bench Diagnosis".
+- Nav (updated 2026-11-20 by Shyam's instruction): Writing · Evidence · Programs ▾ (dropdown) · Intelligence · Simulate · About; CTA `/engage` "Start the March Bench Diagnosis".
   `app.js` no longer injects anything Treeng-related.
 - Contracting entity is SSUNDAR. EXLPRS is not named as the contracting party anywhere.
 - Cleared figures only: 77→93% (90 days, headcount up 70%); 30 working days→4, errors down over 90%;
@@ -218,3 +218,41 @@ five days = 41% of annual reach. The gap is conversion and consistency, not reac
 - `/simulate` is in the nav on every page. Simulator funnel events (`sim_view`, `sim_launch`, `sim_begin`, `sim_round`, `sim_complete`, `sim_report`, `sim_to_engage`) live in simulate.html; the PDF is emailed as an attachment by `send-thankyou`, which accepts `RESEND_API_KEY` or `RESEND_API_KEY_SSUNDAR`. EXLPRS branding is retired from emails and AI prompts.
 - SEO hub: `/leadership-skills-training` (targets leadership skills / leadership skills training). Do not mention client or employer names; sector descriptors only (E-commerce GCC etc.).
 - Search Console (22 Oct-10 Nov 2026): 94 impressions, 2 clicks, 8 queries, all brand or misspelled brand; no generic leadership queries yet.
+
+## 2026-11-20 port from the prototype review
+- Homepage hero has a proof bar (cleared figures only). Simulator can copy a scenario link (`/?s=<geo:values;...>&geo=..#sim`, all inputs in the URL, no personal data) and a plain-text COO brief stamped ILLUSTRATIVE; GA events `sim_share_link`, `sim_share_brief`.
+- `/about` is now a plain executive bio (sector-level record, no employer names, no tenure number until Shyam confirms 24 vs 25). The interactive career map lives at `/about-map` (noindex). 
+- `/capability-forward` has a "How your data is handled" section (#data): only statements that are true today; claim no certifications.
+- NOT ported, deliberately: employer names with metrics, Google Fonts CDN, "built to pass InfoSec in week zero", Treeng/Work Intelligence as a licensed product (waits for five buyer conversations).
+
+## 2026-11-20 decisions (Shyam delegated 2 and 4; decided 1 and 3)
+- Tenure is "24+ years" everywhere. Never "twenty-five".
+- /evidence scale figures (<5% calibration variance, 27 lines of business, 150+ trainers, 250+ QAs) approved by Shyam to stay. "44 trainers/facilitators" remains HOLD and was removed.
+- Hero line stays "Know in January whether your March bench will hold." It is correct for the current selling season and the offer is named for March. REVISIT BY 15 JAN 2027: from February the line and the offer name ("March Bench Diagnosis") must move together to the next season (e.g. June/September) on every page; a rolling hero alone would contradict the fixed offer name in the nav CTA.
+- Career map retired from the site: /about-map and /about-classic 301 to /about (files kept, not linked). Reason: it paired employer names with job titles, process names and unregistered numbers, which the NDA/claims rules forbid. External career-map links replaced with /about. Employer history lives on LinkedIn.
+
+## 2026-11-20 EXLPRS programs moved in (Shyam: "move exlprs build into this as exlprs is being sunset")
+- `/programs` carries the 14 EXLPRS programs in three groups (operations/quality/ramp, leadership, the learning function): problem, what we build, what changes, how it is measured, and only CLEARED figures as "on record". EXLPRS outcome claims were stripped (35%, 40%, 30-40%, -40-50%, 2x, +15-20%, 3 continents, 25+ years, Fortune 500, city names, "even in Amazon" quote).
+- Program enquiry form on /programs posts to Formspree xykdyqyj; GA events `program_enquiry`, `program_ask_click`. Lower-friction lead path than /engage.
+- Nav "Work" became "Programs" with a dropdown on every page (desktop hover/focus; mobile overlay links to /programs). /work is no longer in the nav.
+- /academy, /consulting, /play-labs, /workshops, /services 301 to the matching /programs anchors. /platform (Treeng) untouched and noindexed.
+- Not yet ported from EXLPRS: 6 whitepapers, 6 industry pages, 11 SEO landing pages, insights. exlprs.com is a separate Netlify site; its 301 map to ssundar.com is still to do.
+
+## 2026-11-20 "The leak upstairs" (Shyam asked for it prominently)
+- Homepage now has a full-width black band `#upstairs` between 01 The leak and 02 The forecast: "You promoted your best performer. You lost them that day." / "And you gained a manager nobody taught to lead." / body / verdict "Test readiness before the promotion. Not after the team has paid for it." Links to /programs#leadership-readiness and /simulate. Same line opens the Leadership group on /programs and /leadership-skills-training. Never attribute or quote the Peter Principle; it is stated as SSUNDAR's own verdict, aimed at the system, not the person.
+
+## 2026-11-23 Whitepapers ported from EXLPRS
+- `/whitepapers` hub + six pages at `/whitepaper-<slug>` (same slugs as exlprs.com, so the exlprs redirect map is 1:1): competency-pipeline, curriculum-trap, framework-shift, judgment-gap, learning-curve-collapse, ramp-paradox.
+- Scrubbed before publishing: every unregistered figure (62->94%, 10X, 400%, 30 to 1,500+, 712 sessions, 40%, 30-40%, $1.16M retired), all results tables, client-identifying detail (GIS + city + start date; named ad products; a client's proprietary framework name; month/year dates), and a job-title quote attribution. Build scripts and rewrite rules: build/wp in the Cowork session (not in src).
+- Linked from the Programs dropdown, homepage section 08 and /programs. Each paper ends with the program it supports.
+
+## 2026-11-23 Booking, WhatsApp, whitepapers placement
+- Calendly: https://calendly.com/shyam-ssundar/30min (UTM utm_source=ssundar&utm_medium=site&utm_content=<place>). Linked in the homepage hero (under the two buttons), every footer, the /engage success screen and /programs enquiry. GA event `calendly_click` (app.js).
+- WhatsApp click-to-chat button on every page via app.js (bottom-left, wa.me/919663974926, prefilled with the page path). GA event `whatsapp_click`.
+- Whitepapers live under Evidence: a "The long version" section on /evidence links all six; removed from the Programs dropdown. Hub /whitepapers and homepage section-08 row remain.
+
+## 2026-11-23 exlprs.com sunset, cost layer, calculator, gates diagram
+- exlprs.com: NO redirects to ssundar.com, ever (Shyam, 2026-11-23: tax and legal reasons; he is removing exlprs from Search Console). A redirect commit to smvshyam/exlprs-site was made and reverted the same day; that repo is back to its prior state. Do not link exlprs.com from ssundar.com either.
+- bench-sim.js: optional "cost of the gap" (currency + fully loaded monthly cost per seat). Cost = seat-weeks below need x monthly cost x 12/52; also shows what the first action recovers; in summary, COO brief and share link (&c=&cur=). GA `sim_cost_entered`. User-supplied, never stored, no default figure.
+- /bench-calculator: standalone calculator page (WebApplication schema, sitemap), linked from homepage section 03.
+- Homepage section 04 has a static SVG week 0-16 gates diagram above the table (hidden under 700px; the table carries it on phones).
