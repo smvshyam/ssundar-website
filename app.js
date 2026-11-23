@@ -333,6 +333,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var href = el.getAttribute('href') || '';
     if (/\/engage/.test(href)) {
       fire('engage_click', { link_text: el.textContent.trim().slice(0, 50) });
+    } else if (href.indexOf('calendly.com') !== -1) {
+      fire('calendly_click', { link_text: el.textContent.trim().slice(0, 50) });
     } else if (href.indexOf('app.ssundar.com') !== -1) {
       fire('platform_click', { link_text: el.textContent.trim().slice(0, 50) });
     } else if (/\/simulate/.test(href)) {
