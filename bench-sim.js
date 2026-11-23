@@ -64,6 +64,11 @@
     return m;
   }
   var M = {};
+  /* cost layer: seat-weeks below need x weekly cost (monthly x 12 / 52). Optional, user-supplied, never stored. */
+  state.cost = 0; state.cur = 'INR';
+  function gapWeeks(m, p) { var g = 0; m.weeks.forEach(function (x) { g += Math.max(0, p.seats - x.total); }); return g; }
+  function money(v) { try { return new Intl.NumberFormat(state.cur === 'INR' ? 'en-IN' : 'en-US', { style: 'currency', currency: state.cur, maximumFractionDigits: 0 }).format(Math.round(v)); } catch (e) { return state.cur + ' ' + Math.round(v); } }
+  function costOf(m, p) { return gapWeeks(m, p) * state.cost * 12 / 52; }
   function computeAll() { state.selected.forEach(function (id) { M[id] = computeOne(id); }); }
 
   /* ---------------- UI: geography picker, tabs, inputs ---------------- */
@@ -129,6 +134,7 @@
       + '<header><span class="dotst"></span><h3>' + esc(g.name) + '</h3><p class="hl">' + headline + '</p></header>'
       + '<div class="facts"><div><b>' + p.ready + '</b><span>delivery-ready today</span></div><div><b>' + p.seats + '</b><span>needed in March</span></div><div><b>' + Math.round(last.total) + '</b><span>forecast week 13</span></div><div><b>' + Math.round(last.ramp) + '</b><span>hired, not yet proficient at week 13</span></div><div><b>' + Math.round(last.lost) + '</b><span>seats lost over the quarter</span></div><div><b>' + Math.ceil((m.starts[0] + p.floor + p.prof) / 7) + '</b><span>week cohort 1 is proficient</span></div></div>'
       + '<div class="strip">' + strip + '</div><p class="striplbl">Delivery-ready seats by week &middot; red = below 90% of ' + p.seats + ' (' + Math.round(0.9 * p.seats) + ')</p>'
+      + (state.cost > 0 ? '<p class="cost" style="margin:14px 0 0;padding:12px 14px;border-left:2px solid var(--red);background:var(--ink)"><b style="color:var(--ivory)">' + money(costOf(m, p)) + '</b> &mdash; cost of the gap this quarter: ' + Math.round(gapWeeks(m, p)) + ' seat-weeks below the ' + p.seats + ' you need, at your cost per seat.' + (m.red && m.action ? ' The first action recovers about <b style="color:var(--ivory)">' + money(Math.max(0, costOf(m, p) - costOf(m.action.cf, p))) + '</b>.' : '') + '</p>' : '')
       + '<p class="lbl">Why, ranked by seats it costs</p><ol class="why">' + rs + '</ol>' + act + '</article>';
   }
   function renderAll() {
@@ -136,7 +142,7 @@
     cards.querySelectorAll('.sc').forEach(function (el) { el.addEventListener('click', function (e) { if (state.active !== el.dataset.id) { state.active = el.dataset.id; buildTabs(); loadInputs(); update(false); } }); });
     if (summary) { var shortIds = state.selected.filter(function (x) { return M[x].red; }), worst = null;
       shortIds.forEach(function (x) { var rx = reachWeek(M[x]) || 99, rw = worst ? (reachWeek(M[worst]) || 99) : 0; if (!worst || rx > rw) worst = x; });
-      summary.innerHTML = '<p>' + (shortIds.length ? '<span class="dotst r"></span><b>' + shortIds.length + ' of ' + state.selected.length + ' geographies fall short.</b> Worst: ' + geoById[worst].name + ' &mdash; ' + (reachWeek(M[worst]) ? 'short until ' + wk(reachWeek(M[worst])) : 'never reaches the mark by March') + '.' : '<span class="dotst g"></span><b>Every selected bench holds through March.</b>') + '</p>'; }
+      summary.innerHTML = '<p>' + (shortIds.length ? '<span class="dotst r"></span><b>' + shortIds.length + ' of ' + state.selected.length + ' geographies fall short.</b> Worst: ' + geoById[worst].name + ' &mdash; ' + (reachWeek(M[worst]) ? 'short until ' + wk(reachWeek(M[worst])) : 'never reaches the mark by March') + '.' : '<span class="dotst g"></span><b>Every selected bench holds through March.</b>') + (state.cost > 0 ? ' Cost of the gap across these geographies this quarter: <b>' + money(state.selected.reduce(function (t, x) { return t + costOf(M[x], state.params[x]); }, 0)) + '</b>.' : '') + '</p>'; }
   }
   function link() {
     var p = state.params[state.active], m = M[state.active];
@@ -162,12 +168,13 @@
     if (ids.length) { state.selected = ids; state.active = ids[0]; }
     return ids.length > 0;
   }
-  function shareUrl() { return location.origin + '/?s=' + encodeURIComponent(encodeScenario()) + '&geo=' + state.active + '#sim'; }
+  function shareUrl() { return location.origin + location.pathname + '?s=' + encodeURIComponent(encodeScenario()) + '&geo=' + state.active + (state.cost > 0 ? '&c=' + Math.round(state.cost) + '&cur=' + state.cur : '') + '#sim'; }
   function briefText() {
     var L = ['Bench forecast, 90 days out. ILLUSTRATIVE MODEL, not a forecast of our operation: inputs are editable starting points, not benchmarks.', ''];
     state.selected.forEach(function (id) {
       var p = state.params[id], m = M[id], g = geoById[id], last = m.weeks[WEEKS - 1], reach = reachWeek(m);
       L.push(g.name + ': ' + p.ready + ' delivery-ready today against ' + p.seats + ' needed in March. ' + (!m.red ? 'Holds all quarter.' : (m.red === 1 ? (reach ? 'Short until week ' + reach + '.' : 'Never reaches 90% of need by March.') : 'Falls below 90% of need in week ' + m.red + '.')) + ' Week 13: ' + Math.round(last.total) + ' of ' + p.seats + '; ' + Math.round(last.lost) + ' seats lost over the quarter.');
+      if (state.cost > 0) L.push('  Cost of the gap this quarter at our cost per seat: ' + money(costOf(m, p)) + (m.red && m.action ? '; the first action recovers about ' + money(Math.max(0, costOf(m, p) - costOf(m.action.cf, p))) : '') + '.');
       if (m.red && m.action) { var a = m.action, cfr = reachWeek(a.cf); L.push('  First action: ' + a.text + ' Owner: ' + a.owner + '. Effect: ' + (a.cf.red ? (cfr ? 'reaches the mark in week ' + cfr : 'still short in March') : 'never below the mark') + '; week 13 at ' + Math.round(a.cf.weeks[WEEKS - 1].total) + ' of ' + p.seats + '.'); }
     });
     L.push('', 'What this is: SSUNDAR.\'s March Bench Diagnosis replaces these inputs with our own dialer, quality, attendance and assessment data, per geography. Four weeks, one account, nothing new to host, audio discarded, nobody ranked, and the controller signs the baseline. If there is no material gap, it says so and stops.', 'Rerun my scenario: ' + shareUrl(), 'Start: https://ssundar.com/engage');
@@ -192,6 +199,12 @@
   })();
   var fromShare = false;
   try { var qs = new URLSearchParams(location.search); if (qs.get('s')) { fromShare = applyScenario(qs.get('s')); if (fromShare && geoById[qs.get('geo')] && state.selected.indexOf(qs.get('geo')) >= 0) state.active = qs.get('geo'); } } catch (e) {}
+  (function costInputs() {
+    var c = $('n-cost'), cu = $('cur'); if (!c || !cu) return;
+    try { var q2 = new URLSearchParams(location.search); var qc = +q2.get('c'); if (qc > 0 && qc < 1e9) { state.cost = qc; c.value = qc; } if (/^(INR|USD|EUR|GBP|PHP)$/.test(q2.get('cur') || '')) { state.cur = q2.get('cur'); cu.value = state.cur; } } catch (e) {}
+    function upd() { var v = +c.value; state.cost = v > 0 && v < 1e9 ? v : 0; state.cur = cu.value; update(true); if (state.cost > 0 && typeof window.gtag === 'function' && !upd.sent) { upd.sent = 1; window.gtag('event', 'sim_cost_entered', { currency: state.cur }); } }
+    c.addEventListener('change', upd); c.addEventListener('input', upd); cu.addEventListener('change', upd);
+  })();
   buildPicker(); buildTabs(); loadInputs(); update(false);
   if (fromShare) { var simEl = document.getElementById('sim'); if (simEl && simEl.scrollIntoView) setTimeout(function () { simEl.scrollIntoView(); }, 300); }
 })();

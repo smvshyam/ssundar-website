@@ -82,6 +82,7 @@ h2.t{font-size:clamp(25px,3.1vw,45px);max-width:22ch}
 .pp-l{display:flex;flex-wrap:wrap;gap:12px 32px;margin:30px 0 0}
 .pp-l a{color:var(--sand);text-decoration:none;font-weight:600;font-size:15px;letter-spacing:.02em}
 .pp-l a:hover{text-decoration:underline}
+.gates-fig{margin:34px 0 10px;padding:22px 20px 16px;border:1px solid var(--hair);background:var(--ink-2)}@media(max-width:700px){.gates-fig{display:none}}
 .fx{display:grid;gap:1px;background:var(--hair);margin-top:38px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
 @media(min-width:760px){.fx.c4{grid-template-columns:repeat(4,1fr)}.fx.c3{grid-template-columns:repeat(3,1fr)}
   .fx.c2{grid-template-columns:repeat(2,1fr)}.fx.c6{grid-template-columns:repeat(6,1fr)}}
@@ -364,7 +365,7 @@ footer.footer{background:var(--ink);border-top:1px solid var(--hair)}
         <div class="summary" id="geosummary"></div>
         <div class="scorecards" id="scorecards"></div>
         <div class="acts">
-          <a class="btn" id="simcta" href="/engage">Get this on your real data in four weeks &rarr;</a>
+          <a class="btn" id="simcta" href="/engage">Get this on your real data in four weeks &rarr;</a><a class="btn g" href="/bench-calculator">Open the calculator on its own page</a>
         </div>
         <p class="small">Illustrative model, not a forecast of your operation. The diagnosis replaces these inputs with your dialer, quality, attendance and assessment data, per geography, and your controller signs the baseline.</p>
       </div>
@@ -389,6 +390,7 @@ footer.footer{background:var(--ink);border-top:1px solid var(--hair)}
               <div><input type="number" id="n-a90" inputmode="numeric" min="0" max="70" value="25" aria-label="Attrition by day 90, percent"><input type="range" id="a90" min="0" max="70" step="1" value="25" aria-label="Attrition by day 90"></div>
             </div></div>
           <div class="f"><label for="n-loss">Never reach the floor <small>(% of offers, no-shows)</small></label><input type="number" id="n-loss" inputmode="numeric" min="0" max="40" step="1" value="8"><input type="range" id="loss" min="0" max="40" step="1" value="8" aria-label="Percent of hires who never reach the floor"></div>
+          <div class="f" id="costbox"><label for="n-cost">Cost of the gap <small>(optional: your fully loaded monthly cost per seat)</small></label><div style="display:flex;gap:8px"><select id="cur" aria-label="Currency" style="background:var(--ink);color:var(--ivory);border:1px solid var(--hair);padding:0 8px;font:inherit"><option value="INR">&#8377; INR</option><option value="USD">$ USD</option><option value="EUR">&euro; EUR</option><option value="GBP">&pound; GBP</option><option value="PHP">&#8369; PHP</option></select><input type="number" id="n-cost" inputmode="numeric" min="0" step="1000" placeholder="e.g. 65000" aria-label="Fully loaded monthly cost per seat" style="flex:1"></div><p class="small" style="margin-top:6px">Turns seats into money: every week a seat sits below need is paid for and not earning. Your number, never stored.</p></div>
           <button class="btn g" id="copyall" type="button" style="width:100%;margin-top:8px">Copy hire plan and ramp speeds to all selected geographies</button>
           <p class="small" style="margin-top:8px">A cohort starts every three weeks. Everything else is yours to set.</p>
           </div>
@@ -405,6 +407,7 @@ footer.footer{background:var(--ink);border-top:1px solid var(--hair)}
     <p class="theirs">&ldquo;Don&rsquo;t give me a dashboard. Tell me what to do this week.&rdquo;</p>
     <h2 class="t">One owner<span class="dot">.</span> One date<span class="dot">.</span> One number<span class="dot">.</span></h2>
     <p class="l">Accounts sorted by risk, red first, one recommended action each. The system recommends; a person decides. <strong>If the diagnosis finds no material gap, we say so and stop.</strong></p>
+    <figure class="gates-fig" aria-label="Timeline: week 0 account chosen; week 4 gate, forecast and baseline, go or no-go; week 8 coaching loops live; week 12 client declaration; week 16 gate, gain measured, handover, scale or stop."><svg viewBox="0 0 1000 190" role="img" style="width:100%;height:auto;display:block"><rect x="70" y="64" width="215" height="8" style="fill:var(--red);opacity:.85"/><rect x="285" y="64" width="645" height="8" style="fill:var(--sand);opacity:.55"/><text x="177" y="44" text-anchor="middle" style="fill:var(--red);font:600 14px var(--body);letter-spacing:.08em">THE MARCH BENCH DIAGNOSIS</text><text x="607" y="44" text-anchor="middle" style="fill:var(--sand);font:600 14px var(--body);letter-spacing:.08em">CAPABILITY FORWARD &middot; 120 DAYS</text><circle cx="70" cy="68" r="11" style="fill:var(--ivory);stroke:var(--ink);stroke-width:3"/><text x="70" y="118" text-anchor="middle" style="fill:var(--ivory);font:700 17px var(--body)">Week 0</text><text x="70" y="146" text-anchor="middle" style="fill:var(--mute);font:400 15px var(--body)">Account chosen</text><text x="70" y="168" text-anchor="middle" style="fill:var(--mute);font:400 15px var(--body)">Data access signed</text><rect x="272" y="55" width="26" height="26" transform="rotate(45 285 68)" style="fill:var(--red);stroke:var(--ink);stroke-width:3"/><text x="285" y="118" text-anchor="middle" style="fill:var(--ivory);font:700 17px var(--body)">Week 4 &middot; GATE</text><text x="285" y="146" text-anchor="middle" style="fill:var(--mute);font:400 15px var(--body)">Forecast + baseline</text><text x="285" y="168" text-anchor="middle" style="fill:var(--mute);font:400 15px var(--body)">Go or no-go</text><circle cx="500" cy="68" r="11" style="fill:var(--ivory);stroke:var(--ink);stroke-width:3"/><text x="500" y="118" text-anchor="middle" style="fill:var(--ivory);font:700 17px var(--body)">Week 8</text><text x="500" y="146" text-anchor="middle" style="fill:var(--mute);font:400 15px var(--body)">Coaching loops live</text><text x="500" y="168" text-anchor="middle" style="fill:var(--mute);font:400 15px var(--body)">Weekly step-ups</text><circle cx="715" cy="68" r="11" style="fill:var(--ivory);stroke:var(--ink);stroke-width:3"/><text x="715" y="118" text-anchor="middle" style="fill:var(--ivory);font:700 17px var(--body)">Week 12</text><text x="715" y="146" text-anchor="middle" style="fill:var(--mute);font:400 15px var(--body)">Client declaration</text><text x="715" y="168" text-anchor="middle" style="fill:var(--mute);font:400 15px var(--body)">Monthly forum</text><rect x="917" y="55" width="26" height="26" transform="rotate(45 930 68)" style="fill:var(--red);stroke:var(--ink);stroke-width:3"/><text x="930" y="118" text-anchor="middle" style="fill:var(--ivory);font:700 17px var(--body)">Week 16 &middot; GATE</text><text x="930" y="146" text-anchor="middle" style="fill:var(--mute);font:400 15px var(--body)">Gain measured</text><text x="930" y="168" text-anchor="middle" style="fill:var(--mute);font:400 15px var(--body)">Handover: scale or stop</text></svg><figcaption style="font-size:13px;color:var(--faint);margin-top:6px">Red diamonds are the two gates. At either one you can stop, and you keep everything built so far.</figcaption></figure>
     <table class="tb">
       <tr><th>Week</th><th>What you hold</th><th>What you can stop</th></tr>
       <tr><td><b>0</b></td><td>Account chosen. Data access agreed in writing. Legal scope signed. One controller to sign the baseline.</td><td>Nothing yet. No employee-facing step without your legal sign-off.</td></tr>
@@ -545,7 +548,7 @@ footer.footer{background:var(--ink);border-top:1px solid var(--hair)}
 </footer>
 
 <script src="app.js"></script>
-<script src="/bench-sim.js?v=20261120a" defer></script>
+<script src="/bench-sim.js?v=20261123a" defer></script>
 <script src="/cookie-consent.js"></script>
 </body>
 </html>

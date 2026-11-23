@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bench forecast calculator for GCC and BPO ramps | SSUNDAR.</title>
+<meta name="description" content="Free calculator: delivery-ready seats week by week against need for up to five geographies, with attrition at 30/60/90 days, time to proficiency, no-shows and the cost of the gap.">
+<meta name="keywords" content="global capability centre, GCC workforce planning, time to proficiency, new-hire attrition, bench strength, ramp-up planning, shared services capability, BPO operations, speed to competency, capability building, offshore delivery, seat readiness">
+<meta property="og:title" content="Bench forecast calculator for GCC and BPO ramps | SSUNDAR.">
+<meta property="og:description" content="Free calculator: delivery-ready seats week by week against need for up to five geographies, with attrition at 30/60/90 days, time to proficiency, no-shows and the cost of the gap.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://ssundar.com/bench-calculator">
+<meta property="og:image" content="https://ssundar.com/og-default.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<link rel="canonical" href="https://ssundar.com/bench-calculator">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="/fonts.css">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* ══════════════════════════════════════════════════════════════════════
+   SSUNDAR. homepage — editorial system (2026-11-11)
+   Static by rule: no snapping, no reveals, no motion. Restraint does the work.
+   One accent: red, for the primary action and genuine alarm. Nothing else is red.
+   ══════════════════════════════════════════════════════════════════════ */
+body{background:var(--ink);color:var(--ivory);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:rgba(199,169,119,.28)}
+.nav{position:fixed}
+
+/* ---- rhythm ---- */
+.pn{padding:clamp(72px,8.5vw,132px) var(--px);border-top:1px solid var(--hair);position:relative}
+.pn.hero0{padding-top:clamp(132px,15vw,200px);padding-bottom:clamp(76px,9vw,124px);border-top:0}
+.pn .in{width:100%;max-width:1180px;margin:0 auto}
+
+/* ---- eyebrow ---- */
+.k{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--sand);display:block;margin:0 0 28px;padding-bottom:14px;border-bottom:1px solid var(--hair)}
+.k::before{display:none}
+
+/* ---- display type: mixed case, tight, generous margin ---- */
+h1.t,h2.t{font-family:var(--body);font-weight:600;text-transform:none;letter-spacing:-.035em;
+  line-height:1.03;margin:0 0 26px;color:var(--ivory)}
+h1.t{font-size:clamp(34px,5.1vw,70px);max-width:17ch}
+h2.t{font-size:clamp(25px,3.1vw,45px);max-width:22ch}
+.t .soft{color:var(--mute);font-weight:400}
+.t .dot{color:var(--red)}
+
+/* ---- prose ---- */
+.l{font-family:var(--body);font-size:clamp(16.5px,1.15vw,18.5px);font-weight:400;line-height:1.68;
+  color:var(--mute);max-width:64ch;margin:0 0 18px}
+.l strong{color:var(--ivory);font-weight:600}
+.theirs{font-family:var(--body);font-style:italic;font-weight:400;font-size:clamp(17px,1.35vw,21px);
+  line-height:1.5;color:var(--sand);margin:0 0 20px;max-width:46ch}
+.q{font-family:var(--body);font-weight:500;font-size:clamp(18px,1.9vw,27px);line-height:1.32;letter-spacing:-.018em;
+  color:var(--ivory);border-left:2px solid var(--red);padding:2px 0 2px 24px;margin:34px 0 0;max-width:34ch}
+.small{font-family:var(--body);font-size:13px;font-weight:400;letter-spacing:.005em;line-height:1.7;
+  color:var(--faint);margin-top:22px;max-width:92ch}
+.small a{color:var(--sand);text-decoration:none;border-bottom:1px solid rgba(199,169,119,.35)}
+.small a:hover{color:var(--ivory);border-bottom-color:var(--ivory)}
+.small strong{color:var(--ivory);font-weight:600}
+
+/* ---- actions ---- */
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:15px 28px;
+  font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;background:var(--red);color:#fff;border:1px solid var(--red);cursor:pointer;
+  transition:background .18s ease,color .18s ease,border-color .18s ease}
+.btn:hover{background:#B9181D;border-color:#B9181D}
+.btn.g{background:transparent;border-color:rgba(237,234,228,.28);color:var(--ivory)}
+.btn.g:hover{background:rgba(237,234,228,.07);border-color:rgba(237,234,228,.5)}
+
+/* ---- fact strip ---- */
+.proofbar{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:baseline;margin-top:30px;padding:16px 20px;border-left:2px solid var(--sand);background:var(--ink-2);font-family:var(--body);font-size:14px;line-height:1.5;color:var(--mute)}
+.proofbar b{color:var(--ivory);font-weight:600;margin-right:6px}
+.proofbar a{color:var(--sand);text-decoration:none;font-size:13px;margin-left:auto;white-space:nowrap}
+.proofbar a:hover{text-decoration:underline}
+.pp{background:#000;border-top:1px solid var(--red)}
+.pp-h{font-family:var(--body);font-weight:700;font-size:clamp(38px,5.6vw,84px);line-height:1.02;letter-spacing:-.025em;color:var(--ivory);margin:18px 0 0;text-transform:none}
+.pp-s{font-family:var(--body);font-weight:500;font-size:clamp(22px,2.4vw,34px);line-height:1.2;color:var(--red);margin:20px 0 0}
+.pp-b{font-family:var(--body);font-size:clamp(17px,1.35vw,20px);line-height:1.65;color:var(--mute);max-width:62ch;margin:30px 0 0}
+.pp-v{font-family:var(--body);font-weight:600;font-size:clamp(20px,1.9vw,26px);line-height:1.3;color:var(--ivory);margin:26px 0 0;padding-left:16px;border-left:2px solid var(--red)}
+.pp-l{display:flex;flex-wrap:wrap;gap:12px 32px;margin:30px 0 0}
+.pp-l a{color:var(--sand);text-decoration:none;font-weight:600;font-size:15px;letter-spacing:.02em}
+.pp-l a:hover{text-decoration:underline}
+.fx{display:grid;gap:1px;background:var(--hair);margin-top:38px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+@media(min-width:760px){.fx.c4{grid-template-columns:repeat(4,1fr)}.fx.c3{grid-template-columns:repeat(3,1fr)}
+  .fx.c2{grid-template-columns:repeat(2,1fr)}.fx.c6{grid-template-columns:repeat(6,1fr)}}
+.fx>div{background:var(--ink);padding:26px 24px 24px}
+.fx b{display:block;font-family:var(--body);font-weight:600;font-size:clamp(26px,2.5vw,38px);
+  line-height:1;letter-spacing:-.035em;margin-bottom:12px;color:var(--ivory)}
+.fx b i{font-style:normal;color:var(--faint);font-size:.44em;font-weight:500;letter-spacing:.04em;margin-left:.35em}
+.fx span{font-family:var(--body);font-size:14.5px;font-weight:400;line-height:1.6;color:var(--mute);display:block}
+.fx .m{display:block;margin-top:14px;padding-top:12px;border-top:1px solid var(--hair);
+  font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--faint);font-style:normal}
+
+/* ---- status marks ---- */
+.st{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:11px;vertical-align:middle;
+  position:relative;top:-3px}
+.st.g{background:var(--ok)}.st.r{background:var(--bad)}.st.a{background:var(--warn)}
+
+/* ---- tables ---- */
+table.tb{width:100%;border-collapse:collapse;margin-top:34px;font-family:var(--body);font-size:15.5px;line-height:1.6}
+table.tb th,table.tb td{text-align:left;vertical-align:top;padding:18px 24px 18px 0;border-top:1px solid var(--hair);color:var(--mute)}
+table.tb th{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--faint);white-space:nowrap;padding-top:0;border-top:0;padding-bottom:14px}
+table.tb td:first-child{color:var(--faint);width:30%}
+table.tb td b{color:var(--ivory);font-weight:600}
+table.tb tr:last-child td{border-bottom:1px solid var(--hair)}
+@media(max-width:700px){table.tb,table.tb tbody,table.tb tr,table.tb td,table.tb th{display:block;width:100%}
+  table.tb th{padding-bottom:6px}table.tb td{padding:10px 0;border-top:0}
+  table.tb tr{border-top:1px solid var(--hair);padding:14px 0}
+  table.tb td:first-child{width:100%;font-size:13px;letter-spacing:.04em}}
+
+.two{display:grid;gap:clamp(28px,3.5vw,56px)}
+@media(min-width:900px){.two{grid-template-columns:1fr 1fr}}
+
+/* ---- after-the-diagnostic list ---- */
+.after .list{border-top:1px solid var(--hair);margin-top:34px}
+.after a.row{display:block;text-decoration:none;color:var(--ivory);background:transparent;
+  padding:24px 0;border-bottom:1px solid var(--hair);transition:padding-left .2s ease}
+.after a.row:hover{padding-left:12px}
+.after a.row b{display:block;font-family:var(--body);font-weight:600;font-size:17px;letter-spacing:-.012em;
+  text-transform:none;margin-bottom:7px}
+.after a.row span{font-family:var(--body);font-size:14.5px;line-height:1.6;color:var(--mute)}
+
+/* ══ the model ══════════════════════════════════════════════════════ */
+.geos{display:grid;gap:1px;background:var(--hair);margin-top:30px;border:1px solid var(--hair)}
+@media(min-width:640px){.geos{grid-template-columns:repeat(3,1fr)}}
+/* nine regions: stay 3x3 at every width so no cell is left empty */
+.geos label{display:flex;flex-direction:column;gap:4px;min-height:64px;padding:15px 16px;
+  background:var(--ink);cursor:pointer;position:relative;transition:background .18s ease}
+.geos label:hover{background:var(--ink-2)}
+.geos label.on{background:var(--ink-2);box-shadow:inset 2px 0 0 var(--sand)}
+.geos input{position:absolute;opacity:0;width:1px;height:1px}
+.geos b{font-family:var(--body);font-weight:600;font-size:14.5px;letter-spacing:-.005em;color:var(--mute);text-transform:none}
+.geos label.on b{color:var(--ivory)}
+.geos span{font-family:var(--body);font-size:11.5px;letter-spacing:.01em;color:var(--faint);line-height:1.45}
+
+.simwrap{display:grid;gap:clamp(24px,3vw,44px);margin-top:34px}
+@media(min-width:960px){.simwrap{grid-template-columns:1.3fr .78fr;align-items:start}.simwrap>div:last-child{position:sticky;top:88px;max-height:calc(100vh - 108px);overflow:auto}}
+
+.geotabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.geotabs button{min-height:40px;padding:0 15px;background:transparent;border:1px solid var(--hair);
+  color:var(--faint);font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;cursor:pointer;transition:all .18s ease}
+.geotabs button:hover{color:var(--ivory);border-color:rgba(237,234,228,.3)}
+.geotabs button.on{background:var(--ivory);color:var(--ink);border-color:var(--ivory)}
+
+.watch{font-family:var(--body);font-size:14px;line-height:1.6;color:var(--mute);margin:0 0 22px;
+  padding:16px 18px;border-left:2px solid var(--sand);background:rgba(199,169,119,.05)}
+.watch b{color:var(--ivory);font-weight:600}
+.watch em{display:block;margin-top:8px;font-style:normal;font-family:var(--body);font-size:11px;
+  font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+
+/* inputs — a considered form, not a control panel */
+.ctl{background:var(--ink-2);border:1px solid var(--hair);padding:24px}
+.ctl .f{margin:0 0 20px}
+.ctl .f:last-of-type{margin-bottom:8px}
+.ctl label{display:block;font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--faint);margin:0 0 9px}
+.ctl label small{text-transform:none;letter-spacing:0;color:rgba(237,234,228,.3);font-weight:400;font-size:11.5px}
+.ctl label output{float:right;color:var(--ivory);letter-spacing:.06em}
+.ctl input[type=number]{width:100%;min-height:48px;background:var(--ink);border:1px solid var(--hair);
+  color:var(--ivory);font-family:var(--body);font-weight:600;font-size:18px;letter-spacing:-.01em;
+  padding:0 14px;margin-bottom:8px;transition:border-color .18s ease}
+.ctl input[type=number]:focus{outline:none;border-color:var(--sand)}
+.ctl input[type=range]{width:100%;height:22px;margin:0;accent-color:var(--sand);background:transparent;cursor:pointer}
+.ctl .row2g{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.ctl .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.ctl .close,.sheetbtn{display:none}
+#copyall{width:100%;margin-top:6px;min-height:46px;font-size:11.5px;letter-spacing:.1em}
+
+/* summary */
+.summary{margin-top:34px;padding:22px 24px;background:var(--ink-2);border:1px solid var(--hair);
+  border-left:2px solid var(--sand)}
+.summary p{font-family:var(--body);font-size:16.5px;line-height:1.55;color:var(--mute);margin:0}
+.summary p b{color:var(--ivory);font-weight:600}
+.dotst{width:8px;height:8px;border-radius:50%;display:inline-block;background:var(--ok);flex:none;margin-right:10px}
+.dotst.r{background:var(--bad)}.dotst.g{background:var(--ok)}
+
+/* scorecards */
+.scorecards{display:grid;gap:18px;margin-top:18px}
+.sc{background:var(--ink-2);border:1px solid var(--hair);padding:28px 26px 24px;cursor:pointer;
+  transition:border-color .18s ease}
+.sc:hover{border-color:rgba(237,234,228,.2)}
+.sc.on{border-color:rgba(237,234,228,.26)}
+.sc header{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.sc h3{font-family:var(--body);font-weight:600;text-transform:none;letter-spacing:-.02em;
+  font-size:clamp(20px,2.1vw,27px);margin:0;color:var(--ivory)}
+.sc .hl{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  margin:0;padding:7px 12px;border:1px solid}
+.sc.red .hl{color:#E08A90;border-color:rgba(168,50,58,.7);background:rgba(168,50,58,.12)}
+.sc.amber .hl{color:#DCBA7E;border-color:rgba(176,138,66,.7);background:rgba(176,138,66,.12)}
+.sc.green .hl{color:#8FC7A8;border-color:rgba(78,138,104,.7);background:rgba(78,138,104,.12)}
+.sc.red .dotst{background:var(--bad)}.sc.amber .dotst{background:var(--warn)}.sc.green .dotst{background:var(--ok)}
+
+.sc .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--hair);
+  border:1px solid var(--hair)}
+@media(min-width:620px){.sc .facts{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1100px){.sc .facts{grid-template-columns:repeat(6,1fr)}}
+.sc .facts div{background:var(--ink-2);padding:16px 14px}
+.sc .facts b{display:block;font-family:var(--body);font-weight:600;font-size:clamp(22px,2vw,28px);
+  line-height:1;letter-spacing:-.035em;color:var(--ivory)}
+.sc .facts span{display:block;font-family:var(--body);font-size:11px;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--faint);margin-top:8px;line-height:1.45}
+
+.sc .strip{display:grid;grid-template-columns:repeat(13,1fr);gap:2px;margin-top:22px}
+.sc .strip span{display:block;text-align:center;font-family:var(--body);font-size:12.5px;font-weight:600;
+  letter-spacing:-.01em;padding:10px 0 9px;color:var(--ivory)}
+.sc .strip span i{display:block;font-style:normal;font-size:9px;font-weight:500;letter-spacing:.08em;
+  opacity:.55;margin-bottom:4px}
+.sc .strip .g{background:rgba(78,138,104,.3);box-shadow:inset 0 -2px 0 var(--ok)}
+.sc .strip .r{background:rgba(168,50,58,.34);box-shadow:inset 0 -2px 0 var(--bad)}
+.sc .striplbl{font-family:var(--body);font-size:11.5px;letter-spacing:.04em;color:var(--faint);margin:10px 0 0}
+
+.sc .lbl{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--sand);margin:28px 0 4px}
+.sc .why{list-style:none;margin:0;padding:0}
+.sc .why li{display:grid;grid-template-columns:62px 1fr;gap:16px;padding:14px 0;
+  border-top:1px solid var(--hair);font-family:var(--body);font-size:14.5px;line-height:1.58;color:var(--mute)}
+.sc .why li b{font-family:var(--body);font-weight:600;font-size:23px;letter-spacing:-.035em;color:var(--ivory);line-height:1.1}
+.sc .why li em{font-style:normal;color:var(--ivory);font-weight:600}
+
+.sc .act{margin-top:22px;padding:20px 22px;border-left:2px solid var(--red);background:rgba(227,30,36,.055)}
+.sc .act p{font-family:var(--body);font-size:15px;line-height:1.6;color:var(--mute);margin:0 0 10px}
+.sc .act p:last-child{margin-bottom:0}
+.sc .act p b{color:var(--ivory);font-weight:600}
+.sc .act .lbl{margin:0 0 6px}
+.sc.green .act{border-left-color:var(--ok);background:rgba(78,138,104,.06)}
+.sc.green .act .lbl{color:var(--ok)}
+
+.faq{margin-top:30px;border-top:1px solid var(--hair)}
+.fq{padding:24px 0;border-bottom:1px solid var(--hair)}
+@media(min-width:900px){.fq{display:grid;grid-template-columns:.9fr 1.4fr;gap:clamp(24px,4vw,64px)}}
+.fq h3{font-family:var(--body);font-weight:600;font-size:17.5px;letter-spacing:-.012em;line-height:1.35;
+  color:var(--ivory);margin:0 0 10px;text-transform:none}
+@media(min-width:900px){.fq h3{margin:0}}
+.fq p{font-family:var(--body);font-size:15.5px;line-height:1.68;color:var(--mute);margin:0;max-width:64ch}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+section.pn{scroll-margin-top:84px}
+@media(max-width:560px){
+  .sc .strip span{font-size:10px;padding:7px 0 6px}
+  .sc .strip span i{font-size:7.5px;letter-spacing:.02em}
+  .sc .why li{grid-template-columns:48px 1fr;gap:12px}
+  .sc .why li b{font-size:19px}
+  .ctl .row3{gap:8px}
+}
+
+/* ---- footer, quieter ---- */
+footer.footer{background:var(--ink);border-top:1px solid var(--hair)}
+.footer-link{font-family:var(--body);font-size:14px;font-weight:500;letter-spacing:.01em;
+  color:var(--mute);text-decoration:none;transition:color .18s ease}
+.footer-link:hover{color:var(--ivory)}
+.footer-link .dot{color:var(--red)}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Bench forecast calculator", "url": "https://ssundar.com/bench-calculator", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "provider": {"@id": "https://ssundar.com/#org"}, "description": "Free calculator: delivery-ready seats week by week against need for up to five geographies, with attrition at 30/60/90 days, time to proficiency, no-shows and the cost of the gap."}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/"><img src="/logo-wordmark-light.png" alt="SSUNDAR. — Judgment-Centered Leadership Design" class="nav-logo-img" width="880" height="231"></a>
+    <div class="nav-links">
+    <a class="nav-link" href="/insights">Writing<span class="dot">.</span></a>
+    <a class="nav-link" href="/evidence">Evidence<span class="dot">.</span></a>
+    <div class="nav-dd"><a class="nav-link" href="/programs" aria-haspopup="true">Programs<span class="dot">.</span></a><div class="nav-dd-menu" role="menu"><a class="nav-dd-top" href="/capability-forward"><b>Capability Forward</b> &middot; the March Bench Diagnosis &rarr;</a><div class="nav-dd-cols"><div class="nav-dd-col"><p>Operations, quality and ramp</p><a href="/programs#quality-turnaround">Quality and Performance Turnaround</a><a href="/programs#onboarding-excellence">Onboarding Excellence System</a><a href="/programs#training-bench">Seasonal Training Bench Models</a><a href="/programs#performance-consulting">Performance Consulting</a></div><div class="nav-dd-col"><p>Leadership</p><a href="/programs#leadership-performance-architecture">Leadership Performance Architecture</a><a href="/programs#leadership-readiness">Leadership Readiness System</a><a href="/programs#leadership-operating-system">Leadership Operating System</a><a href="/programs#play-labs">Leadership Play-Labs&trade;</a><a href="/programs#executive-presence">Executive Presence Intensive</a><a href="/programs#design-thinking">Design Thinking for Leaders</a></div><div class="nav-dd-col"><p>The learning function</p><a href="/programs#facilitator-certification">Facilitator Certification (Train-the-Trainer)</a><a href="/programs#ld-strategy">L&D Strategy and Architecture</a><a href="/programs#ai-learning">AI-Native Learning Ecosystems</a><a href="/programs#custom">Custom Enterprise Programmes</a></div></div><a class="nav-dd-all" href="/programs">All programs, what each builds and how it is measured &rarr;</a></div></div>
+    <a class="nav-link" href="/work-intelligence">Intelligence<span class="dot">.</span></a>
+    <a class="nav-link" href="/simulate">Simulate<span class="dot">.</span></a>
+    <a class="nav-link" href="/about">About<span class="dot">.</span></a>
+    <a class="nav-cta" href="/engage">Start the March Bench Diagnosis &rarr;</a>
+  </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-label="Navigation">
+  <a href="/insights">Writing<span class="dot">.</span></a>
+  <a href="/evidence">Evidence<span class="dot">.</span></a>
+  <a href="/programs">Programs<span class="dot">.</span></a>
+  <a href="/work-intelligence">Intelligence<span class="dot">.</span></a>
+  <a href="/simulate">Simulate<span class="dot">.</span></a>
+  <a href="/about">About<span class="dot">.</span></a>
+  <a href="/engage" style="color:var(--red)">Start the March Bench Diagnosis &rarr;</a>
+</div>
+<section class="pn hero0" style="padding-bottom:0">
+  <div class="in">
+    <p class="k">Free tool &middot; no sign-up</p>
+    <h1 class="t">Will your bench hold<span class="dot">?</span> <span class="soft">Find out in two minutes.</span></h1>
+    <p class="l">Pick the geographies you are ramping, type your seats, hires, time to proficiency and attrition at 30, 60 and 90 days, and read delivery-ready seats week by week against the seats you need. Add your cost per seat and the gap becomes a number your CFO will read. Copy the link or the one-page brief and send it to whoever owns the number.</p>
+  </div>
+</section>
+<section class="pn" id="sim">
+  <div class="in">
+    <p class="k">The calculator &middot; illustrative model</p>
+    <h2 class="t">Your number, in black and white<span class="dot">.</span></h2>
+    <p class="l">Pick the geographies you are ramping, type your numbers, and read the result: delivery-ready seats week by week against the seats you need in March, red where you are below 90%, the reasons ranked by how many seats each one costs, and the first action that moves it.</p>
+    <div class="geos" id="geos" aria-label="Geographies you are ramping"></div>
+    <p class="small" style="margin-top:6px">Up to five at once. Each starts from what we watch first in that market &mdash; illustrative starting points to adjust, not benchmarks.</p>
+    <div class="simwrap">
+      <div>
+        <div class="summary" id="geosummary"></div>
+        <div class="scorecards" id="scorecards"></div>
+        <div class="acts">
+          <a class="btn" id="simcta" href="/engage">Get this on your real data in four weeks &rarr;</a>
+        </div>
+        <p class="small">Illustrative model, not a forecast of your operation. The diagnosis replaces these inputs with your dialer, quality, attendance and assessment data, per geography, and your controller signs the baseline.</p>
+      </div>
+      <div>
+        <div class="ctl" id="ctl" aria-label="Simulator inputs">
+          <div class="geotabs" id="geotabs" role="tablist"></div>
+          <p class="watch" id="geowatch"></p>
+          <div class="row2g">
+            <div class="f"><label for="n-seats">Seats needed in March</label><input type="number" id="n-seats" inputmode="numeric" min="20" max="1000" step="5" value="120"><input type="range" id="seats" min="20" max="1000" step="5" value="120" aria-label="Seats needed"></div>
+            <div class="f"><label for="n-ready">Delivery-ready today</label><input type="number" id="n-ready" inputmode="numeric" min="0" max="1000" step="1" value="92"><input type="range" id="ready" min="0" max="1000" step="1" value="92" aria-label="Delivery-ready seats today"></div>
+          </div>
+          <div class="f"><label for="n-tattr">Tenured attrition <small>(% of the bench lost per month)</small></label><input type="number" id="n-tattr" inputmode="numeric" min="0" max="15" step="1" value="3"><input type="range" id="tattr" min="0" max="15" step="1" value="3" aria-label="Tenured attrition per month"></div>
+          <div class="f"><label for="n-hires">Hires per cohort <small>(a cohort starts every 3 weeks)</small></label><input type="number" id="n-hires" inputmode="numeric" min="5" max="200" step="1" value="25"><input type="range" id="hires" min="5" max="200" step="1" value="25" aria-label="Hires per cohort"></div>
+          <div class="row2g">
+            <div class="f"><label for="n-floor">Offer-to-floor days <small>(graduation)</small></label><input type="number" id="n-floor" inputmode="numeric" min="10" max="90" step="1" value="45"><input type="range" id="floor" min="10" max="90" step="1" value="45" aria-label="Offer-to-floor days"></div>
+            <div class="f"><label for="n-prof">Speed to proficiency <small>(days after graduation)</small></label><input type="number" id="n-prof" inputmode="numeric" min="7" max="60" step="1" value="21"><input type="range" id="prof" min="7" max="60" step="1" value="21" aria-label="Days from graduation to proficient"></div>
+          </div>
+          <div class="f"><label>New-hire attrition by day 30 / 60 / 90 <output id="o-att">10% / 18% / 25%</output></label>
+            <div class="row3">
+              <div><input type="number" id="n-a30" inputmode="numeric" min="0" max="40" value="10" aria-label="Attrition by day 30, percent"><input type="range" id="a30" min="0" max="40" step="1" value="10" aria-label="Attrition by day 30"></div>
+              <div><input type="number" id="n-a60" inputmode="numeric" min="0" max="60" value="18" aria-label="Attrition by day 60, percent"><input type="range" id="a60" min="0" max="60" step="1" value="18" aria-label="Attrition by day 60"></div>
+              <div><input type="number" id="n-a90" inputmode="numeric" min="0" max="70" value="25" aria-label="Attrition by day 90, percent"><input type="range" id="a90" min="0" max="70" step="1" value="25" aria-label="Attrition by day 90"></div>
+            </div></div>
+          <div class="f"><label for="n-loss">Never reach the floor <small>(% of offers, no-shows)</small></label><input type="number" id="n-loss" inputmode="numeric" min="0" max="40" step="1" value="8"><input type="range" id="loss" min="0" max="40" step="1" value="8" aria-label="Percent of hires who never reach the floor"></div>
+          <div class="f" id="costbox"><label for="n-cost">Cost of the gap <small>(optional: your fully loaded monthly cost per seat)</small></label><div style="display:flex;gap:8px"><select id="cur" aria-label="Currency" style="background:var(--ink);color:var(--ivory);border:1px solid var(--hair);padding:0 8px;font:inherit"><option value="INR">&#8377; INR</option><option value="USD">$ USD</option><option value="EUR">&euro; EUR</option><option value="GBP">&pound; GBP</option><option value="PHP">&#8369; PHP</option></select><input type="number" id="n-cost" inputmode="numeric" min="0" step="1000" placeholder="e.g. 65000" aria-label="Fully loaded monthly cost per seat" style="flex:1"></div><p class="small" style="margin-top:6px">Turns seats into money: every week a seat sits below need is paid for and not earning. Your number, never stored.</p></div>
+          <button class="btn g" id="copyall" type="button" style="width:100%;margin-top:8px">Copy hire plan and ramp speeds to all selected geographies</button>
+          <p class="small" style="margin-top:8px">A cohort starts every three weeks. Everything else is yours to set.</p>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pn">
+  <div class="in">
+    <p class="k">How it works</p>
+    <h2 class="t">What the model counts<span class="dot">.</span></h2>
+    <p class="l">Tenured attrition takes seats away every week. Each cohort starts every three weeks, loses its no-shows before day one and its leavers at 30, 60 and 90 days, and becomes delivery-ready only after offer-to-floor plus the days to proficiency after graduation. Red means the week sits below 90% of the seats you need. The first action is the single lever that recovers the most seats soonest.</p>
+    <p class="l">Starting values for each geography are illustrative and editable, not benchmarks. The <a href="/capability-forward" style="color:var(--sand)">March Bench Diagnosis</a> replaces them with your own dialer, quality, attendance and assessment data, and your controller signs the baseline.</p>
+    <div class="acts"><a class="btn" href="/engage">Start the March Bench Diagnosis &rarr;</a><a class="btn g" href="https://calendly.com/shyam-ssundar/30min?utm_source=ssundar&amp;utm_medium=site&amp;utm_content=calculator" target="_blank" rel="noopener noreferrer">Book a 30-minute call</a></div>
+  </div>
+</section>
+<footer class="footer">
+  <section class="section" style="padding-top:72px;padding-bottom:36px">
+    <img src="/logo-lockup-light.png" alt="SSUNDAR. — Judgment-Centered Leadership Design" class="footer-logo" width="880" height="266">
+    <div class="red-line-thick" style="margin:20px 0"></div>
+    <p style="font-family:var(--body);font-size:14px;font-weight:500;color:rgba(255,255,255,0.4);max-width:520px;line-height:1.7;margin-bottom:36px">Capability Forward: know in January whether your March bench will hold. One account, four weeks to the first forecast and the first action, proof in 120 days. Contact centres, BPO, shared services, GCCs, sales-as-a-service and people-intensive delivery. Asia, North America and Europe.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px 28px;margin-bottom:36px">
+      <a class='footer-link' href='/engage'>Start the March Bench Diagnosis<span class="dot">.</span></a>
+      <a class='footer-link' href='/capability-forward'>The offer on one page<span class="dot">.</span></a>
+      <a class='footer-link' href='/evidence'>Evidence<span class="dot">.</span></a>
+      <a class='footer-link' href='/about'>About Shyam<span class="dot">.</span></a>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:14px 28px;margin-bottom:28px">
+      <a href="mailto:shyam@ssundar.com" class="footer-link">shyam@ssundar.com</a>
+      <a href="https://linkedin.com/in/shyamsundarmv" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn &rarr;</a>
+      <a href="https://www.linkedin.com/company/ssundar/" target="_blank" rel="noopener noreferrer" class="footer-link">Follow SSUNDAR. on LinkedIn &rarr;</a>
+      <a href="https://calendly.com/shyam-ssundar/30min?utm_source=ssundar&amp;utm_medium=site&amp;utm_content=footer" target="_blank" rel="noopener noreferrer" class="footer-link" style="color:var(--red)">Book a 30-minute call &rarr;</a>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center">
+      <span style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.25);letter-spacing:0.05em">&copy; 2026 SSUNDAR.</span>
+      <a href="/terms" style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.05em;text-decoration:none;text-transform:uppercase">Terms</a>
+      <a href="/privacy" style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.05em;text-decoration:none;text-transform:uppercase">Privacy</a>
+      <a href="/cookie-policy" style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.05em;text-decoration:none;text-transform:uppercase">Cookies</a>
+      <a href="/disclaimer" style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.05em;text-decoration:none;text-transform:uppercase">Disclaimer</a>
+      <a href="mailto:privacy@ssundar.com?subject=Data%20Removal%20Request" style="font-family:var(--mono);font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.05em;text-decoration:none;text-transform:uppercase">Remove my data</a>
+    </div>
+  </section>
+</footer>
+
+<script src="app.js"></script>
+<script src="/bench-sim.js?v=20261123a" defer></script>
+<script src="/cookie-consent.js"></script>
+</body>
+</html>
