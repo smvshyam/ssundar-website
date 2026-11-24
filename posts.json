@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "The Knowledge Base Was Updated on Friday. The Old Answer Was Still Faster.",
+      "slug": "insight-knowledge-base-updated-old-answer-faster",
+      "date": "2026-11-24",
+      "category": "SYSTEMS ARCHITECTURE",
+      "excerpt": "A change was announced, trained and acknowledged, and the floor kept quoting the old rule. Adoption can be forecast on release day, not found in the audit.",
+      "readTime": "5 min",
+      "file": "insight-knowledge-base-updated-old-answer-faster.html",
+      "published": true
+    },
+    {
       "title": "The Hiring Plan Had a Row for Every Seat. Nobody Counted Who Would Teach Them.",
       "slug": "insight-hiring-plan-no-row-for-who-teaches",
       "date": "2026-11-23",
