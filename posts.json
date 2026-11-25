@@ -1209,6 +1209,16 @@
       "readTime": "7 min",
       "file": "insight-simulation-data.html",
       "published": true
+    },
+    {
+      "title": "The Roster Said Full Coverage. A Third of It Never Logged In.",
+      "slug": "insight-roster-said-full-coverage",
+      "date": "2026-11-25",
+      "category": "SYSTEMS ARCHITECTURE",
+      "readTime": "5 min",
+      "file": "insight-roster-said-full-coverage.html",
+      "excerpt": "The roster showed forty-two names for forty-two seats. By nine-eleven Monday, eleven hadn't shown. The gap had been forecastable since Thursday.",
+      "published": true
     }
   ]
 }
