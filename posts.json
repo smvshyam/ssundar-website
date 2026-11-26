@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "She Decided to Leave in Week Three. The Report Found Out in Month Two.",
+      "slug": "insight-she-decided-to-leave-week-three-report-found-out",
+      "date": "2026-11-26",
+      "category": "SYSTEMS ARCHITECTURE",
+      "excerpt": "Four new hires decided to leave within three weeks. The monthly attrition report explained the number two months later, once nothing could be done about it.",
+      "readTime": "6 min",
+      "file": "insight-she-decided-to-leave-week-three-report-found-out.html",
+      "published": true
+    },
+    {
       "title": "The Knowledge Base Was Updated on Friday. The Old Answer Was Still Faster.",
       "slug": "insight-knowledge-base-updated-old-answer-faster",
       "date": "2026-11-24",
