@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "Every Seat Had a Named Backup. Half the Backups Were Already Halfway Out the Door.",
+      "slug": "insight-backups-already-halfway-out",
+      "date": "2026-11-27",
+      "category": "SYSTEMS ARCHITECTURE",
+      "readTime": "5 min",
+      "file": "insight-backups-already-halfway-out.html",
+      "excerpt": "The succession grid showed one hundred percent coverage. Nobody had asked whether the names in the second column were still planning to be there.",
+      "published": true
+    },
+    {
       "title": "She Decided to Leave in Week Three. The Report Found Out in Month Two.",
       "slug": "insight-she-decided-to-leave-week-three-report-found-out",
       "date": "2026-11-26",
